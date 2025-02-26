@@ -116,20 +116,27 @@
 
   }
 
-
-  // Preloader
+  // Preloader Animation
   $(document).ready(function () {
     setTimeout(function () {
       $('#container').addClass('loaded');
-    }, 500); // Wait before starting animation
+    }, 500);
 
     setTimeout(function () {
       $('#preloader').fadeOut(1000, function () {
         $(this).remove();
       });
-    }, 3000); // Completely remove after animation
-  });
+    }, 3000);
 
+    $('.odometer').waypoint(function (direction) {
+      if (direction === 'down') {
+        let countNumber = $(this.element).attr("data-count");
+        $(this.element).html(countNumber);
+      }
+    }, {
+      offset: '80%'
+    });
+  });
 
 
   // Side Info Js
@@ -162,30 +169,6 @@
   });
 
 
-
-  // Counter active
-  if ('counterUp' in window) {
-    const skill_counter = window.counterUp.default
-    const skill_cb = entries => {
-      entries.forEach(entry => {
-        const el = entry.target
-        if (entry.isIntersecting && !el.classList.contains('is-visible')) {
-          skill_counter(el, {
-            duration: 1500,
-            delay: 16,
-          })
-          el.classList.add('is-visible')
-        }
-      })
-    }
-    const IO = new IntersectionObserver(skill_cb, {
-      threshold: 1
-    })
-    const els = document.querySelectorAll('.t-counter');
-    els.forEach((el) => {
-      IO.observe(el)
-    });
-  }
 
   // Magnific Video popup
   if ($('.video-popup').length && 'magnificPopup' in jQuery) {
@@ -757,7 +740,7 @@
           });
 
           // Then, move .section-title 200px to the right after the text is hidden
-          gsap.to('.section-title', {
+          gsap.to('.work-area-2 .section-title', {
             x: 200,
             duration: 1
           });
@@ -767,6 +750,23 @@
     });
   }
 
+
+  if (document.querySelectorAll(".testimonial-active").length > 0) {
+    if ('.testimonial-active') {
+      var client_slider_active = new Swiper(".testimonial-active", {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: true,
+        spaceBetween: 0,
+        centeredSlides: true,
+        speed: 2000,
+        autoplay: false,
+        pagination: {
+          el: ".testimonial-pagination",
+        },
+      });
+    }
+  }
 
 
 })(jQuery);
