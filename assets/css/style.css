@@ -3423,6 +3423,7 @@ section {
 }
 .body-digital-agency .section-title {
   font-size: 90px;
+  letter-spacing: -0.05em;
 }
 @media only screen and (max-width: 1919px) {
   .body-digital-agency .section-title {
@@ -3534,6 +3535,7 @@ section {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* about area style  */
 .body-startup-agency {
   background-color: #F8F8F8;
   color: var(--secondary);
