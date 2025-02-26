@@ -821,28 +821,6 @@
 /*  choose-us style  */
 .choose-us {
 
-    &__inner {
-        background-color: var(--primary);
-        padding-top: 150px;
-
-
-        @media #{$xl} {
-            padding-top: 120px;
-        }
-
-        @media #{$lg} {
-            padding-top: 100px;
-        }
-
-        @media #{$md} {
-            padding-top: 80px;
-        }
-
-        @media #{$sm} {
-            padding-top: 50px;
-        }
-    }
-
     .section-title-wrapper {
         gap: 50px;
         grid-template-columns: 1fr;
@@ -974,7 +952,7 @@
         align-items: flex-start;
 
         @media #{$md} {
-            padding: 100px 0;
+            padding: 50px 0;
         }
 
         @media #{$lg} {
@@ -1151,11 +1129,23 @@
 .team-2 {
 
     &__inner {
-        background-color: var(--primary);
+        padding-bottom: 10px;
     }
 
     .section-title-wrapper {
         grid-template-columns: 1fr 1095px;
+
+        @media #{$xxl} {
+            grid-template-columns: 1fr 850px;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 1fr 650px;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr;
+        }
 
 
         .subtitle-wrapper {
@@ -1251,6 +1241,171 @@
 
         .content {
             margin-top: 19px;
+        }
+    }
+}
+
+.thinking {
+
+    &__wrapper {
+        gap: 134px;
+        display: grid;
+        position: relative;
+        margin-bottom: 80px;
+        grid-template-columns: 1fr 1095px;
+
+        @media #{$xxl} {
+            gap: 100px;
+            grid-template-columns: 1fr 700px;
+        }
+
+        @media #{$xl} {
+            gap: 50px;
+            grid-template-columns: 1fr 600px;
+        }
+
+        @media #{$lg} {
+            gap: 50px;
+            grid-template-columns: 1fr;
+            margin-bottom: 50px;
+        }
+
+        @media #{$md} {
+            margin-bottom: 30px;
+        }
+
+        @media #{$sm} {
+            margin-bottom: 0px;
+        }
+    }
+
+    &__content {
+
+        .sub-title {
+            font-size: 90px;
+            font-weight: 400;
+            line-height: 85px;
+            margin-bottom: 90px;
+            letter-spacing: -4.5px;
+
+            @media #{$xxl} {
+                margin-bottom: 50px;
+            }
+
+            @media #{$xl} {
+                font-size: 70px;
+                line-height: 80px;
+
+            }
+
+            @media #{$md} {
+                font-size: 50px;
+                line-height: 60px;
+                margin-bottom: 10px;
+                letter-spacing: 0;
+
+                br {
+                    display: none;
+                }
+            }
+
+            @media #{$sm} {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+
+        p {
+            color: #555;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            max-width: 390px;
+        }
+
+        .title {
+            font-size: 250px;
+            font-weight: 400;
+            line-height: 160px;
+            letter-spacing: -12.5px;
+            font-family: var(--font_ppeditor);
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: -10px;
+            z-index: 99;
+
+            @media #{$xxl} {
+                font-size: 200px;
+            }
+
+            @media #{$xl} {
+                font-size: 160px;
+                line-height: 100px;
+            }
+
+            @media #{$md} {
+                font-size: 130px;
+                line-height: 85px;
+                bottom: 0;
+            }
+
+            @media #{$sm} {
+                font-size: 112px;
+                line-height: 75px;
+                bottom: 0;
+            }
+
+            @media #{$xs} {
+                font-size: 65px;
+                line-height: 45px;
+                bottom: 0;
+                position: inherit;
+                letter-spacing: 0;
+                margin-top: 20px;
+            }
+
+            .big-letter {
+                font-size: 765px;
+                font-style: italic;
+                font-weight: 400;
+                line-height: 160px;
+                display: inline-block;
+                letter-spacing: -20.25px;
+                margin-top: 95px;
+
+                @media #{$xxl} {
+                    font-size: 560px;
+                }
+
+                @media #{$xl} {
+                    font-size: 500px;
+                    letter-spacing: -5.25px;
+                }
+
+                @media #{$md} {
+                    font-size: 450px;
+                    letter-spacing: 0;
+                }
+
+                @media #{$sm} {
+                    font-size: 380px;
+                    letter-spacing: 0;
+                    margin-top: 0;
+                }
+
+                @media #{$xs} {
+                    font-size: 250px;
+                }
+            }
+        }
+    }
+
+    &__media {
+        margin-top: 250px;
+
+        @media #{$lg} {
+            margin-top: 0;
         }
     }
 }

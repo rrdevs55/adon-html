@@ -759,6 +759,30 @@ h6 {
   }
 }
 
+.section-spacing-top-150 {
+  padding-top: 150px;
+}
+@media only screen and (max-width: 1919px) {
+  .section-spacing-top-150 {
+    padding-top: 120px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .section-spacing-top-150 {
+    padding-top: 100px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .section-spacing-top-150 {
+    padding-top: 80px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .section-spacing-top-150 {
+    padding-top: 60px;
+  }
+}
+
 .section-spacing-130 {
   padding-top: 130px;
   padding-bottom: 130px;
@@ -1351,22 +1375,22 @@ body {
   color: var(--secondary);
 }
 
-.them-bg-white {
+.theme-bg-white {
   background-color: var(--white);
 }
-.them-bg-black {
+.theme-bg-black {
   background-color: var(--black);
 }
-.them-bg-primary {
+.theme-bg-primary {
   background-color: var(--primary);
 }
-.them-bg-secondary {
+.theme-bg-secondary {
   background-color: var(--secondary);
 }
-.them-bg-transparent {
+.theme-bg-transparent {
   background-color: transparent;
 }
-.them-bg-theme {
+.theme-bg-theme {
   background-color: var(--theme);
 }
 
@@ -4419,30 +4443,6 @@ section {
 }
 
 /*  choose-us style  */
-.choose-us__inner {
-  background-color: var(--primary);
-  padding-top: 150px;
-}
-@media only screen and (max-width: 1399px) {
-  .choose-us__inner {
-    padding-top: 120px;
-  }
-}
-@media only screen and (max-width: 1199px) {
-  .choose-us__inner {
-    padding-top: 100px;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .choose-us__inner {
-    padding-top: 80px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .choose-us__inner {
-    padding-top: 50px;
-  }
-}
 .choose-us .section-title-wrapper {
   gap: 50px;
   grid-template-columns: 1fr;
@@ -4568,7 +4568,7 @@ section {
 }
 @media only screen and (max-width: 991px) {
   .testimonial__wrapper {
-    padding: 100px 0;
+    padding: 50px 0;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -4730,10 +4730,25 @@ section {
 
 /* team area style  */
 .team-2__inner {
-  background-color: var(--primary);
+  padding-bottom: 10px;
 }
 .team-2 .section-title-wrapper {
   grid-template-columns: 1fr 1095px;
+}
+@media only screen and (max-width: 1919px) {
+  .team-2 .section-title-wrapper {
+    grid-template-columns: 1fr 850px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .team-2 .section-title-wrapper {
+    grid-template-columns: 1fr 650px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .team-2 .section-title-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 .team-2 .section-title-wrapper .subtitle-wrapper .section-subtitle {
   border: 1px solid var(--white);
@@ -4810,6 +4825,178 @@ section {
 }
 .team-2__box .content {
   margin-top: 19px;
+}
+
+.thinking__wrapper {
+  gap: 134px;
+  display: grid;
+  position: relative;
+  margin-bottom: 80px;
+  grid-template-columns: 1fr 1095px;
+}
+@media only screen and (max-width: 1919px) {
+  .thinking__wrapper {
+    gap: 100px;
+    grid-template-columns: 1fr 700px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .thinking__wrapper {
+    gap: 50px;
+    grid-template-columns: 1fr 600px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .thinking__wrapper {
+    gap: 50px;
+    grid-template-columns: 1fr;
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .thinking__wrapper {
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .thinking__wrapper {
+    margin-bottom: 0px;
+  }
+}
+.thinking__content .sub-title {
+  font-size: 90px;
+  font-weight: 400;
+  line-height: 85px;
+  margin-bottom: 90px;
+  letter-spacing: -4.5px;
+}
+@media only screen and (max-width: 1919px) {
+  .thinking__content .sub-title {
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .thinking__content .sub-title {
+    font-size: 70px;
+    line-height: 80px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .thinking__content .sub-title {
+    font-size: 50px;
+    line-height: 60px;
+    margin-bottom: 10px;
+    letter-spacing: 0;
+  }
+  .thinking__content .sub-title br {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .thinking__content .sub-title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+.thinking__content p {
+  color: #555;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  max-width: 390px;
+}
+.thinking__content .title {
+  font-size: 250px;
+  font-weight: 400;
+  line-height: 160px;
+  letter-spacing: -12.5px;
+  font-family: var(--font_ppeditor);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: -10px;
+  z-index: 99;
+}
+@media only screen and (max-width: 1919px) {
+  .thinking__content .title {
+    font-size: 200px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .thinking__content .title {
+    font-size: 160px;
+    line-height: 100px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .thinking__content .title {
+    font-size: 130px;
+    line-height: 85px;
+    bottom: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .thinking__content .title {
+    font-size: 112px;
+    line-height: 75px;
+    bottom: 0;
+  }
+}
+@media (max-width: 575px) {
+  .thinking__content .title {
+    font-size: 65px;
+    line-height: 45px;
+    bottom: 0;
+    position: inherit;
+    letter-spacing: 0;
+    margin-top: 20px;
+  }
+}
+.thinking__content .title .big-letter {
+  font-size: 765px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 160px;
+  display: inline-block;
+  letter-spacing: -20.25px;
+  margin-top: 95px;
+}
+@media only screen and (max-width: 1919px) {
+  .thinking__content .title .big-letter {
+    font-size: 560px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .thinking__content .title .big-letter {
+    font-size: 500px;
+    letter-spacing: -5.25px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .thinking__content .title .big-letter {
+    font-size: 450px;
+    letter-spacing: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .thinking__content .title .big-letter {
+    font-size: 380px;
+    letter-spacing: 0;
+    margin-top: 0;
+  }
+}
+@media (max-width: 575px) {
+  .thinking__content .title .big-letter {
+    font-size: 250px;
+  }
+}
+.thinking__media {
+  margin-top: 250px;
+}
+@media only screen and (max-width: 1199px) {
+  .thinking__media {
+    margin-top: 0;
+  }
 }
 
 /* header area style  */
