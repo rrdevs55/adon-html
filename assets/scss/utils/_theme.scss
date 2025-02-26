@@ -82,7 +82,7 @@ body {
 
 
 // BG Color
-.bg {
+.them-bg {
 
   &-white {
     background-color: var(--white);
@@ -101,11 +101,11 @@ body {
   }
 
   &-transparent {
-    background-color: transparent !important;
+    background-color: transparent;
   }
 
   &-theme {
-    background-color: var(--theme) !important;
+    background-color: var(--theme);
   }
 }
 
