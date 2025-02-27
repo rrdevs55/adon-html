@@ -208,11 +208,12 @@
             padding-right: 0;
         }
 
-        .title-video {
-            border-radius: 10px;
+        video {
             width: 100%;
-            cursor: pointer;
-            mask-image: repeating-linear-gradient(90deg, black 0%, black 14%, transparent 14%, transparent 14.5%);
+            -webkit-mask-image: url(../imgs/shape/shape-3.png);
+            mask-image: url(../imgs/shape/shape-3.png);
+            mask-size: 100% 100%;
+            object-fit: cover;
         }
     }
 
@@ -498,7 +499,6 @@
 }
 
 // .hero-2 end
-
 .about-area {
 
     &-inner {
@@ -567,7 +567,6 @@
         }
     }
 }
-
 
 /* client area 2 style  */
 .client-area {
@@ -1245,6 +1244,7 @@
     }
 }
 
+/* thinking area style  */
 .thinking {
 
     &__wrapper {
