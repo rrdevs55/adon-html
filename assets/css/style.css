@@ -4906,16 +4906,16 @@ section {
   max-width: 390px;
 }
 .thinking__content .title {
+  z-index: 99;
+  display: flex;
+  bottom: -10px;
   font-size: 250px;
   font-weight: 400;
   line-height: 160px;
+  position: absolute;
+  align-items: center;
   letter-spacing: -12.5px;
   font-family: var(--font_ppeditor);
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: -10px;
-  z-index: 99;
 }
 @media only screen and (max-width: 1919px) {
   .thinking__content .title {

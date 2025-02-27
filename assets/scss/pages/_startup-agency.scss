@@ -1295,7 +1295,6 @@
             @media #{$xl} {
                 font-size: 70px;
                 line-height: 80px;
-
             }
 
             @media #{$md} {
@@ -1324,16 +1323,16 @@
         }
 
         .title {
+            z-index: 99;
+            display: flex;
+            bottom: -10px;
             font-size: 250px;
             font-weight: 400;
             line-height: 160px;
+            position: absolute;
+            align-items: center;
             letter-spacing: -12.5px;
             font-family: var(--font_ppeditor);
-            display: flex;
-            align-items: center;
-            position: absolute;
-            bottom: -10px;
-            z-index: 99;
 
             @media #{$xxl} {
                 font-size: 200px;
