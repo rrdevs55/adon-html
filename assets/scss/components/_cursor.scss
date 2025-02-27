@@ -175,14 +175,17 @@
     -ms-transform: scale(1.32);
     -o-transform: scale(1.32);
     transform: scale(1.32);
+    width: 130px;
+    height: 130px;
+    border-radius: 10px;
 }
 
 .cb-cursor.-opaque.-active:before {
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transform: scale(1.2);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
 }
 
 .cb-cursor.-lg:before {
