@@ -643,7 +643,7 @@
 
 
   document.addEventListener("DOMContentLoaded", function () {
-    const video = document.querySelector(".title-video");
+    const video = document.querySelector(".hero-2__video video");
 
     video.addEventListener("click", function () {
       if (video.requestFullscreen) {
@@ -757,7 +757,7 @@
         slidesPerView: 1,
         loop: true,
         autoplay: true,
-        spaceBetween: 0,
+        spaceBetween: 30,
         centeredSlides: true,
         speed: 2000,
         autoplay: false,

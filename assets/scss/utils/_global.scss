@@ -523,6 +523,26 @@
   }
 }
 
+.section-spacing-top-150 {
+  padding-top: 150px;
+
+  @media #{$xxl} {
+    padding-top: 120px;
+  }
+
+  @media #{$xl} {
+    padding-top: 100px;
+  }
+
+  @media #{$lg} {
+    padding-top: 80px;
+  }
+
+  @media #{$md} {
+    padding-top: 60px;
+  }
+}
+
 .section-spacing-130 {
   padding-top: 130px;
   padding-bottom: 130px;
