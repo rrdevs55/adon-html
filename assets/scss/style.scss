@@ -70,6 +70,7 @@
                 letter-spacing: -3.5px;
                 font-family: var(--font_bdogrotesk);
                 color: var(--black);
+                display: inline-block;
 
                 @media #{$xxl} {
                     font-size: 80px;

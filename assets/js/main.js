@@ -245,7 +245,7 @@
           rotationX: -80,
           force3D: true,
           transformOrigin: "top center -50",
-          stagger: 0.1
+          stagger: 0.2
         });
       });
     }
@@ -412,6 +412,7 @@
 
     });
   }
+
 
   // Full Character Setup 
   // if (document.querySelectorAll(".char-anim").length > 0) {
@@ -743,50 +744,50 @@
   //   });
   // }
 
-  if ($('.work-area-2').length > 0 && window.innerWidth > 768) {
-    let initialPosition = gsap.getProperty('.section-title', 'x'); // Capture the initial position
+  if ($('.works-wrapper-box').length > 0 && window.innerWidth > 768) {
+    // let initialPosition = gsap.getProperty('.section-title', 'x'); // Capture the initial position
 
     let work_area_2 = gsap.timeline({
       scrollTrigger: {
-        trigger: ".work-area-2",
-        start: "top -20%", // Adjust this value as needed
-        end: "bottom 60%", // Adjust this value as needed
+        trigger: ".works-wrapper-box",
+        start: "top 0%s", // Adjust this value as needed
+        end: "bottom 70%", // Adjust this value as needed
         pin: ".section-header",
-        markers: false,
+        markers: true,
         pinSpacing: false,
         scrub: 3,
 
-        onEnterBack: () => {
-          // When section-title scrolls back up, show .remove-text class again immediately
-          gsap.to('.section-title .remove-text', {
-            opacity: 1,
-            visibility: 'visible',
-            x: '0',
-            duration: 1
-          });
+        // onEnterBack: () => {
+        //   // When section-title scrolls back up, show .remove-text class again immediately
+        //   gsap.to('.section-title .remove-text', {
+        //     opacity: 1,
+        //     visibility: 'visible',
+        //     x: '0',
+        //     duration: 1
+        //   });
 
-          // Move section-title back to its initial position (stored in initialPosition)
-          gsap.to('.section-title', {
-            x: initialPosition,
-            duration: 1
-          });
-        },
+        //   // Move section-title back to its initial position (stored in initialPosition)
+        //   gsap.to('.section-title', {
+        //     x: initialPosition,
+        //     duration: 1
+        //   });
+        // },
 
-        onLeave: () => {
-          // When section-title reaches the end position, hide .remove-text class first
-          gsap.to('.section-title .remove-text', {
-            opacity: 0,
-            visibility: 'hidden',
-            x: '-30',
-            duration: 1
-          });
+        // onLeave: () => {
+        //   // When section-title reaches the end position, hide .remove-text class first
+        //   gsap.to('.section-title .remove-text', {
+        //     opacity: 0,
+        //     visibility: 'hidden',
+        //     x: '-30',
+        //     duration: 1
+        //   });
 
-          // Then, move .section-title 200px to the right after the text is hidden
-          gsap.to('.work-area-2 .section-title', {
-            x: 200,
-            duration: 1
-          });
-        },
+        //   // Then, move .section-title 200px to the right after the text is hidden
+        //   gsap.to('.work-area-2 .section-title', {
+        //     x: 200,
+        //     duration: 1
+        //   });
+        // },
 
       },
     });
@@ -809,7 +810,6 @@
       });
     }
   }
-
 
 })(jQuery);
 
