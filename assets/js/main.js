@@ -643,7 +643,7 @@
 
 
   document.addEventListener("DOMContentLoaded", function () {
-    const video = document.querySelector(".title-video");
+    const video = document.querySelector(".hero-2__video video");
 
     video.addEventListener("click", function () {
       if (video.requestFullscreen) {
@@ -757,7 +757,7 @@
         slidesPerView: 1,
         loop: true,
         autoplay: true,
-        spaceBetween: 0,
+        spaceBetween: 30,
         centeredSlides: true,
         speed: 2000,
         autoplay: false,
@@ -767,6 +767,27 @@
       });
     }
   }
+
+
+
+  // Moving text		
+  if (document.querySelectorAll(".moving-text").length > 0) {
+    gsap.utils.toArray('.moving-text').forEach((section, index) => {
+      const w = section.querySelector('.wrapper-text');
+      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+      gsap.fromTo(w, { x }, {
+        x: xEnd,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          scrub: 0.5,
+          start: "20% bottom",
+          end: "80% top",
+        }
+      });
+    });
+  }
+
 
 
 })(jQuery);
