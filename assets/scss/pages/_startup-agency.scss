@@ -111,6 +111,7 @@
             font-weight: 400;
             line-height: 130px;
             letter-spacing: -7.5px;
+            display: inline-block;
 
             span {
                 font-style: italic;
@@ -200,12 +201,14 @@
     &__video {
         padding-right: 85px;
 
+
         @media #{$lg} {
             padding-right: 50px;
         }
 
         @media #{$sm} {
             padding-right: 0;
+            order: 1;
         }
 
         video {
@@ -503,7 +506,22 @@
 
     &-inner {
         padding-top: 135px;
-        padding-bottom: 100px;
+
+        @media #{$xxl} {
+            padding-top: 110px;
+        }
+
+        @media #{$xl} {
+            padding-top: 100px;
+        }
+
+        @media #{$lg} {
+            padding-top: 80px;
+        }
+
+        @media #{$md} {
+            padding-top: 60px;
+        }
     }
 
     .section-title-wrapper {
@@ -575,6 +593,22 @@
         padding-top: 55px;
         border-top: 1px solid rgba(17, 17, 17, 0.10);
         padding-bottom: 200px;
+
+        @media #{$xxl} {
+            padding-bottom: 150px;
+        }
+
+        @media #{$xl} {
+            padding-bottom: 120px;
+        }
+
+        @media #{$lg} {
+            padding-bottom: 100px;
+        }
+
+        @media #{$md} {
+            padding-bottom: 60px;
+        }
     }
 
     .clients-wrapper {
@@ -597,6 +631,10 @@
 
 /* work area 2 style  */
 .work-area-2 {
+
+    &-inner {
+        padding-bottom: 200px;
+    }
 
     .section-description {
         margin-bottom: 10px;
@@ -683,6 +721,14 @@
 
             .remove-text {
                 margin-left: -50px;
+
+                @media #{$md} {
+                    margin-left: -35px;
+                }
+
+                @media #{$sm} {
+                    margin-left: -20px;
+                }
             }
 
 
@@ -847,6 +893,7 @@
 
             .section-title {
                 color: var(--white);
+                display: inline-block;
             }
         }
     }
@@ -1334,6 +1381,10 @@
             align-items: center;
             letter-spacing: -12.5px;
             font-family: var(--font_ppeditor);
+
+            br {
+                display: block;
+            }
 
             @media #{$xxl} {
                 font-size: 200px;
