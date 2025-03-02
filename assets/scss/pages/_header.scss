@@ -69,37 +69,15 @@
         font-size: 16px;
         font-weight: 400;
         padding: 21px 17px;
+        color: var(--white);
 
         &:hover {
-            color: var(--action);
+            color: var(--white);
         }
     }
 
     .search-icon {
         color: var(--primary);
-    }
-
-    .header__meta {
-        @media #{$xs} {
-            display: none;
-        }
-    }
-
-    .header__button {
-        @media #{$xs} {
-            display: none;
-        }
-    }
-
-    .rr-btn {
-        font-size: 16px;
-        padding: 22px 38px;
-        letter-spacing: -0.04em;
-
-        @media #{$lg} {
-            padding: 17px 33px;
-
-        }
     }
 
     .header__navicon {
