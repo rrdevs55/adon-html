@@ -1,39 +1,10 @@
 /* digital agency page css */
 .body-digital-agency {
-    background-color: #FFFFFF;
-    color: var(--secondary);
-
     .container {
-
         &.large {
             @media (min-width: 1650px) {
                 max-width: 1650px;
             }
-        }
-    }
-
-    .section-title {
-        font-size: 90px;
-        letter-spacing: -0.05em;
-
-        @media #{$xxl} {
-            font-size: 70px;
-        }
-
-        @media #{$xl} {
-            font-size: 60px;
-        }
-
-        @media #{$lg} {
-            font-size: 50px;
-        }
-
-        @media #{$md} {
-            font-size: 40px;
-        }
-
-        @media #{$sm} {
-            font-size: 35px;
         }
     }
 }

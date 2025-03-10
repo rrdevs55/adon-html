@@ -473,6 +473,38 @@
   }
 }
 
+
+.section-title {
+  font-size: 90px;
+
+  @media #{$xxl} {
+    font-size: 70px;
+  }
+
+  @media #{$xl} {
+    font-size: 60px;
+  }
+
+  @media #{$lg} {
+    font-size: 50px;
+  }
+
+  @media #{$md} {
+    font-size: 40px;
+  }
+
+  @media #{$sm} {
+    font-size: 35px;
+  }
+
+  &.font-bdogrotesk-regular {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 400;
+    line-height: 0.94;
+    letter-spacing: -0.05em;
+  }
+}
+
 .section-spacing-200 {
   padding-top: 200px;
   padding-bottom: 200px;
@@ -942,6 +974,9 @@
     }
   }
 }
+
+
+
 
 /* body style  */
 .body {
