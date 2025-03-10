@@ -77,7 +77,7 @@
 
     .hero-area-inner {
         position: relative;
-        padding-top: 106px;
+        padding-top: 156px;
         padding-bottom: 89px;
         height: 100vh;
         display: grid;
@@ -123,6 +123,10 @@
 
             @media #{$lg} {
                 font-size: 50px;
+            }
+
+            @media #{$xs} {
+                font-size: 40px;
             }
         }
 
@@ -170,10 +174,14 @@
         right: 0;
 
         @media #{$xxl} {
-            max-width: 580px;
+            max-width: 500px;
         }
 
-        @media #{$sm} {
+        @media #{$xl} {
+            max-width: 390px;
+        }
+
+        @media #{$lg} {
             position: static;
             width: 100%;
         }
@@ -182,6 +190,10 @@
             display: grid;
             gap: 30px 50px;
             grid-template-columns: repeat(2, 1fr);
+
+            @media #{$xl} {
+                gap: 30px 40px;
+            }
 
             @media #{$xs} {
                 grid-template-columns: repeat(1, 1fr);
@@ -202,6 +214,10 @@
             @media #{$xxl} {
                 font-size: 20px;
                 padding-top: 13px;
+            }
+
+            @media #{$xl} {
+                font-size: 18px;
             }
 
             br {

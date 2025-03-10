@@ -116,6 +116,64 @@
 
   }
 
+  // GSAP Fade Animation 
+  let fadeArray_items = document.querySelectorAll(".fade-anim");
+  if (fadeArray_items.length > 0) {
+    const fadeArray = gsap.utils.toArray(".fade-anim")
+    fadeArray.forEach((item, i) => {
+      var fade_direction = "bottom"
+      var onscroll_value = 1
+      var duration_value = 1.15
+      var fade_offset = 50
+      var delay_value = 0.15
+      var ease_value = "power2.out"
+      if (item.getAttribute("data-offset")) {
+        fade_offset = item.getAttribute("data-offset");
+      }
+      if (item.getAttribute("data-duration")) {
+        duration_value = item.getAttribute("data-duration");
+      }
+      if (item.getAttribute("data-direction")) {
+        fade_direction = item.getAttribute("data-direction");
+      }
+      if (item.getAttribute("data-on-scroll")) {
+        onscroll_value = item.getAttribute("data-on-scroll");
+      }
+      if (item.getAttribute("data-delay")) {
+        delay_value = item.getAttribute("data-delay");
+      }
+      if (item.getAttribute("data-ease")) {
+        ease_value = item.getAttribute("data-ease");
+      }
+      let animation_settings = {
+        opacity: 0,
+        ease: ease_value,
+        duration: duration_value,
+        delay: delay_value,
+      }
+      if (fade_direction == "top") {
+        animation_settings['y'] = -fade_offset
+      }
+      if (fade_direction == "left") {
+        animation_settings['x'] = -fade_offset;
+      }
+      if (fade_direction == "bottom") {
+        animation_settings['y'] = fade_offset;
+      }
+      if (fade_direction == "right") {
+        animation_settings['x'] = fade_offset;
+      }
+      if (onscroll_value == 1) {
+        animation_settings['scrollTrigger'] = {
+          trigger: item,
+          start: 'top 85%',
+        }
+      }
+      gsap.from(item, animation_settings);
+    })
+  }
+
+
   // Preloader Animation
   $(document).ready(function () {
     setTimeout(function () {
