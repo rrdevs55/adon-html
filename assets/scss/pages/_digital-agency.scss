@@ -1030,26 +1030,29 @@
         margin-top: -6px;
     }
 
-    .services-wrapper {
-        display: grid;
-        gap: 10px;
-        grid-template-columns: repeat(5, 1fr);
 
-        @media #{$lg} {
-            grid-template-columns: repeat(4, 1fr);
-        }
 
-        @media #{$md} {
-            grid-template-columns: repeat(3, 1fr);
-        }
+}
 
-        @media #{$sm} {
-            grid-template-columns: repeat(2, 1fr);
-        }
+.services-wrapper {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
 
-        @media #{$xs} {
-            grid-template-columns: repeat(1, 1fr);
-        }
+    @media #{$lg} {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media #{$md} {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media #{$sm} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media #{$xs} {
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .service-box {
@@ -1105,5 +1108,23 @@
         }
     }
 
+    .item-1 {
+        transform: translateX(calc(200% + 20px));
+    }
 
+    .item-2 {
+        transform: translateX(calc(100% + 10px));
+    }
+
+    .item-3 {
+        transform: translateX(calc(0% + 0px));
+    }
+
+    .item-4 {
+        transform: translateX(calc(-100% - 10px));
+    }
+
+    .item-5 {
+        transform: translateX(calc(-200% - 20px));
+    }
 }
