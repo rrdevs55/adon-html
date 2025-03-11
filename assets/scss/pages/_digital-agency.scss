@@ -462,6 +462,13 @@
                 }
             }
 
+            &.first {
+                margin-left: calc((100vw - var(--container-max-widths)) / -2);
+            }
+
+            &.last {
+                margin-right: calc((100vw - var(--container-max-widths)) / -2);
+            }
         }
     }
 

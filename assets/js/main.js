@@ -174,6 +174,57 @@
   }
 
 
+  // Moving text		
+  if (document.querySelectorAll(".moving-text").length > 0) {
+    gsap.utils.toArray('.moving-text').forEach((section, index) => {
+      const w = section.querySelector('.wrapper-text');
+      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+      gsap.fromTo(w, { x }, {
+        x: xEnd,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          scrub: 0.5,
+          start: "20% bottom",
+          end: "80% top",
+        }
+      });
+    });
+  }
+
+  // work-title animation 
+  if (document.querySelectorAll(".work-title").length > 0) {
+    let work_title_anim = document.querySelector(".work-title")
+    if (work_title_anim) {
+      let content_1 = document.querySelector(".first")
+      let content_2 = document.querySelector(".last")
+
+      gsap.to(content_1, {
+        marginLeft: "0",
+        ease: "none",
+        scrollTrigger: {
+          trigger: work_title_anim,
+          scrub: 2,
+          start: 'top 90%',
+          end: "top center",
+        }
+      })
+
+      gsap.to(content_2, {
+        marginRight: "0",
+        ease: "none",
+        scrollTrigger: {
+          trigger: work_title_anim,
+          scrub: 2,
+          start: 'top 90%',
+          end: "top center",
+        }
+      })
+    }
+  }
+
+
+
   // Preloader Animation
   $(document).ready(function () {
     setTimeout(function () {
@@ -871,23 +922,6 @@
   2
 
 
-  // Moving text		
-  if (document.querySelectorAll(".moving-text").length > 0) {
-    gsap.utils.toArray('.moving-text').forEach((section, index) => {
-      const w = section.querySelector('.wrapper-text');
-      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
-      gsap.fromTo(w, { x }, {
-        x: xEnd,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          scrub: 0.5,
-          start: "20% bottom",
-          end: "80% top",
-        }
-      });
-    });
-  }
 
 
 })(jQuery);
