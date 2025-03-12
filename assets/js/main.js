@@ -223,6 +223,75 @@
     }
   }
 
+  // service box animation 
+  if (document.querySelectorAll(".services-box-anim").length > 0) {
+    let service_box_anim = document.querySelector(".services-box-anim")
+    if (service_box_anim) {
+      let content_1 = document.querySelector(".item-1")
+      let content_2 = document.querySelector(".item-2")
+      let content_3 = document.querySelector(".item-3")
+      let content_4 = document.querySelector(".item-4")
+      let content_5 = document.querySelector(".item-5")
+
+      gsap.to(content_1, {
+        transform: "translate(0, 0)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: service_box_anim,
+          scrub: 2,
+          start: 'top 90%',
+          end: "top center",
+          markers: true,
+        }
+      })
+
+      gsap.to(content_2, {
+        transform: "translate(0, 0)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: service_box_anim,
+          scrub: 2,
+          start: 'top 90%',
+          end: "top center",
+          markers: true,
+        }
+      })
+      gsap.to(content_3, {
+        transform: "translate(0, 0)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: service_box_anim,
+          scrub: 2,
+          start: 'top 90%',
+          end: "top center",
+          markers: true,
+        }
+      })
+      gsap.to(content_4, {
+        transform: "translate(0, 0)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: service_box_anim,
+          scrub: 2,
+          start: 'top 90%',
+          end: "top center",
+          markers: true,
+        }
+      })
+      gsap.to(content_5, {
+        transform: "translate(0, 0)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: service_box_anim,
+          scrub: 2,
+          start: 'top 90%',
+          end: "top center",
+          markers: true,
+        }
+      })
+    }
+  }
+
 
 
   // Preloader Animation
@@ -287,7 +356,6 @@
   },
     "-=1.5"
   );
-
   // Preloader end
 
   // Side Info Js
@@ -768,47 +836,6 @@
     });
   });
 
-  // contact-form-daynamic
-  $(document).ready(function () {
-    $('#contact__form').submit(function (event) {
-      event.preventDefault();
-      var form = $(this);
-      $('.loading-form').show();
-
-      setTimeout(function () {
-        $.ajax({
-          type: form.attr('method'),
-          url: form.attr('action'),
-          data: form.serialize()
-        }).done(function (data) {
-          $('.loading-form').hide();
-          $('#response-message').html('<p class="success-message">Your message has been sent successfully.</p>');
-          form[0].reset();
-        }).fail(function () {
-          $('.loading-form').hide();
-          $('#response-message').html('<p class="error-message">Something went wrong. Please try again later.</p>');
-        });
-      }, 1000);
-    });
-  });
-
-
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const video = document.querySelector(".hero-2__video video");
-
-    video.addEventListener("click", function () {
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if (video.mozRequestFullScreen) { // Firefox
-        video.mozRequestFullScreen();
-      } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
-        video.webkitRequestFullscreen();
-      } else if (video.msRequestFullscreen) { // IE/Edge
-        video.msRequestFullscreen();
-      }
-    });
-  });
 
   // client slider 
   if (document.querySelectorAll(".client-slider-active").length > 0) {
@@ -862,7 +889,7 @@
         start: "top 0%s", // Adjust this value as needed
         end: "bottom 70%", // Adjust this value as needed
         pin: ".section-header",
-        markers: true,
+        markers: false,
         pinSpacing: false,
         scrub: 3,
 
