@@ -223,139 +223,71 @@
     }
   }
 
-  // service box animation 
-  if (document.querySelectorAll(".services-box-anim").length > 0) {
-    let service_box_anim = document.querySelector(".services-box-anim")
-    if (service_box_anim) {
-      let content_1 = document.querySelector(".item-1")
-      let content_2 = document.querySelector(".item-2")
-      let content_3 = document.querySelector(".item-3")
-      let content_4 = document.querySelector(".item-4")
-      let content_5 = document.querySelector(".item-5")
-
-      gsap.to(content_1, {
-        transform: "translate(0, 0)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: service_box_anim,
-          scrub: 2,
-          start: 'top 90%',
-          end: "top center",
-          markers: true,
-        }
-      })
-
-      gsap.to(content_2, {
-        transform: "translate(0, 0)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: service_box_anim,
-          scrub: 2,
-          start: 'top 90%',
-          end: "top center",
-          markers: true,
-        }
-      })
-      gsap.to(content_3, {
-        transform: "translate(0, 0)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: service_box_anim,
-          scrub: 2,
-          start: 'top 90%',
-          end: "top center",
-          markers: true,
-        }
-      })
-      gsap.to(content_4, {
-        transform: "translate(0, 0)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: service_box_anim,
-          scrub: 2,
-          start: 'top 90%',
-          end: "top center",
-          markers: true,
-        }
-      })
-      gsap.to(content_5, {
-        transform: "translate(0, 0)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: service_box_anim,
-          scrub: 2,
-          start: 'top 90%',
-          end: "top center",
-          markers: true,
-        }
-      })
-    }
-  }
 
 
 
   // Preloader Animation
-  $(document).ready(function () {
-    setTimeout(function () {
-      $('#container').addClass('loaded');
-    }, 500);
+  // $(document).ready(function () {
+  //   setTimeout(function () {
+  //     $('#container').addClass('loaded');
+  //   }, 500);
 
-    setTimeout(function () {
-      $('.loader-wrap').fadeOut(1000, function () {
-        $(this).remove();
-      });
-    }, 3000);
+  //   setTimeout(function () {
+  //     $('.loader-wrap').fadeOut(1000, function () {
+  //       $(this).remove();
+  //     });
+  //   }, 3000);
 
-    $('.odometer').waypoint(function (direction) {
-      if (direction === 'down') {
-        let countNumber = $(this.element).attr("data-count");
-        $(this.element).html(countNumber);
-      }
-    }, {
-      offset: '80%'
-    });
-  });
+  //   $('.odometer').waypoint(function (direction) {
+  //     if (direction === 'down') {
+  //       let countNumber = $(this.element).attr("data-count");
+  //       $(this.element).html(countNumber);
+  //     }
+  //   }, {
+  //     offset: '80%'
+  //   });
+  // });
 
 
 
-  const svg = document.getElementById("svg");
-  const tl = gsap.timeline();
-  const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
-  const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+  // const svg = document.getElementById("svg");
+  // const tl = gsap.timeline();
+  // const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+  // const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
 
-  tl.to(".loader-wrap-heading .load-text , .loader-wrap-heading .cont", {
-    delay: 1.5,
-    y: -100,
-    opacity: 0,
-  });
-  tl.to(svg, {
-    duration: 0.5,
-    attr: {
-      d: curve
-    },
-    ease: "power2.easeIn",
-  }).to(svg, {
-    duration: 0.5,
-    attr: {
-      d: flat
-    },
-    ease: "power2.easeOut",
-  });
-  tl.to(".loader-wrap", {
-    y: -1500,
-  });
-  tl.to(".loader-wrap", {
-    zIndex: -1,
-    display: "none",
-  });
-  tl.from(
-    "main", {
-    y: 100,
-    opacity: 0,
-    delay: 0.3,
-  },
-    "-=1.5"
-  );
+  // tl.to(".loader-wrap-heading .load-text , .loader-wrap-heading .cont", {
+  //   delay: 1.5,
+  //   y: -100,
+  //   opacity: 0,
+  // });
+  // tl.to(svg, {
+  //   duration: 0.5,
+  //   attr: {
+  //     d: curve
+  //   },
+  //   ease: "power2.easeIn",
+  // }).to(svg, {
+  //   duration: 0.5,
+  //   attr: {
+  //     d: flat
+  //   },
+  //   ease: "power2.easeOut",
+  // });
+  // tl.to(".loader-wrap", {
+  //   y: -1500,
+  // });
+  // tl.to(".loader-wrap", {
+  //   zIndex: -1,
+  //   display: "none",
+  // });
+  // tl.from(
+  //   "main", {
+  //   y: 100,
+  //   opacity: 0,
+  //   delay: 0.3,
+  // },
+  //   "-=1.5"
+  // );
   // Preloader end
 
   // Side Info Js
@@ -946,7 +878,190 @@
       });
     }
   }
-  2
+
+  // service box animation 
+  if (document.querySelectorAll(".services-box-anim").length > 0) {
+    // let service_box_anim = document.querySelector(".services-box-anim")
+    // if (service_box_anim) {
+    //   let content_1 = document.querySelector(".item-1")
+    //   let content_2 = document.querySelector(".item-2")
+    //   let content_3 = document.querySelector(".item-3")
+    //   let content_4 = document.querySelector(".item-4")
+    //   let content_5 = document.querySelector(".item-5")
+
+    //   gsap.to(content_1, {
+    //     transform: "translate(0, 0)",
+    //     ease: "none",
+    //     scrollTrigger: {
+    //       trigger: service_box_anim,
+    //       scrub: 2,
+    //       start: 'top 90%',
+    //       end: "top center",
+    //       markers: true,
+    //     }
+    //   })
+
+    //   gsap.to(content_2, {
+    //     transform: "translate(0, 0)",
+    //     ease: "none",
+    //     scrollTrigger: {
+    //       trigger: service_box_anim,
+    //       scrub: 2,
+    //       start: 'top 90%',
+    //       end: "top center",
+    //       markers: true,
+    //     }
+    //   })
+    //   gsap.to(content_3, {
+    //     transform: "translate(0, 0)",
+    //     ease: "none",
+    //     scrollTrigger: {
+    //       trigger: service_box_anim,
+    //       scrub: 2,
+    //       start: 'top 90%',
+    //       end: "top center",
+    //       markers: true,
+    //     }
+    //   })
+    //   gsap.to(content_4, {
+    //     transform: "translate(0, 0)",
+    //     ease: "none",
+    //     scrollTrigger: {
+    //       trigger: service_box_anim,
+    //       scrub: 2,
+    //       start: 'top 90%',
+    //       end: "top center",
+    //       markers: true,
+    //     }
+    //   })
+    //   gsap.to(content_5, {
+    //     transform: "translate(0, 0)",
+    //     ease: "none",
+    //     scrollTrigger: {
+    //       trigger: service_box_anim,
+    //       scrub: 2,
+    //       start: 'top 90%',
+    //       end: "top center",
+    //       markers: true,
+    //     }
+    //   })
+    // }
+  }
+
+
+  // service animation start
+  mm.add("(min-width: 1200px)", () => {
+
+    if (document.querySelectorAll(".services-wrapper-box").length > 0) {
+      let service_box_anim = document.querySelector(".services-box-anim");
+      var sv1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".services-wrapper-box",
+          pin: ".services-wrapper-box",
+          // pinSpacing: false,
+          start: "top top",
+          end: "bottom",
+          scrub: 0.2,
+        },
+      });
+      sv1.to(".services-box-anim", {
+        // right: "0",
+        // ease: "power1.inOut",
+        // delay: 0.15,
+        // duration: 0.75,
+        if(service_box_anim) {
+          let content_1 = document.querySelector(".item-1")
+          let content_2 = document.querySelector(".item-2")
+          let content_3 = document.querySelector(".item-3")
+          let content_4 = document.querySelector(".item-4")
+          let content_5 = document.querySelector(".item-5")
+
+          gsap.to(content_1, {
+            transform: "translate(0, 0)",
+            ease: "none",
+            scrollTrigger: {
+              trigger: service_box_anim,
+              scrub: 2,
+              start: 'top 90%',
+              end: "top center",
+              markers: true,
+            }
+          })
+
+          gsap.to(content_2, {
+            transform: "translate(0, 0)",
+            ease: "none",
+            scrollTrigger: {
+              trigger: service_box_anim,
+              scrub: 2,
+              start: 'top 90%',
+              end: "top center",
+              markers: true,
+            }
+          })
+          gsap.to(content_3, {
+            transform: "translate(0, 0)",
+            ease: "none",
+            scrollTrigger: {
+              trigger: service_box_anim,
+              scrub: 2,
+              start: 'top 90%',
+              end: "top center",
+              markers: true,
+            }
+          })
+          gsap.to(content_4, {
+            transform: "translate(0, 0)",
+            ease: "none",
+            scrollTrigger: {
+              trigger: service_box_anim,
+              scrub: 2,
+              start: 'top 90%',
+              end: "top center",
+              markers: true,
+            }
+          })
+          gsap.to(content_5, {
+            transform: "translate(0, 0)",
+            ease: "none",
+            scrollTrigger: {
+              trigger: service_box_anim,
+              scrub: 2,
+              start: 'top 90%',
+              end: "top center",
+              markers: true,
+            }
+          })
+        }
+      });
+      sv1.to([".add-shape"], {
+        transform: "translate(0, 0)",
+      });
+      sv1.to([".add-shape"], {
+        transform: "scale(720)",
+      });
+      // sv1.to([".services-wrapper-box .text-wrapper", ".services-wrapper-box .btn-wrapper"], {
+      //   x: "100",
+      //   opacity: 0,
+      //   duration: 0.25,
+      // }, "-=0.40");
+      // sv1.to(".is-fading", {
+      //   opacity: 0,
+      //   duration: 0.15,
+      // });
+      // sv1.to(".year-since .last-text", {
+      //   fontSize: 30,
+      //   lineHeight: "27px",
+      //   letterSpacing: "-0.1em",
+      //   position: "absolute",
+      //   top: 0,
+      //   right: 0,
+      //   ease: "none",
+      //   duration: 0.40,
+      // });
+    }
+  });
+  // service animation end
 
 
 

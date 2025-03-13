@@ -1038,6 +1038,8 @@
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(5, 1fr);
+    padding-bottom: 100px;
+    margin-top: -520px;
 
     @media #{$lg} {
         grid-template-columns: repeat(4, 1fr);
@@ -1138,49 +1140,63 @@
     border: 5px solid var(--primary);
     border-radius: 40px;
     padding: 20px;
-}
+    margin-inline: auto;
 
-.mockup-header {
-    border: 1px solid rgba(17, 17, 17, 0.1);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 22px 30px;
-}
+    .mockup-header {
+        border: 1px solid rgba(17, 17, 17, 0.1);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px 30px;
+    }
 
-.mockup-logo img {
-    width: 100px;
-}
-
-ul.mockup-text li {
-    font-family: var(--font_bdogrotesk);
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 1.07;
-    letter-spacing: -0.05em;
-    color: var(--primary);
-
-    a {
-        color: rgba(17, 17, 17, 0.3);
-
-        &:hover {
-            .underline {
-                background-size: 0% 100%;
-            }
+    .mockup-logo {
+        img {
+            width: 100px;
         }
+    }
 
-        .underline {
-            width: calc(100%);
-            background-image: linear-gradient(transparent calc(100% - 1px), currentcolor 1px);
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            transition: background-size 1s;
-            background-position: 0 -2px;
+    .mockup-text {
+        margin-top: 24px;
+
+        li {
+            font-family: var(--font_bdogrotesk);
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 1.07;
+            letter-spacing: -0.05em;
+            color: var(--primary);
+
+            a {
+                color: rgba(17, 17, 17, 0.3);
+
+                &:hover {
+                    .underline {
+                        background-size: 0% 100%;
+                    }
+                }
+
+                .underline {
+                    width: calc(100%);
+                    background-image: linear-gradient(transparent calc(100% - 1px), currentcolor 1px);
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    transition: background-size 1s;
+                    background-position: 0 -2px;
+                }
+            }
         }
     }
 }
 
-ul.mockup-text {
-    margin-top: 24px;
+.add {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .add-shape {
+        transform: translate(0, calc(-50vh - 46px));
+    }
 }
