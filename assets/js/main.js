@@ -953,93 +953,102 @@
   mm.add("(min-width: 1200px)", () => {
 
     if (document.querySelectorAll(".services-wrapper-box").length > 0) {
-      let service_box_anim = document.querySelector(".services-box-anim");
+      let services_box_anim = document.querySelector(".services-box-anim");
       var sv1 = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".services-wrapper-box",
-          pin: ".services-wrapper-box",
-          // pinSpacing: false,
-          start: "top top",
-          end: "bottom",
-          scrub: 0.2,
-        },
+        // scrollTrigger: {
+        //   trigger: ".services-wrapper-box",
+        //   // pin: ".services-wrapper-box",
+        //   // pinSpacing: false,
+        //   start: "top top",
+        //   end: "bottom boottom",
+        //   scrub: 0.2,
+        // },
       });
-      sv1.to(".services-box-anim", {
-        // right: "0",
+      sv1.to(services_box_anim, {
+        opacity: "0",
         // ease: "power1.inOut",
         // delay: 0.15,
         // duration: 0.75,
-        if(service_box_anim) {
-          let content_1 = document.querySelector(".item-1")
-          let content_2 = document.querySelector(".item-2")
-          let content_3 = document.querySelector(".item-3")
-          let content_4 = document.querySelector(".item-4")
-          let content_5 = document.querySelector(".item-5")
+        scrollTrigger: {
+          trigger: ".services-wrapper-box",
+          pin: ".services-wrapper-box",
+          pinSpacing: false,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.2,
+        },
+        // if(services_box_anim) {
+        //   let content_1 = document.querySelector(".item-1")
+        //   let content_2 = document.querySelector(".item-2")
+        //   let content_3 = document.querySelector(".item-3")
+        //   let content_4 = document.querySelector(".item-4")
+        //   let content_5 = document.querySelector(".item-5")
 
-          gsap.to(content_1, {
-            transform: "translate(0, 0)",
-            ease: "none",
-            scrollTrigger: {
-              trigger: service_box_anim,
-              scrub: 2,
-              start: 'top 90%',
-              end: "top center",
-              markers: true,
-            }
-          })
+        //   gsap.to(content_1, {
+        //     transform: "translate(0, 0)",
+        //     ease: "none",
+        //     scrollTrigger: {
+        //       trigger: services_box_anim,
+        //       scrub: 2,
+        //       start: 'top 90%',
+        //       end: "top center",
+        //       markers: true,
+        //     }
+        //   })
 
-          gsap.to(content_2, {
-            transform: "translate(0, 0)",
-            ease: "none",
-            scrollTrigger: {
-              trigger: service_box_anim,
-              scrub: 2,
-              start: 'top 90%',
-              end: "top center",
-              markers: true,
-            }
-          })
-          gsap.to(content_3, {
-            transform: "translate(0, 0)",
-            ease: "none",
-            scrollTrigger: {
-              trigger: service_box_anim,
-              scrub: 2,
-              start: 'top 90%',
-              end: "top center",
-              markers: true,
-            }
-          })
-          gsap.to(content_4, {
-            transform: "translate(0, 0)",
-            ease: "none",
-            scrollTrigger: {
-              trigger: service_box_anim,
-              scrub: 2,
-              start: 'top 90%',
-              end: "top center",
-              markers: true,
-            }
-          })
-          gsap.to(content_5, {
-            transform: "translate(0, 0)",
-            ease: "none",
-            scrollTrigger: {
-              trigger: service_box_anim,
-              scrub: 2,
-              start: 'top 90%',
-              end: "top center",
-              markers: true,
-            }
-          })
-        }
+        //   gsap.to(content_2, {
+        //     transform: "translate(0, 0)",
+        //     ease: "none",
+        //     scrollTrigger: {
+        //       trigger: services_box_anim,
+        //       scrub: 2,
+        //       start: 'top 90%',
+        //       end: "top center",
+        //       markers: true,
+        //     }
+        //   })
+        //   gsap.to(content_3, {
+        //     transform: "translate(0, 0)",
+        //     ease: "none",
+        //     scrollTrigger: {
+        //       trigger: services_box_anim,
+        //       scrub: 2,
+        //       start: 'top 90%',
+        //       end: "top center",
+        //       markers: true,
+        //     }
+        //   })
+        //   gsap.to(content_4, {
+        //     transform: "translate(0, 0)",
+        //     ease: "none",
+        //     scrollTrigger: {
+        //       trigger: services_box_anim,
+        //       scrub: 2,
+        //       start: 'top 90%',
+        //       end: "top center",
+        //       markers: true,
+        //     }
+        //   })
+        //   gsap.to(content_5, {
+        //     transform: "translate(0, 0)",
+        //     ease: "none",
+        //     scrollTrigger: {
+        //       trigger: services_box_anim,
+        //       scrub: 2,
+        //       start: 'top 90%',
+        //       end: "top center",
+        //       markers: true,
+        //     }
+        //   })
+        // }
       });
-      sv1.to([".add-shape"], {
-        transform: "translate(0, 0)",
-      });
-      sv1.to([".add-shape"], {
-        transform: "scale(720)",
-      });
+      // sv1.to([".add-shape"], {
+      //   transform: "translate(0, 0)",
+      //   delay: "0.15",
+      // });
+      // sv1.to([".add-shape"], {
+      //   transform: "scale(720)",
+      // });
       // sv1.to([".services-wrapper-box .text-wrapper", ".services-wrapper-box .btn-wrapper"], {
       //   x: "100",
       //   opacity: 0,
