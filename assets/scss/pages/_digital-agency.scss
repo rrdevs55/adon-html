@@ -4,6 +4,7 @@
         &.large {
             @media (min-width: 1650px) {
                 max-width: 1650px;
+                --container-max-widths: 1650px;
             }
         }
     }
@@ -1195,9 +1196,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 
-    .add-shape {
+    .add-shape-wrapper {
         transform: translate(0, calc(-50vh - 46px));
     }
 }
