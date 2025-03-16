@@ -1195,6 +1195,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
     .add-shape {
         transform: translate(0, calc(-50vh - 46px));
