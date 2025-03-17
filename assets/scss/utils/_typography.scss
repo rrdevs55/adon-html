@@ -56,8 +56,8 @@
 // Font Family Classes
 .font {
   &-heading {
-    &-bdogrotesk-regular {
-      @include heading (var(--font_bdogrotesk), 400, 0.94);
+    &-bdogrotesk {
+      @include heading (var(--font_bdogrotesk));
     }
   }
 }

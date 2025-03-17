@@ -7,26 +7,25 @@
 
 
     &__inner {
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        gap: 0px;
+        gap: 20px;
         position: relative;
-        height: 100px;
+        height: 75px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 70px;
+        padding: 0 30px 0 30px;
+        margin-top: 20px;
 
         @media #{$lg} {
-            height: 70px;
-            gap: 20px;
-        }
-
-        &>*:nth-child(2) {
-            margin-inline-end: auto;
+            display: flex;
         }
     }
 
     .container {
         &.large {
-            @media (min-width: 1800px) {
-                max-width: 1750px;
+            @media (min-width: 1650px) {
+                max-width: 1650px;
             }
         }
 
@@ -36,42 +35,25 @@
 
     .sticky,
     .transformed {
-        background-color: #F9E6DC;
+        background-color: #FFFFFF;
     }
 
     .header__logo {
-        border: 1px solid var(--border);
-        padding: 17px 30px;
-        border-radius: 60px;
-
-        @media #{$lg} {
-            padding: 0;
-            border: 0;
-        }
 
         img {
-            width: 100%;
+            width: 100px;
         }
     }
 
-    .header__nav {
-        border: 1px solid var(--border);
-        border-radius: 60px;
-        padding: 0 13px;
-
-        @media #{$lg} {
-            padding: 0;
-            border: 0;
-        }
-    }
 
     .main-menu li a {
         font-size: 16px;
-        font-weight: 400;
-        padding: 21px 17px;
+        font-weight: 500;
+        padding: 29px 10px;
+        color: var(--white);
 
         &:hover {
-            color: var(--action);
+            color: var(--white);
         }
     }
 
@@ -79,32 +61,12 @@
         color: var(--primary);
     }
 
-    .header__meta {
-        @media #{$xs} {
-            display: none;
-        }
-    }
-
-    .header__button {
-        @media #{$xs} {
-            display: none;
-        }
-    }
-
-    .rr-btn {
-        font-size: 16px;
-        padding: 22px 38px;
-        letter-spacing: -0.04em;
-
-        @media #{$lg} {
-            padding: 17px 33px;
-
-        }
-    }
-
     .header__navicon {
+        margin-left: auto;
+
         i {
             font-size: 22px;
+            color: var(--white);
         }
     }
 
@@ -146,7 +108,7 @@
     .header__logo {
 
         img {
-            width: 100%;
+            width: 100px;
         }
     }
 

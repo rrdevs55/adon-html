@@ -116,69 +116,178 @@
 
   }
 
-  // Preloader Animation
-  $(document).ready(function () {
-    setTimeout(function () {
-      $('#container').addClass('loaded');
-    }, 500);
-
-    setTimeout(function () {
-      $('.loader-wrap').fadeOut(1000, function () {
-        $(this).remove();
-      });
-    }, 3000);
-
-    $('.odometer').waypoint(function (direction) {
-      if (direction === 'down') {
-        let countNumber = $(this.element).attr("data-count");
-        $(this.element).html(countNumber);
+  // GSAP Fade Animation 
+  let fadeArray_items = document.querySelectorAll(".fade-anim");
+  if (fadeArray_items.length > 0) {
+    const fadeArray = gsap.utils.toArray(".fade-anim")
+    fadeArray.forEach((item, i) => {
+      var fade_direction = "bottom"
+      var onscroll_value = 1
+      var duration_value = 1.15
+      var fade_offset = 50
+      var delay_value = 0.15
+      var ease_value = "power2.out"
+      if (item.getAttribute("data-offset")) {
+        fade_offset = item.getAttribute("data-offset");
       }
-    }, {
-      offset: '80%'
+      if (item.getAttribute("data-duration")) {
+        duration_value = item.getAttribute("data-duration");
+      }
+      if (item.getAttribute("data-direction")) {
+        fade_direction = item.getAttribute("data-direction");
+      }
+      if (item.getAttribute("data-on-scroll")) {
+        onscroll_value = item.getAttribute("data-on-scroll");
+      }
+      if (item.getAttribute("data-delay")) {
+        delay_value = item.getAttribute("data-delay");
+      }
+      if (item.getAttribute("data-ease")) {
+        ease_value = item.getAttribute("data-ease");
+      }
+      let animation_settings = {
+        opacity: 0,
+        ease: ease_value,
+        duration: duration_value,
+        delay: delay_value,
+      }
+      if (fade_direction == "top") {
+        animation_settings['y'] = -fade_offset
+      }
+      if (fade_direction == "left") {
+        animation_settings['x'] = -fade_offset;
+      }
+      if (fade_direction == "bottom") {
+        animation_settings['y'] = fade_offset;
+      }
+      if (fade_direction == "right") {
+        animation_settings['x'] = fade_offset;
+      }
+      if (onscroll_value == 1) {
+        animation_settings['scrollTrigger'] = {
+          trigger: item,
+          start: 'top 85%',
+        }
+      }
+      gsap.from(item, animation_settings);
+    })
+  }
+
+
+  // Moving text		
+  if (document.querySelectorAll(".moving-text").length > 0) {
+    gsap.utils.toArray('.moving-text').forEach((section, index) => {
+      const w = section.querySelector('.wrapper-text');
+      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+      gsap.fromTo(w, { x }, {
+        x: xEnd,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          scrub: 0.5,
+          start: "20% bottom",
+          end: "80% top",
+        }
+      });
     });
-  });
+  }
+
+  // work-title animation 
+  if (document.querySelectorAll(".work-title").length > 0) {
+    let work_title_anim = document.querySelector(".work-title")
+    if (work_title_anim) {
+      let content_1 = document.querySelector(".first")
+      let content_2 = document.querySelector(".last")
+
+      gsap.to(content_1, {
+        marginLeft: "0",
+        ease: "none",
+        scrollTrigger: {
+          trigger: work_title_anim,
+          scrub: 2,
+          start: 'top 90%',
+          end: "top center",
+        }
+      })
+
+      gsap.to(content_2, {
+        marginRight: "0",
+        ease: "none",
+        scrollTrigger: {
+          trigger: work_title_anim,
+          scrub: 2,
+          start: 'top 90%',
+          end: "top center",
+        }
+      })
+    }
+  }
 
 
 
-  const svg = document.getElementById("svg");
-  const tl = gsap.timeline();
-  const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
-  const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
 
-  tl.to(".loader-wrap-heading .load-text , .loader-wrap-heading .cont", {
-    delay: 1.5,
-    y: -100,
-    opacity: 0,
-  });
-  tl.to(svg, {
-    duration: 0.5,
-    attr: {
-      d: curve
-    },
-    ease: "power2.easeIn",
-  }).to(svg, {
-    duration: 0.5,
-    attr: {
-      d: flat
-    },
-    ease: "power2.easeOut",
-  });
-  tl.to(".loader-wrap", {
-    y: -1500,
-  });
-  tl.to(".loader-wrap", {
-    zIndex: -1,
-    display: "none",
-  });
-  tl.from(
-    "main", {
-    y: 100,
-    opacity: 0,
-    delay: 0.3,
-  },
-    "-=1.5"
-  );
+  // Preloader Animation
+  // $(document).ready(function () {
+  //   setTimeout(function () {
+  //     $('#container').addClass('loaded');
+  //   }, 500);
 
+  //   setTimeout(function () {
+  //     $('.loader-wrap').fadeOut(1000, function () {
+  //       $(this).remove();
+  //     });
+  //   }, 3000);
+
+  //   $('.odometer').waypoint(function (direction) {
+  //     if (direction === 'down') {
+  //       let countNumber = $(this.element).attr("data-count");
+  //       $(this.element).html(countNumber);
+  //     }
+  //   }, {
+  //     offset: '80%'
+  //   });
+  // });
+
+
+
+  // const svg = document.getElementById("svg");
+  // const tl = gsap.timeline();
+  // const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+  // const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+
+  // tl.to(".loader-wrap-heading .load-text , .loader-wrap-heading .cont", {
+  //   delay: 1.5,
+  //   y: -100,
+  //   opacity: 0,
+  // });
+  // tl.to(svg, {
+  //   duration: 0.5,
+  //   attr: {
+  //     d: curve
+  //   },
+  //   ease: "power2.easeIn",
+  // }).to(svg, {
+  //   duration: 0.5,
+  //   attr: {
+  //     d: flat
+  //   },
+  //   ease: "power2.easeOut",
+  // });
+  // tl.to(".loader-wrap", {
+  //   y: -1500,
+  // });
+  // tl.to(".loader-wrap", {
+  //   zIndex: -1,
+  //   display: "none",
+  // });
+  // tl.from(
+  //   "main", {
+  //   y: 100,
+  //   opacity: 0,
+  //   delay: 0.3,
+  // },
+  //   "-=1.5"
+  // );
   // Preloader end
 
   // Side Info Js
@@ -659,47 +768,6 @@
     });
   });
 
-  // contact-form-daynamic
-  $(document).ready(function () {
-    $('#contact__form').submit(function (event) {
-      event.preventDefault();
-      var form = $(this);
-      $('.loading-form').show();
-
-      setTimeout(function () {
-        $.ajax({
-          type: form.attr('method'),
-          url: form.attr('action'),
-          data: form.serialize()
-        }).done(function (data) {
-          $('.loading-form').hide();
-          $('#response-message').html('<p class="success-message">Your message has been sent successfully.</p>');
-          form[0].reset();
-        }).fail(function () {
-          $('.loading-form').hide();
-          $('#response-message').html('<p class="error-message">Something went wrong. Please try again later.</p>');
-        });
-      }, 1000);
-    });
-  });
-
-
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const video = document.querySelector(".hero-2__video video");
-
-    video.addEventListener("click", function () {
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if (video.mozRequestFullScreen) { // Firefox
-        video.mozRequestFullScreen();
-      } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
-        video.webkitRequestFullscreen();
-      } else if (video.msRequestFullscreen) { // IE/Edge
-        video.msRequestFullscreen();
-      }
-    });
-  });
 
   // client slider 
   if (document.querySelectorAll(".client-slider-active").length > 0) {
@@ -753,7 +821,7 @@
         start: "top 0%s", // Adjust this value as needed
         end: "bottom 70%", // Adjust this value as needed
         pin: ".section-header",
-        markers: true,
+        markers: false,
         pinSpacing: false,
         scrub: 3,
 
@@ -812,25 +880,58 @@
   }
 
 
-
-  // Moving text		
-  if (document.querySelectorAll(".moving-text").length > 0) {
-    gsap.utils.toArray('.moving-text').forEach((section, index) => {
-      const w = section.querySelector('.wrapper-text');
-      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
-      gsap.fromTo(w, { x }, {
-        x: xEnd,
+  // service_box animation 
+  if (document.querySelectorAll(".service-box-1").length > 0) {
+    var service_box = document.querySelectorAll(".service-box-1");
+    service_box.forEach((item) => {
+      gsap.to(item, {
+        transform: "translate(0, 0)",
         ease: "none",
         scrollTrigger: {
-          trigger: section,
-          scrub: 0.5,
-          start: "20% bottom",
-          end: "80% top",
+          trigger: item,
+          start: 'top 50%',
+          end: "top center",
+          scrub: 2,
+          toggleActions: "play reverse play reverse",
+          // markers: true,
         }
       });
     });
   }
 
 
+  // add animation 
+  if (document.querySelectorAll(".add").length > 0) {
+    var add = gsap.timeline();
+    add.to(".add-shape-wrapper", {
+      transform: "translate(0, 0)",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".add-shape",
+        start: "center 50%",
+        end: "center top",
+        scrub: 1,
+        // markers: true,
+      }
+    })
+    add.to(".add-shape", {
+      transform: "scale(860)",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".add",
+        start: "bottom 100%",
+        end: "bottom top",
+        pin: true,
+        scrub: 1,
+        // markers: true,
+      }
+    });
+  }
+
+
+
+
+
 })(jQuery);
+
 
