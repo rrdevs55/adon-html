@@ -634,19 +634,21 @@
 
   // service_box animation 
   if (document.querySelectorAll(".service-box-1").length > 0) {
-    var service_box = document.querySelectorAll(".service-box-1");
-    service_box.forEach((item) => {
-      gsap.to(item, {
-        transform: "translate(0, 0)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 50%',
-          end: "top center",
-          scrub: 2,
-          toggleActions: "play reverse play reverse",
-          // markers: true,
-        }
+    mm.add("(min-width: 1200px)", () => {
+      var service_box = document.querySelectorAll(".service-box-1");
+      service_box.forEach((item) => {
+        gsap.to(item, {
+          transform: "translate(0, 0)",
+          ease: "none",
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 50%',
+            end: "top center",
+            scrub: 2,
+            toggleActions: "play reverse play reverse",
+            // markers: true,
+          }
+        });
       });
     });
   }
@@ -654,29 +656,32 @@
 
   // add animation 
   if (document.querySelectorAll(".add").length > 0) {
-    var add = gsap.timeline();
-    add.to(".add-shape-wrapper", {
-      transform: "translate(0, 0)",
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".add-shape",
-        start: "center 50%",
-        end: "center top",
-        scrub: 1,
-        // markers: true,
-      }
-    })
-    add.to(".add-shape", {
-      transform: "scale(860)",
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".add",
-        start: "bottom 100%",
-        end: "bottom top",
-        pin: true,
-        scrub: 1,
-        // markers: true,
-      }
+    mm.add("(min-width: 1200px)", () => {
+      var add = gsap.timeline();
+      add.to(".add-shape-wrapper", {
+        transform: "translate(0, 0)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".add-shape",
+          start: "center 50%",
+          end: "center top",
+          scrub: 1,
+          // markers: true,
+        }
+      });
+      add.to(".add-shape", {
+        transform: "scale(860)",
+        ease: "none",
+        delay: 1,
+        scrollTrigger: {
+          trigger: ".add",
+          start: "bottom 100%",
+          end: "bottom top",
+          pin: true,
+          scrub: 1,
+          // markers: true,
+        }
+      }, "+=1");
     });
   }
 

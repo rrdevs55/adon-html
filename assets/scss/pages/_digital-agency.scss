@@ -1036,7 +1036,18 @@
     padding-bottom: 100px;
     margin-top: -520px;
 
+    @media #{$xxl} {
+        margin-top: -410px;
+    }
+
+    @media #{$xl} {
+        margin-top: -350px;
+        padding-bottom: 90px;
+    }
+
     @media #{$lg} {
+        margin-top: 0;
+        padding-bottom: 60px;
         grid-template-columns: repeat(4, 1fr);
     }
 
@@ -1056,22 +1067,42 @@
 
     .item-1 {
         transform: translate(calc(200% + 20px), 0);
+
+        @media #{$lg} {
+            transform: none;
+        }
     }
 
     .item-2 {
         transform: translate(calc(100% + 10px), 0);
+
+        @media #{$lg} {
+            transform: none;
+        }
     }
 
     .item-3 {
         transform: translate(calc(0% + 0px), 0);
+
+        @media #{$lg} {
+            transform: none;
+        }
     }
 
     .item-4 {
         transform: translate(calc(-100% - 10px), 0);
+
+        @media #{$lg} {
+            transform: none;
+        }
     }
 
     .item-5 {
         transform: translate(calc(-200% - 20px), 0);
+
+        @media #{$lg} {
+            transform: none;
+        }
     }
 }
 
@@ -1137,6 +1168,23 @@
     padding: 20px;
     margin-inline: auto;
 
+    @media #{$xxl} {
+        width: 350px;
+        height: 600px;
+        border-width: 3px;
+        border-radius: 30px;
+        padding: 15px;
+    }
+
+    @media #{$xl} {
+        width: 300px;
+        height: 530px;
+    }
+
+    @media #{$lg} {
+        display: none;
+    }
+
     .mockup-header {
         border: 1px solid rgba(17, 17, 17, 0.1);
         border-radius: 20px;
@@ -1144,6 +1192,10 @@
         align-items: center;
         justify-content: space-between;
         padding: 22px 30px;
+
+        @media #{$xxl} {
+            padding: 17px 20px;
+        }
     }
 
     .mockup-logo {
@@ -1162,6 +1214,14 @@
             line-height: 1.07;
             letter-spacing: -0.05em;
             color: var(--primary);
+
+            @media #{$xxl} {
+                font-size: 24px;
+            }
+
+            @media #{$xl} {
+                font-size: 20px;
+            }
 
             a {
                 color: rgba(17, 17, 17, 0.3);
@@ -1190,6 +1250,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media #{$lg} {
+        display: none;
+    }
 
     .add-shape-wrapper {
         transform: translate(0, calc(-50vh - 46px));
