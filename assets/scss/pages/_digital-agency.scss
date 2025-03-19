@@ -563,7 +563,7 @@
     }
 }
 
-/* team area style  */
+/* team area style  start */
 .team-area {
     background-color: var(--black);
 
@@ -631,63 +631,6 @@
         }
     }
 
-    .team-box {
-        text-align: center;
-
-        &:hover {
-            .thumb {
-                img {
-                    transform: scale(1.1);
-                }
-            }
-        }
-
-        .thumb {
-            width: 100%;
-            aspect-ratio: 100/100;
-            border-radius: 50%;
-            overflow: hidden;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: all 0.5s;
-            }
-        }
-
-        .name {
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 1.46;
-            letter-spacing: -0.05em;
-            color: var(--white);
-
-            @media #{$lg} {
-                font-size: 20px;
-            }
-
-            a:hover {
-                color: var(--white);
-            }
-        }
-
-        .post {
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 30px;
-            letter-spacing: -0.02em;
-            display: inline-block;
-            color: #999999;
-        }
-
-        .content {
-            margin-top: 20px;
-        }
-
-    }
-
-
     .btn-wrapper {
         display: flex;
         justify-content: center;
@@ -731,12 +674,65 @@
             background-position: 0 -2px;
         }
     }
+}
 
+.team-box {
+    text-align: center;
 
+    &:hover {
+        .thumb {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .thumb {
+        width: 100%;
+        aspect-ratio: 100/100;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+    }
+
+    .name {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 1.46;
+        letter-spacing: -0.05em;
+        color: var(--white);
+
+        @media #{$lg} {
+            font-size: 20px;
+        }
+
+        a:hover {
+            color: var(--white);
+        }
+    }
+
+    .post {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: -0.02em;
+        display: inline-block;
+        color: #999999;
+    }
+
+    .content {
+        margin-top: 20px;
+    }
 
 }
 
-
+/* team area style  end */
 
 
 /* marquee text area style  */
@@ -836,8 +832,6 @@
         }
     }
 }
-
-
 
 /* award area style  */
 .award-area {
@@ -1042,7 +1036,18 @@
     padding-bottom: 100px;
     margin-top: -520px;
 
+    @media #{$xxl} {
+        margin-top: -410px;
+    }
+
+    @media #{$xl} {
+        margin-top: -350px;
+        padding-bottom: 90px;
+    }
+
     @media #{$lg} {
+        margin-top: 0;
+        padding-bottom: 60px;
         grid-template-columns: repeat(4, 1fr);
     }
 
@@ -1062,22 +1067,42 @@
 
     .item-1 {
         transform: translate(calc(200% + 20px), 0);
+
+        @media #{$lg} {
+            transform: none;
+        }
     }
 
     .item-2 {
         transform: translate(calc(100% + 10px), 0);
+
+        @media #{$lg} {
+            transform: none;
+        }
     }
 
     .item-3 {
         transform: translate(calc(0% + 0px), 0);
+
+        @media #{$lg} {
+            transform: none;
+        }
     }
 
     .item-4 {
         transform: translate(calc(-100% - 10px), 0);
+
+        @media #{$lg} {
+            transform: none;
+        }
     }
 
     .item-5 {
         transform: translate(calc(-200% - 20px), 0);
+
+        @media #{$lg} {
+            transform: none;
+        }
     }
 }
 
@@ -1143,6 +1168,23 @@
     padding: 20px;
     margin-inline: auto;
 
+    @media #{$xxl} {
+        width: 350px;
+        height: 600px;
+        border-width: 3px;
+        border-radius: 30px;
+        padding: 15px;
+    }
+
+    @media #{$xl} {
+        width: 300px;
+        height: 530px;
+    }
+
+    @media #{$lg} {
+        display: none;
+    }
+
     .mockup-header {
         border: 1px solid rgba(17, 17, 17, 0.1);
         border-radius: 20px;
@@ -1150,6 +1192,10 @@
         align-items: center;
         justify-content: space-between;
         padding: 22px 30px;
+
+        @media #{$xxl} {
+            padding: 17px 20px;
+        }
     }
 
     .mockup-logo {
@@ -1168,6 +1214,14 @@
             line-height: 1.07;
             letter-spacing: -0.05em;
             color: var(--primary);
+
+            @media #{$xxl} {
+                font-size: 24px;
+            }
+
+            @media #{$xl} {
+                font-size: 20px;
+            }
 
             a {
                 color: rgba(17, 17, 17, 0.3);
@@ -1196,6 +1250,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media #{$lg} {
+        display: none;
+    }
 
     .add-shape-wrapper {
         transform: translate(0, calc(-50vh - 46px));
