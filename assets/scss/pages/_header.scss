@@ -165,6 +165,18 @@
         margin-top: 10px;
         border-radius: 20px;
         width: 950px;
+
+        @media #{$xxl} {
+            width: 700px;
+        }
+
+        @media #{$lg} {
+            width: 500px;
+        }
+
+        @media #{$md} {
+            width: 100%;
+        }
     }
 
 
@@ -213,8 +225,15 @@
         }
     }
 
+    .header__logo {
+        margin-right: auto;
+    }
+
     .header__btn {
-        margin-left: auto;
+
+        @media #{$xs} {
+            display: none;
+        }
     }
 
     .side-toggle {
