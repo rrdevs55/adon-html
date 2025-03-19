@@ -1877,7 +1877,7 @@ section {
   padding-right: 0;
 }
 .main-menu > ul > li:hover > a {
-  color: var(--primary);
+  color: var(--white);
 }
 .main-menu > ul > li:hover > ul {
   opacity: 1;
