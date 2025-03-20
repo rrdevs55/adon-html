@@ -644,9 +644,10 @@
             trigger: item,
             start: 'top 50%',
             end: "top center",
+            pin: "services-wrapper-box",
             scrub: 2,
             toggleActions: "play reverse play reverse",
-            // markers: true,
+            markers: true,
           }
         });
       });
