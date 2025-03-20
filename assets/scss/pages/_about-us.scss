@@ -163,3 +163,226 @@
         }
     }
 }
+
+.team-area {
+
+    &.about-us-team {
+        .section-title-wrapper {
+            display: block;
+
+            .title-wrapper {
+                .section-title {
+                    font-size: 90px;
+                    font-weight: 400;
+                    line-height: 85px;
+                    letter-spacing: -4.5px;
+                    max-width: 100%;
+                    margin-top: 45px;
+
+                    @media #{$xl} {
+                        font-size: 80px;
+                        line-height: 80px;
+                    }
+
+                    @media #{$lg} {
+                        font-size: 60px;
+                        line-height: 70px;
+                        letter-spacing: normal;
+                    }
+
+                    @media #{$md} {
+                        font-size: 50px;
+                        line-height: 60px;
+                    }
+
+                    @media #{$sm} {
+                        font-size: 40px;
+                        line-height: 50px;
+                    }
+
+                    @media #{$sm} {
+                        font-size: 23px;
+                        line-height: 30px;
+                    }
+
+                    span {
+                        font-family: var(--font_ppeditor);
+                    }
+                }
+            }
+        }
+
+        .btn-wrapper {
+
+            a {
+                color: var(--black);
+            }
+        }
+
+        .team-box {
+            .name {
+                color: var(--black);
+
+                a {
+                    &:hover {
+                        color: var(--black);
+                    }
+                }
+            }
+
+            .post {
+                color: #555555;
+            }
+        }
+    }
+}
+
+
+/* award area style  */
+.award-area-2 {
+
+    .section-header {
+        margin-top: 172px;
+
+        @media #{$xxl} {
+            margin-top: 72px;
+        }
+    }
+
+    .section-title {
+        font-weight: 400;
+        line-height: 85px;
+        letter-spacing: -4.5px;
+
+        span {
+            font-family: var(--font_ppeditor);
+        }
+    }
+
+    .section-subtitle {
+        border: 1px solid var(--white);
+        color: var(--white);
+
+        &::before {
+            background-color: var(--white);
+        }
+    }
+
+    &-inner {
+        display: grid;
+        grid-template-columns: 455px 1fr;
+    }
+
+    .award-wrapper-box {
+        margin-left: auto;
+        margin-top: 80px;
+
+        @media #{$xxl} {
+            margin-top: 64px;
+        }
+    }
+
+    .award-wrapper {
+        border-top: 1px solid #292929;
+    }
+
+    .award-box {
+        border-bottom: 1px solid #292929;
+        padding-top: 28px;
+        padding-bottom: 28px;
+        display: grid;
+        gap: 20px 50px;
+        grid-template-columns: 280px 1fr 100px;
+        align-items: center;
+        transition: all 0.5s;
+
+        @media #{$xxl} {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 180px 1fr 100px;
+
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &:hover {
+            background-color: #171717;
+
+            @media #{$sm} {
+                background-color: transparent;
+
+            }
+
+            .category {
+                transform: translateX(30px);
+
+                @media #{$sm} {
+                    transform: translateX(0px);
+
+                }
+            }
+
+            .year {
+                transform: translateX(-30px);
+
+                @media #{$sm} {
+                    transform: translateX(0px);
+
+                }
+            }
+        }
+
+        .category {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 18px;
+            display: inline-block;
+            color: var(--white);
+            transition: all 0.5s;
+
+        }
+
+        .award {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 22px;
+            color: var(--white);
+
+            @media #{$sm} {
+                order: 3;
+                grid-column: span 2;
+            }
+        }
+
+        .year {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 18px;
+            display: inline-block;
+            color: var(--white);
+            transition: all 0.5s;
+            text-align: right;
+
+
+        }
+
+    }
+
+}
+
+.client-area {
+
+    .clients-wrapper-box {
+
+        &.about-us--client {
+            border-top: none;
+            margin-top: 0;
+        }
+    }
+
+}
