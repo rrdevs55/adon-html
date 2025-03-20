@@ -566,11 +566,9 @@
 
 /* team area style  start */
 .team-area {
-    background-color: var(--black);
 
     .section-title {
         max-width: 665px;
-        color: var(--white);
 
         @media #{$xxl} {
             max-width: 565px;
@@ -830,8 +828,6 @@
             margin-top: 72px;
         }
     }
-
-
 
     .section-title {
         max-width: 975px;
