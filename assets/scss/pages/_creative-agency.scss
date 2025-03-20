@@ -291,21 +291,46 @@
     justify-content: space-between;
     padding: 47px 50px 44px;
 
+    @media #{$xxl} {
+        padding: 37px 40px 34px;
+    }
+
+    @media #{$lg} {
+        padding: 27px 20px 24px;
+    }
+
     .text {
         font-weight: 400;
         font-size: 30px;
-        line-height: 28px;
+        line-height: 0.93;
         color: var(--primary);
+
+        @media #{$xxl} {
+            font-size: 24px;
+        }
+
+        @media #{$lg} {
+            font-size: 20px;
+        }
     }
 
     .number {
         font-family: var(--font_bdogrotesk);
         font-weight: 400;
         font-size: 110px;
-        line-height: 100px;
+        line-height: 0.91;
         letter-spacing: -0.05em;
         display: inline-block;
         color: var(--primary);
+        margin-top: 30px;
+
+        @media #{$xxl} {
+            font-size: 80px;
+        }
+
+        @media #{$lg} {
+            font-size: 60px;
+        }
 
         .icon {
             font-size: 50px;
@@ -320,6 +345,10 @@
     display: grid;
     gap: 5px;
     grid-template-columns: 1fr 1fr 1fr;
+
+    @media #{$xs} {
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -329,21 +358,44 @@
     border-radius: 20px;
     padding: 50px 50px 53px;
 
+    @media #{$xxl} {
+        padding: 40px 40px 43px;
+    }
+
+    @media #{$lg} {
+        padding: 25px 20px 28px;
+    }
+
     .text {
         font-family: var(--font_bdogrotesk);
         font-weight: 400;
         font-size: 30px;
-        line-height: 30px;
+        line-height: 1;
         letter-spacing: -0.05em;
         color: var(--primary);
         max-width: 570px;
+
+        @media #{$xxl} {
+            font-size: 24px;
+        }
+
+        @media #{$lg} {
+            font-size: 20px;
+        }
     }
 
     .text-wrapper {
         margin-top: 62px;
+
+        @media #{$lg} {
+            margin-top: 32px;
+        }
     }
 }
 
+.about-3-btn-wrapper {
+    margin-top: 5px;
+}
 
 
 .about-area-3-inner {
@@ -351,4 +403,18 @@
     gap: 5px;
     grid-template-columns: 1fr 685px;
     padding-top: 5px;
+
+    @media #{$xxl} {
+        grid-template-columns: 1fr 555px;
+
+    }
+
+    @media #{$lg} {
+        grid-template-columns: 1fr 415px;
+    }
+
+    @media #{$md} {
+        grid-template-columns: 1fr;
+
+    }
 }
