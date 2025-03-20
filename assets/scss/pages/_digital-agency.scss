@@ -738,21 +738,7 @@
 
 /* marquee text area style  */
 .marquee-text-area {
-    background-color: var(--black);
     overflow: hidden;
-    padding-top: 259px;
-
-    @media #{$xxl} {
-        padding-top: 209px;
-    }
-
-    @media #{$xl} {
-        padding-top: 159px;
-    }
-
-    @media #{$lg} {
-        padding-top: 109px;
-    }
 
     .section-title {
         font-size: 280px;
@@ -760,7 +746,6 @@
         line-height: 1;
         letter-spacing: -0.07em;
         white-space: nowrap;
-        color: var(--white);
 
         @media #{$xxl} {
             font-size: 210px;

@@ -120,3 +120,46 @@
         font-family: var(--font_ppeditor);
     }
 }
+
+
+.who-we-are {
+
+    .who-we-are__wrapper {
+        margin-top: 115px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 500px 1fr;
+
+        @media #{$xl} {
+            margin-top: 80px;
+        }
+
+        @media #{$lg} {
+            margin-top: 60px;
+            grid-template-columns: 300px 1fr;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .who-we-are__content {
+        max-width: 741px;
+
+        .designation {
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 38px;
+
+            @media #{$lg} {
+                max-width: 100%;
+            }
+
+            @media #{$sm} {
+                font-size: 22px;
+                line-height: 25px;
+            }
+        }
+    }
+}

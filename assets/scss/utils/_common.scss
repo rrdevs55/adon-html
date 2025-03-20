@@ -52,6 +52,18 @@
   /* White background color */
 }
 
+.rr-text-white {
+  color: var(--white);
+}
+
+.rr-text-black {
+  color: var(--black);
+}
+
+.text-gray {
+  color: #555555;
+}
+
 /* Full background image styling */
 .rr-bg-full {
   position: absolute;
@@ -79,6 +91,33 @@
 /* Parallax view styling */
 .parallax-view {
   overflow: hidden;
+}
+
+.section-subtitle {
+  font-family: var(--font_bdogrotesk);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 7px 8px;
+  line-height: 14px;
+  padding-left: 20px;
+  position: relative;
+  border-radius: 500px;
+  color: var(--primary);
+  display: inline-block;
+  border: 1px solid var(--black);
+  text-transform: capitalize;
+
+  &::before {
+    top: 50%;
+    width: 6px;
+    left: 12px;
+    height: 6px;
+    content: "";
+    position: absolute;
+    border-radius: 500px;
+    background-color: var(--black);
+    transform: translate(-50%, -50%);
+  }
 }
 
 /* Section title styling with responsive font sizes */
@@ -115,6 +154,47 @@
 }
 
 /* Section spacing with responsive padding */
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.pt159 {
+  padding-top: 259px;
+
+  @media #{$xxl} {
+    padding-top: 209px;
+  }
+
+  @media #{$xl} {
+    padding-top: 159px;
+  }
+
+  @media #{$lg} {
+    padding-top: 109px;
+  }
+}
+
+.pt-220 {
+  padding-top: 220px;
+
+  @media #{$xxl} {
+    padding-top: 209px;
+  }
+
+  @media #{$xl} {
+    padding-top: 159px;
+  }
+
+  @media #{$lg} {
+    padding-top: 109px;
+  }
+}
+
 .section-spacing-200 {
   padding-top: 200px;
   padding-bottom: 200px;
@@ -171,6 +251,22 @@
   @media #{$xxl} {
     padding-top: 120px;
   }
+
+  @media #{$xl} {
+    padding-top: 100px;
+  }
+
+  @media #{$lg} {
+    padding-top: 80px;
+  }
+
+  @media #{$md} {
+    padding-top: 60px;
+  }
+}
+
+.section-spacing-top-130 {
+  padding-top: 130px;
 
   @media #{$xl} {
     padding-top: 100px;
