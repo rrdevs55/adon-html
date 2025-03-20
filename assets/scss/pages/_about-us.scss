@@ -1,0 +1,122 @@
+.about-us {
+
+    .about-us-inner {
+        padding-top: 80px;
+
+        @media #{$lg} {
+            padding-top: 70px;
+        }
+    }
+
+    .info {
+        border-right: 1px solid rgba(17, 17, 17, 0.10);
+
+        @media #{$md} {
+            border-right: none;
+        }
+
+        .text {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: -1px;
+            color: var(--black);
+
+            @media #{$md} {
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        span {
+            display: block;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 20px;
+            margin-top: 126px;
+            color: var(--black);
+            letter-spacing: -1px;
+
+            @media #{$md} {
+                margin-top: 20px;
+            }
+        }
+
+        .text-wrapper {
+            margin-top: 16px;
+        }
+    }
+
+    .title-wrapper {
+        margin-top: 60px;
+        margin-bottom: 95px;
+
+        @media #{$lg} {
+            margin-bottom: 60px;
+        }
+
+        @media #{$sm} {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+    }
+
+}
+
+.section-title-2-wrapper {
+    display: grid;
+    gap: 20px 60px;
+    grid-template-columns: 300px 1fr;
+
+    @media #{$md} {
+        gap: 0;
+    }
+
+    @media #{$xxl} {
+        grid-template-columns: 275px 1fr;
+
+    }
+
+    @media #{$md} {
+        grid-template-columns: 1fr;
+    }
+}
+
+.section-title-2 {
+    font-size: 140px;
+    font-weight: 400;
+    line-height: 130px;
+    letter-spacing: -7px;
+
+    @media #{$xl} {
+        font-size: 130px;
+    }
+
+    @media #{$lg} {
+        font-size: 100px;
+        line-height: 100px;
+        letter-spacing: -5px;
+    }
+
+    @media #{$md} {
+        font-size: 80px;
+        line-height: 80px;
+        letter-spacing: -2px;
+    }
+
+    @media #{$sm} {
+        font-size: 60px;
+        line-height: 60px;
+        letter-spacing: 0px;
+    }
+
+    @media #{$sm} {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    span {
+        font-family: var(--font_ppeditor);
+    }
+}
