@@ -1,6 +1,6 @@
-/* global css  */
+/* global css */
 
-// scrollbar 
+/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -17,7 +17,7 @@
   background: #555;
 }
 
-
+/* Utility classes for positioning */
 .rr-pos-rel {
   position: relative;
 }
@@ -30,21 +30,29 @@
   overflow: hidden;
 }
 
+/* Container with max-width and padding */
 .rr-container-1900 {
   max-width: 100%;
   padding-left: 10px;
   padding-right: 10px;
 }
 
+.rr-container-1850 {
+  max-width: 1850px;
+}
+
+/* Background color classes */
 .rr-bg-primary {
   background-color: var(--primary);
+  /* Primary background color */
 }
 
 .rr-bg-white {
   background-color: var(--white);
+  /* White background color */
 }
 
-
+/* Full background image styling */
 .rr-bg-full {
   position: absolute;
   width: 100%;
@@ -59,6 +67,7 @@
   }
 }
 
+/* Centering utility */
 .pos-center {
   position: absolute;
   top: 50%;
@@ -67,11 +76,12 @@
   z-index: 1;
 }
 
+/* Parallax view styling */
 .parallax-view {
   overflow: hidden;
 }
 
-
+/* Section title styling with responsive font sizes */
 .section-title {
   font-size: 90px;
 
@@ -95,6 +105,7 @@
     font-size: 35px;
   }
 
+  /* Specific font family and weight */
   &.font-bdogrotesk-regular {
     font-family: var(--font_bdogrotesk);
     font-weight: 400;
@@ -103,6 +114,7 @@
   }
 }
 
+/* Section spacing with responsive padding */
 .section-spacing-200 {
   padding-top: 200px;
   padding-bottom: 200px;
@@ -250,7 +262,7 @@
   }
 }
 
-
+/* Container styling with full HD support */
 .container {
   --bs-gutter-x: 30px;
 
@@ -263,10 +275,9 @@
       padding-right: 0;
     }
   }
-
 }
 
-/* inverted text style  */
+/* Inverted text style */
 .text-invert>div {
   background-image: linear-gradient(to right,
       var(--primary) 50%,
@@ -278,10 +289,7 @@
   -webkit-background-clip: text;
 }
 
-
-
-
-// side info style
+/* Side info and offcanvas styling */
 .offcanvas-overlay {
   position: fixed;
   height: 100%;
@@ -299,7 +307,6 @@
   visibility: visible;
 }
 
-
 .side-info-close {
   font-size: 20px;
   padding: 0;
@@ -314,6 +321,7 @@
 
   &:hover {
     transform: rotate(90deg);
+    /* Rotate button on hover */
   }
 }
 
@@ -325,13 +333,7 @@
   top: 0;
   width: 500px;
   height: 100%;
-  -webkit-transform: translateX(calc(100% + 80px));
-  -moz-transform: translateX(calc(100% + 80px));
-  -ms-transform: translateX(calc(100% + 80px));
-  -o-transform: translateX(calc(100% + 80px));
   transform: translateX(calc(100% + 80px));
-  -webkit-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
-  -moz-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
   transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
   z-index: 9999;
   overflow-y: scroll;
@@ -340,6 +342,7 @@
 
   ::-webkit-scrollbar {
     display: none;
+    /* Hide scrollbar */
   }
 
   @media #{$xs} {
@@ -350,11 +353,11 @@
   &.info-open {
     opacity: 1;
     transform: (translateX(0));
+    /* Show side info */
   }
-
 }
 
-
+/* Offset header and logo styling */
 .offset {
   &-header {
     display: flex;
@@ -383,6 +386,7 @@
   }
 }
 
+/* Offset widget box styling */
 .offset-widget-box {
   margin-top: 40px;
 
@@ -393,7 +397,6 @@
 
     @media #{$xxl} {
       margin-bottom: 22px;
-
     }
   }
 
@@ -428,16 +431,14 @@
       border-radius: 50%;
       color: var(--black);
     }
-
   }
 }
 
-/* mean menu customize */
+/* Mobile menu customization */
 .mobile-menu {
   margin-top: 40px;
 
   &.mean-container {
-
     .mean-nav>ul {
       padding: 0;
       margin: 0;
@@ -502,8 +503,6 @@
             font-weight: 300;
             border: none !important;
 
-
-
             @media #{$sm} {
               height: 50px;
             }
@@ -518,7 +517,6 @@
         li {
           &:first-child {
             border-top: 1px solid var(--border);
-
           }
 
           a {
@@ -571,10 +569,7 @@
   }
 }
 
-
-
-
-/* body style  */
+/* Body page inner styling */
 .body {
   &-page-inner {
     position: relative;
@@ -587,7 +582,6 @@
           max-width: 1650px;
           --container-max-widths: 1620px;
           --bs-gutter-x: 30px;
-
         }
       }
     }
@@ -595,7 +589,6 @@
     .section-title {
       font-size: 100px;
       letter-spacing: -0.07em;
-
 
       @media #{$xxl} {
         font-size: 80px;
@@ -652,8 +645,7 @@
   }
 }
 
-
-// sticky header style
+/* Sticky header styling */
 .header-sticky {
   transition: all 0.5s;
 }
@@ -665,13 +657,11 @@
   right: 0;
   width: 100%;
   z-index: 800;
-  // background-color: #FFFFFF;
   transform: translateY(-100%);
 
   .header-area__inner {
     height: 80px;
   }
-
 }
 
 .sticky {
@@ -687,5 +677,4 @@
   .header-area__inner {
     height: 80px;
   }
-
 }
