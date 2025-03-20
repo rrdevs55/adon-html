@@ -166,6 +166,10 @@
             line-height: 20px;
             padding: 11.5px 23px;
             letter-spacing: -0.64px;
+
+            @media #{$xs} {
+                display: none;
+            }
         }
     }
 
