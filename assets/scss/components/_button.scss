@@ -232,6 +232,125 @@
 
 }
 
+.rr-btn-plus {
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+  padding: 25px 36px;
+  background-color: var(--primary);
+  color: var(--white);
+  border: 1px solid var(--primary);
+  border-radius: 100px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  text-transform: capitalize;
+  letter-spacing: -0.02em;
+
+  @include dark {
+    color: var(--black);
+  }
+
+  @media #{$lg} {
+    padding: 18px 29px;
+
+  }
+
+  @media #{$xs} {
+    padding: 16px 20px;
+    font-size: 14px;
+  }
+
+  &:hover,
+  &:focus {
+
+    &::before {
+      height: 100%;
+    }
+
+    .btn-wrap {
+      .text-one {
+        transform: translateY(-150%);
+      }
+
+      .text-two {
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--black);
+
+        @include dark {
+          color: var(--white);
+        }
+      }
+    }
+  }
+
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+
+  &::before {
+    background-color: var(--white);
+    content: "";
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    position: absolute;
+    transition: all 0.5s;
+
+    @include dark {
+      background-color: var(--black);
+    }
+  }
+
+  .btn-wrap {
+    z-index: 1;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    border: none;
+
+    .text-one,
+    .text-two {
+      display: flex;
+      align-items: center;
+    }
+
+    .text-one {
+      position: relative;
+      display: block;
+      color: var(--white);
+      transition: all 0.5s;
+
+      @include dark {
+        color: var(--black);
+      }
+    }
+
+    .text-two {
+      position: absolute;
+      top: 100%;
+      display: block;
+      color: var(--white);
+      transition: all 0.5s;
+
+      @include dark {
+        color: var(--black);
+      }
+    }
+  }
+
+
+
+}
+
 
 .rr-btn-underline {
   font-size: 18px;
