@@ -687,6 +687,21 @@
   }
 
 
+  if (document.querySelectorAll(".portfolio-3-active").length > 0) {
+    var portfolio_3_active = new Swiper(".portfolio-3-active", {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: true,
+      spaceBetween: 5,
+      centeredSlides: true,
+      speed: 2000,
+      navigation: {
+        prevEl: ".portfolio-3-button-prev",
+        nextEl: ".portfolio-3-button-next",
+      },
+    });
+  }
+
 })(jQuery);
 
 
