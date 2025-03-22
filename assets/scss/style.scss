@@ -6,6 +6,7 @@
 @import "pages/startup-agency";
 @import "pages/creative-agency";
 @import "pages/about-us";
+@import "pages/service";
 
 
 /* footer area style  */
@@ -229,4 +230,73 @@
             }
         }
     }
+}
+
+.footer-area-2 {
+
+    .footer-widget-wrapper-box {
+        border-bottom: none;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: calc(100% + 165px);
+            height: 1px;
+            background: rgba(17, 17, 17, 0.10);
+        }
+
+        &::before {
+            left: 740px;
+
+            @media #{$xl} {
+                left: 550px;
+            }
+
+            @media #{$lg} {
+                left: 400px;
+            }
+        }
+    }
+
+    .footer-widget-wrapper {
+        gap: 30px 90px;
+
+        @media #{$sm} {
+            grid-template-columns: 300px 1fr;
+            gap: 30px 40px;
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .footer-widget-box {
+
+        &.content {
+            .title {
+
+                @media #{$lg} {
+                    font-size: 55px;
+                    line-height: 65px;
+
+                    br {
+                        display: none;
+                    }
+                }
+
+                @media #{$lg} {
+                    font-size: 40px;
+                    line-height: 45px;
+                }
+
+                span {
+                    font-family: var(--font_ppeditor);
+                }
+            }
+        }
+    }
+
 }
