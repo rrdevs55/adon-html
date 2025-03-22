@@ -29,33 +29,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .subtitle-wrapper {
-                .section-subtitle {
-                    font-size: 16px;
-                    font-weight: 500;
-                    padding: 7px 8px;
-                    line-height: 14px;
-                    padding-left: 20px;
-                    position: relative;
-                    border-radius: 500px;
-                    color: var(--primary);
-                    display: inline-block;
-                    border: 1px solid var(--black);
-                    text-transform: capitalize;
 
-                    &::before {
-                        top: 50%;
-                        width: 6px;
-                        left: 12px;
-                        height: 6px;
-                        content: "";
-                        position: absolute;
-                        border-radius: 500px;
-                        background-color: var(--black);
-                        transform: translate(-50%, -50%);
-                    }
-                }
-            }
 
             .title-wrapper {
                 .section-title {
