@@ -693,7 +693,6 @@
       loop: true,
       autoplay: true,
       spaceBetween: 5,
-      centeredSlides: true,
       speed: 2000,
       navigation: {
         prevEl: ".portfolio-3-button-prev",
