@@ -122,6 +122,16 @@
     background-color: var(--black);
     transform: translate(-50%, -50%);
   }
+
+  &.sub--white {
+    color: var(--white);
+    border-color: var(--white);
+    font-weight: 400;
+
+    &::before {
+      background-color: var(--white);
+    }
+  }
 }
 
 /* Section title styling with responsive font sizes */
