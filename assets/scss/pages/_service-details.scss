@@ -93,63 +93,98 @@
     }
 
     .section-content-wrapper {
-        margin-top: 94px;
+        margin-top: 62px;
         display: grid;
-        gap: 40px 60px;
-        grid-template-columns: 1fr 1045px;
-
-        @media #{$xxl} {
-            grid-template-columns: 1fr 845px;
-            margin-top: 64px;
-
-        }
-
-        @media #{$xl} {
-            grid-template-columns: 1fr 645px;
-        }
+        gap: 50px;
+        grid-template-columns: 500px 1fr;
+        border-top: 1px solid var(--primary);
 
         @media #{$lg} {
-            grid-template-columns: 1fr 585px;
-            margin-top: 44px;
-
+            grid-template-columns: 420px 1fr;
+            gap: 30px;
         }
 
         @media #{$md} {
             grid-template-columns: 1fr;
+            margin-top: 50px;
         }
     }
 
     .section-content {
-        .text {
-            font-size: 18px;
+        border-right: 1px solid var(--primary);
+        padding-top: 50px;
+
+        @media #{$md} {
+            border-right: none;
+            padding-top: 30px;
+        }
+
+        .title {
+            font-size: 30px;
             font-weight: 400;
+            line-height: 35px;
+            letter-spacing: -1.5px;
+            margin-bottom: 100px;
+
+            @media #{$xl} {
+                margin-bottom: 80px;
+            }
+
+            @media #{$lg} {
+                margin-bottom: 60px;
+            }
+
+            @media #{$md} {
+                margin-bottom: 30px;
+                letter-spacing: 0;
+
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        .text {
+            color: #555;
+            font-size: 18px;
+            max-width: 395px;
             line-height: 26px;
-            max-width: 420px;
         }
     }
 
     .section-thumb {
+        margin-top: 50px;
+
+        @media #{$md} {
+            margin-top: 30px;
+        }
+
         img {
             width: 100%;
         }
     }
 
     .feature-list {
-        margin-top: 26px;
+        margin-top: 45px;
 
-        li {
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 26px;
-            color: var(--primary);
+        ul {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
 
-            &:before {
-                content: "+";
-                margin-right: 5px;
+            li {
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 26px;
+                display: inline-flex;
+                padding: 11px 19px;
+                align-items: center;
+                color: var(--primary);
+                border-radius: 500px;
+                border: 1px solid rgba(17, 17, 17, 0.10);
             }
         }
+
 
     }
 
@@ -158,76 +193,39 @@
 /* approach area service details style  */
 .approach-area-service-details-page {
 
-    .section-header {
-        margin-top: 32px;
-    }
-
-    .section-title-wrapper {
-        display: grid;
-        gap: 20px 60px;
-        grid-template-columns: 1fr 1125px;
-        align-items: flex-end;
-
-        @media #{$xxl} {
-            grid-template-columns: 1fr 905px;
-        }
-
-        @media #{$xl} {
-            grid-template-columns: 1fr 675px;
-        }
+    .section-title {
+        max-width: 658px;
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 50px;
+        letter-spacing: -2.5px;
+        margin-bottom: 70px;
 
         @media #{$lg} {
-            grid-template-columns: 1fr 575px;
+            font-size: 38px;
+            line-height: 45px;
+            letter-spacing: 0;
+            margin-bottom: 50px;
         }
 
-        @media #{$md} {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    .section-subtitle {
-        font-family: var(--font_sequelsansromanbody);
-        font-size: 30px;
-        font-weight: 310;
-        line-height: 1.16;
-        letter-spacing: -0.07em;
-        color: var(--primary);
-        text-transform: unset;
-
-        @media #{$xxl} {
-            font-size: 24px;
+        @media #{$sm} {
+            font-size: 30px;
+            line-height: 40px;
+            max-width: 100%;
         }
 
-        @media #{$md} {
-            font-size: 18px;
-
-            br {
-                display: none;
-            }
-        }
-    }
-
-    .section-title {
-        max-width: 875px;
-
-        @media (min-width:1200px) {
-            font-size: 50px;
-            line-height: 1;
+        @media #{$xs} {
+            font-size: 22px;
+            line-height: 35px;
         }
     }
 
     .approach-wrapper-box {
-        margin-top: 94px;
         display: grid;
         gap: 20px 60px;
-        grid-template-columns: 1fr 1125px;
+        grid-template-columns: 1fr 790px;
         align-items: flex-start;
         margin-bottom: 50px;
-
-        @media #{$xxl} {
-            grid-template-columns: 1fr 905px;
-            margin-top: 64px;
-        }
 
         @media #{$xl} {
             grid-template-columns: 1fr 675px;
@@ -239,27 +237,63 @@
 
         @media #{$md} {
             grid-template-columns: 1fr;
-            margin-top: 44px;
+        }
+    }
+
+    .approach-wrapper-content {
+        margin-top: 270px;
+
+        @media #{$lg} {
+            margin-top: 230px;
+        }
+
+        @media #{$md} {
+            margin-top: 0px;
+        }
+
+        .subtitle-wrapper {
+
+            .subtitle {
+                color: var(--primary);
+                font-family: var(--font_bdogrotesk);
+            }
         }
 
         .steps {
-            font-family: var(--font_sequelsansromanbody);
-            font-size: 265px;
-            font-weight: 310;
-            line-height: 0.65;
-            letter-spacing: -0.07em;
+            display: block;
+            font-size: 330px;
+            font-weight: 400;
+            margin-top: 100px;
+            line-height: 245px;
             color: var(--primary);
+            letter-spacing: -16.5px;
 
-            @media #{$xxl} {
-                font-size: 205px;
-            }
-
-            @media #{$xl} {
-                font-size: 165px;
+            @media #{$lg} {
+                font-size: 250px;
+                margin-top: 80px;
+                font-weight: 400;
+                line-height: 220px;
+                letter-spacing: -10.5px;
             }
 
             @media #{$md} {
-                display: none;
+                font-size: 230px;
+                margin-top: 40px;
+                letter-spacing: -6.5px;
+            }
+
+            @media #{$sm} {
+                font-size: 200px;
+                line-height: 185px;
+                margin-top: 30px;
+                letter-spacing: -0.5px;
+            }
+
+            @media #{$sm} {
+                font-size: 160px;
+                line-height: 150px;
+                margin-top: 30px;
+                letter-spacing: 0;
             }
         }
     }
@@ -271,11 +305,11 @@
 
     .approach-box {
         display: grid;
-        gap: 10px 50px;
-        grid-template-columns: 60px 1fr 595px;
+        gap: 10px 45px;
+        grid-template-columns: 60px 1fr 360px;
         align-items: flex-start;
-        padding-top: 24px;
-        padding-bottom: 24px;
+        padding-top: 40px;
+        padding-bottom: 44px;
         border-bottom: 1px dashed #878482;
 
         @media #{$xxl} {
@@ -287,20 +321,17 @@
 
         }
 
-        @media #{$md} {
-            gap: 10px 30px;
-
-        }
-
         @media #{$xs} {
-            grid-template-columns: 30px 1fr;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         .number {
-            font-size: 18px;
+            font-size: 30px;
             font-weight: 400;
             line-height: 26px;
             color: var(--primary);
+            font-family: var(--font_bdogrotesk);
 
             @media #{$xl} {
                 grid-row: span 2;
@@ -313,8 +344,8 @@
             line-height: 30px;
             letter-spacing: -0.07em;
 
-            @media #{$xxl} {
-                font-size: 24px;
+            @media #{$lg} {
+                letter-spacing: 0;
             }
         }
 
@@ -322,6 +353,7 @@
             font-size: 18px;
             font-weight: 400;
             line-height: 26px;
+            color: #555555;
         }
 
     }
