@@ -372,6 +372,11 @@
         @media #{$lg} {
             padding: 16px 19px;
         }
+
+        &:hover {
+            background-color: #FFD80C;
+            border-color: transparent;
+        }
     }
 }
 
