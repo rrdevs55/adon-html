@@ -3327,6 +3327,11 @@ section {
   height: 60px;
   border: 1px solid rgba(17, 17, 17, 0.15);
   border-radius: 20px;
+  transition: all 0.5s;
+}
+.header-area-3 .side-toggle:hover {
+  background-color: #FFD80C;
+  border-color: transparent;
 }
 
 .bar-icon {
@@ -6368,12 +6373,16 @@ section {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+  transition: all 0.5s;
 }
 @media only screen and (max-width: 1199px) {
   .portfolio-3-button {
     width: 80px;
     height: 80px;
   }
+}
+.portfolio-3-button:hover {
+  background-color: #FFD80C;
 }
 
 .portfolio-3-nav {
@@ -6883,11 +6892,15 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.5s;
 }
 @media only screen and (max-width: 1199px) {
   .testimonial-3-button {
     height: 80px;
   }
+}
+.testimonial-3-button:hover {
+  background-color: #FFD80C;
 }
 
 .testimonial-3-wrapper-box {
@@ -9224,6 +9237,10 @@ section {
     padding: 16px 19px;
   }
 }
+.footer-3-social a:hover {
+  background-color: #FFD80C;
+  border-color: transparent;
+}
 
 .footer-3-subscription-text {
   background-color: var(--white);
@@ -9314,4 +9331,28 @@ section {
     height: 80px;
     min-width: 80px;
   }
+}
+.footer-3-subscribe-form .subscribe-btn:hover .icon .first {
+  transform: translate(100%, -100%);
+}
+.footer-3-subscribe-form .subscribe-btn:hover .icon .second {
+  transform: translate(0%, 0%);
+}
+.footer-3-subscribe-form .subscribe-btn .icon {
+  display: inline-block;
+  line-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+.footer-3-subscribe-form .subscribe-btn .icon .first {
+  transition: all 0.3s;
+}
+.footer-3-subscribe-form .subscribe-btn .icon .second {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-100%, 100%);
+  transition: all 0.3s;
+  box-sizing: content-box;
+  padding: var(--white-space);
 }/*# sourceMappingURL=style.css.map */
