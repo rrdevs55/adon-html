@@ -1,12 +1,20 @@
-.work {}
-
-.work-wrapper {}
-
 .work-wrapper {
     display: grid;
     gap: 0px 70px;
     margin-top: 110px;
     grid-template-columns: 1fr 1fr;
+
+    @media #{$xxl} {
+        margin-top: 90px;
+    }
+
+    @media #{$xl} {
+        margin-top: 80px;
+    }
+
+    @media #{$lg} {
+        margin-top: 60px;
+    }
 
     @media #{$md} {
         gap: 0px 50px;
@@ -36,7 +44,6 @@
     }
 
     .work-box {
-
 
         .thumb {
             border-radius: 15px;
