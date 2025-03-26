@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Adon HTML Template">
+  <meta name="theme-color" content="#FFD80C">
 
   <title>Adon - Agency HTML Template</title>
 
@@ -16,14 +17,14 @@
 
 
 
-  <!-- Vendor CSS Files -->
-  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/vendor/all.min.css">
-  <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css">
-  <link rel="stylesheet" href="assets/vendor/progressbar.css">
-  <link rel="stylesheet" href="assets/vendor/meanmenu.min.css">
-  <link rel="stylesheet" href="assets/vendor/magnific-popup.css">
-  <link rel="stylesheet" href="assets/vendor/animate.min.css">
+  <!-- Dependencies CSS Files -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome-pro.css">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/progressbar.css">
+  <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/animate.min.css">
 
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -78,7 +79,7 @@
             <i class="fas fa-times"></i>
           </button>
         </div>
-        <div class="mobile-menu d-xl-none fix"></div>
+        <div class="mobile-menu fix"></div>
         <div class="offset-button">
           <a href="contact.html" class="rr-btn">
             <span class="btn-wrap">
@@ -161,6 +162,40 @@
       </div>
     </div>
   </header>
+  <nav class="main-menu-all d-none">
+    <ul>
+      <li class="menu-item-has-children">
+        <a href="#">Home</a>
+        <ul class="dp-menu col-2">
+          <li><a href="digital-agency.html">Digital Agency</a></li>
+          <li><a href="startup-agency.html">Startup Agency</a></li>
+          <li><a href="creative-agency.html">Creative Agency</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About Us</a></li>
+      <li class="menu-item-has-children">
+        <a href="#">Service</a>
+        <ul class="dp-menu">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="service-details.html">Service Details</a></li>
+        </ul>
+      </li>
+      <li class="menu-item-has-children">
+        <a href="#">Blog</a>
+        <ul class="dp-menu">
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="blog-details.html">Blog Details</a></li>
+        </ul>
+      </li>
+      <li class="menu-item-has-children">
+        <a href="#">Pages</a>
+        <ul class="dp-menu">
+          <li><a href="work.html">Portfolio</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
   <!-- Header area end -->
 
   <div class="has-smooth" id="has_smooth"></div>
@@ -175,8 +210,8 @@
             <div class="hero-area-3-inner">
               <div class="hero-3-content">
                 <div class="section-title-wrapper">
-                  <div class="subtitle-wrapper">
-                    <span class="section-subtitle"><a href="about.html">
+                  <div class="address-wrapper fade-anim">
+                    <span class="address"><a href="about.html">
                         Adon <br>
                         1772 Street Charleston, <br>
                         Sarbia
@@ -188,15 +223,15 @@
                     </span>
                   </div>
                   <div class="title-wrapper">
-                    <h1 class="section-title"><span>We</span><video class="hero-video" loop="" muted="" autoplay=""
-                        playsinline="">
-                        <source src="assets/video/wavy-layer.mp4" type="video/mp4">
+                    <h1 class="section-title fade-anim"><span>We</span><video class="hero-video" loop="" muted=""
+                        autoplay="" playsinline="">
+                        <source src="assets/video/reel-teaser.mp4" type="video/mp4">
                       </video>design <br>
                       develop <span>and</span> <br>
                       build</h1>
                   </div>
                 </div>
-                <div class="btn-wrapper">
+                <div class="btn-wrapper fade-anim">
                   <a href="contact.html" class="rr-btn">
                     <span class="btn-wrap">
                       <span class="text-one">get started</span>
@@ -204,7 +239,7 @@
                     </span>
                   </a>
                 </div>
-                <div class="meta-list">
+                <div class="meta-list fade-anim">
                   <ul>
                     <li>© 2025</li>
                     <li><span>An</span> award winning creative <br>
@@ -213,67 +248,625 @@
                 </div>
 
               </div>
-              <div class="hero-3-thumb">
-                <img src="assets/imgs/gallery/gallery-s-2.jpg" alt="image">
+              <div class="hero-3-thumb parallax-view">
+                <img src="assets/imgs/gallery/gallery-s-2.jpg" alt="image" data-speed="0.5">
               </div>
             </div>
           </div>
         </section>
         <!-- hero area end  -->
 
-
-      </main>
-
-      <!-- footer area start  -->
-      <footer class="footer-area">
-        <div class="container large">
-          <div class="footer-widget-wrapper-box">
-            <div class="footer-widget-wrapper">
-              <div class="footer-widget-box content">
-                <div class="title-wrapper">
-                  <h2 class="title rr_title_anim" data-cursor="-opaque">Let’s start a <br> great work
-                    right <br> now
-                  </h2>
+        <!-- about area start  -->
+        <div class="about-area-3 rr-bg-primary mb--1">
+          <div class="container rr-container-1900">
+            <div class="about-area-3-inner">
+              <div class="meta-wrapper-box">
+                <div class="meta-box fade-anim" data-delay="0.30">
+                  <p class="text">Years of <br>
+                    experience</p>
+                  <span class="number">15<span class="icon">+</span></span>
                 </div>
-                <a href="contact.html" class="rr-btn-underline">Let’s get started now</a>
+                <div class="meta-box fade-anim" data-delay="0.45">
+                  <p class="text">Crafted digital <br>
+                    products</p>
+                  <span class="number">215</span>
+                </div>
+                <div class="meta-box fade-anim" data-delay="0.60">
+                  <p class="text">Skilled team <br>
+                    players</p>
+                  <span class="number">70</span>
+                </div>
               </div>
-              <div class="footer-widget-box">
-                <h2 class="title">Company</h2>
-                <ul class="footer-nav-list">
-                  <li><a href="contact.html">agency</a></li>
-                  <li><a href="contact.html">Solutions</a></li>
-                  <li><a href="contact.html">Community</a></li>
-                  <li><a href="contact.html">Work</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                </ul>
-              </div>
-              <div class="footer-widget-box">
-                <h2 class="title">Social</h2>
-                <ul class="footer-nav-list">
-                  <li><a href="contact.html">Facebook</a></li>
-                  <li><a href="contact.html">Twitter</a></li>
-                  <li><a href="contact.html">Dribbble</a></li>
-                  <li><a href="contact.html">Instagram</a></li>
-                  <li><a href="contact.html">Awwwards</a></li>
-                  <li><a href="contact.html">YouTube</a></li>
-                </ul>
-              </div>
-              <div class="footer-widget-box">
-                <h2 class="title">Office</h2>
-                <ul class="footer-nav-list">
-                  <li><a href="contact.html">New York</a></li>
-                  <li><a href="contact.html">Toronto</a></li>
-                  <li><a href="contact.html">Berlin</a></li>
-                  <li><a href="contact.html">London</a></li>
-                </ul>
+              <div class="section-content-wrapper fade-anim" data-delay="0.75">
+                <div class="about-3-section-content">
+                  <div class="section-title-wrapper">
+                    <div class="subtitle-wrapper">
+                      <span class="section-subtitle">Who we are</span>
+                    </div>
+                  </div>
+                  <div class="text-wrapper">
+                    <p class="text">We are an award winning brand design and development agency in Serbia set up in 2017
+                      who crafts product. We work closely with our team of senior designers, and developers. Get
+                      full-service creative with full-service care.</p>
+                  </div>
+                </div>
+                <div class="about-3-btn-wrapper">
+                  <a href="contact.html" class="rr-btn-plus">
+                    <span class="icon">+</span>
+                    <span class="btn-wrap">
+                      <span class="text-one">Learn more</span>
+                      <span class="text-two">Learn more</span>
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="copyright-area">
-          <div class="copyright-area-inner">
-            <div class="copyright-text">
-              <p class="text">© 2025 <a href="contact.html">RavexTheme.</a> All right reserved</p>
+        <!-- about area end  -->
+
+        <!-- portfolio area start  -->
+        <section class="portfolio-area-3 rr-bg-primary">
+          <div class="container rr-container-1900">
+            <div class="portfolio-area-3-inner">
+              <div class="portfolio-3-content-wrapper fade-anim">
+                <div class="portfolio-3-content">
+                  <div class="section-title-wrapper">
+                    <div class="subtitle-wrapper">
+                      <span class="section-subtitle">Portfolio</span>
+                    </div>
+                    <div class="title-wrapper">
+                      <h2 class="section-title font-bdogrotesk-regular-50">Selected <br>
+                        Work</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="portfolio-3-actions">
+                  <div class="portfolio-3-nav">
+                    <div class="portfolio-3-button portfolio-3-button-prev">
+                      <img src="assets/imgs/icon/icon-s-6.png" alt="image">
+                    </div>
+                    <div class="portfolio-3-button portfolio-3-button-next">
+                      <img src="assets/imgs/icon/icon-s-7.png" alt="image">
+                    </div>
+                  </div>
+                  <div class="portfolio-3-btn-wrapper">
+                    <a href="portfolio.html" class="rr-btn-plus">
+                      <span class="icon">+</span>
+                      <span class="btn-wrap">
+                        <span class="text-one">Browse all work</span>
+                        <span class="text-two">Browse all work</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-3-slider-box fade-anim">
+                <div class="slider-wrapper">
+                  <div class="swiper portfolio-3-active">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="portfolio-3-item">
+                          <div class="thumb">
+                            <img src="assets/imgs/project/project-s-9.jpg" alt="image">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="portfolio-3-item">
+                          <div class="thumb">
+                            <img src="assets/imgs/project/project-s-11.jpg" alt="image">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="portfolio-3-item">
+                          <div class="thumb">
+                            <img src="assets/imgs/project/project-s-12.jpg" alt="image">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="portfolio-3-item">
+                          <div class="thumb">
+                            <img src="assets/imgs/project/project-s-13.jpg" alt="image">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider-wrapper">
+                  <div class="swiper portfolio-3-active">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="portfolio-3-item">
+                          <div class="thumb">
+                            <img src="assets/imgs/project/project-s-10.jpg" alt="image">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="portfolio-3-item">
+                          <div class="thumb">
+                            <img src="assets/imgs/project/project-s-14.jpg" alt="image">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="portfolio-3-item">
+                          <div class="thumb">
+                            <img src="assets/imgs/project/project-s-15.jpg" alt="image">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- portfolio area end  -->
+
+        <!-- service area start  -->
+        <section class="service-area-3 rr-bg-primary">
+          <div class="container rr-container-1900">
+            <div class="service-aera-3-inner">
+              <div class="service-3-content-wrapper">
+                <div class="service-3-content fade-anim" data-direction="left">
+                  <div class="section-title-wrapper">
+                    <div class="subtitle-wrapper">
+                      <span class="section-subtitle">Capability</span>
+                    </div>
+                    <div class="title-wrapper">
+                      <h2 class="section-title font-bdogrotesk-regular-50">Tailor-made <br>
+                        expertise</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-3-content-last fade-anim" data-direction="right">
+                  <div class="service-3-text-wrapper">
+                    <p class="text">Take a look at this selection of our work. Design, Branding, Website, and Marketing.
+                      We help people name their businesses and products with memorable, standout names. </p>
+                  </div>
+                  <div class="service-3-btn-wrapper">
+                    <a href="services.html" class="rr-btn-plus">
+                      <span class="icon">+</span>
+                      <span class="btn-wrap">
+                        <span class="text-one">Explore services</span>
+                        <span class="text-two">Explore services</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="services-3-wrapper-box">
+                <div class="services-3-wrapper">
+                  <a href="service-details.html">
+                    <div class="service-box-3 fade-anim" data-delay="0.30">
+                      <div class="icon">
+                        <img src="assets/imgs/icon/icon-s-8.png" alt="image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Interaction <br>
+                          Design</h3>
+                        <span class="action-shape">+</span>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="service-details.html">
+                    <div class="service-box-3 fade-anim" data-delay="0.45">
+                      <div class="icon">
+                        <img src="assets/imgs/icon/icon-s-9.png" alt="image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Website <br>
+                          Development</h3>
+                        <span class="action-shape">+</span>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="service-details.html">
+                    <div class="service-box-3 fade-anim" data-delay="0.60">
+                      <div class="icon">
+                        <img src="assets/imgs/icon/icon-s-10.png" alt="image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">SaaS Product <br>
+                          Design</h3>
+                        <span class="action-shape">+</span>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="service-details.html">
+                    <div class="service-box-3 fade-anim" data-delay="0.75">
+                      <div class="icon">
+                        <img src="assets/imgs/icon/icon-s-11.png" alt="image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Digital <br>
+                          Marketing</h3>
+                        <span class="action-shape">+</span>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="service-details.html">
+                    <div class="service-box-3 fade-anim" data-delay="0.90">
+                      <div class="icon">
+                        <img src="assets/imgs/icon/icon-s-12.png" alt="image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Brand <br>
+                          Guidelines</h3>
+                        <span class="action-shape">+</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="services-3-image-wrapper parallax-view fade-anim">
+                <img class="w-100" src="assets/imgs/gallery/gallery-s-3.jpg" alt="image" data-speed="0.1">
+              </div>
+
+            </div>
+          </div>
+        </section>
+        <!-- service area end  -->
+
+        <!-- team area start  -->
+        <section class="team-area-3 rr-bg-primary">
+          <div class="container rr-container-1900">
+            <div class="team-area-3-inner">
+              <div class="team-3-content-wrapper fade-anim" data-direction="left">
+                <div class="team-3-content">
+                  <div class="section-title-wrapper">
+                    <div class="subtitle-wrapper">
+                      <span class="section-subtitle">The team</span>
+                    </div>
+                    <div class="title-wrapper">
+                      <h2 class="section-title font-bdogrotesk-regular-50">Our talented <br>
+                        and creative <br>
+                        team</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="team-3-btn-wrapper">
+                  <a href="team.html" class="rr-btn-plus">
+                    <span class="icon">+</span>
+                    <span class="btn-wrap">
+                      <span class="text-one">Explore the team</span>
+                      <span class="text-two">Explore the team</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="team-3-wrapper-box">
+                <div class="team-3-wrapper">
+                  <div class="team-box-3 fade-anim">
+                    <div class="thumb">
+                      <a href="team-details.html"><img src="assets/imgs/team/team-s-8.jpg" alt="image"></a>
+                    </div>
+                    <div class="content">
+                      <h3 class="name"><a href="team-details.html">Cristian Vargas</a></h3>
+                      <span class="post">CEO & Founder</span>
+                    </div>
+                    <div class="social-links">
+                      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                      <a href="#"><i class="fa-brands fa-behance"></i></a>
+                    </div>
+                  </div>
+                  <div class="team-box-3 fade-anim">
+                    <div class="thumb">
+                      <a href="team-details.html"><img src="assets/imgs/team/team-s-9.jpg" alt="image"></a>
+                    </div>
+                    <div class="content">
+                      <h3 class="name"><a href="team-details.html">Joey Dello Russo</a></h3>
+                      <span class="post">Lead Designer</span>
+                    </div>
+                    <div class="social-links">
+                      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                      <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="#"><i class="fa-brands fa-behance"></i></a>
+                    </div>
+                  </div>
+                  <div class="team-box-3 fade-anim">
+                    <div class="thumb">
+                      <a href="team-details.html"><img src="assets/imgs/team/team-s-10.jpg" alt="image"></a>
+                    </div>
+                    <div class="content">
+                      <h3 class="name"><a href="team-details.html">Michelle Gasparov</a></h3>
+                      <span class="post">Lead Developer</span>
+                    </div>
+                    <div class="social-links">
+                      <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="#"><i class="fa-brands fa-behance"></i></a>
+                    </div>
+                  </div>
+                  <div class="team-box-3 fade-anim">
+                    <div class="thumb">
+                      <a href="team-details.html"><img src="assets/imgs/team/team-s-11.jpg" alt="image"></a>
+                    </div>
+                    <div class="content">
+                      <h3 class="name"><a href="team-details.html">Bruno Larry Vargas</a></h3>
+                      <span class="post">Admin & HR</span>
+                    </div>
+                    <div class="social-links">
+                      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                      <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+                      <a href="#"><i class="fa-brands fa-behance"></i></a>
+                    </div>
+                  </div>
+                  <div class="team-box-3 fade-anim">
+                    <div class="thumb">
+                      <a href="team-details.html"><img src="assets/imgs/team/team-s-12.jpg" alt="image"></a>
+                    </div>
+                    <div class="content">
+                      <h3 class="name"><a href="team-details.html">Brandon Tailor</a></h3>
+                      <span class="post">WP Developer</span>
+                    </div>
+                    <div class="social-links">
+                      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                      <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="#"><i class="fa-brands fa-behance"></i></a>
+                    </div>
+                  </div>
+                  <div class="team-box-3 fade-anim">
+                    <div class="thumb">
+                      <a href="team-details.html"><img src="assets/imgs/team/team-s-13.jpg" alt="image"></a>
+                    </div>
+                    <div class="content">
+                      <h3 class="name"><a href="team-details.html">Courtney Gayer</a></h3>
+                      <span class="post">Head of Marketing</span>
+                    </div>
+                    <div class="social-links">
+                      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                      <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- team area end  -->
+
+        <!-- testimonial area start  -->
+        <section class="testimonial-area-3 rr-bg-primary">
+          <div class="container rr-container-1900">
+            <div class="testimonial-area-3-inner">
+              <div class="testimonial-3-content-wrapper fade-anim" data-direction="left">
+                <div class="testimonial-3-content">
+                  <div class="section-title-wrapper">
+                    <div class="subtitle-wrapper">
+                      <span class="section-subtitle">Feedback</span>
+                    </div>
+                  </div>
+                  <div class="circle-text">
+                    <img class="text" src="assets/imgs/shape/shape-s-3.png" alt="image">
+                    <img class="shape" src="assets/imgs/shape/shape-s-2.png" alt="image">
+                  </div>
+                  <div class="rating-box">
+                    <span class="rating">4.9<span class="icon"><i class="fa-solid fa-star"></i></span></span>
+                    <p class="text">Based on <span>24 reviews</span> <br>
+                      on Clutch</p>
+                  </div>
+                </div>
+                <div class="testimonial-3-nav">
+                  <div class="testimonial-3-button testimonial-3-button-prev">
+                    <img src="assets/imgs/icon/icon-s-6.png" alt="image">
+                  </div>
+                  <div class="testimonial-3-button testimonial-3-button-next">
+                    <img src="assets/imgs/icon/icon-s-7.png" alt="image">
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-3-wrapper-box fade-anim" data-direction="right">
+                <div class="slider-wrapper">
+                  <div class="swiper testimonial-3-active">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="testimonial-3-item">
+                          <div class="icon">
+                            <img class="quote-icon" src="assets/imgs/icon/icon-s-13.png" alt="image">
+                          </div>
+                          <div class="content">
+                            <div class="text-wrapper">
+                              <p class="text">Their services in a systematic pursuit of excellence. Adon team work hard
+                                to exceed my expectations & deliver the best results. Our rigor and attention to detail
+                                ensure high standards and your complete satisfaction.</p>
+                            </div>
+                            <div class="author">
+                              <div class="meta">
+                                <h3 class="name">Kallam D. Michelle</h3>
+                                <span class="post">CEO, Khanda</span>
+                              </div>
+                              <div class="brand">
+                                <img src="assets/imgs/brand/brand-s-1.png" alt="image">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="testimonial-3-item">
+                          <div class="icon">
+                            <img class="quote-icon" src="assets/imgs/icon/icon-s-13.png" alt="image">
+                          </div>
+                          <div class="content">
+                            <div class="text-wrapper">
+                              <p class="text">Their services in a systematic pursuit of excellence. Adon team work hard
+                                to exceed my expectations & deliver the best results. Our rigor and attention to detail
+                                ensure high standards and your complete satisfaction.</p>
+                            </div>
+                            <div class="author">
+                              <div class="meta">
+                                <h3 class="name">Kallam D. Michelle</h3>
+                                <span class="post">CEO, Khanda</span>
+                              </div>
+                              <div class="brand">
+                                <img src="assets/imgs/brand/brand-s-1.png" alt="image">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="testimonial-3-item">
+                          <div class="icon">
+                            <img class="quote-icon" src="assets/imgs/icon/icon-s-13.png" alt="image">
+                          </div>
+                          <div class="content">
+                            <div class="text-wrapper">
+                              <p class="text">Their services in a systematic pursuit of excellence. Adon team work hard
+                                to exceed my expectations & deliver the best results. Our rigor and attention to detail
+                                ensure high standards and your complete satisfaction.</p>
+                            </div>
+                            <div class="author">
+                              <div class="meta">
+                                <h3 class="name">Kallam D. Michelle</h3>
+                                <span class="post">CEO, Khanda</span>
+                              </div>
+                              <div class="brand">
+                                <img src="assets/imgs/brand/brand-s-1.png" alt="image">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="testimonial-3-item">
+                          <div class="icon">
+                            <img class="quote-icon" src="assets/imgs/icon/icon-s-13.png" alt="image">
+                          </div>
+                          <div class="content">
+                            <div class="text-wrapper">
+                              <p class="text">Their services in a systematic pursuit of excellence. Adon team work hard
+                                to exceed my expectations & deliver the best results. Our rigor and attention to detail
+                                ensure high standards and your complete satisfaction.</p>
+                            </div>
+                            <div class="author">
+                              <div class="meta">
+                                <h3 class="name">Kallam D. Michelle</h3>
+                                <span class="post">CEO, Khanda</span>
+                              </div>
+                              <div class="brand">
+                                <img src="assets/imgs/brand/brand-s-1.png" alt="image">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- testimonial area end  -->
+
+        <!-- client area start  -->
+        <section class="client-area-3 rr-bg-primary">
+          <div class="container rr-container-1900">
+            <div class="client-area-3-inner">
+              <div class="client-3-content-wrapper fade-anim">
+                <div class="client-3-content">
+                  <div class="section-title-wrapper">
+                    <div class="subtitle-wrapper">
+                      <span class="section-subtitle">Client & Partner</span>
+                    </div>
+                    <div class="title-wrapper">
+                      <h2 class="section-title font-bdogrotesk-regular-50">We help to brands growing <br>
+                        up and show their success <br>
+                        to the world</h2>
+                    </div>
+                  </div>
+                  <div class="clients-3-wrapper-box">
+                    <div class="clients-3-wrapper">
+                      <div class="client-3-item">
+                        <img src="assets/imgs/brand/brand-s-2.png" alt="image">
+                      </div>
+                      <div class="client-3-item">
+                        <img src="assets/imgs/brand/brand-s-3.png" alt="image">
+                      </div>
+                      <div class="client-3-item">
+                        <img src="assets/imgs/brand/brand-s-4.png" alt="image">
+                      </div>
+                      <div class="client-3-item">
+                        <img src="assets/imgs/brand/brand-s-5.png" alt="image">
+                      </div>
+                      <div class="client-3-item">
+                        <img src="assets/imgs/brand/brand-s-6.png" alt="image">
+                      </div>
+                      <div class="client-3-item">
+                        <img src="assets/imgs/brand/brand-s-7.png" alt="image">
+                      </div>
+                      <div class="client-3-item">
+                        <img src="assets/imgs/brand/brand-s-8.png" alt="image">
+                      </div>
+                      <div class="client-3-item">
+                        <img src="assets/imgs/brand/brand-s-9.png" alt="image">
+                      </div>
+                      <div class="client-3-item">
+                        <img src="assets/imgs/brand/brand-s-10.png" alt="image">
+                      </div>
+                      <div class="client-3-item">
+                        <img src="assets/imgs/brand/brand-s-11.png" alt="image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-wrapper">
+                    <p class="text">More than 250 top brands we <br>
+                      worked last 15 years</p>
+                  </div>
+                </div>
+              </div>
+              <div class="client-3-thumb parallax-view fade-anim">
+                <img src="assets/imgs/gallery/gallery-s-4.jpg" alt="image" data-speed="0.3">
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- client area end  -->
+
+
+      </main>
+
+      <!-- footer area start  -->
+      <footer class="footer-area-3 rr-bg-primary">
+        <div class="container rr-container-1900">
+          <div class="footer-3-area-inner">
+            <div class="footer-3-link-box">
+              <div class="footer-3-logo">
+                <a href="index.html"><img src="assets/imgs/logo/dark-logo.png" alt="site logo"></a>
+              </div>
+              <ul class="footer-3-social">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Dribbble</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Instagram</a></li>
+              </ul>
+            </div>
+            <div class="footer-3-newsletter-box">
+              <div class="footer-3-subscription-text">
+                <div class="text-wrapper">
+                  <p class="text">Subscribe our newsletter <br>
+                    and daily updates
+                  </p>
+                </div>
+              </div>
+              <form action="#" class="footer-3-subscribe-form">
+                <div class="input-field">
+                  <input type="email" placeholder="Type your email">
+                  <button type="submit" class="subscribe-btn"><img src="assets/imgs/icon/icon-s-14.png"
+                      alt="image"></button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -285,22 +878,22 @@
 
 
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery-3.6.0.min.js"></script>
-  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.magnific-popup.min.js"></script>
-  <script src="assets/vendor/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/odometer.min.js"></script>
-  <script src="assets/vendor/waypoints.min.js"></script>
-  <script src="assets/vendor/progressbar.js"></script>
-  <script src="assets/vendor/gsap.min.js"></script>
-  <script src="assets/vendor/ScrollSmoother.min.js"></script>
-  <script src="assets/vendor/ScrollTrigger.min.js"></script>
-  <script src="assets/vendor/SplitText.min.js"></script>
-  <script src="assets/vendor/TextPlugin.js"></script>
-  <script src="assets/vendor/customEase.js"></script>
-  <script src="assets/vendor/jquery.meanmenu.min.js"></script>
-  <script src="assets/vendor/backToTop.js"></script>
+  <!-- Dependencies JS Files -->
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/odometer.min.js"></script>
+  <script src="assets/js/waypoints.min.js"></script>
+  <script src="assets/js/progressbar.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollSmoother.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+  <script src="assets/js/SplitText.min.js"></script>
+  <script src="assets/js/TextPlugin.js"></script>
+  <script src="assets/js/customEase.js"></script>
+  <script src="assets/js/jquery.meanmenu.min.js"></script>
+  <script src="assets/js/backToTop.js"></script>
   <script src="assets/js/magiccursor.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
