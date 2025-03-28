@@ -1,5 +1,55 @@
 .blog-area {
 
+    .section-title-wrapper {
+        margin-bottom: 84px;
+
+        @media #{$md} {
+            margin-bottom: 50px;
+        }
+
+        @media #{$sm} {
+            margin-bottom: 40px;
+        }
+
+
+        .title-wrapper {
+            margin-top: 50px;
+
+            @media #{$sm} {
+                margin-top: 20px;
+            }
+
+            .section-title {
+                font-size: 90px;
+                font-weight: 400;
+                line-height: 85px;
+                letter-spacing: -4.5px;
+
+                @media #{$xl} {
+                    font-size: 80px;
+                    line-height: 80px;
+                }
+
+                @media #{$lg} {
+                    font-size: 60px;
+                    line-height: 70px;
+                    letter-spacing: normal;
+                }
+
+                @media #{$md} {
+                    font-size: 50px;
+                    line-height: 60px;
+                }
+
+                @media #{$sm} {
+                    font-size: 40px;
+                    line-height: 50px;
+                }
+
+            }
+        }
+    }
+
     .mb-minus-80 {
         margin-bottom: -80px;
     }
