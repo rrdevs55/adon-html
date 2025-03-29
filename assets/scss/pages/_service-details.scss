@@ -527,6 +527,10 @@
 /* faq area style  */
 .faq-area {
 
+    &.faq-area-space {
+        padding-top: 50px;
+    }
+
     .faq-area-inner {
         display: grid;
         gap: 30px;
