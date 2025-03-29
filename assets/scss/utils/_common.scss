@@ -122,6 +122,16 @@
     background-color: var(--black);
     transform: translate(-50%, -50%);
   }
+
+  &.sub--white {
+    color: var(--white);
+    border-color: var(--white);
+    font-weight: 400;
+
+    &::before {
+      background-color: var(--white);
+    }
+  }
 }
 
 /* Section title styling with responsive font sizes */
@@ -155,6 +165,21 @@
     line-height: 0.94;
     letter-spacing: -0.05em;
   }
+
+  &.font-bdogrotesk-regular-50 {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.05em;
+
+    @media (min-width:1200px) {
+      font-size: 50px;
+    }
+  }
+}
+
+.font_ppeditor {
+  font-family: var(--font_ppeditor);
 }
 
 /* Section spacing with responsive padding */
@@ -437,6 +462,7 @@
   background: #000;
   z-index: 900;
   top: 0;
+  right: 0;
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
@@ -708,82 +734,6 @@
     }
   }
 }
-
-/* Body page inner styling */
-// .body {
-//   &-page-inner {
-//     position: relative;
-//     z-index: 100;
-//     background-color: #FFFFFF;
-
-//     .container {
-//       &.large {
-//         @media (min-width: 1650px) {
-//           max-width: 1650px;
-//           --container-max-widths: 1620px;
-//           --bs-gutter-x: 30px;
-//         }
-//       }
-//     }
-
-//     .section-title {
-//       font-size: 100px;
-//       letter-spacing: -0.07em;
-
-//       @media #{$xxl} {
-//         font-size: 80px;
-//       }
-
-//       @media #{$xl} {
-//         font-size: 60px;
-//       }
-
-//       @media #{$lg} {
-//         font-size: 50px;
-//       }
-
-//       @media #{$md} {
-//         font-size: 40px;
-//       }
-
-//       @media #{$sm} {
-//         font-size: 35px;
-//       }
-
-//       &.large {
-//         font-size: 64px;
-
-//         @media #{$xxl} {
-//           font-size: 56px;
-//         }
-
-//         @media #{$lg} {
-//           font-size: 48px;
-//         }
-
-//         @media #{$md} {
-//           font-size: 42px;
-//         }
-
-//         @media #{$sm} {
-//           font-size: 36px;
-//         }
-//       }
-//     }
-
-//     .header-area-2 .side-toggle {
-//       background-color: rgba(243, 243, 243, 1);
-
-//       @include dark {
-//         background-color: #1D1C1C;
-//       }
-//     }
-
-//     .header-area-2__inner {
-//       border-bottom: 1px solid var(--border);
-//     }
-//   }
-// }
 
 /* Sticky header styling */
 .header-sticky {

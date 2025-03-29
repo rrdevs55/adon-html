@@ -686,6 +686,54 @@
     });
   }
 
+  // portfolio 3 active 
+  if (document.querySelectorAll(".portfolio-3-active").length > 0) {
+    var portfolio_3_active = new Swiper(".portfolio-3-active", {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: true,
+      spaceBetween: 5,
+      speed: 2000,
+      navigation: {
+        prevEl: ".portfolio-3-button-prev",
+        nextEl: ".portfolio-3-button-next",
+      },
+    });
+  }
+
+  // testimonial 3 active
+  if (document.querySelectorAll(".testimonial-3-active").length > 0) {
+    var testimonial_3_active = new Swiper(".testimonial-3-active", {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 5,
+      speed: 2000,
+      watchSlidesProgress: true,
+      navigation: {
+        prevEl: ".testimonial-3-button-prev",
+        nextEl: ".testimonial-3-button-next",
+      },
+      breakpoints: {
+        // when window width is >= px
+        576: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 1,
+        },
+        992: {
+          slidesPerView: 2,
+        },
+        1201: {
+          slidesPerView: 3,
+        },
+        1367: {
+          slidesPerView: 3,
+        },
+      }
+    });
+  }
+
 
 })(jQuery);
 
