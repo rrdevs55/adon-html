@@ -1,4 +1,4 @@
-/* hero area style  */
+/* hero area 3 style  */
 .hero-3-content {
     margin-top: 115px;
 
@@ -280,9 +280,7 @@
     }
 }
 
-/* about area style  */
-
-
+/* about area 3 style  */
 .meta-box {
     background-color: var(--white);
     border-radius: 20px;
@@ -298,6 +296,7 @@
     @media #{$lg} {
         padding: 27px 20px 24px;
     }
+
 
     .text {
         font-weight: 400;
@@ -471,10 +470,15 @@
     align-items: center;
     justify-content: center;
     border-radius: 20px;
+    transition: all 0.5s;
 
     @media #{$lg} {
         width: 80px;
         height: 80px;
+    }
+
+    &:hover {
+        background-color: #FFD80C;
     }
 }
 
@@ -711,7 +715,7 @@
             left: 0;
             border-radius: 50%;
             z-index: -1;
-            transition: all 0.5s;
+            transition: all 0.7s;
         }
     }
 }
@@ -994,9 +998,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.5s;
 
     @media #{$lg} {
         height: 80px;
+    }
+
+    &:hover {
+        background-color: #FFD80C;
     }
 
 }
