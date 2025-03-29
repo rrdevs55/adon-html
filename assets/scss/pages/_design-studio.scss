@@ -254,10 +254,34 @@
 .service-4-section-header {
     .section-title {
         text-indent: 260px;
+
+        @media #{$xl} {
+            text-indent: 220px;
+        }
+
+        @media #{$md} {
+            text-indent: 0px;
+        }
     }
 
     .title-wrapper {
         margin-top: -48px;
+
+        @media #{$xxl} {
+            margin-top: -44px;
+        }
+
+        @media #{$xl} {
+            margin-top: -42px;
+        }
+
+        @media #{$lg} {
+            margin-top: -40px;
+        }
+
+        @media #{$md} {
+            margin-top: 0px;
+        }
     }
 }
 
@@ -271,7 +295,7 @@
 
     @media #{$lg} {
         grid-template-columns: 1fr;
-
+        padding-top: 23px;
     }
 
     .jump-section-area {
@@ -286,7 +310,11 @@
 .services-4-wrapper {
     display: grid;
     gap: 37px 60px;
-    grid-template-columns: repeat(2, 380px);
+    grid-template-columns: 1fr 1fr;
+
+    @media #{$sm} {
+        grid-template-columns: 1fr;
+    }
 }
 
 .service-box-4 {
@@ -294,6 +322,10 @@
         display: grid;
         gap: 20px 30px;
         grid-template-columns: 130px 1fr;
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
     }
 
     .title {
