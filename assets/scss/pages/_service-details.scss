@@ -653,7 +653,9 @@
             font-weight: 400;
             line-height: 35px;
             align-items: center;
+            color: var(--primary);
             letter-spacing: -0.9px;
+            font-family: var(--font_bdogrotesk);
 
             @media #{$xs} {
                 align-items: self-start;
