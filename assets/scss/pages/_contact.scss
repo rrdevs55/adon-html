@@ -113,7 +113,7 @@
             }
 
             &:hover {
-                color: #999999;
+                color: var(--primary);
             }
         }
     }
@@ -162,7 +162,7 @@
                     font-family: var(--font_bdogrotesk);
 
                     &:hover {
-                        color: #999;
+                        color: var(--primary);
                     }
                 }
 

@@ -375,6 +375,10 @@
     &::before {
       width: 0;
     }
+
+    i {
+      rotate: 0deg;
+    }
   }
 
   &::before {
@@ -389,7 +393,10 @@
   }
 
   i {
-    font-size: 10px;
+    font-size: 17px;
+    font-weight: 400;
+    rotate: -50deg;
+    transition: all 0.3s;
   }
 }
 
