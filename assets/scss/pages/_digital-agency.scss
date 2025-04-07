@@ -666,7 +666,7 @@
 
         .underline {
             width: calc(100%);
-            background-image: linear-gradient(transparent calc(100% - 1px), var(--white) 1px);
+            background-image: linear-gradient(transparent calc(100% - 1px), var(--black) 1px);
             background-repeat: no-repeat;
             background-size: 100% 100%;
             transition: background-size 1s;

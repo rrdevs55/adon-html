@@ -83,7 +83,7 @@
                     i {
                         margin-left: 5px;
                         rotate: -45deg;
-                        transition: all 0.3s;
+                        transition: all 0.2s;
                     }
 
                     .btn-wrap {
@@ -94,8 +94,22 @@
                         }
                     }
 
+                    &::before {
+                        background-color: var(--primary);
+                    }
+
                     &:hover {
-                        border-color: var(--primary);
+                        i {
+                            rotate: -0deg;
+                        }
+
+                        .btn-wrap {
+
+                            .text-one,
+                            .text-two {
+                                color: var(--white);
+                            }
+                        }
                     }
 
                 }
