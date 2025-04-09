@@ -737,6 +737,38 @@
     });
   }
 
+  // Moving Gallery		
+  if (document.querySelectorAll(".moving-gallery").length > 0) {
+    gsap.utils.toArray('.moving-gallery').forEach((section, index) => {
+      const w = section.querySelector('.wrapper-gallery');
+      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+      gsap.fromTo(w, { x }, {
+        x: xEnd,
+        scrollTrigger: {
+          trigger: section,
+          scrub: 1,
+        }
+      });
+    });
+  }
+
+  // Text Invert With Scroll 
+  const split = new SplitText(".text-invert", { type: "lines" });
+  split.lines.forEach((target) => {
+    gsap.to(target, {
+      backgroundPositionX: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: target,
+        scrub: 1,
+        start: 'top 85%',
+        end: "bottom center",
+      }
+    });
+  });
+
+
+
 
 })(jQuery);
 

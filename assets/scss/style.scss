@@ -17,6 +17,7 @@
 @import "pages/blog-details";
 @import "pages/contact";
 @import "pages/error";
+@import "pages/marketing-agency";
 
 
 /* footer area style  */
@@ -508,4 +509,16 @@
             }
         }
     }
+}
+
+/* inverted text style  */
+.text-invert>div {
+    background-image: linear-gradient(to right,
+            var(--primary) 50%,
+            rgba(17, 17, 17, 0.30) 50%);
+    background-size: 200% 100%;
+    background-position-x: 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
 }

@@ -56,6 +56,11 @@
   /* White background color */
 }
 
+.rr-bg-light-gray {
+  background-color: #F0F0F0;
+  /* White background color */
+}
+
 .rr-text-white {
   color: var(--white);
 }
@@ -66,6 +71,11 @@
 
 .text-gray {
   color: #555555;
+}
+
+.agency-body-border {
+  border-right: 1px solid rgba(17, 17, 17, 0.20);
+  border-left: 1px solid rgba(17, 17, 17, 0.20);
 }
 
 /* Full background image styling */
