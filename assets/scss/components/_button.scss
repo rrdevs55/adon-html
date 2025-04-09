@@ -252,6 +252,10 @@
       @media #{$lg} {
         gap: 50px;
       }
+
+      @media #{$sm} {
+        gap: 20px;
+      }
     }
 
     .btn-wrap {
