@@ -190,10 +190,17 @@
 }
 
 /* moving gallery style  */
+
+.moving-gallery-area {
+    position: relative;
+    z-index: 1;
+}
+
 .wrapper-gallery {
     display: inline-flex;
     align-items: flex-start;
     padding-bottom: 180px;
+    position: relative;
 
     @media #{$xxl} {
         padding-bottom: 150px;
@@ -210,6 +217,11 @@
     @media #{$md} {
         padding-bottom: 60px;
     }
+}
+
+.moving-gallery {
+    position: relative;
+    z-index: -1;
 }
 
 .moving-gallery li {
@@ -561,9 +573,102 @@
 .progress-area {
 
     .progress-wrapper {
-        gap: 40px;
+        gap: 20px;
         display: flex;
-        justify-content: center;
+
+        @media #{$xs} {
+            gap: 10px;
+        }
+    }
+
+    .progress__wrapper {
+        gap: 20px;
+        display: grid;
+        margin-left: 486px;
+        grid-template-columns: 750px 1fr;
+
+        @media #{$xxl} {
+            margin-left: 0;
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 650px 1fr;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 500px 1fr;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+
+    .progress-content {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            display: block;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 20px;
+            color: var(--black);
+            margin-bottom: 40px;
+            letter-spacing: -0.9px;
+            font-family: var(--font_bdogrotesk);
+
+            @media #{$md} {
+                margin-bottom: 20px;
+            }
+        }
+
+        P {
+            color: var(--black);
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .sub-title {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 28px;
+            margin-top: auto;
+            letter-spacing: -1.2px;
+
+            @media #{$md} {
+                margin-top: 20px;
+            }
+        }
+
+        .number {
+            font-size: 140px;
+            margin-top: 30px;
+            font-weight: 400;
+            line-height: 120px;
+            letter-spacing: -9.8px;
+
+            @media #{$xs} {
+                font-size: 80px;
+                margin-top: 30px;
+                font-weight: 400;
+                line-height: 80px;
+                letter-spacing: -6px;
+            }
+
+            @media #{$md} {
+                font-size: 100px;
+                font-weight: 400;
+                line-height: 100px;
+            }
+
+            @media #{$xs} {
+                font-size: 80px;
+                line-height: 80px;
+                letter-spacing: -6px;
+            }
+        }
     }
 
     .progress__item {
@@ -578,8 +683,17 @@
         height: 600px;
         display: flex;
         overflow: hidden;
+        margin-top: -30px;
         align-items: flex-end;
         background-color: transparent;
+
+        @media #{$lg} {
+            width: 100px;
+        }
+
+        @media #{$xs} {
+            width: 64px;
+        }
     }
 
     .progress-bar {
@@ -598,6 +712,10 @@
         position: absolute;
         text-align: center;
 
+        @media #{$xs} {
+            bottom: 20px;
+        }
+
         .count-text {
             font-size: 24px;
             font-weight: 400;
@@ -614,6 +732,10 @@
             font-weight: 400;
             letter-spacing: -0.7px;
             font-family: var(--font_bdogrotesk);
+
+            @media #{$xs} {
+                font-size: 12px;
+            }
         }
 
     }
@@ -636,6 +758,10 @@
         .agency-view {
             position: relative;
             height: 100%;
+
+            .container {
+                height: 100%;
+            }
 
             .parallax-container {
                 position: absolute;
@@ -701,14 +827,15 @@
     &__item {
 
         h3 {
+            gap: 6px;
             display: flex;
             font-size: 50px;
             font-weight: 400;
             line-height: 18px;
+            margin-bottom: 20px;
             color: var(--black);
             align-items: center;
             letter-spacing: -2.5px;
-            margin-bottom: 20px;
         }
 
         p {
