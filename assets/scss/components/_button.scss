@@ -230,6 +230,45 @@
     background-color: transparent;
   }
 
+  &.btn-white {
+    border-radius: 20px;
+    padding: 25px 25px;
+    border-color: transparent;
+    background-color: var(--white);
+
+    &::before {
+      background-color: var(--primary);
+    }
+
+    .text-one,
+    .text-two {
+      gap: 119px;
+      display: flex;
+
+      @media #{$xl} {
+        gap: 100px;
+      }
+
+      @media #{$lg} {
+        gap: 50px;
+      }
+
+      @media #{$sm} {
+        gap: 20px;
+      }
+    }
+
+    .btn-wrap {
+      .text-one {
+        color: var(--primary);
+      }
+
+      .text-two {
+        color: var(--white);
+      }
+    }
+  }
+
 }
 
 .rr-btn-plus {

@@ -653,13 +653,16 @@
             font-weight: 400;
             line-height: 35px;
             align-items: center;
+            color: var(--primary);
             letter-spacing: -0.9px;
+            font-family: var(--font_bdogrotesk);
 
             @media #{$xs} {
                 align-items: self-start;
                 letter-spacing: 0px;
                 gap: 30px;
                 line-height: 26px;
+                font-size: 16px;
             }
 
         }
@@ -672,11 +675,19 @@
         padding-left: 68px;
         border-top: 1px solid #E7E7E7;
 
+        @media #{$sm} {
+            padding-left: 30px;
+        }
+
         p {
             color: #555;
             font-size: 18px;
             font-weight: 400;
             line-height: 26px;
+
+            @media #{$xs} {
+                font-size: 16px;
+            }
 
             &:last-child {
                 margin-top: 30px;
