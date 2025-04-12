@@ -764,8 +764,8 @@
     });
   });
 
-  /*blog__slider***/
-  let doctor__slider = new Swiper(".client-testimonial__slider", {
+  /*client-testimonial***/
+  let client_testimonial = new Swiper(".client-testimonial__slider", {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
@@ -788,6 +788,51 @@
       },
     },
   });
+
+
+  if (document.querySelectorAll(".progress-bar").length > 0) {
+    const bars = document.querySelectorAll('.progress-bar');
+    const countTexts = document.querySelectorAll('.count-text');
+
+    function animateToValue(bar, targetValue, countText) {
+      let currentValue = parseInt(bar.style.height) || 0;
+
+      const interval = setInterval(() => {
+        const current = parseInt(bar.style.height) || 0;
+        if (current < targetValue) {
+          bar.style.height = (current + 1) + '%';
+          countText.textContent = (current + 1) + '%';
+        } else if (current > targetValue) {
+          bar.style.height = (current - 1) + '%';
+          countText.textContent = (current - 1) + '%';
+        } else {
+          clearInterval(interval);
+        }
+      }, 15);
+    }
+
+    function startOnScroll() {
+      const section = document.getElementById('skills-section');
+
+      const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            bars.forEach((bar, index) => {
+              const target = parseInt(bar.getAttribute('data-value'));
+              animateToValue(bar, target, countTexts[index]);
+            });
+            sectionObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+
+      sectionObserver.observe(section);
+    }
+    startOnScroll();
+  }
+
 })(jQuery);
 
 
