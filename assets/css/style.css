@@ -11752,10 +11752,16 @@ section {
 }
 
 /* moving gallery style  */
+.moving-gallery-area {
+  position: relative;
+  z-index: 1;
+}
+
 .wrapper-gallery {
   display: inline-flex;
   align-items: flex-start;
   padding-bottom: 180px;
+  position: relative;
 }
 @media only screen and (max-width: 1919px) {
   .wrapper-gallery {
@@ -11776,6 +11782,11 @@ section {
   .wrapper-gallery {
     padding-bottom: 60px;
   }
+}
+
+.moving-gallery {
+  position: relative;
+  z-index: -1;
 }
 
 .moving-gallery li {
@@ -12124,9 +12135,106 @@ section {
 
 /* progress-area gallery style  */
 .progress-area .progress-wrapper {
-  gap: 40px;
+  gap: 20px;
   display: flex;
-  justify-content: center;
+}
+@media (max-width: 575px) {
+  .progress-area .progress-wrapper {
+    gap: 10px;
+  }
+}
+.progress-area .progress__wrapper {
+  gap: 20px;
+  display: grid;
+  margin-left: 486px;
+  grid-template-columns: 750px 1fr;
+}
+@media only screen and (max-width: 1919px) {
+  .progress-area .progress__wrapper {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .progress-area .progress__wrapper {
+    grid-template-columns: 650px 1fr;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .progress-area .progress__wrapper {
+    grid-template-columns: 500px 1fr;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .progress-area .progress__wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+.progress-area .progress-content {
+  display: flex;
+  flex-direction: column;
+}
+.progress-area .progress-content span {
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--black);
+  margin-bottom: 40px;
+  letter-spacing: -0.9px;
+  font-family: var(--font_bdogrotesk);
+}
+@media only screen and (max-width: 991px) {
+  .progress-area .progress-content span {
+    margin-bottom: 20px;
+  }
+}
+.progress-area .progress-content P {
+  color: var(--black);
+  font-size: 20px;
+  font-weight: 400;
+}
+.progress-area .progress-content .sub-title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-top: auto;
+  letter-spacing: -1.2px;
+}
+@media only screen and (max-width: 991px) {
+  .progress-area .progress-content .sub-title {
+    margin-top: 20px;
+  }
+}
+.progress-area .progress-content .number {
+  font-size: 140px;
+  margin-top: 30px;
+  font-weight: 400;
+  line-height: 120px;
+  letter-spacing: -9.8px;
+}
+@media (max-width: 575px) {
+  .progress-area .progress-content .number {
+    font-size: 80px;
+    margin-top: 30px;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: -6px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .progress-area .progress-content .number {
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 100px;
+  }
+}
+@media (max-width: 575px) {
+  .progress-area .progress-content .number {
+    font-size: 80px;
+    line-height: 80px;
+    letter-spacing: -6px;
+  }
 }
 .progress-area .progress__item {
   display: flex;
@@ -12139,8 +12247,19 @@ section {
   height: 600px;
   display: flex;
   overflow: hidden;
+  margin-top: -30px;
   align-items: flex-end;
   background-color: transparent;
+}
+@media only screen and (max-width: 1199px) {
+  .progress-area .progress-container {
+    width: 100px;
+  }
+}
+@media (max-width: 575px) {
+  .progress-area .progress-container {
+    width: 64px;
+  }
 }
 .progress-area .progress-bar {
   width: 100%;
@@ -12155,6 +12274,11 @@ section {
   bottom: 30px;
   position: absolute;
   text-align: center;
+}
+@media (max-width: 575px) {
+  .progress-area .progress__item-wrapper {
+    bottom: 20px;
+  }
 }
 .progress-area .progress__item-wrapper .count-text {
   font-size: 24px;
@@ -12172,6 +12296,11 @@ section {
   letter-spacing: -0.7px;
   font-family: var(--font_bdogrotesk);
 }
+@media (max-width: 575px) {
+  .progress-area .progress__item-wrapper .success {
+    font-size: 12px;
+  }
+}
 .progress-area .spacer {
   height: 500px;
   background: #eaeaea;
@@ -12183,6 +12312,9 @@ section {
 /*features-area gallery style  */
 .features-area .agency-view {
   position: relative;
+  height: 100%;
+}
+.features-area .agency-view .container {
   height: 100%;
 }
 .features-area .agency-view .parallax-container {
@@ -12240,14 +12372,15 @@ section {
   }
 }
 .features__item h3 {
+  gap: 6px;
   display: flex;
   font-size: 50px;
   font-weight: 400;
   line-height: 18px;
+  margin-bottom: 20px;
   color: var(--black);
   align-items: center;
   letter-spacing: -2.5px;
-  margin-bottom: 20px;
 }
 .features__item p {
   font-size: 18px;
