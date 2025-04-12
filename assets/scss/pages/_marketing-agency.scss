@@ -190,10 +190,17 @@
 }
 
 /* moving gallery style  */
+
+.moving-gallery-area {
+    position: relative;
+    z-index: 1;
+}
+
 .wrapper-gallery {
     display: inline-flex;
     align-items: flex-start;
     padding-bottom: 180px;
+    position: relative;
 
     @media #{$xxl} {
         padding-bottom: 150px;
@@ -210,6 +217,11 @@
     @media #{$md} {
         padding-bottom: 60px;
     }
+}
+
+.moving-gallery {
+    position: relative;
+    z-index: -1;
 }
 
 .moving-gallery li {
