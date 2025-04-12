@@ -95,7 +95,7 @@
   pinned_header();
 
   // Register GSAP Plugins
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CustomEase);
+  gsap.registerPlugin(Flip, ScrollTrigger, ScrollSmoother, CustomEase);
 
   // Smooth active
   var device_width = window.screen.width;
@@ -794,6 +794,98 @@
       }
     });
   });
+
+  // Moving brand		
+  if (document.querySelectorAll(".moving-brand").length > 0) {
+    gsap.utils.toArray('.moving-brand').forEach((section, index) => {
+      const w = section.querySelector('.wrapper-brand');
+      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+      gsap.fromTo(w, { x }, {
+        x: xEnd,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          scrub: 0.5,
+          start: "20% bottom",
+          end: "80% top",
+        }
+      });
+    });
+  }
+
+
+  // about animation 
+  let flipCtx;
+
+  const createTimeline = () => {
+    flipCtx && flipCtx.revert();
+
+    flipCtx = gsap.context(() => {
+      const stepElement = [...document.querySelectorAll("[data-step]")];
+      const states = stepElement.map((step) => Flip.getState(step));
+      const flipConfig = {
+        ease: "none",
+        duration: 1
+      };
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".containerr.initial",
+          start: "clamp(top center)",
+          endTrigger: ".final",
+          end: "clamp(top center)",
+          scrub: 1,
+          markers: true
+        }
+      });
+
+      states.forEach((state, index) => {
+        tl.add(Flip.fit(".boxx", state, flipConfig), index === 0 ? 0 : "+=0.5");
+      });
+    });
+  };
+
+  createTimeline();
+
+  window.addEventListener("resize", createTimeline);
+
+
+  // ......... 
+  let flipCtxa;
+
+  const createTimelinea = () => {
+    flipCtxa && flipCtxa.revert();
+
+    flipCtxa = gsap.context(() => {
+      const stepElement = [...document.querySelectorAll("[data-stepa]")];
+      const states = stepElement.map((step) => Flip.getState(step));
+      const flipConfig = {
+        ease: "none",
+        duration: 1
+      };
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".about-4-title-wrapper",
+          start: "clamp(top center)",
+          endTrigger: ".finala",
+          end: "clamp(top center)",
+          scrub: 1,
+          markers: true
+        }
+      });
+
+      states.forEach((state, index) => {
+        tl.add(Flip.fit(".about-4-title-shape img", state, flipConfig), index === 0 ? 0 : "+=0.5");
+      });
+    });
+  };
+
+  createTimelinea();
+
+  window.addEventListener("resize", createTimelinea);
+
+
 
 
   /*client-testimonial***/
