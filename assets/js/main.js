@@ -231,11 +231,11 @@
         $('#container').addClass('loaded');
       }, 500);
 
-      setTimeout(function () {
-        $('.loader-wrap').fadeOut(1000, function () {
-          $(this).remove();
-        });
-      }, 3000);
+      //     setTimeout(function () {
+      //       $('.loader-wrap').fadeOut(1000, function () {
+      //         $(this).remove();
+      //       });
+      //     }, 3000);
 
       $('.odometer').waypoint(function (direction) {
         if (direction === 'down') {
@@ -248,10 +248,10 @@
 
     });
 
-    const svg = document.getElementById("svg");
-    const tl = gsap.timeline();
-    const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
-    const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+    //   const svg = document.getElementById("svg");
+    //   const tl = gsap.timeline();
+    //   const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+    //   const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
 
     tl.to(".loader-wrap-heading .load-text , .loader-wrap-heading .cont", {
       delay: 1.5,
@@ -288,6 +288,8 @@
     );
     // Preloader end
   }
+
+
 
 
   // Side Info Js
@@ -763,6 +765,36 @@
       }
     });
   });
+  // testimonial 4 active
+  if (document.querySelectorAll(".testimonial-4-active").length > 0) {
+    var testimonial_4_active = new Swiper(".testimonial-4-active", {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 5,
+      speed: 2000,
+      watchSlidesProgress: true,
+      pagination: {
+        el: ".testimonial-4-pagination",
+      },
+    });
+  }
+
+  // gsap nav
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1); // Get section ID
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    });
+  });
+
 
   /*client-testimonial***/
   let client_testimonial = new Swiper(".client-testimonial__slider", {
@@ -790,6 +822,8 @@
   });
 
 
+
+  /*rogress-bar***/
   if (document.querySelectorAll(".progress-bar").length > 0) {
     const bars = document.querySelectorAll('.progress-bar');
     const countTexts = document.querySelectorAll('.count-text');
@@ -832,6 +866,7 @@
     }
     startOnScroll();
   }
+
 
 })(jQuery);
 
