@@ -224,8 +224,6 @@
   }
 
 
-
-
   // Preloader Animation
   if (document.querySelectorAll(".loader-wrap").length > 0) {
     $(document).ready(function () {
@@ -247,6 +245,7 @@
       }, {
         offset: '80%'
       });
+
     });
 
     const svg = document.getElementById("svg");
@@ -289,8 +288,6 @@
     );
     // Preloader end
   }
-
-
 
 
   // Side Info Js
@@ -767,9 +764,30 @@
     });
   });
 
-
-
-
+  /*blog__slider***/
+  let doctor__slider = new Swiper(".client-testimonial__slider", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    clickable: true,
+    autoplay: {
+      delay: 3000,
+    },
+    breakpoints: {
+      1400: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      0: {
+        slidesPerView: 1,
+      },
+    },
+  });
 })(jQuery);
 
 

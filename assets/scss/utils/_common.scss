@@ -294,6 +294,26 @@
   }
 }
 
+.section-spacing-bottom-200 {
+  padding-bottom: 200px;
+
+  @media #{$xxl} {
+    padding-bottom: 150px;
+  }
+
+  @media #{$xl} {
+    padding-bottom: 120px;
+  }
+
+  @media #{$lg} {
+    padding-bottom: 100px;
+  }
+
+  @media #{$md} {
+    padding-bottom: 60px;
+  }
+}
+
 .section-spacing-150 {
   padding-top: 150px;
   padding-bottom: 150px;

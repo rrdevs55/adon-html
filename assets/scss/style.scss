@@ -23,6 +23,96 @@
 /* footer area style  */
 .footer-area {
 
+    &.footer-area-5 {
+        .footer-widget-wrapper-box {
+            border-bottom: none;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .subscribe-form {
+            max-width: 515px;
+
+            .input-field {
+                display: flex;
+                gap: 10px;
+                background-color: rgba(17, 17, 17, 0.05);
+                padding: 28px 30px;
+                border-radius: 50px;
+
+                @include dark {
+                    background-color: rgba(255, 255, 255, 0.05);
+                }
+
+                @media #{$xxl} {
+                    padding: 18px 30px;
+                }
+
+                input {
+                    width: 100%;
+                    background-color: transparent;
+                    border: 0;
+                    outline: 0;
+                    font-size: 22px;
+                    line-height: 1;
+                    color: var(--primary);
+
+                    &::placeholder {
+                        color: rgba(17, 17, 17, 0.3);
+                    }
+
+                }
+
+                i {
+                    rotate: -45deg;
+                    font-size: 20px;
+                }
+            }
+
+        }
+
+        .subscription-text {
+            margin-top: 23px;
+
+            .text {
+                font-size: 22px;
+                line-height: 28px;
+                color: var(--primary);
+                max-width: 345px;
+
+                a {
+                    position: relative;
+
+                    &::before {
+                        transition: all 0.5s;
+                        width: 100%;
+                        height: 1px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        content: "";
+                        background-color: currentColor;
+                    }
+
+                    &:hover {
+                        &:hover {
+                            &::before {
+                                width: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright-area-5 {
+        border-top: 1px solid rgba(17, 17, 17, 0.10);
+
+    }
+
     .footer-widget-wrapper-box {
         border-top: 1px solid rgba(17, 17, 17, 0.10);
         border-bottom: 1px solid rgba(17, 17, 17, 0.10);
