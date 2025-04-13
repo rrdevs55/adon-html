@@ -795,23 +795,6 @@
     });
   });
 
-  // Moving brand		
-  if (document.querySelectorAll(".moving-brand").length > 0) {
-    gsap.utils.toArray('.moving-brand').forEach((section, index) => {
-      const w = section.querySelector('.wrapper-brand');
-      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
-      gsap.fromTo(w, { x }, {
-        x: xEnd,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          scrub: 0.5,
-          start: "20% bottom",
-          end: "80% center",
-        }
-      });
-    });
-  }
 
 
 
@@ -940,6 +923,26 @@
           markers: true,
         }
       })
+    });
+  }
+
+  // Moving brand		
+  if (document.querySelectorAll(".moving-brand").length > 0) {
+    mm.add("(min-width: 1200px)", () => {
+      gsap.utils.toArray('.moving-brand').forEach((section, index) => {
+        const w = section.querySelector('.wrapper-brand');
+        const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+        gsap.fromTo(w, { x }, {
+          x: xEnd,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            scrub: 0.5,
+            start: "20% bottom",
+            end: "80% center",
+          }
+        });
+      });
     });
   }
 

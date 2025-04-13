@@ -167,13 +167,24 @@
 
     .section-title {
 
+
+
         @media (min-width:1200px) {
+            font-size: 140px;
             font-family: var(--font_bdogrotesk);
-            font-size: 200px;
             font-weight: 400;
             line-height: 0.83;
             letter-spacing: -0.08em;
             text-transform: uppercase;
+        }
+
+        @media (min-width:1400px) {
+            font-size: 170px;
+        }
+
+        @media (min-width:1920px) {
+            font-size: 200px;
+
         }
 
         br {
@@ -197,6 +208,18 @@
         width: 140px;
         height: 140px;
         margin-top: -34px;
+
+        @media #{$xxl} {
+            height: 120px;
+            width: 120px;
+        }
+
+        @media #{$xl} {
+            height: 100px;
+            width: 100px;
+            margin-top: -24px;
+
+        }
     }
 }
 
@@ -206,6 +229,16 @@
     display: grid;
     gap: 20px 60px;
     grid-template-columns: 1fr 625px;
+
+    @media #{$xxl} {
+        padding-bottom: 488px;
+
+    }
+
+    @media #{$xl} {
+        padding-bottom: 338px;
+
+    }
 
     @media #{$lg} {
         margin-top: 26px;
@@ -238,14 +271,29 @@
     border-top: 1px solid rgba(17, 17, 17, 0.15);
     padding-top: 44px;
     padding-bottom: 44px;
+
+    @media #{$xxl} {
+        padding-top: 34px;
+        padding-bottom: 34px;
+    }
+
+    @media #{$lg} {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
 }
 
 .clients-4-wrapper {
     display: flex;
-    gap: 0 100px;
+    gap: 30px 100px;
     justify-content: space-between;
     padding: 0 50px;
     width: max-content;
+
+    @media #{$lg} {
+        flex-wrap: wrap;
+        width: auto;
+    }
 }
 
 /* service area 4 style  */
