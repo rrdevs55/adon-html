@@ -152,8 +152,9 @@
             padding: 0 30px;
             margin-top: 230px;
             align-items: center;
-            border-top: 1px solid rgba(17, 17, 17, 0.20);
             justify-content: space-between;
+            background-color: var(--white);
+            border-top: 1px solid rgba(17, 17, 17, 0.20);
 
             @media #{$lg} {
                 margin-top: 150px;
@@ -361,6 +362,27 @@
             justify-content: space-between;
             padding: 20px 30px;
             padding-left: 0;
+            z-index: 1;
+            position: relative;
+
+            &::before {
+                left: 0;
+                right: 0;
+                content: "";
+                height: 0;
+                width: 100%;
+                transition: all 0.3s;
+                position: absolute;
+                background-color: var(--white);
+                z-index: -1;
+            }
+
+            &:hover {
+
+                &::before {
+                    height: 100%;
+                }
+            }
 
             @media #{$xs} {
                 padding: 12px 5px;

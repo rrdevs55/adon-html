@@ -889,29 +889,29 @@
 
 
   /*client-testimonial***/
-  let client_testimonial = new Swiper(".client-testimonial__slider", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    clickable: true,
-    autoplay: {
-      delay: 3000,
-    },
-    breakpoints: {
-      1400: {
-        slidesPerView: 4,
-      },
-      1200: {
-        slidesPerView: 3,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      0: {
-        slidesPerView: 1,
-      },
-    },
-  });
+  // let client_testimonial = new Swiper(".client-testimonial__slider", {
+  //   slidesPerView: 1,
+  //   spaceBetween: 20,
+  //   loop: true,
+  //   clickable: true,
+  //   autoplay: {
+  //     delay: 3000,
+  //   },
+  //   breakpoints: {
+  //     1400: {
+  //       slidesPerView: 4,
+  //     },
+  //     1200: {
+  //       slidesPerView: 3,
+  //     },
+  //     768: {
+  //       slidesPerView: 2,
+  //     },
+  //     0: {
+  //       slidesPerView: 1,
+  //     },
+  //   },
+  // });
 
 
 
@@ -959,6 +959,35 @@
     startOnScroll();
   }
 
+
+  // Title fade-in animation
+  gsap.from(".section-3-title-wrapper", {
+    opacity: 0,
+    y: 50,
+    duration: 1.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".section-3-title-wrapper",
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    }
+  });
+
+  // Testimonial items animation
+  gsap.utils.toArray(".client-testimonial__item").forEach((item, index) => {
+    gsap.from(item, {
+      x: 100,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 85%",
+        toggleActions: "play none none reverse"
+      },
+      delay: index * 0.2 // little stagger effect
+    });
+  });
 
 })(jQuery);
 
