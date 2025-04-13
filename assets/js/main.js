@@ -869,7 +869,7 @@
           trigger: ".about-4-title-wrapper",
           start: "clamp(top center)",
           endTrigger: ".finala",
-          end: "clamp(top center)",
+          end: "clamp(top bottom)",
           scrub: 1,
           markers: true
         }
