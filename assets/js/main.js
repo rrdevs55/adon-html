@@ -95,7 +95,7 @@
   pinned_header();
 
   // Register GSAP Plugins
-  gsap.registerPlugin(Flip, ScrollTrigger, ScrollSmoother, CustomEase);
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CustomEase);
 
   // Smooth active
   var device_width = window.screen.width;
@@ -814,76 +814,6 @@
   }
 
 
-  // about animation 
-  let flipCtx;
-
-  const createTimeline = () => {
-    flipCtx && flipCtx.revert();
-
-    flipCtx = gsap.context(() => {
-      const stepElement = [...document.querySelectorAll("[data-step]")];
-      const states = stepElement.map((step) => Flip.getState(step));
-      const flipConfig = {
-        ease: "none",
-        duration: 1
-      };
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".containerr.initial",
-          start: "clamp(top center)",
-          endTrigger: ".final",
-          end: "clamp(top center)",
-          scrub: 1,
-          markers: true
-        }
-      });
-
-      states.forEach((state, index) => {
-        tl.add(Flip.fit(".boxx", state, flipConfig), index === 0 ? 0 : "+=0.5");
-      });
-    });
-  };
-
-  createTimeline();
-
-  window.addEventListener("resize", createTimeline);
-
-
-  // ......... 
-  let flipCtxa;
-
-  const createTimelinea = () => {
-    flipCtxa && flipCtxa.revert();
-
-    flipCtxa = gsap.context(() => {
-      const stepElement = [...document.querySelectorAll("[data-stepa]")];
-      const states = stepElement.map((step) => Flip.getState(step));
-      const flipConfig = {
-        ease: "none",
-        duration: 1
-      };
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".about-4-title-wrapper",
-          start: "clamp(top center)",
-          endTrigger: ".finala",
-          end: "clamp(top bottom)",
-          scrub: 1,
-          markers: true
-        }
-      });
-
-      states.forEach((state, index) => {
-        tl.add(Flip.fit(".about-4-title-shape img", state, flipConfig), index === 0 ? 0 : "+=0.5");
-      });
-    });
-  };
-
-  createTimelinea();
-
-  window.addEventListener("resize", createTimelinea);
 
 
 

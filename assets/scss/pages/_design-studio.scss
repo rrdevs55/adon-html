@@ -187,8 +187,6 @@
 
 .about-4-title-shape {
     margin-left: 138px;
-    // width: 140px;
-    // height: 140px;
     display: inline-block;
 
     @media #{$lg} {
@@ -196,8 +194,8 @@
     }
 
     img {
-        width: 1400px;
-        height: 1400px;
+        width: 140px;
+        height: 140px;
         margin-top: -34px;
     }
 }
