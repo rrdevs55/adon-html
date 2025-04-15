@@ -943,61 +943,15 @@
   }
 
 
-  // // Timeline for section-3-title-wrapper pin and fade out
-  // const titleTimeline = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: ".section-3-title-wrapper",
-  //     start: "top center",
-  //     end: "+=500", // section scroll length
-  //     scrub: true,
-  //     pin: "cclient-testimonial",
-  //     // pin: true,
-  //     markers: false // true dile debug korte parba
-  //   }
-  // });
-
-  // // Opacity 1 theke 0 te transition
-  // titleTimeline.to(".section-3-title-wrapper", {
-  //   opacity: 0,
-  //   duration: 1
-  // });
-
-  // // Testimonial animation: right to left with stagger
-  // gsap.utils.toArray(".client-testimonial__item").forEach((item, index) => {
-  //   gsap.from(item, {
-  //     scrollTrigger: {
-  //       trigger: item,
-  //       start: "top top",
-  //       bottom: "bottom bottom",
-  //       scrub: true,
-  //       markers: false,
-  //       pinSpacing: true,
-
-  //     },
-  //     x: 1000, // <-- change this from y to x
-  //     opacity: 0,
-  //     duration: 1,
-  //     ease: "power2.out",
-  //     delay: index * 0.3
-  //   });
-  // });
-
-
-
   const title = document.querySelector(".section-3-title-wrapper");
   const items = gsap.utils.toArray(".client-testimonial__item");
 
-
-  // Title fades out and section is pinned
-
   // Timeline for testimonial animations (slide from right -> center -> left)
   let tl = gsap.timeline({
-
-
     scrollTrigger: {
       trigger: ".client-testimonial",
       start: "top top",
-      end: "+=420%",
+      end: "+=400%",
       scrub: 3,
       markers: true,
       pin: true
@@ -1012,13 +966,13 @@
       end: "+=200%",
       scrub: true,
       markers: true,
-      // pin: true
     }
   });
-  tl.add("startItems", "+=1.5"); // 1.5 seconds after title animation
+
+  tl.add("startItems", "+=1"); // After title fade-out
 
   items.forEach((item, index) => {
-    const delay = index * 2; // Still staggered if needed
+    const delay = index * 0.9;
     tl.fromTo(
       item,
       { x: "450%", opacity: 1 },
@@ -1026,6 +980,11 @@
       `startItems+=${delay}`
     );
   });
+
+  // Add 2 extra seconds after the last item's animation
+  const totalItemDuration = (items.length - 1) * 0.9 + 1;
+  tl.to({}, { duration: 2 }, `startItems+=${totalItemDuration}`);
+
 
 })(jQuery);
 
