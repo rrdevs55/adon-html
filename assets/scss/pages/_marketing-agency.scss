@@ -872,6 +872,7 @@
 
 /*client-testimonial gallery style  */
 .client-testimonial {
+    // height: 100vh;
 
     .agency-body-border {
         padding-top: 300px;
@@ -978,9 +979,27 @@
         }
     }
 
+    &__main {
+        // display: flex;
+        // margin-left: 50%;
+        // transform: translate(50%, 50%);
+        // justify-content: center;
+        position: relative;
+    }
+
+    &__warpper {
+        top: 50%;
+        right: 0;
+        gap: 20px;
+        display: flex;
+        position: absolute;
+        transform: translate(0%, -50%);
+    }
+
     &__item {
         padding: 45px;
         border-radius: 20px;
+        width: 440px;
         background: var(--white);
 
         @media #{$md} {
@@ -1087,6 +1106,8 @@
         }
     }
 }
+
+
 
 .award-area-2 {
 
