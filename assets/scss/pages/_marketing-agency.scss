@@ -698,6 +698,21 @@
         align-items: center;
         position: relative;
         flex-direction: column;
+
+        &.has---black {
+
+            .progress-bar {
+                background-color: var(--black);
+            }
+
+            .count-text {
+                color: var(--white);
+            }
+
+            .success {
+                color: var(--white);
+            }
+        }
     }
 
     .progress-container {
