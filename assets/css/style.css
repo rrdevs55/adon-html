@@ -3688,6 +3688,12 @@ section {
   position: relative;
   height: 90px;
 }
+@media only screen and (max-width: 1199px) {
+  .header-area-6__inner {
+    height: 80px;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+  }
+}
 .header-area-6 .sticky,
 .header-area-6 .transformed {
   background-color: #FFFFFF;
@@ -8949,6 +8955,11 @@ section {
 
 .hero-6-thumb {
   margin-top: 50px;
+}
+@media only screen and (max-width: 767px) {
+  .hero-6-thumb {
+    margin-top: 30px;
+  }
 }
 
 .about-us .about-us-inner {
