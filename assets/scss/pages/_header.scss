@@ -621,6 +621,11 @@
         gap: 10px;
         position: relative;
         height: 90px;
+
+        @media #{$lg} {
+            height: 80px;
+            border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+        }
     }
 
     .sticky,

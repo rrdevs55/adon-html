@@ -88,4 +88,8 @@
 
 .hero-6-thumb {
     margin-top: 50px;
+
+    @media #{$sm} {
+        margin-top: 30px;
+    }
 }
