@@ -12398,6 +12398,15 @@ section {
   position: relative;
   flex-direction: column;
 }
+.progress-area .progress__item.has---black .progress-bar {
+  background-color: var(--black);
+}
+.progress-area .progress__item.has---black .count-text {
+  color: var(--white);
+}
+.progress-area .progress__item.has---black .success {
+  color: var(--white);
+}
 .progress-area .progress-container {
   width: 140px;
   height: 600px;
