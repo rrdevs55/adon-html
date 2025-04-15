@@ -224,70 +224,70 @@
   }
 
 
-  // Preloader Animation
-  if (document.querySelectorAll(".loader-wrap").length > 0) {
-    $(document).ready(function () {
-      setTimeout(function () {
-        $('#container').addClass('loaded');
-      }, 500);
+  // // Preloader Animation
+  // if (document.querySelectorAll(".loader-wrap").length > 0) {
+  //   $(document).ready(function () {
+  //     setTimeout(function () {
+  //       $('#container').addClass('loaded');
+  //     }, 500);
 
-      setTimeout(function () {
-        $('.loader-wrap').fadeOut(1000, function () {
-          $(this).remove();
-        });
-      }, 3000);
+  //     setTimeout(function () {
+  //       $('.loader-wrap').fadeOut(1000, function () {
+  //         $(this).remove();
+  //       });
+  //     }, 3000);
 
-      $('.odometer').waypoint(function (direction) {
-        if (direction === 'down') {
-          let countNumber = $(this.element).attr("data-count");
-          $(this.element).html(countNumber);
-        }
-      }, {
-        offset: '80%'
-      });
+  //     $('.odometer').waypoint(function (direction) {
+  //       if (direction === 'down') {
+  //         let countNumber = $(this.element).attr("data-count");
+  //         $(this.element).html(countNumber);
+  //       }
+  //     }, {
+  //       offset: '80%'
+  //     });
 
-    });
+  //   });
 
-    const svg = document.getElementById("svg");
-    const tl = gsap.timeline();
-    const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
-    const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+  //   const svg = document.getElementById("svg");
+  //   const tl = gsap.timeline();
+  //   const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+  //   const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
 
-    tl.to(".loader-wrap-heading .load-text , .loader-wrap-heading .cont", {
-      delay: 1.5,
-      y: -100,
-      opacity: 0,
-    });
-    tl.to(svg, {
-      duration: 0.5,
-      attr: {
-        d: curve
-      },
-      ease: "power2.easeIn",
-    }).to(svg, {
-      duration: 0.5,
-      attr: {
-        d: flat
-      },
-      ease: "power2.easeOut",
-    });
-    tl.to(".loader-wrap", {
-      y: -1500,
-    });
-    tl.to(".loader-wrap", {
-      zIndex: -1,
-      display: "none",
-    });
-    tl.from(
-      "main", {
-      y: 100,
-      opacity: 0,
-      delay: 0.3,
-    },
-      "-=1.5"
-    );
-    // Preloader end
-  }
+  //   tl.to(".loader-wrap-heading .load-text , .loader-wrap-heading .cont", {
+  //     delay: 1.5,
+  //     y: -100,
+  //     opacity: 0,
+  //   });
+  //   tl.to(svg, {
+  //     duration: 0.5,
+  //     attr: {
+  //       d: curve
+  //     },
+  //     ease: "power2.easeIn",
+  //   }).to(svg, {
+  //     duration: 0.5,
+  //     attr: {
+  //       d: flat
+  //     },
+  //     ease: "power2.easeOut",
+  //   });
+  //   tl.to(".loader-wrap", {
+  //     y: -1500,
+  //   });
+  //   tl.to(".loader-wrap", {
+  //     zIndex: -1,
+  //     display: "none",
+  //   });
+  //   tl.from(
+  //     "main", {
+  //     y: 100,
+  //     opacity: 0,
+  //     delay: 0.3,
+  //   },
+  //     "-=1.5"
+  //   );
+  //   // Preloader end
+  // }
 
 
 
@@ -795,23 +795,6 @@
     });
   });
 
-  // Moving brand		
-  if (document.querySelectorAll(".moving-brand").length > 0) {
-    gsap.utils.toArray('.moving-brand').forEach((section, index) => {
-      const w = section.querySelector('.wrapper-brand');
-      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
-      gsap.fromTo(w, { x }, {
-        x: xEnd,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          scrub: 0.5,
-          start: "20% bottom",
-          end: "80% top",
-        }
-      });
-    });
-  }
 
 
   /*client-testimonial***/
@@ -883,6 +866,80 @@
       sectionObserver.observe(section);
     }
     startOnScroll();
+  }
+
+
+  // about-4-title-shape animation 
+  if (document.querySelectorAll(".about-4-title-shape").length > 0) {
+    mm.add("(min-width: 1200px)", () => {
+      var ab4 = gsap.timeline();
+      ab4.to(".about-4-title-shape img", {
+        width: "40px",
+        height: "40px",
+        // translateX: 50,
+        rotation: 180,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".about-4-title-shape",
+          start: "center center",
+          endTrigger: ".client-area-4",
+          end: "bottom bottom",
+          pin: true,
+          pinSpacing: false,
+          scrub: 0,
+          markers: true,
+        }
+      })
+      ab4.to(".about-4-title-shape img", {
+        translateX: 500,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".client-area-4",
+          start: "bottom bottom",
+          endTrigger: ".client-area-4",
+          end: "bottom center",
+          pin: ".about-area-4",
+          pinSpacing: true,
+          scrub: 0,
+          markers: true,
+        }
+      })
+      ab4.to(".about-4-title-shape img", {
+        scale: 400,
+        rotation: 90,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".client-area-4",
+          start: "bottom center",
+          endTrigger: ".client-area-4",
+          end: "bottom top",
+          pin: ".about-area-4",
+          pinSpacing: true,
+          scrub: 0,
+          markers: true,
+        }
+      })
+    });
+  }
+
+  // Moving brand		
+  if (document.querySelectorAll(".moving-brand").length > 0) {
+    mm.add("(min-width: 1200px)", () => {
+      gsap.utils.toArray('.moving-brand').forEach((section, index) => {
+        const w = section.querySelector('.wrapper-brand');
+        const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+        gsap.fromTo(w, { x }, {
+          x: xEnd,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            scrub: 0.5,
+            start: "20% bottom",
+            end: "80% center",
+          }
+        });
+      });
+    });
   }
 
 
