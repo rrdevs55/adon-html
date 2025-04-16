@@ -943,47 +943,95 @@
   }
 
 
-  const title = document.querySelector(".section-3-title-wrapper");
-  const items = gsap.utils.toArray(".client-testimonial__item");
 
-  // Timeline for testimonial animations (slide from right -> center -> left)
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".client-testimonial",
-      start: "top top",
-      end: "+=400%",
-      scrub: 3,
-      markers: true,
-      pin: true
+  // client-testimonial
+  // ===============================
+  mm.add("(min-width: 1200px)", () => {
+    if (document.querySelectorAll(".client-testimonial").length > 0) {
+      const title = document.querySelector(".section-3-title-wrapper");
+      const items = gsap.utils.toArray(".client-testimonial__item");
+
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".client-testimonial",
+          start: "top top",
+          end: "+=400%",
+          scrub: 3,
+          markers: true,
+          pin: true
+        }
+      });
+
+      tl.to(title, {
+        opacity: 0,
+        webkitFilter: "blur(10px)",
+        scrollTrigger: {
+          trigger: ".client-testimonial",
+          start: "top top",
+          end: "+=200%",
+          scrub: true,
+          markers: true,
+        }
+      });
+
+      tl.add("startItems", "+=1");
+
+      items.forEach((item, index) => {
+        const delay = index * 0.9;
+        tl.fromTo(
+          item,
+          { x: "450%", opacity: 1 },
+          { x: 0, opacity: 1, duration: 1 },
+          `startItems+=${delay}`
+        );
+      });
+
+      const totalItemDuration = (items.length - 1) * 0.9 + 1;
+      tl.to({}, { duration: 2 }, `startItems+=${totalItemDuration}`);
     }
   });
 
-  tl.to(title, {
-    opacity: 0,
-    scrollTrigger: {
-      trigger: ".client-testimonial",
-      start: "top top",
-      end: "+=200%",
-      scrub: true,
-      markers: true,
+
+  // Service list Hover Animation
+  // ===============================
+  function Team_animation() {
+    const wrapper = $(".service-5__wrapper");
+    const active_bg = wrapper.find(".active-bg");
+
+    function moveBgTo(target) {
+      if (!target.length) return;
+
+      const offsetTop = target.offset().top;
+      const height = target.outerHeight();
+      const wrapperTop = wrapper.offset().top;
+      const translateY = offsetTop - wrapperTop;
+
+      active_bg.css({
+        transform: `translateY(${translateY}px)`,
+        height: `${height}px`,
+        opacity: 1
+      });
     }
+
+    // On hover
+    wrapper.find(".service-5__item").on("mouseenter", function () {
+      moveBgTo($(this));
+    });
+
+    // On leave, hide background
+    wrapper.on("mouseleave", function () {
+      active_bg.css({
+        opacity: 0,
+        height: 0
+      });
+    });
+  }
+
+  $(document).ready(function () {
+    Team_animation();
   });
 
-  tl.add("startItems", "+=1"); // After title fade-out
 
-  items.forEach((item, index) => {
-    const delay = index * 0.9;
-    tl.fromTo(
-      item,
-      { x: "450%", opacity: 1 },
-      { x: 0, opacity: 1, duration: 1 },
-      `startItems+=${delay}`
-    );
-  });
-
-  // Add 2 extra seconds after the last item's animation
-  const totalItemDuration = (items.length - 1) * 0.9 + 1;
-  tl.to({}, { duration: 2 }, `startItems+=${totalItemDuration}`);
 
 
 })(jQuery);
