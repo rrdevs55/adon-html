@@ -1,0 +1,95 @@
+/* hero area 6 style  */
+.hero-6-section-content {
+
+    margin-top: 108px;
+
+    .section-title {
+        font-family: var(--font_bdogrotesk);
+        font-weight: 400;
+        font-size: 215px;
+        line-height: 0.86;
+        letter-spacing: -0.09em;
+        text-transform: uppercase;
+
+        @media #{$xxl} {
+            font-size: 165px;
+        }
+
+        @media #{$xl} {
+            font-size: 155px;
+        }
+
+        @media #{$lg} {
+            font-size: 115px;
+        }
+
+        @media #{$md} {
+            font-size: 85px;
+        }
+
+        @media #{$sm} {
+            font-size: 60px;
+            letter-spacing: -0.05em;
+            line-height: 1;
+        }
+
+        @media #{$xs} {
+            font-size: 38px;
+        }
+    }
+}
+
+.hero-6-nav {
+    margin-top: 146px;
+
+    @media #{$xxl} {
+        margin-top: 96px;
+    }
+
+    .main-menu li a {
+        font-size: 16px;
+        font-weight: 500;
+        padding: 0 0;
+        text-transform: uppercase;
+        justify-content: space-between;
+
+
+        &:hover {
+            color: var(--primary);
+        }
+    }
+
+    .main-menu>ul {
+        gap: 40px;
+
+        >li {
+            flex-grow: 1;
+            max-width: 270px;
+
+            &:hover {
+
+                >a {
+                    color: var(--primary);
+                    border-color: var(--primary);
+                }
+            }
+
+            >a {
+                padding-bottom: 17px;
+                border-bottom: 1px solid rgba(17, 17, 17, 0.2);
+            }
+        }
+    }
+
+    .main-menu ul.dp-menu {
+        min-width: 100%;
+    }
+}
+
+.hero-6-thumb {
+    margin-top: 50px;
+
+    @media #{$sm} {
+        margin-top: 30px;
+    }
+}
