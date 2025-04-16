@@ -486,28 +486,41 @@
         }
     }
 
-    .rr-btn {
-        font-size: 16px;
-        font-weight: 500;
-        padding: 15px 26px;
+    .header-btn {
+        padding: 14.5px 22px;
+        display: inline-block;
+        color: var(--black);
         border-radius: 15px;
         background: var(--white);
-        border-color: transparent;
 
-        &::before {
-            background: var(--black);
+        .text {
+            font-weight: 500;
+            position: relative;
+            font-size: 16px;
+            display: inline-block;
+
+            &::before {
+                content: "";
+                bottom: 0;
+                width: 100%;
+                left: 0;
+                height: 1px;
+                position: absolute;
+                transition: all 0.3s;
+                background-color: var(--black);
+            }
         }
 
-        .btn-wrap {
-            .text-one {
-                color: var(--black);
-                border-bottom: 1px solid var(--black);
+
+        &:hover {
+
+            .text {
+
+                &::before {
+                    width: 0;
+                }
             }
 
-            .text-two {
-                color: var(--white);
-                border-bottom: 1px solid var(--white);
-            }
         }
     }
 
