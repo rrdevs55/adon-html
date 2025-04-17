@@ -1,7 +1,58 @@
 /* hero area 6 style  */
 .hero-6-section-content {
 
-    margin-top: 108px;
+    margin-top: 27px;
+
+    @media #{$lg} {
+        margin-top: 107px;
+    }
+
+    .meta-list {
+        max-width: 580px;
+        margin-left: auto;
+
+        @media #{$lg} {
+            margin-left: 0;
+        }
+
+        ul {
+            display: grid;
+            gap: 15px 40px;
+            grid-template-columns: 200px 200px;
+            justify-content: space-between;
+
+            @media #{$xs} {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        li {
+            font-family: var(--font_bdogrotesk);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 15px;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            color: var(--primary);
+
+            br {
+                display: block;
+            }
+        }
+
+    }
+
+    .section-title-wrapper {
+        margin-top: 51px;
+
+        @media #{$lg} {
+            margin-top: 41px;
+        }
+
+        @media #{$md} {
+            margin-top: 31px;
+        }
+    }
 
     .section-title {
         font-family: var(--font_bdogrotesk);
