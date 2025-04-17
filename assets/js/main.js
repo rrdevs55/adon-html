@@ -954,9 +954,9 @@
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".client-testimonial",
-          start: "top top",
+          start: "top 0%",
           end: "+=400%",
-          scrub: 3,
+          scrub: 0,
           markers: true,
           pin: true
         }
@@ -967,7 +967,7 @@
         webkitFilter: "blur(10px)",
         scrollTrigger: {
           trigger: ".client-testimonial",
-          start: "top top",
+          start: "top 0%",
           end: "+=200%",
           scrub: true,
           markers: true,
