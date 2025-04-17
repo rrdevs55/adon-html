@@ -1,3 +1,38 @@
+.section-title-6 {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 400;
+    font-size: 215px;
+    line-height: 0.86;
+    letter-spacing: -0.09em;
+    text-transform: uppercase;
+
+    @media #{$xxl} {
+        font-size: 165px;
+    }
+
+    @media #{$xl} {
+        font-size: 155px;
+    }
+
+    @media #{$lg} {
+        font-size: 115px;
+    }
+
+    @media #{$md} {
+        font-size: 85px;
+    }
+
+    @media #{$sm} {
+        font-size: 60px;
+        letter-spacing: -0.05em;
+        line-height: 1;
+    }
+
+    @media #{$xs} {
+        font-size: 38px;
+    }
+}
+
 /* hero area 6 style  */
 .hero-6-section-content {
 
@@ -54,40 +89,7 @@
         }
     }
 
-    .section-title {
-        font-family: var(--font_bdogrotesk);
-        font-weight: 400;
-        font-size: 215px;
-        line-height: 0.86;
-        letter-spacing: -0.09em;
-        text-transform: uppercase;
 
-        @media #{$xxl} {
-            font-size: 165px;
-        }
-
-        @media #{$xl} {
-            font-size: 155px;
-        }
-
-        @media #{$lg} {
-            font-size: 115px;
-        }
-
-        @media #{$md} {
-            font-size: 85px;
-        }
-
-        @media #{$sm} {
-            font-size: 60px;
-            letter-spacing: -0.05em;
-            line-height: 1;
-        }
-
-        @media #{$xs} {
-            font-size: 38px;
-        }
-    }
 }
 
 .hero-6-nav {
@@ -143,4 +145,126 @@
     @media #{$sm} {
         margin-top: 30px;
     }
+}
+
+
+/* about area 6 style  */
+
+.about-6-section-header {
+    margin-top: 193px;
+    position: relative;
+
+    @media #{$xxl} {
+        margin-top: 143px;
+    }
+
+    @media #{$xl} {
+        margin-top: 93px;
+    }
+
+    @media #{$lg} {
+        margin-top: 53px;
+    }
+
+    .meta-text {
+        font-family: var(--font_bdogrotesk);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.03em;
+        text-align: center;
+        color: var(--primary);
+        max-width: 435px;
+        margin-inline: auto;
+    }
+
+
+    .section-title-wrapper {
+        margin-top: 174px;
+
+        @media #{$xxl} {
+            margin-top: 124px;
+        }
+
+        @media #{$xl} {
+            margin-top: 74px;
+        }
+
+        @media #{$lg} {
+            margin-top: 34px;
+        }
+    }
+
+    .section-title-6 {
+        text-align: center;
+    }
+}
+
+.about-6-section-content {
+    display: grid;
+    gap: 40px 90px;
+    grid-template-columns: 1.9fr 440px 1fr;
+    align-items: flex-end;
+    margin-top: -241px;
+
+    @media #{$xxl} {
+        margin-top: -191px;
+
+    }
+
+    @media #{$xl} {
+        margin-top: -151px;
+
+    }
+
+    @media #{$lg} {
+        margin-top: 60px;
+        gap: 40px 60px;
+    }
+
+    @media #{$md} {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-6-thumb-1 {
+        margin-bottom: 7px;
+    }
+
+    .meta-text {
+        font-family: var(--font_bdogrotesk);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 15px;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: var(--primary);
+    }
+
+    .text {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 28px;
+        text-align: justify;
+        color: var(--primary);
+        margin-top: 137px;
+
+        @media #{$xxl} {
+            margin-top: 87px;
+        }
+
+        @media #{$xl} {
+            margin-top: 37px;
+        }
+    }
+
+    .about-6-thumb-2 {
+        margin-left: auto;
+        margin-bottom: 7px;
+
+        @media #{$md} {
+            margin-left: 0;
+        }
+    }
+
 }
