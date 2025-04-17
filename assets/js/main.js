@@ -797,33 +797,6 @@
 
 
 
-  /*client-testimonial***/
-  // let client_testimonial = new Swiper(".client-testimonial__slider", {
-  //   slidesPerView: 1,
-  //   spaceBetween: 20,
-  //   loop: true,
-  //   clickable: true,
-  //   autoplay: {
-  //     delay: 3000,
-  //   },
-  //   breakpoints: {
-  //     1400: {
-  //       slidesPerView: 4,
-  //     },
-  //     1200: {
-  //       slidesPerView: 3,
-  //     },
-  //     768: {
-  //       slidesPerView: 2,
-  //     },
-  //     0: {
-  //       slidesPerView: 1,
-  //     },
-  //   },
-  // });
-
-
-
   /*rogress-bar***/
   if (document.querySelectorAll(".progress-bar").length > 0) {
     const bars = document.querySelectorAll('.progress-bar');
@@ -942,8 +915,6 @@
     });
   }
 
-
-
   // client-testimonial
   // ===============================
   mm.add("(min-width: 1200px)", () => {
@@ -1033,6 +1004,34 @@
 
 
 
+  /*fun-fact-slider***/
+  // let fun_fact_slider = new Swiper(".fun-fact-slider", {
+  //   slidesPerView: 4,
+  //   spaceBetween: 20,
+  //   clickable: true,
+  //   speed: 2000,
+  //   autoplay: {
+  //     delay: 3000,
+  //   },
+  //   mousewheel: {
+  //     releaseOnEdges: true,
+  //   },
+
+  //   breakpoints: {
+  //     1400: {
+  //       slidesPerView: 4,
+  //     },
+  //     1200: {
+  //       slidesPerView: 3,
+  //     },
+  //     768: {
+  //       slidesPerView: 2,
+  //     },
+  //     0: {
+  //       slidesPerView: 1,
+  //     },
+  //   },
+  // });
 
 })(jQuery);
 

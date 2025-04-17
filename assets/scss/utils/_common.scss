@@ -318,6 +318,28 @@
   }
 }
 
+.section-spacing-top-200 {
+  padding-top: 200px;
+
+  @media #{$xxl} {
+    padding-top: 150px;
+  }
+
+  @media #{$xl} {
+    padding-top: 120px;
+  }
+
+  @media #{$lg} {
+    padding-top: 100px;
+  }
+
+  @media #{$md} {
+    padding-top: 60px;
+  }
+}
+
+
+
 .section-spacing-150 {
   padding-top: 150px;
   padding-bottom: 150px;
