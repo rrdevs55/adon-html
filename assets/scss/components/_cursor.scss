@@ -183,3 +183,58 @@
         color: black;
     }
 }
+
+
+.cb-cursor.-portfolio {
+    &:before {
+        display: none;
+    }
+
+    .cb-cursor-text {
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        display: block;
+        text-align: start;
+    }
+
+    .hover-display {
+        width: 420px;
+
+        .hover-thumb {
+            img {
+                width: 100%;
+            }
+        }
+
+        .hover-content {
+            display: grid;
+            gap: 10px 30px;
+            grid-template-columns: 1fr auto;
+            margin-top: 14px;
+        }
+
+        .title {
+            font-family: var(--font_bdogrotesk);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        .date {
+            font-family: var(--font_bdogrotesk);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            display: inline-block;
+            color: var(--white);
+        }
+
+    }
+}
