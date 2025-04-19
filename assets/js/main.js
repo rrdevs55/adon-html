@@ -1003,35 +1003,20 @@
   });
 
 
-
-  /*fun-fact-slider***/
-  // let fun_fact_slider = new Swiper(".fun-fact-slider", {
-  //   slidesPerView: 4,
-  //   spaceBetween: 20,
-  //   clickable: true,
-  //   speed: 2000,
-  //   autoplay: {
-  //     delay: 3000,
-  //   },
-  //   mousewheel: {
-  //     releaseOnEdges: true,
-  //   },
-
-  //   breakpoints: {
-  //     1400: {
-  //       slidesPerView: 4,
-  //     },
-  //     1200: {
-  //       slidesPerView: 3,
-  //     },
-  //     768: {
-  //       slidesPerView: 2,
-  //     },
-  //     0: {
-  //       slidesPerView: 1,
-  //     },
-  //   },
-  // });
+  // Moving Gallery		
+  if (document.querySelectorAll(".fun-fact-area-inner").length > 0) {
+    gsap.utils.toArray('.fun-fact-area-inner').forEach((section, index) => {
+      const w = section.querySelector('.fun-fact-wrapper');
+      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+      gsap.fromTo(w, { x }, {
+        x: xEnd,
+        scrollTrigger: {
+          trigger: section,
+          scrub: 1,
+        }
+      });
+    });
+  }
 
 })(jQuery);
 
