@@ -202,6 +202,14 @@
     .hover-display {
         width: 420px;
 
+        @media #{$xxl} {
+            width: 350px;
+        }
+
+        @media #{$xl} {
+            width: 280px;
+        }
+
         .hover-thumb {
             img {
                 width: 100%;
