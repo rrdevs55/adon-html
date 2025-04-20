@@ -1011,8 +1011,11 @@
       gsap.fromTo(w, { x }, {
         x: xEnd,
         scrollTrigger: {
-          trigger: section,
+          trigger: ".fun-fact-area",
           scrub: 1,
+          start: "bottom bottom",
+          pin: true,
+          markers: true,
         }
       });
     });
