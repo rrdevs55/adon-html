@@ -1,0 +1,29 @@
+.hero-7-area {
+
+    .hero-7-area-inner {}
+
+    .hero-7-area-content {
+
+        .hero-7-area-title {
+            font-size: 180px;
+            font-weight: 200;
+            line-height: 170px;
+            color: var(--black);
+            text-align: center;
+            text-transform: uppercase;
+            font-family: var(--font_ppeditor);
+
+            span {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                color: var(--black);
+                letter-spacing: -0.7px;
+                text-transform: uppercase;
+                font-family: var(--font_bdogrotesk);
+                display: inline-block;
+                text-align-last: left;
+            }
+        }
+    }
+}
