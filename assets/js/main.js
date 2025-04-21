@@ -1015,7 +1015,7 @@
           scrub: 1,
           start: "bottom bottom",
           pin: true,
-          markers: true,
+          // markers: true,
         }
       });
     });

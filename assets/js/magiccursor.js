@@ -62,10 +62,12 @@ class Cursor {
                 self.removeText();
             }).on('mouseenter', '[data-cursor-text-portfolio]', function () {
                 self.setText(this.dataset.cursorText);
-                self.el.addClass('-portfolio');
+                self.text.addClass('portfolio');
+                self.el.addClass('portfolio');
             }).on('mouseleave', '[data-cursor-text-portfolio]', function () {
                 self.removeText();
-                self.el.removeClass('-portfolio');
+                self.text.removeClass('portfolio');
+                self.el.removeClass('portfolio');
             });
     }
 
