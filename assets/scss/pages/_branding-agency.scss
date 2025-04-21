@@ -93,6 +93,8 @@
 }
 
 .hero-6-nav {
+    position: relative;
+    z-index: 1;
     margin-top: 146px;
 
     @media #{$xxl} {
@@ -539,7 +541,7 @@
 
     .thumb {
         img {
-            cursor: none;
+            // cursor: none;
         }
     }
 

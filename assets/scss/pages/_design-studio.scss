@@ -158,15 +158,15 @@
 /* about area 4 style  */
 .about-area-4 {
     overflow: hidden;
-}
-
-.about-4-title-wrapper {
-
     margin-top: -47px;
 
     @media #{$lg} {
         margin-top: 50px;
     }
+}
+
+.about-4-title-wrapper {
+
 
     .section-title {
 
