@@ -112,19 +112,9 @@
 
 
             span {
-
-                @media #{$xxl} {
-                    display: none;
-                }
-
-                @media #{$xs} {
-                    display: block;
-                }
-
-
                 text-align: center;
                 width: 131px;
-                display: block;
+                display: none;
                 font-size: 14px;
                 font-weight: 400;
                 line-height: 16px;
@@ -133,6 +123,14 @@
                 letter-spacing: -0.7px;
                 text-transform: uppercase;
                 font-family: var(--font_bdogrotesk);
+
+                @media #{$xxl} {
+                    display: none;
+                }
+
+                @media #{$xs} {
+                    display: block;
+                }
             }
         }
     }
@@ -376,4 +374,71 @@
         }
     }
 
+}
+
+.feature-work-7 {
+
+    .feature-work-7-inner {
+        padding-top: 40px;
+        border-top: 1px solid rgba(17, 17, 17, 0.15);
+
+        .section-3-title-wrapper {
+
+            .sub-title {}
+        }
+    }
+
+    .feature-work-7-wrapper {
+        padding-top: 110px;
+    }
+
+    .feature-work-7-item {
+        gap: 30px;
+        display: grid;
+        padding-top: 40px;
+        grid-template-columns: 235px 554px 1fr;
+
+
+        &:not(:last-child) {
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+        }
+
+        span {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+            color: var(--primary);
+            letter-spacing: -0.7px;
+            text-transform: uppercase;
+            font-family: var(--font_bdogrotesk);
+        }
+
+        .content {
+            .title {
+                font-size: 60px;
+                font-weight: 200;
+                line-height: 60px;
+                margin-bottom: 6px;
+                color: var(--primary);
+                text-transform: uppercase;
+                font-family: var(--font_ppeditor);
+            }
+
+            p {
+                color: #111;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: -0.7px;
+                text-transform: uppercase;
+                font-family: var(--font_bdogrotesk);
+            }
+        }
+
+        .media {
+
+            img {}
+        }
+    }
 }
