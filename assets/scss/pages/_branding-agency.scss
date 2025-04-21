@@ -696,7 +696,8 @@
     .fun-fact-area-inner {
         margin-top: 93px;
         padding-top: 20px;
-        border-top: 1px solid;
+        border-top: 1px solid rgba(17, 17, 17, 0.10);
+        ;
 
         @media #{$lg} {
             margin-top: 60px;
@@ -877,6 +878,11 @@
         align-items: center;
         justify-content: center;
 
+        @media #{$xs} {
+            height: inherit;
+            padding: 60px 0;
+        }
+
         .cta-btn {
             padding: 0;
             font-size: 90px;
@@ -1016,22 +1022,28 @@
                 margin-top: -40px;
                 display: inline-block;
 
+                @media #{$xl} {
+                    width: 220px;
+                    height: 130px;
+
+                }
+
                 @media #{$lg} {
-                    width: 215px;
-                    height: 115px;
-                    margin-top: -15px;
+                    width: 170px;
+                    height: 95px;
+                    margin-top: -20px;
                 }
 
                 @media #{$md} {
-                    width: 140px;
-                    height: 80px;
+                    width: 110px;
+                    height: 66px;
                     margin-top: -10px;
                 }
 
                 @media #{$sm} {
-                    width: 100px;
-                    height: 50px;
-                    margin-top: -5px;
+                    width: 70px;
+                    height: 45px;
+                    margin-top: -7px;
                 }
 
                 @media #{$xs} {
