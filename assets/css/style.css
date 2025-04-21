@@ -3246,10 +3246,27 @@ section {
   color: black;
 }
 
-.cb-cursor.-portfolio:before {
+.cb-cursor.portfolio:before {
   display: none;
 }
-.cb-cursor.-portfolio .cb-cursor-text {
+
+.cb-cursor-text.portfolio {
+  width: 420px;
+  left: -210px;
+}
+@media only screen and (max-width: 1919px) {
+  .cb-cursor-text.portfolio {
+    width: 350px;
+    left: -175px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .cb-cursor-text.portfolio {
+    width: 280px;
+    left: -140px;
+  }
+}
+.cb-cursor-text.portfolio .cb-cursor-text {
   top: 0;
   left: 0;
   width: auto;
@@ -3257,29 +3274,30 @@ section {
   display: block;
   text-align: start;
 }
-.cb-cursor.-portfolio .hover-display {
+.cb-cursor-text.portfolio .hover-display {
   width: 420px;
 }
 @media only screen and (max-width: 1919px) {
-  .cb-cursor.-portfolio .hover-display {
+  .cb-cursor-text.portfolio .hover-display {
     width: 350px;
   }
 }
 @media only screen and (max-width: 1399px) {
-  .cb-cursor.-portfolio .hover-display {
+  .cb-cursor-text.portfolio .hover-display {
     width: 280px;
   }
 }
-.cb-cursor.-portfolio .hover-display .hover-thumb img {
+.cb-cursor-text.portfolio .hover-display .hover-thumb img {
   width: 100%;
 }
-.cb-cursor.-portfolio .hover-display .hover-content {
+.cb-cursor-text.portfolio .hover-display .hover-content {
   display: grid;
   gap: 10px 30px;
   grid-template-columns: 1fr auto;
   margin-top: 14px;
+  text-align: start;
 }
-.cb-cursor.-portfolio .hover-display .title {
+.cb-cursor-text.portfolio .hover-display .title {
   font-family: var(--font_bdogrotesk);
   font-weight: 400;
   font-size: 18px;
@@ -3288,7 +3306,7 @@ section {
   text-transform: uppercase;
   color: var(--white);
 }
-.cb-cursor.-portfolio .hover-display .date {
+.cb-cursor-text.portfolio .hover-display .date {
   font-family: var(--font_bdogrotesk);
   font-weight: 400;
   font-size: 18px;
@@ -9544,6 +9562,9 @@ section {
   }
 }
 
+.portfolio-6-item {
+  position: relative;
+}
 .portfolio-6-item .thumb img {
   cursor: none;
 }
@@ -9552,6 +9573,7 @@ section {
   gap: 10px 30px;
   grid-template-columns: 1fr auto;
   margin-top: 14px;
+  text-align: start;
 }
 @media (min-width: 1200px) {
   .portfolio-6-item .content {
