@@ -9231,6 +9231,8 @@ section {
 }
 .about-6-section-header .section-title-wrapper {
   margin-top: 174px;
+  position: relative;
+  z-index: 1;
 }
 @media only screen and (max-width: 1919px) {
   .about-6-section-header .section-title-wrapper {
