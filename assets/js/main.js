@@ -797,33 +797,6 @@
 
 
 
-  /*client-testimonial***/
-  // let client_testimonial = new Swiper(".client-testimonial__slider", {
-  //   slidesPerView: 1,
-  //   spaceBetween: 20,
-  //   loop: true,
-  //   clickable: true,
-  //   autoplay: {
-  //     delay: 3000,
-  //   },
-  //   breakpoints: {
-  //     1400: {
-  //       slidesPerView: 4,
-  //     },
-  //     1200: {
-  //       slidesPerView: 3,
-  //     },
-  //     768: {
-  //       slidesPerView: 2,
-  //     },
-  //     0: {
-  //       slidesPerView: 1,
-  //     },
-  //   },
-  // });
-
-
-
   /*rogress-bar***/
   if (document.querySelectorAll(".progress-bar").length > 0) {
     const bars = document.querySelectorAll('.progress-bar');
@@ -942,8 +915,6 @@
     });
   }
 
-
-
   // client-testimonial
   // ===============================
   mm.add("(min-width: 1200px)", () => {
@@ -1032,7 +1003,23 @@
   });
 
 
-
+  // Moving Gallery		
+  if (document.querySelectorAll(".fun-fact-area-inner").length > 0) {
+    gsap.utils.toArray('.fun-fact-area-inner').forEach((section, index) => {
+      const w = section.querySelector('.fun-fact-wrapper');
+      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+      gsap.fromTo(w, { x }, {
+        x: xEnd,
+        scrollTrigger: {
+          trigger: ".fun-fact-area",
+          scrub: 1,
+          start: "bottom bottom",
+          pin: true,
+          markers: true,
+        }
+      });
+    });
+  }
 
 })(jQuery);
 

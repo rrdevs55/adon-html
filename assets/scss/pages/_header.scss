@@ -150,7 +150,6 @@
 
         &__inner {
             border-bottom: 1px solid rgba(17, 17, 17, 0.10);
-            ;
         }
 
     }
@@ -547,6 +546,89 @@
 
 }
 
+/* header area 7 style  */
+.header-area-7 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #F8F2EF;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: 98px;
+        position: relative;
+        height: 80px;
+
+        @media #{$lg} {
+            height: 70px;
+            gap: 10px;
+        }
+
+        &>*:nth-child(1) {
+            margin-inline-end: auto;
+        }
+    }
+
+
+    .sticky,
+    .transformed {
+        background-color: #F8F2EF;
+    }
+
+    .header__logo {
+
+        img {
+            width: 100px;
+        }
+    }
+
+    .main-menu li a {
+        font-size: 16px;
+        font-weight: 500;
+        padding: 21px 24px;
+        text-transform: uppercase;
+
+        &:hover {
+            color: var(--secondary);
+        }
+    }
+
+    .header__navicon {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+
+        .rr-btn {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            padding: 11.5px 23px;
+            letter-spacing: -0.64px;
+
+            @media #{$xs} {
+                display: none;
+            }
+        }
+    }
+
+    .side-toggle {
+        .bar-icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            border-radius: 500px;
+            justify-content: center;
+            border: 1px solid rgba(17, 17, 17, 0.40);
+
+            img {
+                width: 15px;
+            }
+        }
+    }
+}
 
 
 // Icon draw
