@@ -227,16 +227,19 @@
   // Preloader Animation
   if (document.querySelectorAll(".loader-wrap").length > 0) {
     $(document).ready(function () {
+      // Preloader Timeout
       setTimeout(function () {
         $('#container').addClass('loaded');
       }, 500);
 
+      // Fade out loader-wrap
       setTimeout(function () {
         $('.loader-wrap').fadeOut(1000, function () {
           $(this).remove();
         });
       }, 3000);
 
+      // Odometer Counter
       $('.odometer').waypoint(function (direction) {
         if (direction === 'down') {
           let countNumber = $(this.element).attr("data-count");
@@ -273,11 +276,15 @@
     });
     tl.to(".loader-wrap", {
       y: -1500,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power1.out",
     });
-    tl.to(".loader-wrap", {
+    tl.set(".loader-wrap", {
       zIndex: -1,
       display: "none",
     });
+
     tl.from(
       "main", {
       y: 100,
@@ -286,7 +293,14 @@
     },
       "-=1.5"
     );
+
     // Preloader end
+
+    // Images Loaded - Wait for all images to load before removing 'loading' class
+    imagesLoaded(document.querySelectorAll('.preload'), () => {
+      console.log('All images loaded!');
+      document.body.classList.remove('loading');
+    });
   }
 
 
@@ -1020,6 +1034,70 @@
       });
     });
   }
+
+
+  // Animate the image scaling to fullscreen, keeping center position
+  gsap.to(".image-wrapper", {
+    scrollTrigger: {
+      trigger: ".hero-area-7",
+      start: "top top",
+      end: "+=100%",
+      scrub: 1,
+      pin: true,
+    },
+    width: "100vw",
+    height: "100vh",
+    ease: "power4.inOut"
+  });
+
+
+  // Labels fade in with horizontal movement
+  gsap.to(".label-left", {
+    scrollTrigger: {
+      trigger: ".hero-area-7",
+      start: "top 30%",
+      end: "top 10%",
+      scrub: true
+    },
+    opacity: 1,
+    x: -10
+  });
+
+  gsap.to(".label-right", {
+    scrollTrigger: {
+      trigger: ".hero-area-7",
+      start: "top 30%",
+      end: "top 10%",
+      scrub: true
+    },
+    opacity: 1,
+    x: 10
+  });
+
+
+  // hover reveal 4 start
+  // if (document.querySelectorAll(".our-expertise-7").length > 0) {
+  //   const hoveritem = document.querySelectorAll(
+  //     ".our-expertise-7__item"
+  //   );
+
+  //   function moveImage(e, hoveritem, index) {
+  //     const item = hoveritem.getBoundingClientRect();
+  //     const x = e.clientX - item.x;
+  //     const y = e.clientY - item.y;
+  //     if (hoveritem.children[index]) {
+  //       hoveritem.children[
+  //         index
+  //       ].style.transform = `translate(${x}px, ${y}px)`;
+  //     }
+  //   }
+  //   hoveritem.forEach((item, i) => {
+  //     item.addEventListener("mousemove", (e) => {
+  //       setInterval(moveImage(e, item, 1), 50);
+  //     });
+  //   });
+  // }
+  // hover reveal 4 end
 
 })(jQuery);
 

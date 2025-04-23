@@ -718,6 +718,89 @@
     }
 }
 
+.footer-area-7 {
+
+    .footer-inner-7 {
+
+        border-top: 1px solid #D5D0CE;
+    }
+
+    .footer-widget-wrapper {
+        display: grid;
+        grid-template-columns: 833px 445px 540px;
+    }
+
+    .copyright-text {
+        padding-top: 100px;
+
+        .logo {}
+
+        .text {
+            font-size: 20px;
+            margin-top: 43px;
+            font-weight: 400;
+            color: var(--black);
+        }
+    }
+
+    .footer-widget-box {
+        padding-left: 100px;
+        position: relative;
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            height: 1000px;
+            width: 1px;
+            background-color: var(--primary);
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 200;
+            line-height: normal;
+            margin-bottom: 36px;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-family: var(--font_ppeditor);
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            color: var(--primary);
+        }
+
+        .group {
+            display: flex;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--primary);
+
+            input {
+                width: 100%;
+                border: none;
+                color: #999;
+                font-size: 20px;
+                font-weight: 400;
+                padding-right: 10px;
+                background: transparent;
+
+                &:focus {
+                    border: none;
+                    outline: 0;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
 /* inverted text style  */
 .text-invert>div {
     background-image: linear-gradient(to right,
