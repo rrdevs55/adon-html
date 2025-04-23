@@ -1087,6 +1087,8 @@
     padding: 50px 40px 46px;
     border-radius: 15px;
     height: 100%;
+    transition: all 1s;
+
 
     @media #{$xxl} {
         padding: 30px 25px 26px;

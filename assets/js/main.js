@@ -995,20 +995,23 @@
 
   window.addEventListener("load", () => {
     // Create a timeline with a delay before starting
-    const tl = gsap.timeline({ delay: 2 });
+    const tl = gsap.timeline();
 
     // Animate service boxes with stagger and pinning
     tl.to(".services-wrapper-1 .service-box-1", {
       x: 0,
       duration: 1,
       ease: "power2.out",
+      delay: 1,
       // stagger: 0.2, // animate each item one after the other
       scrollTrigger: {
         trigger: ".services-wrapper-box",
         start: "top top",
-        end: "top top",
+        end: "bottom bottom",
         pin: ".services-wrapper-box",
         pinSpacing: false,
+        toggleActions: "play reverse play reverse",
+        markers: true,
       }
     });
 
@@ -1020,10 +1023,10 @@
         trigger: ".add-shape",
         start: "center 50%",
         end: "center top",
-        scrub: 1,
-        // markers: true,
+        scrub: 0,
+        markers: true,
       }
-    }, "+=1"); // wait 0.5s after previous animation
+    }, "+=5"); // wait 0.5s after previous animation
 
     // Scale up the shape with pinning
     tl.to(".add-shape", {
@@ -1031,13 +1034,13 @@
       ease: "none",
       scrollTrigger: {
         trigger: ".add",
-        start: "bottom 100%",
-        end: "bottom top",
-        pin: true,
-        scrub: 1,
-        // markers: true,
+        start: "center center",
+        end: "center top",
+        pin: ".service-area",
+        scrub: 0,
+        markers: true,
       }
-    }, "+=2"); // wait 1s after previous animation
+    }); // wait 1s after previous animation
   });
 
 
