@@ -992,36 +992,60 @@
   //     });
   //   });
   // }
-  var service_box = document.querySelectorAll(".service-box-1");
-  service_box.forEach((item) => {
-    gsap.to(item, {
-      transform: "translate(0, 0)",
+
+  window.addEventListener("load", () => {
+    // Create a timeline with a delay before starting
+    const tl = gsap.timeline({ delay: 2 });
+
+    // Animate service boxes with stagger and pinning
+    tl.to(".services-wrapper-1 .service-box-1", {
+      x: 0,
+      duration: 1,
+      ease: "power2.out",
+      // stagger: 0.2, // animate each item one after the other
       scrollTrigger: {
         trigger: ".services-wrapper-box",
-        start: "top center",
+        start: "top top",
         end: "top top",
-        markers: true,
         pin: ".services-wrapper-box",
         pinSpacing: false,
       }
     });
+
+    // Animate shape wrapper with a small delay after service boxes
+    tl.to(".add-shape-wrapper", {
+      transform: "translate(0, 0)",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".add-shape",
+        start: "center 50%",
+        end: "center top",
+        scrub: 1,
+        // markers: true,
+      }
+    }, "+=1"); // wait 0.5s after previous animation
+
+    // Scale up the shape with pinning
+    tl.to(".add-shape", {
+      transform: "scale(860)",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".add",
+        start: "bottom 100%",
+        end: "bottom top",
+        pin: true,
+        scrub: 1,
+        // markers: true,
+      }
+    }, "+=2"); // wait 1s after previous animation
   });
 
-  gsap.to(".service-box-1", {
-    transform: "translate(0, 0)",
-    scrollTrigger: {
-      trigger: ".services-wrapper-box",
-      start: "top center",
-      end: "top top",
-      markers: true,
-      pin: ".services-wrapper-box",
-      pinSpacing: false,
-    }
-  });
 
 
 
-  // // add animation 
+
+
+  // add animation 
   // if (document.querySelectorAll(".add").length > 0) {
   //   mm.add("(min-width: 1200px)", () => {
   //     var add = gsap.timeline();
@@ -1035,6 +1059,82 @@
   //         scrub: 1,
   //         // markers: true,
   //       }
+  //     });
+  //     add.to(".add-shape", {
+  //       transform: "scale(860)",
+  //       ease: "none",
+  //       delay: 1,
+  //       scrollTrigger: {
+  //         trigger: ".add",
+  //         start: "bottom 100%",
+  //         end: "bottom top",
+  //         pin: true,
+  //         scrub: 1,
+  //         // markers: true,
+  //       }
+  //     }, "+=1");
+  //   });
+  // }
+
+
+  // Animate the image scaling to fullscreen, keeping center position
+  gsap.to(".image-wrapper", {
+    scrollTrigger: {
+      trigger: ".hero-area-7",
+      start: "top top",
+      end: "+=100%",
+      scrub: 1,
+      pin: true,
+    },
+    width: "100vw",
+    height: "100vh",
+    ease: "power4.inOut"
+  });
+
+
+  // Labels fade in with horizontal movement
+  gsap.to(".label-left", {
+    scrollTrigger: {
+      trigger: ".hero-area-7",
+      start: "top 30%",
+      end: "top 10%",
+      scrub: true
+    },
+    opacity: 1,
+    x: -10
+  });
+
+  gsap.to(".label-right", {
+    scrollTrigger: {
+      trigger: ".hero-area-7",
+      start: "top 30%",
+      end: "top 10%",
+      scrub: true
+    },
+    opacity: 1,
+    x: 10
+  });
+
+
+  // hover reveal 4 start
+  // if (document.querySelectorAll(".our-expertise-7").length > 0) {
+  //   const hoveritem = document.querySelectorAll(
+  //     ".our-expertise-7__item"
+  //   );
+
+  //   function moveImage(e, hoveritem, index) {
+  //     const item = hoveritem.getBoundingClientRect();
+  //     const x = e.clientX - item.x;
+  //     const y = e.clientY - item.y;
+  //     if (hoveritem.children[index]) {
+  //       hoveritem.children[
+  //         index
+  //       ].style.transform = `translate(${x}px, ${y}px)`;
+  //     }
+  //   }
+  //   hoveritem.forEach((item, i) => {
+  //     item.addEventListener("mousemove", (e) => {
+  //       setInterval(moveImage(e, item, 1), 50);
   //     });
   //     add.to(".add-shape", {
   //       transform: "scale(860)",
