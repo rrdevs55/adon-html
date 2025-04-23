@@ -1006,17 +1006,31 @@
   //     });
   //   });
   // }
-  var service_box = document.querySelectorAll(".service-box-1");
-  service_box.forEach((item) => {
-    gsap.to(item, {
-      transform: "translate(0, 0)",
+
+  window.addEventListener("load", () => {
+
+    // Timeline for scroll-based pinning and animation
+    const tl = gsap.timeline(
+
+    );
+
+    // Animate items one by one from X offset
+    tl.to(".services-wrapper-1 .service-box-1", {
+
+      x: 0,
+      duration: 1,
+      ease: "power2.out",
+      // stagger: 0.2
+
       scrollTrigger: {
         trigger: ".services-wrapper-box",
-        start: "bottom center",
-        end: "bottom bottom",
-        markers: true,
+        toggleActions: "play reverse play reverse",
+        start: "top top",
+        // end: "+=300",
+        endTrigger: ".services-wrapper-1",
+        // scrub: true,
         pin: ".services-wrapper-box",
-        pinSpacing: false,
+        markers: true
       }
     });
   });
@@ -1024,36 +1038,38 @@
 
 
 
-  // // add animation 
-  // if (document.querySelectorAll(".add").length > 0) {
-  //   mm.add("(min-width: 1200px)", () => {
-  //     var add = gsap.timeline();
-  //     add.to(".add-shape-wrapper", {
-  //       transform: "translate(0, 0)",
-  //       ease: "none",
-  //       scrollTrigger: {
-  //         trigger: ".add-shape",
-  //         start: "center 50%",
-  //         end: "center top",
-  //         scrub: 1,
-  //         // markers: true,
-  //       }
-  //     });
-  //     add.to(".add-shape", {
-  //       transform: "scale(860)",
-  //       ease: "none",
-  //       delay: 1,
-  //       scrollTrigger: {
-  //         trigger: ".add",
-  //         start: "bottom 100%",
-  //         end: "bottom top",
-  //         pin: true,
-  //         scrub: 1,
-  //         // markers: true,
-  //       }
-  //     }, "+=1");
-  //   });
-  // }
+
+
+  // add animation 
+  if (document.querySelectorAll(".add").length > 0) {
+    mm.add("(min-width: 1200px)", () => {
+      var add = gsap.timeline();
+      add.to(".add-shape-wrapper", {
+        transform: "translate(0, 0)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".add-shape",
+          start: "center 50%",
+          end: "center top",
+          scrub: 1,
+          // markers: true,
+        }
+      });
+      add.to(".add-shape", {
+        transform: "scale(860)",
+        ease: "none",
+        delay: 1,
+        scrollTrigger: {
+          trigger: ".add",
+          start: "bottom 100%",
+          end: "bottom top",
+          pin: true,
+          scrub: 1,
+          // markers: true,
+        }
+      }, "+=1");
+    });
+  }
 
 
   // Animate the image scaling to fullscreen, keeping center position

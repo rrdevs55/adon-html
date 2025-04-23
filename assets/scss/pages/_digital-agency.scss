@@ -1004,8 +1004,8 @@
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(5, 1fr);
-    // padding-bottom: 100px;
-    // margin-top: -520px;
+    padding-bottom: 100px;
+    margin-top: -520px;
     padding: 0;
 
     @media #{$xxl} {
@@ -1055,6 +1055,7 @@
             transform: none;
         }
     }
+
 
     .item-3 {
         transform: translate(calc(0% + 0px), 0);
