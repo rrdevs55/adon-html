@@ -1004,8 +1004,9 @@
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(5, 1fr);
-    padding-bottom: 100px;
-    margin-top: -520px;
+    // padding-bottom: 100px;
+    // margin-top: -520px;
+    padding: 0;
 
     @media #{$xxl} {
         margin-top: -410px;
@@ -1034,6 +1035,9 @@
         grid-template-columns: repeat(1, 1fr);
     }
 
+    >* {
+        display: inline-block;
+    }
 
 
     .item-1 {
