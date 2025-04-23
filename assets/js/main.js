@@ -648,59 +648,6 @@
     }
   }
 
-  // service_box animation 
-  if (document.querySelectorAll(".service-box-1").length > 0) {
-    mm.add("(min-width: 1200px)", () => {
-      var service_box = document.querySelectorAll(".service-box-1");
-      service_box.forEach((item) => {
-        gsap.to(item, {
-          transform: "translate(0, 0)",
-          ease: "none",
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 50%',
-            end: "top center",
-            pin: "services-wrapper-box",
-            scrub: 2,
-            toggleActions: "play reverse play reverse",
-            // markers: true,
-          }
-        });
-      });
-    });
-  }
-
-
-  // add animation 
-  if (document.querySelectorAll(".add").length > 0) {
-    mm.add("(min-width: 1200px)", () => {
-      var add = gsap.timeline();
-      add.to(".add-shape-wrapper", {
-        transform: "translate(0, 0)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".add-shape",
-          start: "center 50%",
-          end: "center top",
-          scrub: 1,
-          // markers: true,
-        }
-      });
-      add.to(".add-shape", {
-        transform: "scale(860)",
-        ease: "none",
-        delay: 1,
-        scrollTrigger: {
-          trigger: ".add",
-          start: "bottom 100%",
-          end: "bottom top",
-          pin: true,
-          scrub: 1,
-          // markers: true,
-        }
-      }, "+=1");
-    });
-  }
 
   // portfolio 3 active 
   if (document.querySelectorAll(".portfolio-3-active").length > 0) {
@@ -856,58 +803,7 @@
   }
 
 
-  // about-4-title-shape animation 
-  if (document.querySelectorAll(".about-4-title-shape").length > 0) {
-    mm.add("(min-width: 1200px)", () => {
-      var ab4 = gsap.timeline();
-      ab4.to(".about-4-title-shape img", {
-        width: "40px",
-        height: "40px",
-        // translateX: 50,
-        rotation: 180,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".about-4-title-shape",
-          start: "center center",
-          endTrigger: ".client-area-4",
-          end: "bottom bottom",
-          pin: true,
-          pinSpacing: false,
-          scrub: 0,
-          markers: true,
-        }
-      })
-      ab4.to(".about-4-title-shape img", {
-        translateX: 500,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".client-area-4",
-          start: "bottom bottom",
-          endTrigger: ".client-area-4",
-          end: "bottom center",
-          pin: ".about-area-4",
-          pinSpacing: true,
-          scrub: 0,
-          markers: true,
-        }
-      })
-      ab4.to(".about-4-title-shape img", {
-        scale: 400,
-        rotation: 90,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".client-area-4",
-          start: "bottom center",
-          endTrigger: ".client-area-4",
-          end: "bottom top",
-          pin: ".about-area-4",
-          pinSpacing: true,
-          scrub: 0,
-          markers: true,
-        }
-      })
-    });
-  }
+
 
   // Moving brand		
   if (document.querySelectorAll(".moving-brand").length > 0) {
@@ -1034,6 +930,130 @@
       });
     });
   }
+
+  // about-4-title-shape animation 
+  if (document.querySelectorAll(".about-4-title-shape").length > 0) {
+    mm.add("(min-width: 1200px)", () => {
+      var ab4 = gsap.timeline();
+      ab4.to(".about-4-title-shape img", {
+        width: "40px",
+        height: "40px",
+        // translateX: 50,
+        rotation: 180,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".about-4-title-shape",
+          start: "center center",
+          endTrigger: ".client-area-4",
+          end: "bottom bottom",
+          pin: true,
+          pinSpacing: false,
+          scrub: 0,
+          markers: true,
+        }
+      })
+      ab4.to(".about-4-title-shape img", {
+        translateX: 500,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".client-area-4",
+          start: "bottom bottom",
+          endTrigger: ".client-area-4",
+          end: "bottom center",
+          pin: ".about-area-4",
+          pinSpacing: true,
+          scrub: 0,
+          markers: true,
+        }
+      })
+      ab4.to(".about-4-title-shape img", {
+        scale: 400,
+        rotation: 90,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".client-area-4",
+          start: "bottom center",
+          endTrigger: ".client-area-4",
+          end: "bottom top",
+          pin: ".about-area-4",
+          pinSpacing: true,
+          scrub: 0,
+          markers: true,
+        }
+      })
+    });
+  }
+
+  // service_box animation 
+  // if (document.querySelectorAll(".service-box-1").length > 0) {
+  //   mm.add("(min-width: 1200px)", () => {
+  //     var service_box = document.querySelectorAll(".service-box-1");
+  //     service_box.forEach((item) => {
+  //       gsap.to(item, {
+  //         transform: "translate(0, 0)",
+  //         ease: "none",
+  //         scrollTrigger: {
+  //           trigger: item,
+  //           start: 'top 80%',
+  //           end: "top 20%",
+  //           pin: ".services-wrapper-box",
+  //           pinSpacing: false,
+  //           scrub: 1,
+  //           // toggleActions: "play reverse play reverse",
+  //           markers: true,
+  //         }
+  //       });
+  //     });
+  //   });
+  // }
+  var service_box = document.querySelectorAll(".service-box-1");
+  service_box.forEach((item) => {
+    gsap.to(item, {
+      transform: "translate(0, 0)",
+      scrollTrigger: {
+        trigger: ".services-wrapper-box",
+        start: "bottom center",
+        end: "bottom bottom",
+        markers: true,
+        pin: ".services-wrapper-box",
+        pinSpacing: false,
+      }
+    });
+  });
+
+
+
+
+  // // add animation 
+  // if (document.querySelectorAll(".add").length > 0) {
+  //   mm.add("(min-width: 1200px)", () => {
+  //     var add = gsap.timeline();
+  //     add.to(".add-shape-wrapper", {
+  //       transform: "translate(0, 0)",
+  //       ease: "none",
+  //       scrollTrigger: {
+  //         trigger: ".add-shape",
+  //         start: "center 50%",
+  //         end: "center top",
+  //         scrub: 1,
+  //         // markers: true,
+  //       }
+  //     });
+  //     add.to(".add-shape", {
+  //       transform: "scale(860)",
+  //       ease: "none",
+  //       delay: 1,
+  //       scrollTrigger: {
+  //         trigger: ".add",
+  //         start: "bottom 100%",
+  //         end: "bottom top",
+  //         pin: true,
+  //         scrub: 1,
+  //         // markers: true,
+  //       }
+  //     }, "+=1");
+  //   });
+  // }
 
 
   // Animate the image scaling to fullscreen, keeping center position
