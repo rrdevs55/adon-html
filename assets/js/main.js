@@ -1011,20 +1011,30 @@
     // Create a timeline with a delay before starting
     const tl = gsap.timeline({ delay: 2 });
 
+    // Assuming totalItemDuration is calculated based on previous animations
+    let totalItemDuration = 2; // You can dynamically calculate this based on your timeline
+
     // Animate service boxes with stagger and pinning
     tl.to(".services-wrapper-1 .service-box-1", {
       x: 0,
       duration: 1,
       ease: "power2.out",
-      // stagger: 0.2, // animate each item one after the other
       scrollTrigger: {
         trigger: ".services-wrapper-box",
-        start: "top top",
+        start: "top 80%", // Start when the top of the element is at 80% of the viewport height
         end: "top top",
         pin: ".services-wrapper-box",
         markers: true
       }
     });
+
+    // Use the relative timing to add this animation after the previous one
+    tl.to({}, {
+      duration: 2,
+      onStart: () => {
+        console.log("Animation started after the previous one");
+      }
+    }, `+=${totalItemDuration}`); // The new animation will start after `totalItemDuration`
 
     // Animate shape wrapper with a small delay after service boxes
     tl.to(".add-shape-wrapper", {
@@ -1035,9 +1045,8 @@
         start: "center 50%",
         end: "center top",
         scrub: 1,
-        // markers: true,
       }
-    }, "+=1"); // wait 0.5s after previous animation
+    }, `+=${totalItemDuration}`); // Wait for `totalItemDuration` before this starts
 
     // Scale up the shape with pinning
     tl.to(".add-shape", {
@@ -1045,13 +1054,12 @@
       ease: "none",
       scrollTrigger: {
         trigger: ".add",
-        start: "bottom 100%",
+        start: "bottom 100%", // Start when the bottom of the element is at 100% of the viewport height
         end: "bottom top",
         pin: true,
         scrub: 1,
-        // markers: true,
       }
-    }, "+=2"); // wait 1s after previous animation
+    }, `+=${totalItemDuration}`); // Wait for `totalItemDuration` before this starts
   });
 
 
@@ -1092,42 +1100,44 @@
 
 
   // Animate the image scaling to fullscreen, keeping center position
-  gsap.to(".image-wrapper", {
-    scrollTrigger: {
-      trigger: ".hero-area-7",
-      start: "top top",
-      end: "+=100%",
-      scrub: 1,
-      pin: true,
-    },
-    width: "100vw",
-    height: "100vh",
-    ease: "power4.inOut"
-  });
+  if ($('.hero-area-7').length > 0 && window.innerWidth > 1200) {
+    gsap.to(".image-wrapper", {
+      scrollTrigger: {
+        trigger: ".hero-area-7",
+        start: "top 10%",
+        end: "+=100%",
+        scrub: 1,
+        pin: true,
+      },
+      width: "100vw",
+      height: "100vh",
+      ease: "power4.inOut"
+    });
 
 
-  // Labels fade in with horizontal movement
-  gsap.to(".label-left", {
-    scrollTrigger: {
-      trigger: ".hero-area-7",
-      start: "top 30%",
-      end: "top 10%",
-      scrub: true
-    },
-    opacity: 1,
-    x: -10
-  });
+    // Labels fade in with horizontal movement
+    gsap.to(".label-left", {
+      scrollTrigger: {
+        trigger: ".hero-area-7",
+        start: "top 30%",
+        end: "top 10%",
+        scrub: true
+      },
+      opacity: 1,
+      x: -10
+    });
 
-  gsap.to(".label-right", {
-    scrollTrigger: {
-      trigger: ".hero-area-7",
-      start: "top 30%",
-      end: "top 10%",
-      scrub: true
-    },
-    opacity: 1,
-    x: 10
-  });
+    gsap.to(".label-right", {
+      scrollTrigger: {
+        trigger: ".hero-area-7",
+        start: "top 30%",
+        end: "top 10%",
+        scrub: true
+      },
+      opacity: 1,
+      x: 10
+    });
+  }
 
 
   // hover reveal 4 start

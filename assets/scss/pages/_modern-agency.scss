@@ -547,6 +547,198 @@
     }
 }
 
+.award-area-7 {
+
+    .award-inner {
+        gap: 30px;
+        display: grid;
+        padding-top: 40px;
+        grid-template-columns: 820px 1fr;
+        border-top: 1px solid rgba(17, 17, 17, 0.15);
+
+        @media #{$xxl} {
+            grid-template-columns: 720px 1fr;
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 500px 1fr;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 250px 1fr;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr;
+        }
+
+        .award-section {
+            .title {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: -0.7px;
+                text-transform: uppercase;
+            }
+        }
+
+        .award-content {
+
+            .award-list {
+                li {
+                    display: flex;
+                    font-size: 60px;
+                    font-weight: 200;
+                    line-height: 60px;
+                    color: var(--primary);
+                    align-items: baseline;
+                    text-transform: uppercase;
+                    font-family: var(--font_ppeditor);
+
+                    @media #{$lg} {
+                        font-size: 50px;
+                    }
+
+                    @media #{$md} {
+                        font-size: 45px;
+                        line-height: 55px;
+                    }
+
+                    @media #{$sm} {
+                        font-size: 35px;
+                        line-height: 50px;
+                    }
+
+                    @media #{$xs} {
+                        font-size: 30px;
+                        line-height: 30px;
+                        flex-wrap: wrap;
+                        margin-bottom: 20px;
+                    }
+
+                    span {
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 16px;
+                        color: var(--primary);
+                        letter-spacing: -0.7px;
+                        text-transform: uppercase;
+                        font-family: var(--font_bdogrotesk);
+                    }
+                }
+            }
+        }
+    }
+
+    .award-list {
+        flex: 3;
+        line-height: 1.8;
+    }
+
+    .award-list span {
+        font-size: 10px;
+        margin-left: 8px;
+        vertical-align: super;
+        color: #555;
+    }
+}
+
+
+
+
+
+.fun-fact-area {
+
+    &.fun-fact-7 {
+        .fun-fact-area-inner {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .fun-fact__item {
+            position: relative;
+
+            .number {
+                font-size: 60px;
+                font-weight: 200;
+                line-height: 60px;
+                text-transform: uppercase;
+                font-family: var(--font_ppeditor);
+                position: absolute;
+                left: 40px;
+                bottom: 30px;
+            }
+
+            &.has--card {
+                background: #F2E9E5;
+            }
+        }
+    }
+}
+
+.cta-area-7 {
+
+    .cta-inner {
+        padding-bottom: 70px;
+
+        @media #{$xs} {
+            padding-bottom: 50px;
+        }
+
+        .cta-designation {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+            text-align: center;
+            color: var(--primary);
+            letter-spacing: -0.7px;
+            text-transform: uppercase;
+            font-family: var(--font_bdogrotesk);
+        }
+
+        .cta-title {
+            font-size: 180px;
+            font-weight: 200;
+            margin-top: 155px;
+            text-align: center;
+            line-height: 170px;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-family: var(--font_ppeditor);
+
+            @media #{$xl} {
+                font-size: 160px;
+                margin-top: 120px;
+                line-height: 160px;
+            }
+
+            @media #{$lg} {
+                font-size: 130px;
+                margin-top: 100px;
+                line-height: 140px;
+            }
+
+            @media #{$md} {
+                font-size: 100px;
+                margin-top: 70px;
+                line-height: 115px;
+            }
+
+            @media #{$sm} {
+                font-size: 70px;
+                margin-top: 50px;
+                line-height: 80px;
+            }
+
+            @media #{$xs} {
+                font-size: 50px;
+                margin-top: 20px;
+                line-height: 55px;
+            }
+        }
+    }
+}
 
 // .our-expertise-7 {
 //     z-index: 91;
