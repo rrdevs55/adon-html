@@ -643,10 +643,19 @@
       autoplay: true,
       spaceBetween: 5,
       speed: 2000,
+      slidesPerGroup: 1,
       navigation: {
         prevEl: ".portfolio-3-button-prev",
         nextEl: ".portfolio-3-button-next",
       },
+      breakpoints: {
+        // when window width is >= px
+        576: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+
+        }
+      }
     });
   }
 

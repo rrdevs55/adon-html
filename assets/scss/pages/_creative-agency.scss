@@ -502,13 +502,16 @@
 }
 
 .portfolio-3-slider-box {
-    display: grid;
-    gap: 5px;
-    grid-template-columns: 1fr 1fr;
+    // display: grid;
+    // gap: 5px;
+    // grid-template-columns: 1fr 1fr;
 
-    @media #{$xs} {
-        grid-template-columns: 1fr;
-    }
+    // @media #{$xs} {
+    //     grid-template-columns: 1fr;
+    // }
+
+    width: 100%;
+    overflow: hidden;
 
     .slider-wrapper {
         width: 100%;
