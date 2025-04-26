@@ -52,6 +52,10 @@
         padding: 29px 14px;
         color: var(--white);
 
+        @media #{$xl} {
+            padding: 29px 10px;
+        }
+
         &:hover {
             color: var(--white);
         }

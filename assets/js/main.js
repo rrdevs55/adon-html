@@ -634,60 +634,6 @@
     }
   }
 
-  // service_box animation 
-  if (document.querySelectorAll(".service-box-1").length > 0) {
-    mm.add("(min-width: 1200px)", () => {
-      var service_box = document.querySelectorAll(".service-box-1");
-      service_box.forEach((item) => {
-        gsap.to(item, {
-          transform: "translate(0, 0)",
-          ease: "none",
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 50%',
-            end: "top center",
-            pin: ".phone-mockup",
-            pinSpacing: true,
-            scrub: 2,
-            toggleActions: "play reverse play reverse",
-            // markers: true,
-          }
-        });
-      });
-    });
-  }
-
-
-  // add animation 
-  if (document.querySelectorAll(".add").length > 0) {
-    mm.add("(min-width: 1200px)", () => {
-      var add = gsap.timeline();
-      add.to(".add-shape-wrapper", {
-        transform: "translate(0, 0)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".add-shape",
-          start: "center 50%",
-          end: "center top",
-          scrub: 1,
-          // markers: true,
-        }
-      });
-      add.to(".add-shape", {
-        transform: "scale(860)",
-        ease: "none",
-        delay: 1,
-        scrollTrigger: {
-          trigger: ".add",
-          start: "bottom 100%",
-          end: "bottom top",
-          pin: true,
-          scrub: 1,
-          // markers: true,
-        }
-      }, "+=1");
-    });
-  }
 
   // portfolio 3 active 
   if (document.querySelectorAll(".portfolio-3-active").length > 0) {
@@ -843,58 +789,7 @@
   }
 
 
-  // about-4-title-shape animation 
-  if (document.querySelectorAll(".about-4-title-shape").length > 0) {
-    mm.add("(min-width: 1200px)", () => {
-      var ab4 = gsap.timeline();
-      ab4.to(".about-4-title-shape img", {
-        width: "40px",
-        height: "40px",
-        // translateX: 50,
-        rotation: 180,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".about-4-title-shape",
-          start: "center center",
-          endTrigger: ".client-area-4",
-          end: "bottom bottom",
-          pin: true,
-          pinSpacing: false,
-          scrub: 0,
-          markers: true,
-        }
-      })
-      ab4.to(".about-4-title-shape img", {
-        translateX: 500,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".client-area-4",
-          start: "bottom bottom",
-          endTrigger: ".client-area-4",
-          end: "bottom center",
-          pin: ".about-area-4",
-          pinSpacing: true,
-          scrub: 0,
-          markers: true,
-        }
-      })
-      ab4.to(".about-4-title-shape img", {
-        scale: 400,
-        rotation: 90,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".client-area-4",
-          start: "bottom center",
-          endTrigger: ".client-area-4",
-          end: "bottom top",
-          pin: ".about-area-4",
-          pinSpacing: true,
-          scrub: 0,
-          markers: true,
-        }
-      })
-    });
-  }
+
 
   // Moving brand		
   if (document.querySelectorAll(".moving-brand").length > 0) {
@@ -1021,6 +916,185 @@
       });
     });
   }
+
+  // about-4-title-shape animation 
+  if (document.querySelectorAll(".about-4-title-shape").length > 0) {
+    mm.add("(min-width: 1200px)", () => {
+      var ab4 = gsap.timeline();
+      ab4.to(".about-4-title-shape img", {
+        width: "40px",
+        height: "40px",
+        // translateX: 50,
+        rotation: 180,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".about-4-title-shape",
+          start: "center center",
+          endTrigger: ".client-area-4",
+          end: "bottom bottom",
+          pin: true,
+          pinSpacing: false,
+          scrub: 0,
+          markers: true,
+        }
+      })
+      ab4.to(".about-4-title-shape img", {
+        translateX: 500,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".client-area-4",
+          start: "bottom bottom",
+          endTrigger: ".client-area-4",
+          end: "bottom center",
+          pin: ".about-area-4",
+          pinSpacing: true,
+          scrub: 0,
+          markers: true,
+        }
+      })
+      ab4.to(".about-4-title-shape img", {
+        scale: 400,
+        rotation: 90,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".client-area-4",
+          start: "bottom center",
+          endTrigger: ".client-area-4",
+          end: "bottom top",
+          pin: ".about-area-4",
+          pinSpacing: true,
+          scrub: 0,
+          markers: true,
+        }
+      })
+    });
+  }
+
+
+  // service area animation 
+  if (document.querySelectorAll(".service-area").length > 0) {
+    mm.add("(min-width: 1200px)", () => {
+      window.addEventListener("load", () => {
+        const tl = gsap.timeline();
+
+        tl.to(".services-wrapper-1 .service-box-1", {
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".services-wrapper-box",
+            start: "top top",
+            end: "+=50%",
+            toggleActions: "play complete play reverse",
+            pin: true,
+            // markers: true,
+          }
+        });
+
+        tl.to(".add-shape-wrapper", {
+          transform: "translate(0, 0)",
+          ease: "none",
+          duration: 50,
+          scrollTrigger: {
+            trigger: ".add",
+            start: "top top",
+            end: "center top",
+            scrub: true,
+            // markers: true,
+          }
+        });
+
+        tl.to(".add-shape", {
+          transform: "scale(860)",
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".add",
+            start: "center top",
+            end: "bottom -=30%",
+            pin: ".service-area",
+            scrub: 0,
+            // markers: true,
+          }
+        });
+      });
+    });
+  }
+
+
+  // Animate the image scaling to fullscreen, keeping center position
+  gsap.to(".image-wrapper", {
+    scrollTrigger: {
+      trigger: ".hero-area-7",
+      start: "top top",
+      end: "+=100%",
+      scrub: 1,
+      pin: true,
+    },
+    width: "100vw",
+    height: "100vh",
+    ease: "power4.inOut"
+  });
+
+
+  // Labels fade in with horizontal movement
+  gsap.to(".label-left", {
+    scrollTrigger: {
+      trigger: ".hero-area-7",
+      start: "top 30%",
+      end: "top 10%",
+      scrub: true
+    },
+    opacity: 1,
+    x: -10
+  });
+
+  gsap.to(".label-right", {
+    scrollTrigger: {
+      trigger: ".hero-area-7",
+      start: "top 30%",
+      end: "top 10%",
+      scrub: true
+    },
+    opacity: 1,
+    x: 10
+  });
+
+
+  // hover reveal 4 start
+  // if (document.querySelectorAll(".our-expertise-7").length > 0) {
+  //   const hoveritem = document.querySelectorAll(
+  //     ".our-expertise-7__item"
+  //   );
+
+  //   function moveImage(e, hoveritem, index) {
+  //     const item = hoveritem.getBoundingClientRect();
+  //     const x = e.clientX - item.x;
+  //     const y = e.clientY - item.y;
+  //     if (hoveritem.children[index]) {
+  //       hoveritem.children[
+  //         index
+  //       ].style.transform = `translate(${x}px, ${y}px)`;
+  //     }
+  //   }
+  //   hoveritem.forEach((item, i) => {
+  //     item.addEventListener("mousemove", (e) => {
+  //       setInterval(moveImage(e, item, 1), 50);
+  //     });
+  //     add.to(".add-shape", {
+  //       transform: "scale(860)",
+  //       ease: "none",
+  //       delay: 1,
+  //       scrollTrigger: {
+  //         trigger: ".add",
+  //         start: "bottom 100%",
+  //         end: "bottom top",
+  //         pin: true,
+  //         scrub: 1,
+  //         // markers: true,
+  //       }
+  //     }, "+=1");
+  //   });
+  // }
 
 })(jQuery);
 
