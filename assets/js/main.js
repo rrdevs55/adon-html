@@ -970,114 +970,55 @@
     });
   }
 
-  // service_box animation 
-  // if (document.querySelectorAll(".service-box-1").length > 0) {
-  //   mm.add("(min-width: 1200px)", () => {
-  //     var service_box = document.querySelectorAll(".service-box-1");
-  //     service_box.forEach((item) => {
-  //       gsap.to(item, {
-  //         transform: "translate(0, 0)",
-  //         ease: "none",
-  //         scrollTrigger: {
-  //           trigger: item,
-  //           start: 'top 80%',
-  //           end: "top 20%",
-  //           pin: ".services-wrapper-box",
-  //           pinSpacing: false,
-  //           scrub: 1,
-  //           // toggleActions: "play reverse play reverse",
-  //           markers: true,
-  //         }
-  //       });
-  //     });
-  //   });
-  // }
 
-  window.addEventListener("load", () => {
-    // Create a timeline with a delay before starting
-    const tl = gsap.timeline();
+  // service area animation 
+  if (document.querySelectorAll(".service-area").length > 0) {
+    mm.add("(min-width: 1200px)", () => {
+      window.addEventListener("load", () => {
+        const tl = gsap.timeline();
 
-    // Animate service boxes with stagger and pinning
-    tl.to(".services-wrapper-1 .service-box-1", {
-      x: 0,
-      duration: 1,
-      ease: "power2.out",
-      delay: 1,
-      // stagger: 0.2, // animate each item one after the other
-      scrollTrigger: {
-        trigger: ".services-wrapper-box",
-        start: "top top",
-        end: "bottom bottom",
-        pin: ".services-wrapper-box",
-        pinSpacing: false,
-        toggleActions: "play reverse play reverse",
-        markers: true,
-      }
+        tl.to(".services-wrapper-1 .service-box-1", {
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".services-wrapper-box",
+            start: "top top",
+            end: "+=50%",
+            toggleActions: "play complete play reverse",
+            pin: true,
+            // markers: true,
+          }
+        });
+
+        tl.to(".add-shape-wrapper", {
+          transform: "translate(0, 0)",
+          ease: "none",
+          duration: 50,
+          scrollTrigger: {
+            trigger: ".add",
+            start: "top top",
+            end: "center top",
+            scrub: true,
+            // markers: true,
+          }
+        });
+
+        tl.to(".add-shape", {
+          transform: "scale(860)",
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".add",
+            start: "center top",
+            end: "bottom -=30%",
+            pin: ".service-area",
+            scrub: 0,
+            // markers: true,
+          }
+        });
+      });
     });
-
-    // Animate shape wrapper with a small delay after service boxes
-    tl.to(".add-shape-wrapper", {
-      transform: "translate(0, 0)",
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".add-shape",
-        start: "center 50%",
-        end: "center top",
-        scrub: 0,
-        markers: true,
-      }
-    }, "+=5"); // wait 0.5s after previous animation
-
-    // Scale up the shape with pinning
-    tl.to(".add-shape", {
-      transform: "scale(860)",
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".add",
-        start: "center center",
-        end: "center top",
-        pin: ".service-area",
-        scrub: 0,
-        markers: true,
-      }
-    }); // wait 1s after previous animation
-  });
-
-
-
-
-
-
-  // add animation 
-  // if (document.querySelectorAll(".add").length > 0) {
-  //   mm.add("(min-width: 1200px)", () => {
-  //     var add = gsap.timeline();
-  //     add.to(".add-shape-wrapper", {
-  //       transform: "translate(0, 0)",
-  //       ease: "none",
-  //       scrollTrigger: {
-  //         trigger: ".add-shape",
-  //         start: "center 50%",
-  //         end: "center top",
-  //         scrub: 1,
-  //         // markers: true,
-  //       }
-  //     });
-  //     add.to(".add-shape", {
-  //       transform: "scale(860)",
-  //       ease: "none",
-  //       delay: 1,
-  //       scrollTrigger: {
-  //         trigger: ".add",
-  //         start: "bottom 100%",
-  //         end: "bottom top",
-  //         pin: true,
-  //         scrub: 1,
-  //         // markers: true,
-  //       }
-  //     }, "+=1");
-  //   });
-  // }
+  }
 
 
   // Animate the image scaling to fullscreen, keeping center position

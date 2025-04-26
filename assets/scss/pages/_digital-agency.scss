@@ -1006,7 +1006,6 @@
     grid-template-columns: repeat(5, 1fr);
     padding-bottom: 100px;
     margin-top: -520px;
-    padding: 0;
 
     @media #{$xxl} {
         margin-top: -410px;
@@ -1228,6 +1227,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
 
     @media #{$lg} {
         display: none;
