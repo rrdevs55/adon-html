@@ -721,43 +721,87 @@
 .footer-area-7 {
 
     .footer-inner-7 {
-
         border-top: 1px solid #D5D0CE;
     }
 
     .footer-widget-wrapper {
         display: grid;
         grid-template-columns: 833px 445px 540px;
+
+        @media #{$xl} {
+            grid-template-columns: auto auto auto;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: auto;
+        }
     }
 
     .copyright-text {
         padding-top: 100px;
 
-        .logo {}
+        @media #{$lg} {
+            padding-top: 70px;
+        }
+
+        @media #{$md} {
+            padding-top: 50px;
+        }
 
         .text {
             font-size: 20px;
             margin-top: 43px;
             font-weight: 400;
             color: var(--black);
+
+            @media #{$lg} {
+                margin-top: 30px;
+            }
+
+            @media #{$sm} {
+                margin-top: 15px;
+            }
         }
     }
 
     .footer-widget-box {
         padding-left: 100px;
         position: relative;
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 94px;
+        padding-bottom: 94px;
+
+        @media #{$lg} {
+            padding-left: 50px;
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        @media #{$md} {
+            padding-left: 20px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+
+        }
+
+        @media #{$sm} {
+            padding-left: 0;
+            padding-top: 30px;
+            padding-bottom: 10px;
+        }
 
 
         &::before {
-            position: absolute;
             content: "";
             top: 0;
             left: 0;
-            height: 1000px;
             width: 1px;
-            background-color: var(--primary);
+            height: 1000px;
+            position: absolute;
+            background-color: #D5D0CE;
+
+            @media #{$sm} {
+                display: none;
+            }
         }
 
         .title {
@@ -768,6 +812,18 @@
             color: var(--primary);
             text-transform: uppercase;
             font-family: var(--font_ppeditor);
+
+            @media #{$lg} {
+                margin-bottom: 20px;
+            }
+
+            @media #{$sm} {
+                margin-bottom: 5px;
+            }
+
+            @media #{$xs} {
+                font-size: 22px;
+            }
         }
 
         p {

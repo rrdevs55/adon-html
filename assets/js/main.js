@@ -286,7 +286,14 @@
     },
       "-=1.5"
     );
+
     // Preloader end
+
+    // Images Loaded - Wait for all images to load before removing 'loading' class
+    imagesLoaded(document.querySelectorAll('.preload'), () => {
+      console.log('All images loaded!');
+      document.body.classList.remove('loading');
+    });
   }
 
 
@@ -1031,42 +1038,44 @@
 
 
   // Animate the image scaling to fullscreen, keeping center position
-  gsap.to(".image-wrapper", {
-    scrollTrigger: {
-      trigger: ".hero-area-7",
-      start: "top top",
-      end: "+=100%",
-      scrub: 1,
-      pin: true,
-    },
-    width: "100vw",
-    height: "100vh",
-    ease: "power4.inOut"
-  });
+  if ($('.hero-area-7').length > 0 && window.innerWidth > 1200) {
+    gsap.to(".image-wrapper", {
+      scrollTrigger: {
+        trigger: ".hero-area-7",
+        start: "top 10%",
+        end: "+=100%",
+        scrub: 1,
+        pin: true,
+      },
+      width: "100vw",
+      height: "100vh",
+      ease: "power4.inOut"
+    });
 
 
-  // Labels fade in with horizontal movement
-  gsap.to(".label-left", {
-    scrollTrigger: {
-      trigger: ".hero-area-7",
-      start: "top 30%",
-      end: "top 10%",
-      scrub: true
-    },
-    opacity: 1,
-    x: -10
-  });
+    // Labels fade in with horizontal movement
+    gsap.to(".label-left", {
+      scrollTrigger: {
+        trigger: ".hero-area-7",
+        start: "top 30%",
+        end: "top 10%",
+        scrub: true
+      },
+      opacity: 1,
+      x: -10
+    });
 
-  gsap.to(".label-right", {
-    scrollTrigger: {
-      trigger: ".hero-area-7",
-      start: "top 30%",
-      end: "top 10%",
-      scrub: true
-    },
-    opacity: 1,
-    x: 10
-  });
+    gsap.to(".label-right", {
+      scrollTrigger: {
+        trigger: ".hero-area-7",
+        start: "top 30%",
+        end: "top 10%",
+        scrub: true
+      },
+      opacity: 1,
+      x: 10
+    });
+  }
 
 
   // hover reveal 4 start
@@ -1104,6 +1113,7 @@
   //     }, "+=1");
   //   });
   // }
+
 
 })(jQuery);
 
