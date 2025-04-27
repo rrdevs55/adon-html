@@ -502,14 +502,6 @@
 }
 
 .portfolio-3-slider-box {
-    // display: grid;
-    // gap: 5px;
-    // grid-template-columns: 1fr 1fr;
-
-    // @media #{$xs} {
-    //     grid-template-columns: 1fr;
-    // }
-
     width: 100%;
     overflow: hidden;
 
@@ -725,6 +717,10 @@
 .services-3-image-wrapper {
     border-radius: 20px;
     margin-top: 5px;
+
+    img {
+        border-radius: 20px;
+    }
 }
 
 /* team area 3 style  */
