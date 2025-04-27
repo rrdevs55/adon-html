@@ -6,12 +6,53 @@
     .section-title {
         margin-bottom: 120px;
 
+        @media #{$xl} {
+            margin-bottom: 100px;
+        }
+
+        @media #{$lg} {
+            margin-bottom: 80px;
+        }
+
+        @media #{$md} {
+            margin-bottom: 50px;
+        }
+
+        @media #{$sm} {
+            margin-bottom: 30px;
+        }
+
         .title {
             font-size: 180px;
             font-weight: 200;
             line-height: 170px;
             text-transform: uppercase;
             font-family: var(--font_ppeditor);
+
+            @media #{$xl} {
+                font-size: 150px;
+                line-height: 150px;
+            }
+
+            @media #{$lg} {
+                font-size: 100px;
+                line-height: 100px;
+            }
+
+            @media #{$md} {
+                font-size: 80px;
+                line-height: 80px;
+            }
+
+            @media #{$sm} {
+                font-size: 60px;
+                line-height: 60px;
+            }
+
+            @media #{$xs} {
+                font-size: 40px;
+                line-height: 40px;
+            }
         }
     }
 
@@ -24,6 +65,28 @@
         padding-bottom: 50px;
         border-bottom: 1px solid #D5D0CE;
         grid-template-columns: 234px 930px 1fr;
+
+        @media #{$xxl} {
+            grid-template-columns: 234px 630px 1fr;
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 234px 430px 1fr;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 200px 300px 1fr;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 80px 290px 1fr;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr;
+            padding-bottom: 20px;
+            gap: 20px;
+        }
 
         &::before {
             transition: all 0.3s;
@@ -63,14 +126,34 @@
         }
 
         .title {
+            z-index: 1;
             font-size: 60px;
             font-weight: 200;
             line-height: 60px;
             position: relative;
-            z-index: 1;
             color: var(--primary);
             text-transform: uppercase;
             font-family: var(--font_ppeditor);
+
+            @media #{$xl} {
+                font-size: 50px;
+                line-height: 50px;
+            }
+
+            @media #{$lg} {
+                font-size: 40px;
+                line-height: 45px;
+            }
+
+            @media #{$sm} {
+                font-size: 35px;
+                line-height: 35px;
+            }
+
+            @media #{$xs} {
+                font-size: 29px;
+                line-height: 30px;
+            }
         }
 
         p {
@@ -81,6 +164,12 @@
             color: var(--primary);
             z-index: 1;
             position: relative;
+
+            @media #{$md} {
+                max-width: 100%;
+            }
+
+
         }
     }
 

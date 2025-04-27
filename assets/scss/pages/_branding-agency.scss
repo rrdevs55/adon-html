@@ -722,6 +722,10 @@
         display: inline-flex;
         align-items: self-start;
         gap: 10px;
+
+        @media #{$sm} {
+            flex-wrap: wrap;
+        }
     }
 
     .fun-fact__item {
