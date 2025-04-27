@@ -287,14 +287,8 @@
       "-=1.5"
     );
 
-    // Preloader end
-
-    // Images Loaded - Wait for all images to load before removing 'loading' class
-    imagesLoaded(document.querySelectorAll('.preload'), () => {
-      console.log('All images loaded!');
-      document.body.classList.remove('loading');
-    });
   }
+  // Preloader end
 
 
 
