@@ -93,6 +93,8 @@
 }
 
 .hero-6-nav {
+    position: relative;
+    z-index: 1;
     margin-top: 146px;
 
     @media #{$xxl} {
@@ -181,6 +183,8 @@
 
     .section-title-wrapper {
         margin-top: 174px;
+        position: relative;
+        z-index: 1;
 
         @media #{$xxl} {
             margin-top: 124px;
@@ -532,12 +536,15 @@
 }
 
 .portfolio-6-item {
+    position: relative;
+
 
     .thumb {
         img {
-            cursor: none;
+            // cursor: none;
         }
     }
+
 
 
     .content {
@@ -545,6 +552,8 @@
         gap: 10px 30px;
         grid-template-columns: 1fr auto;
         margin-top: 14px;
+        text-align: start;
+
 
         @media (min-width:1200px) {
             display: none;
