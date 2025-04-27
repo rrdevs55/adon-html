@@ -294,13 +294,6 @@
       "-=1.5"
     );
 
-    // Preloader end
-
-    // Images Loaded - Wait for all images to load before removing 'loading' class
-    imagesLoaded(document.querySelectorAll('.preload'), () => {
-      console.log('All images loaded!');
-      document.body.classList.remove('loading');
-    });
   }
 
 
@@ -1007,60 +1000,60 @@
   //   });
   // }
 
-  window.addEventListener("load", () => {
-    // Create a timeline with a delay before starting
-    const tl = gsap.timeline({ delay: 2 });
+  // window.addEventListener("load", () => {
+  //   // Create a timeline with a delay before starting
+  //   const tl = gsap.timeline({ delay: 2 });
 
-    // Assuming totalItemDuration is calculated based on previous animations
-    let totalItemDuration = 2; // You can dynamically calculate this based on your timeline
+  //   // Assuming totalItemDuration is calculated based on previous animations
+  //   let totalItemDuration = 2; // You can dynamically calculate this based on your timeline
 
-    // Animate service boxes with stagger and pinning
-    tl.to(".services-wrapper-1 .service-box-1", {
-      x: 0,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".services-wrapper-box",
-        start: "top 80%", // Start when the top of the element is at 80% of the viewport height
-        end: "top top",
-        pin: ".services-wrapper-box",
-        markers: true
-      }
-    });
+  //   // Animate service boxes with stagger and pinning
+  //   tl.to(".services-wrapper-1 .service-box-1", {
+  //     x: 0,
+  //     duration: 1,
+  //     ease: "power2.out",
+  //     scrollTrigger: {
+  //       trigger: ".services-wrapper-box",
+  //       start: "top 80%", // Start when the top of the element is at 80% of the viewport height
+  //       end: "top top",
+  //       pin: ".services-wrapper-box",
+  //       markers: true
+  //     }
+  //   });
 
-    // Use the relative timing to add this animation after the previous one
-    tl.to({}, {
-      duration: 2,
-      onStart: () => {
-        console.log("Animation started after the previous one");
-      }
-    }, `+=${totalItemDuration}`); // The new animation will start after `totalItemDuration`
+  //   // Use the relative timing to add this animation after the previous one
+  //   tl.to({}, {
+  //     duration: 2,
+  //     onStart: () => {
+  //       console.log("Animation started after the previous one");
+  //     }
+  //   }, `+=${totalItemDuration}`); // The new animation will start after `totalItemDuration`
 
-    // Animate shape wrapper with a small delay after service boxes
-    tl.to(".add-shape-wrapper", {
-      transform: "translate(0, 0)",
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".add-shape",
-        start: "center 50%",
-        end: "center top",
-        scrub: 1,
-      }
-    }, `+=${totalItemDuration}`); // Wait for `totalItemDuration` before this starts
+  //   // Animate shape wrapper with a small delay after service boxes
+  //   tl.to(".add-shape-wrapper", {
+  //     transform: "translate(0, 0)",
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: ".add-shape",
+  //       start: "center 50%",
+  //       end: "center top",
+  //       scrub: 1,
+  //     }
+  //   }, `+=${totalItemDuration}`); // Wait for `totalItemDuration` before this starts
 
-    // Scale up the shape with pinning
-    tl.to(".add-shape", {
-      transform: "scale(860)",
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".add",
-        start: "bottom 100%", // Start when the bottom of the element is at 100% of the viewport height
-        end: "bottom top",
-        pin: true,
-        scrub: 1,
-      }
-    }, `+=${totalItemDuration}`); // Wait for `totalItemDuration` before this starts
-  });
+  //   // Scale up the shape with pinning
+  //   tl.to(".add-shape", {
+  //     transform: "scale(860)",
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: ".add",
+  //       start: "bottom 100%", // Start when the bottom of the element is at 100% of the viewport height
+  //       end: "bottom top",
+  //       pin: true,
+  //       scrub: 1,
+  //     }
+  //   }, `+=${totalItemDuration}`); // Wait for `totalItemDuration` before this starts
+  // });
 
 
 
@@ -1163,6 +1156,7 @@
   //   });
   // }
   // hover reveal 4 end
+
 
 })(jQuery);
 

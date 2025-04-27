@@ -1,137 +1,85 @@
-{
-    const mapNumber = (X, A, B, C, D) => (X - A) * (D - C) / (B - A) + C;
-    const getMousePos = (e) => {
-        let posx = 0;
-        let posy = 0;
-        if (!e) e = window.event;
-        if (e.pageX || e.pageY) {
-            posx = e.pageX;
-            posy = e.pageY;
-        }
-        else if (e.clientX || e.clientY) {
-            posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-            posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-        }
-        return { x: posx, y: posy }
-    }
-    const getRandomFloat = (min, max) => (Math.random() * (max - min) + min).toFixed(2);
+const serviceItems = document.querySelectorAll('.our-expertise-item');
 
+serviceItems.forEach(item => {
+    // Create a hover image inside each service item
+    const hoverImage = document.createElement('div');
+    hoverImage.className = 'hover-image';
+    hoverImage.innerHTML = '<img src="" alt="Hover Preview">';
+    item.appendChild(hoverImage);
 
-    class HoverImgFx8 {
-        constructor(el) {
-            this.DOM = { el: el };
+    const hoverImgEl = hoverImage.querySelector('img');
+    let target = { x: 0, y: 0 };
+    let current = { x: 0, y: 0 };
+    let lastPos = { x: 0, y: 0 };
+    let tracking = false;
+    let mouseSpeed = 0;
 
-            this.DOM.reveal = document.createElement('div');
-            this.DOM.reveal.className = 'hover-reveal';
-            this.DOM.reveal.innerHTML = `<div class="hover-reveal__deco"></div><div class="hover-reveal__inner"><div class="hover-reveal__img" style="background-image:url(${this.DOM.el.dataset.img})"></div></div>`;
-            this.DOM.el.appendChild(this.DOM.reveal);
-            this.DOM.revealInner = this.DOM.reveal.querySelector('.hover-reveal__inner');
-            this.DOM.revealInner.style.overflow = 'hidden';
-            this.DOM.revealDeco = this.DOM.reveal.querySelector('.hover-reveal__deco');
-            this.DOM.revealImg = this.DOM.revealInner.querySelector('.hover-reveal__img');
-            this.rect = this.DOM.reveal.getBoundingClientRect();
-            // charming(this.DOM.el);
-            this.DOM.letters = [...this.DOM.el.querySelectorAll('span')];
-            this.initEvents();
-        }
-        initEvents() {
-            this.positionElement = (ev) => {
-                const mousePos = getMousePos(ev);
-                const docScrolls = {
-                    left: document.body.scrollLeft + document.documentElement.scrollLeft,
-                    top: document.body.scrollTop + document.documentElement.scrollTop
-                };
-                this.DOM.reveal.style.top = `${mousePos.y + 20 - docScrolls.top}px`;
-                this.DOM.reveal.style.left = `${mousePos.x + 20 - docScrolls.left}px`;
-            };
-            this.mouseenterFn = (ev) => {
-                this.positionElement(ev);
-                this.showImage();
-            };
-            this.mousemoveFn = ev => requestAnimationFrame(() => {
-                this.positionElement(ev);
-            });
-            this.mouseleaveFn = () => {
-                this.hideImage();
-            };
+    function animateImageFollow() {
+        if (!tracking) return;
+        current.x += (target.x - current.x) * 0.2;
+        current.y += (target.y - current.y) * 0.2;
 
-            this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
-            this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
-            this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
-        }
-        showImage() {
+        const deltaX = target.x - lastPos.x;
+        const deltaY = target.y - lastPos.y;
+        mouseSpeed = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
-            TweenMax.killTweensOf(this.DOM.revealInner);
-            TweenMax.killTweensOf(this.DOM.revealImg);
-            TweenMax.killTweensOf(this.DOM.revealDeco);
+        lastPos.x = target.x;
+        lastPos.y = target.y;
 
-            this.tl = new TimelineMax({
-                onStart: () => {
-                    this.DOM.reveal.style.opacity = 1;
-                    TweenMax.set(this.DOM.el, { zIndex: 1000 });
-                }
-            })
-                .set(this.DOM.revealInner, { opacity: 0 })
-                .add('begin')
-                .set(this.DOM.revealDeco, { transformOrigin: '50% 0%' })
-                .add(new TweenMax(this.DOM.revealDeco, 0.6, {
-                    ease: Cubic.easeInOut,
-                    startAt: { opacity: 0, x: '0', y: '5%', rotate: 0, scaleY: 3 },
-                    scaleY: 1,
-                    opacity: 1,
-                    y: '-1px',
-                    x: '-37px',
-                    rotate: -10,
-                }), 'begin')
-                .add(new TweenMax(this.DOM.revealInner, 0.8, {
-                    ease: Expo.easeOut,
-                    startAt: { y: '10%', rotation: 3 },
-                    opacity: 1,
-                    rotation: 0,
-                    y: '0%'
-                }), 'begin+=0.4')
-                .add(new TweenMax(this.DOM.revealImg, 1.3, {
-                    ease: Expo.easeOut,
-                    startAt: { scale: 1.4 },
-                    scale: 1
-                }), 'begin+=0.4')
-        }
-        hideImage() {
+        const skewFactorX = 1;
+        const maxSkewX = 20;
+        const skewX = Math.min(maxSkewX, Math.max(-maxSkewX, deltaX * skewFactorX));
 
-            TweenMax.killTweensOf(this.DOM.revealInner);
-            TweenMax.killTweensOf(this.DOM.revealImg);
-            TweenMax.killTweensOf(this.DOM.revealDeco);
+        gsap.set(hoverImage, {
+            x: current.x,
+            y: current.y,
+            skewX: skewX,
+        });
 
-            this.tl = new TimelineMax({
-                onStart: () => {
-                    TweenMax.set(this.DOM.el, { zIndex: 999 });
-                },
-                onComplete: () => {
-                    TweenMax.set(this.DOM.el, { zIndex: '' });
-                    TweenMax.set(this.DOM.reveal, { opacity: 0 });
-                }
-            })
-                .add('begin')
-                .add(new TweenMax([this.DOM.revealDeco, this.DOM.revealInner], 0.2, {
-                    ease: Expo.easeOut,
-                    opacity: 0
-                }), 'begin')
-        }
+        requestAnimationFrame(animateImageFollow);
     }
 
-    [...document.querySelectorAll('[data-fx="8"] > a, a[data-fx="8"]')].forEach(link => new HoverImgFx8(link));
+    item.addEventListener('mouseenter', (e) => {
+        tracking = true;
+        const imgSrc = item.getAttribute('data-img');
+        hoverImgEl.src = imgSrc;
 
-    const contentel = document.querySelector('.image-reveal-hover-content');
-    [...document.querySelectorAll('.block__title, .block__link, .content__text-link')].forEach((el) => {
-        const imgsArr = el.dataset.img.split(',');
-        for (let i = 0, len = imgsArr.length; i <= len - 1; ++i) {
-            const imgel = document.createElement('img');
-            imgel.style.visibility = 'hidden';
-            imgel.style.width = 0;
-            imgel.src = imgsArr[i];
-            imgel.className = 'preload';
-            contentel.appendChild(imgel);
-        }
+        const rect = item.getBoundingClientRect();
+        target.x = e.clientX - rect.left;
+        target.y = e.clientY - rect.top;
+        current.x = target.x;
+        current.y = target.y;
+
+        gsap.set(hoverImage, {
+            x: target.x,
+            y: target.y,
+            scale: 0,
+            opacity: 1
+        });
+
+        gsap.to(hoverImage, {
+            scale: 1,
+            duration: 0.4,
+            ease: 'power3.out'
+        });
+
+        animateImageFollow();
     });
-    imagesLoaded(document.querySelectorAll('.preload'), () => document.body.classList.remove('loading'));
-}
+
+    item.addEventListener('mousemove', (e) => {
+        if (!tracking) return;
+        const rect = item.getBoundingClientRect();
+        target.x = e.clientX - rect.left;
+        target.y = e.clientY - rect.top;
+    });
+
+    item.addEventListener('mouseleave', () => {
+        tracking = false;
+        gsap.to(hoverImage, {
+            scale: 0,
+            opacity: 0,
+            duration: 0.3,
+            ease: 'power3.in'
+        });
+    });
+});
