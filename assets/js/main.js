@@ -4,54 +4,7 @@
 
   // Data Css js
   //  sticky header
-  // Register GSAP Plugins
-  // Smooth active
-  // Preloader
-  // Side Info Js
-  // meanmenu activation 
-  // Counter active
-  // Magnific Video popup
-  // Image Reveal Animation
-  // testimonial slider
-  // text slider 
-  // client slider 
-  // GSAP Fade Animation 
-  // Text Invert With Scroll 
-  // Pin Active
-  // grow animation 
-  // go full width 
-  // scale animation 
-  // cta text animation 
-  // hover reveal start
-  // go-visible animation 
-  // video Active
-  // Moving text		
-  // Moving Gallery		
-  // moving testimonial 
-  // capability hover active 
-  // video start
-  // text-animation start
-  // service-area-2 text and bg animation start
-  // work-area-2 box animation start
-  // hover reveal image animation 
-  // GSAP hover animations for .text-underline elements
-  // Client Pin Active
-  // about 3 thumb animation 
-  // GSAP title animation
-  // Animation Word
-  // Full Character Setup 
-  // approach-area
-  // approach-area service details page
-  // button animation
-  // service-area-4
-  // service-area-4 image
-  // portfolio-slide
-  // portfolio-slide-2
-  // portfolio-slide-3
-  // portfolio-slide-4
-  // portfolio-slide-5
-  // parallax
-  // woking card
+
 
 
 
@@ -280,7 +233,7 @@
     });
     tl.from(
       "main", {
-      y: 100,
+      y: 0,
       opacity: 0,
       delay: 0.3,
     },
@@ -927,59 +880,139 @@
     });
   }
 
+
+
+
+
   // about-4-title-shape animation 
   if (document.querySelectorAll(".about-4-title-shape").length > 0) {
-    mm.add("(min-width: 1200px)", () => {
-      var ab4 = gsap.timeline();
-      ab4.to(".about-4-title-shape img", {
-        width: "40px",
-        height: "40px",
-        // translateX: 50,
-        rotation: 180,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".about-4-title-shape",
-          start: "center center",
-          endTrigger: ".client-area-4",
-          end: "bottom bottom",
-          pin: true,
-          pinSpacing: false,
-          scrub: 0,
-          markers: true,
-        }
-      })
-      ab4.to(".about-4-title-shape img", {
-        translateX: 500,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".client-area-4",
-          start: "bottom bottom",
-          endTrigger: ".client-area-4",
-          end: "bottom center",
-          pin: ".about-area-4",
-          pinSpacing: true,
-          scrub: 0,
-          markers: true,
-        }
-      })
-      ab4.to(".about-4-title-shape img", {
-        scale: 400,
-        rotation: 90,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".client-area-4",
-          start: "bottom center",
-          endTrigger: ".client-area-4",
-          end: "bottom top",
-          pin: ".about-area-4",
-          pinSpacing: true,
-          scrub: 0,
-          markers: true,
-        }
-      })
+    ScrollTrigger.matchMedia({
+      "(min-width: 1400px)": function () {
+        var ab4 = gsap.timeline();
+        ab4.to(".about-4-title-shape img", {
+          width: "40px",
+          height: "40px",
+          marginLeft: 50,
+          rotation: 180,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".about-4-title-shape",
+            start: "center center",
+            endTrigger: ".client-area-4",
+            end: "bottom bottom",
+            pin: true,
+            pinSpacing: false,
+            scrub: 0,
+            // markers: true,
+          }
+        })
+        ab4.to(".title-4-text-last", {
+          translateX: "1.4em",
+          ease: "power2.out",
+          display: "inline-block",
+          scrollTrigger: {
+            trigger: ".title-4-text-last",
+            start: "top bottom",
+            end: "center center",
+            pinSpacing: false,
+            scrub: 2,
+            // markers: true,
+          }
+        })
+        ab4.to(".about-4-title-shape img", {
+          translateX: 450,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".client-area-4",
+            start: "bottom bottom",
+            endTrigger: ".client-area-4",
+            end: "bottom center",
+            pin: ".about-area-4",
+            pinSpacing: true,
+            scrub: 0,
+            // markers: true,
+          }
+        })
+        ab4.to(".about-4-title-shape img", {
+          scale: 400,
+          rotation: 90,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".client-area-4",
+            start: "bottom center",
+            endTrigger: ".client-area-4",
+            end: "bottom top",
+            pin: ".about-area-4",
+            pinSpacing: true,
+            scrub: 0,
+            // markers: true,
+          }
+        })
+      },
+      "(min-width: 1200px) and (max-width: 1399px)": function () {
+        var ab4 = gsap.timeline();
+        ab4.to(".about-4-title-shape img", {
+          width: "40px",
+          height: "40px",
+          marginLeft: 50,
+          rotation: 180,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".about-4-title-shape",
+            start: "center center",
+            endTrigger: ".client-area-4",
+            end: "bottom bottom",
+            pin: true,
+            pinSpacing: false,
+            scrub: 0,
+            // markers: true,
+          }
+        })
+        ab4.to(".title-4-text-last", {
+          translateX: "1.7em",
+          ease: "power2.out",
+          display: "inline-block",
+          scrollTrigger: {
+            trigger: ".title-4-text-last",
+            start: "top bottom",
+            end: "center center",
+            pinSpacing: false,
+            scrub: 2,
+            // markers: true,
+          }
+        })
+        ab4.to(".about-4-title-shape img", {
+          translateX: 350,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".client-area-4",
+            start: "bottom bottom",
+            endTrigger: ".client-area-4",
+            end: "bottom center",
+            pin: ".about-area-4",
+            pinSpacing: true,
+            scrub: 0,
+            // markers: true,
+          }
+        })
+        ab4.to(".about-4-title-shape img", {
+          scale: 400,
+          rotation: 90,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".client-area-4",
+            start: "bottom center",
+            endTrigger: ".client-area-4",
+            end: "bottom top",
+            pin: ".about-area-4",
+            pinSpacing: true,
+            scrub: 0,
+            // markers: true,
+          }
+        })
+      },
     });
   }
-
 
   // service area animation 
   if (document.querySelectorAll(".service-area").length > 0) {
@@ -1048,55 +1081,57 @@
 
 
     // Labels fade in with horizontal movement
-    gsap.to(".label-left", {
-      scrollTrigger: {
-        trigger: ".hero-area-7",
-        start: "top 30%",
-        end: "top 10%",
-        scrub: true
-      },
-      opacity: 1,
-      x: -10
-    });
+    if (document.querySelectorAll(".hero-area-7").length > 0) {
 
-    gsap.to(".label-right", {
-      scrollTrigger: {
-        trigger: ".hero-area-7",
-        start: "top 30%",
-        end: "top 10%",
-        scrub: true
-      },
-      opacity: 1,
-      x: 10
-    });
-  }
+      gsap.to(".label-left", {
+        scrollTrigger: {
+          trigger: ".hero-area-7",
+          start: "top 30%",
+          end: "top 10%",
+          scrub: true
+        },
+        opacity: 1,
+        x: -10
+      });
 
-  // counter section
-  if ($('.funding-success').length > 0 && window.innerWidth > 767) {
-    const counterElement = document.getElementById("counter");
-    const finalValue = parseInt(counterElement.dataset.value);
-    const prefix = counterElement.dataset.prefix || "";
-    const suffix = counterElement.dataset.suffix || "";
-    const counterObj = { value: 0 };
+      gsap.to(".label-right", {
+        scrollTrigger: {
+          trigger: ".hero-area-7",
+          start: "top 30%",
+          end: "top 10%",
+          scrub: true
+        },
+        opacity: 1,
+        x: 10
+      });
+    }
 
-    counterElement.textContent = `${prefix}0${suffix}`;
+    // counter section
+    if ($('.funding-success').length > 0 && window.innerWidth > 767) {
+      const counterElement = document.getElementById("counter");
+      const finalValue = parseInt(counterElement.dataset.value);
+      const prefix = counterElement.dataset.prefix || "";
+      const suffix = counterElement.dataset.suffix || "";
+      const counterObj = { value: 0 };
 
-    gsap.to(counterObj, {
-      value: finalValue,
-      scrollTrigger: {
-        trigger: ".funding-success",
-        start: "top 20%",
-        end: "+=1000",
-        scrub: true,
-        pin: true,
-      },
-      onUpdate: () => {
-        counterElement.textContent = `${prefix}${Math.floor(counterObj.value)}${suffix}`;
-      }
-    });
+      counterElement.textContent = `${prefix}0${suffix}`;
 
-  }
+      gsap.to(counterObj, {
+        value: finalValue,
+        scrollTrigger: {
+          trigger: ".funding-success",
+          start: "top 20%",
+          end: "+=1000",
+          scrub: true,
+          pin: true,
+        },
+        onUpdate: () => {
+          counterElement.textContent = `${prefix}${Math.floor(counterObj.value)}${suffix}`;
+        }
+      });
 
-})(jQuery);
+    }
+
+  }) (jQuery);
 
 
