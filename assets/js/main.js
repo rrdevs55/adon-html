@@ -910,7 +910,7 @@
 
 
   // Moving Gallery		
-  if (document.querySelectorAll(".fun-fact-area-inner").length > 0) {
+  if ($('.fun-fact-area-inner').length > 0 && window.innerWidth > 767) {
     gsap.utils.toArray('.fun-fact-area-inner').forEach((section, index) => {
       const w = section.querySelector('.fun-fact-wrapper');
       const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
@@ -1071,43 +1071,31 @@
     });
   }
 
+  // counter section
+  if ($('.funding-success').length > 0 && window.innerWidth > 767) {
+    const counterElement = document.getElementById("counter");
+    const finalValue = parseInt(counterElement.dataset.value);
+    const prefix = counterElement.dataset.prefix || "";
+    const suffix = counterElement.dataset.suffix || "";
+    const counterObj = { value: 0 };
 
-  // hover reveal 4 start
-  // if (document.querySelectorAll(".our-expertise-7").length > 0) {
-  //   const hoveritem = document.querySelectorAll(
-  //     ".our-expertise-7__item"
-  //   );
+    counterElement.textContent = `${prefix}0${suffix}`;
 
-  //   function moveImage(e, hoveritem, index) {
-  //     const item = hoveritem.getBoundingClientRect();
-  //     const x = e.clientX - item.x;
-  //     const y = e.clientY - item.y;
-  //     if (hoveritem.children[index]) {
-  //       hoveritem.children[
-  //         index
-  //       ].style.transform = `translate(${x}px, ${y}px)`;
-  //     }
-  //   }
-  //   hoveritem.forEach((item, i) => {
-  //     item.addEventListener("mousemove", (e) => {
-  //       setInterval(moveImage(e, item, 1), 50);
-  //     });
-  //     add.to(".add-shape", {
-  //       transform: "scale(860)",
-  //       ease: "none",
-  //       delay: 1,
-  //       scrollTrigger: {
-  //         trigger: ".add",
-  //         start: "bottom 100%",
-  //         end: "bottom top",
-  //         pin: true,
-  //         scrub: 1,
-  //         // markers: true,
-  //       }
-  //     }, "+=1");
-  //   });
-  // }
+    gsap.to(counterObj, {
+      value: finalValue,
+      scrollTrigger: {
+        trigger: ".funding-success",
+        start: "top 20%",
+        end: "+=1000",
+        scrub: true,
+        pin: true,
+      },
+      onUpdate: () => {
+        counterElement.textContent = `${prefix}${Math.floor(counterObj.value)}${suffix}`;
+      }
+    });
 
+  }
 
 })(jQuery);
 
