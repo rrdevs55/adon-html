@@ -7140,8 +7140,13 @@ section {
 .services-3-image-wrapper {
   border-radius: 20px;
   margin-top: 5px;
+  aspect-ratio: 100/52;
 }
 .services-3-image-wrapper img {
+  width: 100%;
+  height: 120%;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 20px;
 }
 
@@ -7573,9 +7578,10 @@ section {
 }
 .client-3-thumb img {
   width: 100%;
-  height: 100%;
+  height: 120%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 20px;
 }
 
 .clients-3-wrapper-box {
@@ -7813,6 +7819,7 @@ section {
   width: 140px;
   height: 140px;
   margin-top: -34px;
+  display: inline-block;
 }
 @media only screen and (max-width: 1919px) {
   .about-4-title-shape img {
@@ -8979,91 +8986,6 @@ section {
   align-self: center;
   margin-left: 0.3em;
   margin-right: 0.2em;
-}
-
-:root {
-  --color-surface-white: #fffce1;
-  --color-ui-gradient: radial-gradient(78.77% 78.77% at 71.71% 30.77%,
-          #f0fcff 0%,
-          #9bedff 67.21%,
-          #98ecff 76.04%,
-          #5be1ff 84.9%,
-          #00bae2 94.79%);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.spacer {
-  width: 100%;
-  height: 20vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.containerr {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed var(--black);
-  border-radius: 10px;
-}
-
-.initial {
-  left: 60%;
-  top: 0%;
-}
-
-.second {
-  margin-left: 138px;
-}
-
-.third {
-  margin-inline: auto;
-}
-
-.fiv {
-  right: 50%;
-  bottom: 0%;
-  width: 600px;
-}
-
-.gradient-blue {
-  background: var(--color-ui-gradient), url("https://assets.codepen.io/16327/noise-e82662fe.png");
-  background-blend-mode: color-dodge;
-}
-
-.boxx {
-  width: 500px;
-  height: 100px;
-  position: relative;
-  z-index: 10;
-  border-radius: 10px;
-}
-
-.initial .boxx {
-  width: 100vw;
-  height: 100vh;
-}
-
-.second .marker {
-  width: 140px;
-  height: 140px;
-}
-
-.third .marker {
-  width: 500px;
-  height: 500px;
-}
-
-.fiv .marker {
-  width: 40px;
-  height: 40px;
-  transform: rotate(360deg);
 }
 
 .section-title-6 {
