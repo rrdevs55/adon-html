@@ -1078,60 +1078,61 @@
       height: "100vh",
       ease: "power4.inOut"
     });
+  }
 
 
-    // Labels fade in with horizontal movement
-    if (document.querySelectorAll(".hero-area-7").length > 0) {
+  // Labels fade in with horizontal movement
+  if (document.querySelectorAll(".hero-area-7").length > 0) {
 
-      gsap.to(".label-left", {
-        scrollTrigger: {
-          trigger: ".hero-area-7",
-          start: "top 30%",
-          end: "top 10%",
-          scrub: true
-        },
-        opacity: 1,
-        x: -10
-      });
+    gsap.to(".label-left", {
+      scrollTrigger: {
+        trigger: ".hero-area-7",
+        start: "top 30%",
+        end: "top 10%",
+        scrub: true
+      },
+      opacity: 1,
+      x: -10
+    });
 
-      gsap.to(".label-right", {
-        scrollTrigger: {
-          trigger: ".hero-area-7",
-          start: "top 30%",
-          end: "top 10%",
-          scrub: true
-        },
-        opacity: 1,
-        x: 10
-      });
-    }
+    gsap.to(".label-right", {
+      scrollTrigger: {
+        trigger: ".hero-area-7",
+        start: "top 30%",
+        end: "top 10%",
+        scrub: true
+      },
+      opacity: 1,
+      x: 10
+    });
+  }
 
-    // counter section
-    if ($('.funding-success').length > 0 && window.innerWidth > 767) {
-      const counterElement = document.getElementById("counter");
-      const finalValue = parseInt(counterElement.dataset.value);
-      const prefix = counterElement.dataset.prefix || "";
-      const suffix = counterElement.dataset.suffix || "";
-      const counterObj = { value: 0 };
+  // counter section
+  if ($('.funding-success').length > 0 && window.innerWidth > 767) {
+    const counterElement = document.getElementById("counter");
+    const finalValue = parseInt(counterElement.dataset.value);
+    const prefix = counterElement.dataset.prefix || "";
+    const suffix = counterElement.dataset.suffix || "";
+    const counterObj = { value: 0 };
 
-      counterElement.textContent = `${prefix}0${suffix}`;
+    counterElement.textContent = `${prefix}0${suffix}`;
 
-      gsap.to(counterObj, {
-        value: finalValue,
-        scrollTrigger: {
-          trigger: ".funding-success",
-          start: "top 20%",
-          end: "+=1000",
-          scrub: true,
-          pin: true,
-        },
-        onUpdate: () => {
-          counterElement.textContent = `${prefix}${Math.floor(counterObj.value)}${suffix}`;
-        }
-      });
+    gsap.to(counterObj, {
+      value: finalValue,
+      scrollTrigger: {
+        trigger: ".funding-success",
+        start: "top 20%",
+        end: "+=1000",
+        scrub: true,
+        pin: true,
+      },
+      onUpdate: () => {
+        counterElement.textContent = `${prefix}${Math.floor(counterObj.value)}${suffix}`;
+      }
+    });
 
-    }
+  }
 
-  }) (jQuery);
+})(jQuery);
 
 
