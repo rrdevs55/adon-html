@@ -937,7 +937,7 @@
         ab4.to(".about-4-title-shape img", {
           scale: 400,
           rotation: 90,
-          ease: "none",
+          ease: "power2.in",
           scrollTrigger: {
             trigger: ".client-area-4",
             start: "bottom center",
@@ -999,7 +999,7 @@
         ab4.to(".about-4-title-shape img", {
           scale: 400,
           rotation: 90,
-          ease: "none",
+          ease: "power2.in",
           scrollTrigger: {
             trigger: ".client-area-4",
             start: "bottom center",
