@@ -7145,7 +7145,12 @@ section {
 .services-3-image-wrapper img {
   width: 100%;
   height: 120%;
+<<<<<<< HEAD
   object-fit: cover;
+=======
+  -o-object-fit: cover;
+     object-fit: cover;
+>>>>>>> 83bdbf38212306efb7a8fd5ba4360cea216d2633
   border-radius: 20px;
 }
 
@@ -7577,7 +7582,12 @@ section {
 .client-3-thumb img {
   width: 100%;
   height: 120%;
+<<<<<<< HEAD
   object-fit: cover;
+=======
+  -o-object-fit: cover;
+     object-fit: cover;
+>>>>>>> 83bdbf38212306efb7a8fd5ba4360cea216d2633
   border-radius: 20px;
 }
 
