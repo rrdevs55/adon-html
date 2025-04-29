@@ -935,7 +935,7 @@
         font-weight: 400;
         font-size: 90px;
         line-height: 1.83;
-        letter-spacing: -0.08em;
+        letter-spacing: -0.04em;
         text-transform: uppercase;
         color: var(--primary);
         display: inline-block;
@@ -947,6 +947,7 @@
         @media #{$xs} {
             font-size: 50px;
         }
+
     }
 
     .text {

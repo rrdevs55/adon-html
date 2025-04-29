@@ -56,7 +56,8 @@
   if (device_width > 767) {
     if (document.querySelector("#has_smooth").classList.contains("has-smooth")) {
       const smoother = ScrollSmoother.create({
-        smooth: 0.9,
+        // smooth: 0.9,
+        smooth: 1.5,
         effects: device_width < 1025 ? false : true,
         smoothTouch: 0.1,
         // normalizeScroll: false,
@@ -1049,11 +1050,11 @@
 
         tl.to(".add-shape", {
           transform: "scale(860)",
-          ease: "none",
+          ease: "power2.in",
           scrollTrigger: {
             trigger: ".add",
             start: "center top",
-            end: "bottom -=30%",
+            end: "bottom -=100%",
             pin: ".service-area",
             scrub: 0,
             // markers: true,
