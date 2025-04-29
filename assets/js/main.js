@@ -1070,10 +1070,11 @@
     gsap.to(".image-wrapper", {
       scrollTrigger: {
         trigger: ".hero-area-7",
-        start: "top 10%",
-        end: "+=100%",
+        start: "top top",
+        end: "bottom -=100%",
         scrub: 1,
         pin: true,
+        // markers: true,
       },
       width: "100vw",
       height: "100vh",
