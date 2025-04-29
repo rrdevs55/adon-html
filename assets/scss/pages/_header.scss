@@ -339,8 +339,39 @@
     //     }
     // }
 
+    // .offcanvas-3 {
+    //     position: absolute;
+    //     right: 0;
+    //     top: 0;
+    //     height: auto;
+    //     transform-origin: top right;
+    //     will-change: transform;
+    //     translate: none;
+    //     rotate: none;
+    //     scale: none;
+    //     transform-origin: 50% 50%;
+    //     transform: scale(0.1, 0.1);
+    //     filter: blur(20px);
+    //     opacity: 0;
+    //     border-radius: 20px;
+
+    //     &.info-open {
+    //         opacity: 1;
+    //         transform: translateX(0);
+    //         translate: none;
+
+    //         rotate: none;
+    //         scale: none;
+    //         transform-origin: 100% 0%;
+    //         transform: scale(1, 1);
+    //         filter: none;
+    //         opacity: 1;
+    //     }
+
+    // }
     .offcanvas-3 {
         position: absolute;
+        top: 0;
         right: 0;
         top: 0;
         height: auto;
@@ -363,6 +394,8 @@
 
         }
     }
+
+
 
 }
 

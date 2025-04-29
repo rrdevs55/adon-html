@@ -537,63 +537,60 @@
 
 .portfolio-6-item {
     position: relative;
+    display: block;
+    cursor: pointer;
 
+    .hover-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 420px;
+        height: auto;
+        opacity: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 2;
+        transform: translate3d(0, 0, 0) scale(0.1);
+        transition:
+            opacity 0.3s ease,
+            clip-path 1.2s cubic-bezier(.19, 1, .22, 1);
 
-    .thumb {
-        img {
-            // cursor: none;
+        @media #{$lg} {
+            width: 320px;
+        }
+
+        @media #{$sm} {
+            width: 220px;
         }
     }
 
-
-
-    .content {
-        display: grid;
-        gap: 10px 30px;
-        grid-template-columns: 1fr auto;
-        margin-top: 14px;
-        text-align: start;
-
-
-        @media (min-width:1200px) {
-            display: none;
-        }
-
-        .title {
-            font-family: var(--font_bdogrotesk);
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 24px;
-            letter-spacing: -0.05em;
-            text-transform: uppercase;
-            color: var(--white);
-
-            @media #{$xl} {
-                font-size: 16px;
-            }
-        }
-
-        .date {
-            font-family: var(--font_bdogrotesk);
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 24px;
-            letter-spacing: -0.05em;
-            text-transform: uppercase;
-            display: inline-block;
-            color: var(--white);
-
-            @media #{$xl} {
-                font-size: 16px;
-            }
-        }
+    .hover-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        pointer-events: none;
     }
 
+    .hover-text {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .hover-text h4 {
+        margin: 5px 0;
+        font-size: 18px;
+        color: var(--white);
+    }
+
+    .hover-text p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--white);
+    }
 
 }
-
-
-
 
 // approach-area
 
@@ -706,7 +703,7 @@
         margin-top: 93px;
         padding-top: 20px;
         border-top: 1px solid rgba(17, 17, 17, 0.10);
-        ;
+
 
         @media #{$lg} {
             margin-top: 60px;
