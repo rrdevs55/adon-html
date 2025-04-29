@@ -56,7 +56,8 @@
   if (device_width > 767) {
     if (document.querySelector("#has_smooth").classList.contains("has-smooth")) {
       const smoother = ScrollSmoother.create({
-        smooth: 0.9,
+        // smooth: 0.9,
+        smooth: 1.5,
         effects: device_width < 1025 ? false : true,
         smoothTouch: 0.1,
         // normalizeScroll: false,
@@ -936,7 +937,7 @@
         ab4.to(".about-4-title-shape img", {
           scale: 400,
           rotation: 90,
-          ease: "none",
+          ease: "power2.in",
           scrollTrigger: {
             trigger: ".client-area-4",
             start: "bottom center",
@@ -998,7 +999,7 @@
         ab4.to(".about-4-title-shape img", {
           scale: 400,
           rotation: 90,
-          ease: "none",
+          ease: "power2.in",
           scrollTrigger: {
             trigger: ".client-area-4",
             start: "bottom center",
@@ -1049,11 +1050,11 @@
 
         tl.to(".add-shape", {
           transform: "scale(860)",
-          ease: "none",
+          ease: "power2.in",
           scrollTrigger: {
             trigger: ".add",
             start: "center top",
-            end: "bottom -=30%",
+            end: "bottom -=100%",
             pin: ".service-area",
             scrub: 0,
             // markers: true,
@@ -1069,10 +1070,11 @@
     gsap.to(".image-wrapper", {
       scrollTrigger: {
         trigger: ".hero-area-7",
-        start: "top 10%",
-        end: "+=100%",
+        start: "top top",
+        end: "bottom -=100%",
         scrub: 1,
         pin: true,
+        // markers: true,
       },
       width: "100vw",
       height: "100vh",
@@ -1132,6 +1134,101 @@
     });
 
   }
+
+
+
+  const serviceItems = document.querySelectorAll('.portfolio-6-item');
+
+  serviceItems.forEach(item => {
+    const hoverImage = item.querySelector('.hover-image');
+    const hoverImgEl = hoverImage.querySelector('img');
+    const hoverTextTitle = hoverImage.querySelector('.hover-text h4');
+    const hoverTextSubtitle = hoverImage.querySelector('.hover-text p');
+
+    let animationFrameId;
+    let target = { x: 0, y: 0 };
+    let current = { x: 0, y: 0 };
+    let tracking = false;
+
+    let scale = 0.1;
+    let scaleTarget = 1;
+
+    function animateImageFollow() {
+      if (!tracking) return;
+
+      current.x += (target.x - current.x) * 0.2;
+      current.y += (target.y - current.y) * 0.2;
+      scale += (scaleTarget - scale) * 0.1;
+
+      hoverImage.style.transform = `translate3d(${current.x}px, ${current.y}px, 0) scale(${scale})`;
+
+      animationFrameId = requestAnimationFrame(animateImageFollow);
+    }
+
+    item.addEventListener('mouseenter', (e) => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+
+      const rect = item.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      target.x = current.x = mouseX;
+      target.y = current.y = mouseY;
+
+      const imgSrc = item.getAttribute('data-img');
+      const title = item.getAttribute('data-title');
+      const subtitle = item.getAttribute('data-subtitle');
+
+      hoverImgEl.src = imgSrc;
+      hoverTextTitle.textContent = title;
+      hoverTextSubtitle.textContent = subtitle;
+
+      hoverImage.style.opacity = 1;
+      scale = 0.1;
+      scaleTarget = 1;
+
+      hoverImage.style.clipPath = 'inset(0%)';
+
+      tracking = true;
+      animationFrameId = requestAnimationFrame(animateImageFollow);
+    });
+
+    item.addEventListener('mousemove', (e) => {
+      if (!tracking) return;
+
+      const rect = item.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      const imgWidth = hoverImage.offsetWidth || 420;
+      const imgHeight = hoverImage.offsetHeight || 300;
+
+      const maxX = rect.width - imgWidth;
+      const maxY = rect.height - imgHeight;
+
+      // Clamp position so image stays inside the item
+      target.x = Math.max(0, Math.min(mouseX, maxX));
+      target.y = Math.max(0, Math.min(mouseY, maxY));
+    });
+
+    item.addEventListener('mouseleave', () => {
+      tracking = false;
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+
+      hoverImage.style.opacity = 0;
+      hoverImage.style.clipPath = 'inset(40%)';
+      hoverImage.style.transform = `translate3d(${current.x}px, ${current.y}px, 0) scale(0.5)`;
+
+      setTimeout(() => {
+        hoverImage.style.transform = `translate3d(${current.x}px, ${current.y}px, 0) scale(0.1)`;
+      }, 300);
+    });
+  });
+
 
 })(jQuery);
 
