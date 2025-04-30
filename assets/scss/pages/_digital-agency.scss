@@ -492,6 +492,14 @@
     }
 
     .work-box {
+        &:hover {
+            .thumb {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
         .thumb {
             border-radius: 15px;
             overflow: hidden;
@@ -499,6 +507,7 @@
             img {
                 width: 100%;
                 cursor: none;
+                transition: all 0.5s;
             }
         }
 
@@ -519,6 +528,10 @@
 
             @media #{$lg} {
                 font-size: 18px;
+            }
+
+            a:hover {
+                color: var(--secondary);
             }
         }
 
@@ -701,7 +714,7 @@
         }
 
         a:hover {
-            color: var(--white);
+            color: var(--secondary);
         }
     }
 
@@ -1086,11 +1099,14 @@
     padding: 50px 40px 46px;
     border-radius: 15px;
     height: 100%;
-    transition: all 1s;
 
 
     @media #{$xxl} {
         padding: 30px 25px 26px;
+    }
+
+    &:hover {
+        background-color: #555555;
     }
 
     .thumb {
