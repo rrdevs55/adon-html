@@ -492,6 +492,14 @@
     }
 
     .work-box {
+        &:hover {
+            .thumb {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
         .thumb {
             border-radius: 15px;
             overflow: hidden;
@@ -499,6 +507,7 @@
             img {
                 width: 100%;
                 cursor: none;
+                transition: all 0.5s;
             }
         }
 
@@ -1086,7 +1095,6 @@
     padding: 50px 40px 46px;
     border-radius: 15px;
     height: 100%;
-    transition: all 1s;
 
 
     @media #{$xxl} {

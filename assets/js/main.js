@@ -1018,48 +1018,45 @@
   // service area animation 
   if (document.querySelectorAll(".service-area").length > 0) {
     mm.add("(min-width: 1200px)", () => {
-      window.addEventListener("load", () => {
-        const tl = gsap.timeline();
+      const tl = gsap.timeline();
 
-        tl.to(".services-wrapper-1 .service-box-1", {
-          x: 0,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".services-wrapper-box",
-            start: "top top",
-            end: "+=50%",
-            toggleActions: "play complete play reverse",
-            pin: true,
-            // markers: true,
-          }
-        });
+      tl.to(".services-wrapper-1 .service-box-1", {
+        x: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".services-wrapper-box",
+          start: "top top",
+          end: "+=50%",
+          toggleActions: "play complete play reverse",
+          pin: true,
+          scrub: 0,
+          markers: true,
+        }
+      });
 
-        tl.to(".add-shape-wrapper", {
-          transform: "translate(0, 0)",
-          ease: "none",
-          duration: 50,
-          scrollTrigger: {
-            trigger: ".add",
-            start: "top top",
-            end: "center top",
-            scrub: true,
-            // markers: true,
-          }
-        });
+      tl.to(".add-shape-wrapper", {
+        transform: "translate(0, 0)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".add",
+          start: "top top",
+          end: "center top",
+          scrub: true,
+          markers: true,
+        }
+      });
 
-        tl.to(".add-shape", {
-          transform: "scale(860)",
-          ease: "power2.in",
-          scrollTrigger: {
-            trigger: ".add",
-            start: "center top",
-            end: "bottom -=100%",
-            pin: ".service-area",
-            scrub: 0,
-            // markers: true,
-          }
-        });
+      tl.to(".add-shape", {
+        transform: "scale(860)",
+        ease: "power2.in",
+        scrollTrigger: {
+          trigger: ".add",
+          start: "center top",
+          end: "bottom -=100%",
+          pin: ".service-area",
+          scrub: 0,
+          // markers: true,
+        }
       });
     });
   }

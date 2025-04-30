@@ -421,6 +421,10 @@
         line-height: 1;
         letter-spacing: -0.05em;
         margin-top: 4px;
+
+        a:hover {
+            color: #555555;
+        }
     }
 
     .service-list {
