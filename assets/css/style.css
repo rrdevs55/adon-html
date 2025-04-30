@@ -5091,6 +5091,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 100vh;
 }
 @media only screen and (max-width: 1199px) {
   .add {
@@ -14209,16 +14210,16 @@ section {
 
 .image-wrapper {
   width: 500px;
+  height: 650px;
   position: relative;
   display: flex;
   align-items: center;
-  overflow-y: clip;
   justify-content: center;
 }
 
 .image-wrapper img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   min-height: 650px;
   display: block;
