@@ -865,8 +865,12 @@
             font-size: 580px;
             font-weight: 200;
             text-align: center;
-            margin-bottom: 30px;
-            margin-top: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // margin-bottom: 30px;
+            // margin-top: 150px;
+            height: 100vh;
             color: var(--primary);
             text-transform: uppercase;
             font-family: var(--font_ppeditor);
@@ -877,12 +881,10 @@
 
             @media #{$xl} {
                 font-size: 350px;
-                margin-top: 100px;
             }
 
             @media #{$lg} {
                 font-size: 250px;
-                margin-top: 70px;
             }
 
             @media #{$md} {

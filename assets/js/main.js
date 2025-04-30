@@ -1122,11 +1122,12 @@
     gsap.to(counterObj, {
       value: finalValue,
       scrollTrigger: {
-        trigger: ".funding-success",
-        start: "top 20%",
+        trigger: ".counter",
+        start: "top 5%",
         end: "+=1000",
         scrub: true,
         pin: true,
+        // markers: true,
       },
       onUpdate: () => {
         counterElement.textContent = `${prefix}${Math.floor(counterObj.value)}${suffix}`;
