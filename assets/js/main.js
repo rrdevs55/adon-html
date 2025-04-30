@@ -1226,6 +1226,39 @@
     });
   });
 
+  // scale animation 
+  var scale = document.querySelectorAll(".scale");
+  var image = document.querySelectorAll(".scale img");
+  scale.forEach((item) => {
+    gsap.to(item, {
+      scale: 1,
+      duration: 1,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: item,
+        start: 'top bottom',
+        end: "bottom top",
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+  });
+  image.forEach((image) => {
+    gsap.set(image, {
+      scale: 1.3,
+    });
+    gsap.to(image, {
+      scale: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: image,
+        start: 'top bottom',
+        end: "bottom top",
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+  })
+
+
 
 })(jQuery);
 
