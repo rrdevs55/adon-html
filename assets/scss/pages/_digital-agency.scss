@@ -529,6 +529,10 @@
             @media #{$lg} {
                 font-size: 18px;
             }
+
+            a:hover {
+                color: var(--secondary);
+            }
         }
 
         .tag {
@@ -710,7 +714,7 @@
         }
 
         a:hover {
-            color: var(--white);
+            color: var(--secondary);
         }
     }
 
@@ -1099,6 +1103,10 @@
 
     @media #{$xxl} {
         padding: 30px 25px 26px;
+    }
+
+    &:hover {
+        background-color: #555555;
     }
 
     .thumb {
