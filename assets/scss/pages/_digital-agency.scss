@@ -489,25 +489,41 @@
                 }
             }
         }
-    }
 
-    .work-box {
-        &:hover {
-            .thumb {
-                img {
-                    transform: scale(1.1);
+        >* {
+            .image {
+                transform-origin: bottom right;
+            }
+
+            &:nth-child(2n) {
+                .image {
+                    transform-origin: bottom left;
                 }
             }
         }
+    }
+
+    .work-box {
 
         .thumb {
             border-radius: 15px;
             overflow: hidden;
 
+            .image {
+                overflow: hidden;
+                position: relative;
+                border-radius: 15px;
+                transform: scale(0.9);
+
+                img {
+                    transform-origin: center;
+                }
+
+            }
+
             img {
                 width: 100%;
                 cursor: none;
-                transition: all 0.5s;
             }
         }
 

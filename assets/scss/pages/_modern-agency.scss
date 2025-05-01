@@ -484,6 +484,7 @@
                 grid-template-columns: 1fr;
             }
         }
+
     }
 
     .feature-work-7-item {
@@ -537,6 +538,17 @@
                 text-transform: uppercase;
                 font-family: var(--font_bdogrotesk);
             }
+        }
+
+        .image {
+            overflow: hidden;
+            position: relative;
+            transform: scale(0.9);
+
+            img {
+                transform-origin: center;
+            }
+
         }
 
         .media {
