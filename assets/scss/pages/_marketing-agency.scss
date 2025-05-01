@@ -133,6 +133,21 @@
                 font-size: 26px;
                 outline: 4px solid #F0F0F0;
                 margin-left: -15px;
+                position: relative;
+                z-index: 1;
+
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    top: 0;
+                    left: -1px;
+                    height: 100%;
+                    border-radius: 500px;
+                    background: var(--white);
+                    z-index: -1;
+                }
 
                 @media #{$xxl} {
                     width: 80px;

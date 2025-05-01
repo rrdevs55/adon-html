@@ -805,10 +805,10 @@
         }
       });
 
-      tl.add("startItems", "+=1");
+      tl.add("startItems", "+=0.9");
 
       items.forEach((item, index) => {
-        const delay = index * 0.9;
+        const delay = index * 0.7;
         tl.fromTo(
           item,
           { x: "450%", opacity: 1 },
@@ -817,7 +817,7 @@
         );
       });
 
-      const totalItemDuration = (items.length - 1) * 0.9 + 1;
+      const totalItemDuration = (items.length - 1) * 0.6 + 1;
       tl.to({}, { duration: 2 }, `startItems+=${totalItemDuration}`);
     }
   });
