@@ -293,15 +293,26 @@
     .side-toggle {
         width: 60px;
         height: 60px;
-        border: 1px solid rgba(17, 17, 17, 0.15);
+        height: 60px;
+        cursor: pointer;
         border-radius: 20px;
         transition: all 0.5s;
-
+        border: 1px solid rgba(17, 17, 17, 0.15);
 
         &:hover {
             background-color: #FFD80C;
             border-color: transparent;
         }
+
+    }
+
+    .dot {
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        border-radius: 50%;
+        background: var(--primary);
+        transition: all 0.4s ease;
     }
 
     .offcanvas-3 {

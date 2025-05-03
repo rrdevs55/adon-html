@@ -614,38 +614,33 @@
     });
   }
 
-  // testimonial 3 active
-  if (document.querySelectorAll(".testimonial-3-active").length > 0) {
-    var testimonial_3_active = new Swiper(".testimonial-3-active", {
-      loop: true,
+
+
+
+  // portfolio 3 active 
+  if (document.querySelectorAll(".portfolio-3-active").length > 0) {
+    var portfolio_3_active = new Swiper(".portfolio-3-active", {
       slidesPerView: 1,
+      loop: true,
+      autoplay: true,
       spaceBetween: 5,
       speed: 2000,
-      watchSlidesProgress: true,
+      slidesPerGroup: 1,
       navigation: {
-        prevEl: ".testimonial-3-button-prev",
-        nextEl: ".testimonial-3-button-next",
+        prevEl: ".portfolio-3-button-prev",
+        nextEl: ".portfolio-3-button-next",
       },
       breakpoints: {
         // when window width is >= px
         576: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 1,
-        },
-        992: {
           slidesPerView: 2,
-        },
-        1201: {
-          slidesPerView: 3,
-        },
-        1367: {
-          slidesPerView: 3,
-        },
+          slidesPerGroup: 2,
+
+        }
       }
     });
   }
+
 
   // Moving Gallery		
   if (document.querySelectorAll(".moving-gallery").length > 0) {
@@ -808,7 +803,7 @@
       tl.add("startItems", "+=0.9");
 
       items.forEach((item, index) => {
-        const delay = index * 0.7;
+        const delay = index * 0.6;
         tl.fromTo(
           item,
           { x: "450%", opacity: 1 },
@@ -1260,6 +1255,101 @@
   })
 
 
+  // side-toggle animaton
+
+  const dotGrid = document.getElementById("side-toggle");
+
+  const dotSize = 4;        // px
+  const gapX = 5;           // px
+  const gapY = 5;           // px
+  const centerOffset = 27;  // px
+
+  const baseOffset = dotSize + gapX;
+  const baseOffsetY = dotSize + gapY;
+
+  // Dot positions relative to center
+  const positions = [
+    { x: 0, y: 0 },
+    { x: baseOffset, y: 0 },
+    { x: baseOffset * 2, y: 0 },
+    { x: 0, y: baseOffsetY },
+    { x: baseOffset, y: baseOffsetY },
+    { x: baseOffset, y: baseOffsetY * 2 },
+    { x: baseOffset * 2, y: baseOffsetY * 2 },
+  ];
+
+  const originalPositions = [...positions];
+  const dots = [];
+
+  // Helper to set position
+  function setDotPosition(dot, pos) {
+    dot.style.left = `${centerOffset + pos.x - baseOffset}px`;
+    dot.style.top = `${centerOffset + pos.y - baseOffsetY}px`;
+  }
+
+  // Create dots
+  positions.forEach(pos => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    setDotPosition(dot, pos);
+    dotGrid.appendChild(dot);
+    dots.push(dot);
+  });
+
+  // Shuffle and apply positions
+  function applyShuffledPositions() {
+    const shuffled = [...positions].sort(() => Math.random() - 0.5);
+    dots.forEach((dot, i) => setDotPosition(dot, shuffled[i]));
+  }
+
+  // Reset to original
+  function resetPositions() {
+    dots.forEach((dot, i) => setDotPosition(dot, originalPositions[i]));
+  }
+
+  // Event listeners
+  dotGrid.addEventListener("mouseenter", applyShuffledPositions);
+  dotGrid.addEventListener("mouseleave", resetPositions);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // const swiper = new Swiper(".swiper", {
+  //   // Optional parameters
+  //   direction: "horizontal",
+  //   grabCursor: true,
+  //   slidesPerView: 1,
+  //   slidesPerGroup: 1,
+  //   centeredSlides: false,
+  //   loop: true,
+  //   spaceBetween: 10,
+  //   mousewheel: {
+  //     forceToAxis: true
+  //   },
+  //   breakpoints: {
+  //     767: {
+  //       slidesPerView: 2,
+  //       spaceBetween: 24,
+  //     },
+  //     1699: {
+  //       slidesPerView: 2,
+  //       spaceBetween: 24,
+  //     },
+  //   },
+  //   speed: 700,
+  //   slideActiveClass: "is-active",
+  //   slideDuplicateActiveClass: "is-active"
+  // });
 
 })(jQuery);
 
