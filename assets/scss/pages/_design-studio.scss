@@ -730,9 +730,13 @@
 }
 
 .team-4-wrapper {
-    display: grid;
+    display: inline-flex;
     gap: 40px 20px;
-    grid-template-columns: repeat(4, 1fr);
+
+    @media #{$lg} {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
 
     @media #{$md} {
         grid-template-columns: repeat(2, 1fr);
@@ -744,6 +748,17 @@
 }
 
 .team-4-box {
+    width: 460px;
+
+    @media #{$xxl} {
+        width: 340px;
+    }
+
+    @media #{$xl} {
+        width: 320px;
+    }
+
+
     &:hover {
         .thumb {
             img {

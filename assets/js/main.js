@@ -571,7 +571,7 @@
     });
   }
 
-
+  // testimonial active 
   if (document.querySelectorAll(".testimonial-active").length > 0) {
     if ('.testimonial-active') {
       var client_slider_active = new Swiper(".testimonial-active", {
@@ -589,6 +589,39 @@
     }
   }
 
+  // testimonial 3 active
+  if (document.querySelectorAll(".testimonial-3-active").length > 0) {
+    var testimonial_3_active = new Swiper(".testimonial-3-active", {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 5,
+      speed: 2000,
+      watchSlidesProgress: true,
+      navigation: {
+        prevEl: ".testimonial-3-button-prev",
+        nextEl: ".testimonial-3-button-next",
+      },
+      breakpoints: {
+        // when window width is >= px
+        576: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 1,
+        },
+        992: {
+          slidesPerView: 2,
+        },
+        1201: {
+          slidesPerView: 3,
+        },
+        1367: {
+          slidesPerView: 3,
+        },
+      }
+    });
+  }
+
 
   // portfolio 3 active 
   if (document.querySelectorAll(".portfolio-3-active").length > 0) {
@@ -597,7 +630,7 @@
       loop: true,
       autoplay: true,
       spaceBetween: 5,
-      speed: 2000,
+      speed: 5000,
       slidesPerGroup: 1,
       navigation: {
         prevEl: ".portfolio-3-button-prev",
@@ -877,6 +910,25 @@
   }
 
 
+  // Moving team		
+  if ($('.team-area-4-inner').length > 0 && window.innerWidth > 1200) {
+    gsap.utils.toArray('.team-area-4-inner').forEach((section, index) => {
+      const w = section.querySelector('.team-4-wrapper');
+      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+      gsap.fromTo(w, { x }, {
+        x: xEnd,
+        scrollTrigger: {
+          trigger: ".team-area-4",
+          scrub: 1,
+          start: "bottom bottom",
+          pin: true,
+          // markers: true,
+        }
+      });
+    });
+  }
+
+
 
 
 
@@ -908,7 +960,7 @@
           display: "inline-block",
           scrollTrigger: {
             trigger: ".title-4-text-last",
-            start: "top bottom",
+            start: "center bottom",
             end: "center center",
             pinSpacing: false,
             scrub: 2,
@@ -970,7 +1022,7 @@
           display: "inline-block",
           scrollTrigger: {
             trigger: ".title-4-text-last",
-            start: "top bottom",
+            start: "center bottom",
             end: "center center",
             pinSpacing: false,
             scrub: 2,

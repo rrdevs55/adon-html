@@ -330,6 +330,14 @@
         transition: all 0.6s ease-in-out;
         pointer-events: none;
 
+        @media #{$lg} {
+            height: 550px;
+        }
+
+        @media #{$sm} {
+            height: 450px;
+        }
+
 
         &.info-open {
             opacity: 1;
