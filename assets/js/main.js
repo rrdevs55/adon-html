@@ -1256,100 +1256,59 @@
 
 
   // side-toggle animaton
+  document.addEventListener("DOMContentLoaded", () => {
+    const dotGrid = document.querySelector(".side-toggle");
 
-  const dotGrid = document.getElementById("side-toggle");
+    if (dotGrid) {
+      const dotSize = 4;
+      const gapX = 5;
+      const gapY = 5;
+      const centerOffset = 27;
 
-  const dotSize = 4;        // px
-  const gapX = 5;           // px
-  const gapY = 5;           // px
-  const centerOffset = 27;  // px
+      const baseOffset = dotSize + gapX;
+      const baseOffsetY = dotSize + gapY;
 
-  const baseOffset = dotSize + gapX;
-  const baseOffsetY = dotSize + gapY;
+      const positions = [
+        { x: 0, y: 0 },
+        { x: baseOffset, y: 0 },
+        { x: baseOffset * 2, y: 0 },
+        { x: 0, y: baseOffsetY },
+        { x: baseOffset, y: baseOffsetY },
+        { x: baseOffset, y: baseOffsetY * 2 },
+        { x: baseOffset * 2, y: baseOffsetY * 2 },
+      ];
 
-  // Dot positions relative to center
-  const positions = [
-    { x: 0, y: 0 },
-    { x: baseOffset, y: 0 },
-    { x: baseOffset * 2, y: 0 },
-    { x: 0, y: baseOffsetY },
-    { x: baseOffset, y: baseOffsetY },
-    { x: baseOffset, y: baseOffsetY * 2 },
-    { x: baseOffset * 2, y: baseOffsetY * 2 },
-  ];
+      const originalPositions = [...positions];
+      const dots = [];
 
-  const originalPositions = [...positions];
-  const dots = [];
+      function setDotPosition(dot, pos) {
+        dot.style.left = `${centerOffset + pos.x - baseOffset}px`;
+        dot.style.top = `${centerOffset + pos.y - baseOffsetY}px`;
+      }
 
-  // Helper to set position
-  function setDotPosition(dot, pos) {
-    dot.style.left = `${centerOffset + pos.x - baseOffset}px`;
-    dot.style.top = `${centerOffset + pos.y - baseOffsetY}px`;
-  }
+      positions.forEach(pos => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        setDotPosition(dot, pos);
+        dotGrid.appendChild(dot);
+        dots.push(dot);
+      });
 
-  // Create dots
-  positions.forEach(pos => {
-    const dot = document.createElement("div");
-    dot.classList.add("dot");
-    setDotPosition(dot, pos);
-    dotGrid.appendChild(dot);
-    dots.push(dot);
+      function applyShuffledPositions() {
+        const shuffled = [...positions].sort(() => Math.random() - 0.5);
+        dots.forEach((dot, i) => setDotPosition(dot, shuffled[i]));
+      }
+
+      function resetPositions() {
+        dots.forEach((dot, i) => setDotPosition(dot, originalPositions[i]));
+      }
+
+      dotGrid.addEventListener("mouseenter", applyShuffledPositions);
+      dotGrid.addEventListener("mouseleave", resetPositions);
+    }
   });
 
-  // Shuffle and apply positions
-  function applyShuffledPositions() {
-    const shuffled = [...positions].sort(() => Math.random() - 0.5);
-    dots.forEach((dot, i) => setDotPosition(dot, shuffled[i]));
-  }
 
-  // Reset to original
-  function resetPositions() {
-    dots.forEach((dot, i) => setDotPosition(dot, originalPositions[i]));
-  }
-
-  // Event listeners
-  dotGrid.addEventListener("mouseenter", applyShuffledPositions);
-  dotGrid.addEventListener("mouseleave", resetPositions);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // const swiper = new Swiper(".swiper", {
-  //   // Optional parameters
-  //   direction: "horizontal",
-  //   grabCursor: true,
-  //   slidesPerView: 1,
-  //   slidesPerGroup: 1,
-  //   centeredSlides: false,
-  //   loop: true,
-  //   spaceBetween: 10,
-  //   mousewheel: {
-  //     forceToAxis: true
-  //   },
-  //   breakpoints: {
-  //     767: {
-  //       slidesPerView: 2,
-  //       spaceBetween: 24,
-  //     },
-  //     1699: {
-  //       slidesPerView: 2,
-  //       spaceBetween: 24,
-  //     },
-  //   },
-  //   speed: 700,
-  //   slideActiveClass: "is-active",
-  //   slideDuplicateActiveClass: "is-active"
-  // });
 
 })(jQuery);
 

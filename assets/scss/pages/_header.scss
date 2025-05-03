@@ -28,9 +28,6 @@
                 max-width: 1650px;
             }
         }
-
-
-
     }
 
     .sticky,
@@ -46,18 +43,36 @@
     }
 
 
-    .main-menu li a {
-        font-size: 16px;
-        font-weight: 400;
-        padding: 29px 14px;
-        color: var(--white);
+    .main-menu {
 
-        @media #{$xl} {
-            padding: 29px 10px;
+        >ul {
+            display: flex;
+
+            >li {
+                &:hover {
+                    >a {
+                        color: var(--white);
+                    }
+
+                }
+            }
         }
 
-        &:hover {
+
+        li a {
+
+            font-size: 16px;
+            font-weight: 400;
+            padding: 29px 14px;
             color: var(--white);
+
+            @media #{$xl} {
+                padding: 29px 10px;
+            }
+
+            &:hover {
+                color: var(--white);
+            }
         }
     }
 
@@ -120,6 +135,14 @@
 
         &:hover {
             color: var(--secondary);
+        }
+    }
+
+    .main-menu>ul>li {
+        &:hover {
+            >a {
+                color: var(--white);
+            }
         }
     }
 
@@ -379,21 +402,27 @@
         margin-right: 90px;
     }
 
-    .main-menu li a {
-        font-size: 16px;
-        font-weight: 500;
-        padding: 32px 25px;
-        text-transform: uppercase;
 
-        &:hover {
-            color: var(--primary);
+
+
+    .main-menu {
+        li a {
+
+            font-size: 16px;
+            font-weight: 500;
+            padding: 32px 25px;
+            text-transform: uppercase;
+
+            &:hover {
+                color: var(--primary);
+            }
         }
     }
 
     .main-menu>ul>li {
         &:hover {
             >a {
-                color: var(--primary);
+                color: var(--secondary);
             }
         }
     }
@@ -760,6 +789,7 @@
             width: 100px;
         }
     }
+
 
     .header__logo {
         margin-right: auto;
