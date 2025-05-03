@@ -571,7 +571,7 @@
     });
   }
 
-
+  // testimonial active 
   if (document.querySelectorAll(".testimonial-active").length > 0) {
     if ('.testimonial-active') {
       var client_slider_active = new Swiper(".testimonial-active", {
@@ -587,31 +587,6 @@
         },
       });
     }
-  }
-
-
-  // portfolio 3 active 
-  if (document.querySelectorAll(".portfolio-3-active").length > 0) {
-    var portfolio_3_active = new Swiper(".portfolio-3-active", {
-      slidesPerView: 1,
-      loop: true,
-      autoplay: true,
-      spaceBetween: 5,
-      speed: 2000,
-      slidesPerGroup: 1,
-      navigation: {
-        prevEl: ".portfolio-3-button-prev",
-        nextEl: ".portfolio-3-button-next",
-      },
-      breakpoints: {
-        // when window width is >= px
-        576: {
-          slidesPerView: 2,
-          slidesPerGroup: 2,
-
-        }
-      }
-    });
   }
 
   // testimonial 3 active
@@ -646,6 +621,59 @@
       }
     });
   }
+
+
+  // portfolio 3 active 
+  if (document.querySelectorAll(".portfolio-3-active").length > 0) {
+    var portfolio_3_active = new Swiper(".portfolio-3-active", {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: true,
+      spaceBetween: 5,
+      speed: 5000,
+      slidesPerGroup: 1,
+      navigation: {
+        prevEl: ".portfolio-3-button-prev",
+        nextEl: ".portfolio-3-button-next",
+      },
+      breakpoints: {
+        // when window width is >= px
+        576: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+
+        }
+      }
+    });
+  }
+
+
+
+
+  // portfolio 3 active 
+  if (document.querySelectorAll(".portfolio-3-active").length > 0) {
+    var portfolio_3_active = new Swiper(".portfolio-3-active", {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: true,
+      spaceBetween: 5,
+      speed: 2000,
+      slidesPerGroup: 1,
+      navigation: {
+        prevEl: ".portfolio-3-button-prev",
+        nextEl: ".portfolio-3-button-next",
+      },
+      breakpoints: {
+        // when window width is >= px
+        576: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+
+        }
+      }
+    });
+  }
+
 
   // Moving Gallery		
   if (document.querySelectorAll(".moving-gallery").length > 0) {
@@ -805,10 +833,10 @@
         }
       });
 
-      tl.add("startItems", "+=1");
+      tl.add("startItems", "+=0.9");
 
       items.forEach((item, index) => {
-        const delay = index * 0.9;
+        const delay = index * 0.6;
         tl.fromTo(
           item,
           { x: "450%", opacity: 1 },
@@ -817,7 +845,7 @@
         );
       });
 
-      const totalItemDuration = (items.length - 1) * 0.9 + 1;
+      const totalItemDuration = (items.length - 1) * 0.6 + 1;
       tl.to({}, { duration: 2 }, `startItems+=${totalItemDuration}`);
     }
   });
@@ -882,6 +910,25 @@
   }
 
 
+  // Moving team		
+  if ($('.team-area-4-inner').length > 0 && window.innerWidth > 1200) {
+    gsap.utils.toArray('.team-area-4-inner').forEach((section, index) => {
+      const w = section.querySelector('.team-4-wrapper');
+      const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+      gsap.fromTo(w, { x }, {
+        x: xEnd,
+        scrollTrigger: {
+          trigger: ".team-area-4",
+          scrub: 1,
+          start: "bottom bottom",
+          pin: true,
+          // markers: true,
+        }
+      });
+    });
+  }
+
+
 
 
 
@@ -913,7 +960,7 @@
           display: "inline-block",
           scrollTrigger: {
             trigger: ".title-4-text-last",
-            start: "top bottom",
+            start: "center bottom",
             end: "center center",
             pinSpacing: false,
             scrub: 2,
@@ -975,7 +1022,7 @@
           display: "inline-block",
           scrollTrigger: {
             trigger: ".title-4-text-last",
-            start: "top bottom",
+            start: "center bottom",
             end: "center center",
             pinSpacing: false,
             scrub: 2,
@@ -1018,48 +1065,45 @@
   // service area animation 
   if (document.querySelectorAll(".service-area").length > 0) {
     mm.add("(min-width: 1200px)", () => {
-      window.addEventListener("load", () => {
-        const tl = gsap.timeline();
+      const tl = gsap.timeline();
 
-        tl.to(".services-wrapper-1 .service-box-1", {
-          x: 0,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".services-wrapper-box",
-            start: "top top",
-            end: "+=50%",
-            toggleActions: "play complete play reverse",
-            pin: true,
-            // markers: true,
-          }
-        });
+      tl.to(".services-wrapper-1 .service-box-1", {
+        x: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".services-wrapper-box",
+          start: "top top",
+          end: "+=50%",
+          toggleActions: "play complete play reverse",
+          pin: true,
+          scrub: 0,
+          markers: true,
+        }
+      });
 
-        tl.to(".add-shape-wrapper", {
-          transform: "translate(0, 0)",
-          ease: "none",
-          duration: 50,
-          scrollTrigger: {
-            trigger: ".add",
-            start: "top top",
-            end: "center top",
-            scrub: true,
-            // markers: true,
-          }
-        });
+      tl.to(".add-shape-wrapper", {
+        transform: "translate(0, 0)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".add",
+          start: "top top",
+          end: "center top",
+          scrub: true,
+          markers: true,
+        }
+      });
 
-        tl.to(".add-shape", {
-          transform: "scale(860)",
-          ease: "power2.in",
-          scrollTrigger: {
-            trigger: ".add",
-            start: "center top",
-            end: "bottom -=100%",
-            pin: ".service-area",
-            scrub: 0,
-            // markers: true,
-          }
-        });
+      tl.to(".add-shape", {
+        transform: "scale(860)",
+        ease: "power2.in",
+        scrollTrigger: {
+          trigger: ".add",
+          start: "center top",
+          end: "bottom -=100%",
+          pin: ".service-area",
+          scrub: 0,
+          // markers: true,
+        }
       });
     });
   }
@@ -1122,11 +1166,12 @@
     gsap.to(counterObj, {
       value: finalValue,
       scrollTrigger: {
-        trigger: ".funding-success",
-        start: "top 20%",
+        trigger: ".counter",
+        start: "top 5%",
         end: "+=1000",
         scrub: true,
         pin: true,
+        // markers: true,
       },
       onUpdate: () => {
         counterElement.textContent = `${prefix}${Math.floor(counterObj.value)}${suffix}`;
@@ -1228,6 +1273,93 @@
       }, 300);
     });
   });
+
+  // scale animation 
+  var scale = document.querySelectorAll(".scale");
+  var image = document.querySelectorAll(".scale img");
+  scale.forEach((item) => {
+    gsap.to(item, {
+      scale: 1,
+      duration: 1,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: item,
+        start: 'top bottom',
+        end: "bottom top",
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+  });
+  image.forEach((image) => {
+    gsap.set(image, {
+      scale: 1.3,
+    });
+    gsap.to(image, {
+      scale: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: image,
+        start: 'top bottom',
+        end: "bottom top",
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+  })
+
+
+  // side-toggle animaton
+  document.addEventListener("DOMContentLoaded", () => {
+    const dotGrid = document.querySelector(".side-toggle");
+
+    if (dotGrid) {
+      const dotSize = 4;
+      const gapX = 5;
+      const gapY = 5;
+      const centerOffset = 27;
+
+      const baseOffset = dotSize + gapX;
+      const baseOffsetY = dotSize + gapY;
+
+      const positions = [
+        { x: 0, y: 0 },
+        { x: baseOffset, y: 0 },
+        { x: baseOffset * 2, y: 0 },
+        { x: 0, y: baseOffsetY },
+        { x: baseOffset, y: baseOffsetY },
+        { x: baseOffset, y: baseOffsetY * 2 },
+        { x: baseOffset * 2, y: baseOffsetY * 2 },
+      ];
+
+      const originalPositions = [...positions];
+      const dots = [];
+
+      function setDotPosition(dot, pos) {
+        dot.style.left = `${centerOffset + pos.x - baseOffset}px`;
+        dot.style.top = `${centerOffset + pos.y - baseOffsetY}px`;
+      }
+
+      positions.forEach(pos => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        setDotPosition(dot, pos);
+        dotGrid.appendChild(dot);
+        dots.push(dot);
+      });
+
+      function applyShuffledPositions() {
+        const shuffled = [...positions].sort(() => Math.random() - 0.5);
+        dots.forEach((dot, i) => setDotPosition(dot, shuffled[i]));
+      }
+
+      function resetPositions() {
+        dots.forEach((dot, i) => setDotPosition(dot, originalPositions[i]));
+      }
+
+      dotGrid.addEventListener("mouseenter", applyShuffledPositions);
+      dotGrid.addEventListener("mouseleave", resetPositions);
+    }
+  });
+
 
 
 })(jQuery);

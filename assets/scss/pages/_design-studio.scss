@@ -421,6 +421,10 @@
         line-height: 1;
         letter-spacing: -0.05em;
         margin-top: 4px;
+
+        a:hover {
+            color: #555555;
+        }
     }
 
     .service-list {
@@ -726,9 +730,13 @@
 }
 
 .team-4-wrapper {
-    display: grid;
+    display: inline-flex;
     gap: 40px 20px;
-    grid-template-columns: repeat(4, 1fr);
+
+    @media #{$lg} {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
 
     @media #{$md} {
         grid-template-columns: repeat(2, 1fr);
@@ -740,6 +748,17 @@
 }
 
 .team-4-box {
+    width: 460px;
+
+    @media #{$xxl} {
+        width: 340px;
+    }
+
+    @media #{$xl} {
+        width: 320px;
+    }
+
+
     &:hover {
         .thumb {
             img {
@@ -1468,7 +1487,7 @@
     }
 
     .title-wrapper {
-        animation: 45s t-slide infinite linear;
+        animation: 13s t-slide infinite linear;
     }
 
     .section-title {

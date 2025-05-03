@@ -489,12 +489,37 @@
                 }
             }
         }
+
+        >* {
+            .image {
+                transform-origin: bottom right;
+            }
+
+            &:nth-child(2n) {
+                .image {
+                    transform-origin: bottom left;
+                }
+            }
+        }
     }
 
     .work-box {
+
         .thumb {
             border-radius: 15px;
             overflow: hidden;
+
+            .image {
+                overflow: hidden;
+                position: relative;
+                border-radius: 15px;
+                transform: scale(0.9);
+
+                img {
+                    transform-origin: center;
+                }
+
+            }
 
             img {
                 width: 100%;
@@ -519,6 +544,10 @@
 
             @media #{$lg} {
                 font-size: 18px;
+            }
+
+            a:hover {
+                color: var(--secondary);
             }
         }
 
@@ -701,7 +730,7 @@
         }
 
         a:hover {
-            color: var(--white);
+            color: var(--secondary);
         }
     }
 
@@ -1086,11 +1115,14 @@
     padding: 50px 40px 46px;
     border-radius: 15px;
     height: 100%;
-    transition: all 1s;
 
 
     @media #{$xxl} {
         padding: 30px 25px 26px;
+    }
+
+    &:hover {
+        background-color: #555555;
     }
 
     .thumb {
