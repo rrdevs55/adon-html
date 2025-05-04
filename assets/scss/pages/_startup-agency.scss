@@ -521,7 +521,9 @@
             margin-top: 40px;
         }
 
-        .rr-btn {}
+        .rr-btn::before {
+            background-color: #F8F8F8;
+        }
 
         .btn-team {
             font-size: 18px;
