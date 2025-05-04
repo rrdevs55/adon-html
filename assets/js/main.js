@@ -1030,7 +1030,7 @@
           toggleActions: "play complete play reverse",
           pin: true,
           scrub: 0,
-          markers: true,
+          // markers: true,
         }
       });
 
@@ -1042,7 +1042,7 @@
           start: "top top",
           end: "center top",
           scrub: true,
-          markers: true,
+          // markers: true,
         }
       });
 
@@ -1060,6 +1060,8 @@
       });
     });
   }
+
+
 
 
   // Animate the image scaling to fullscreen, keeping center position
