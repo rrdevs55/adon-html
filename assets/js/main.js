@@ -704,12 +704,13 @@
       }
     });
   });
+
   // testimonial 4 active
   if (document.querySelectorAll(".testimonial-4-active").length > 0) {
     var testimonial_4_active = new Swiper(".testimonial-4-active", {
       loop: true,
       slidesPerView: 1,
-      spaceBetween: 5,
+      spaceBetween: 40,
       speed: 2000,
       watchSlidesProgress: true,
       pagination: {
