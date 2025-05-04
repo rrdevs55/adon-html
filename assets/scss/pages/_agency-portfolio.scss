@@ -1,0 +1,142 @@
+.section-title-6 {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 400;
+    font-size: 215px;
+    line-height: 0.86;
+    letter-spacing: -0.09em;
+    text-transform: uppercase;
+
+    @media #{$xxl} {
+        font-size: 165px;
+    }
+
+    @media #{$xl} {
+        font-size: 155px;
+    }
+
+    @media #{$lg} {
+        font-size: 115px;
+    }
+
+    @media #{$md} {
+        font-size: 85px;
+    }
+
+    @media #{$sm} {
+        font-size: 60px;
+        letter-spacing: -0.05em;
+        line-height: 1;
+    }
+
+    @media #{$xs} {
+        font-size: 38px;
+    }
+}
+
+/* hero area 6 style  */
+.hero-9-section-content {
+
+    margin-top: 27px;
+
+    @media #{$lg} {
+        margin-top: 107px;
+    }
+
+    .meta-list {
+        max-width: 580px;
+        margin-left: auto;
+
+        @media #{$lg} {
+            margin-left: 0;
+        }
+
+        ul {
+            display: grid;
+            gap: 15px 40px;
+            grid-template-columns: 200px 200px;
+            justify-content: space-between;
+
+            @media #{$xs} {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        li {
+            font-family: var(--font_bdogrotesk);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 15px;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            color: var(--primary);
+
+            br {
+                display: block;
+            }
+        }
+
+    }
+
+    .section-title-wrapper {
+        margin-top: 51px;
+
+        @media #{$lg} {
+            margin-top: 41px;
+        }
+
+        @media #{$md} {
+            margin-top: 31px;
+        }
+    }
+
+
+}
+
+.hero-9-nav {
+    position: relative;
+    z-index: 1;
+    margin-top: 146px;
+
+    @media #{$xxl} {
+        margin-top: 96px;
+    }
+
+    .main-menu li a {
+        font-size: 16px;
+        font-weight: 500;
+        padding: 0 0;
+        text-transform: uppercase;
+        justify-content: space-between;
+
+
+        &:hover {
+            color: var(--primary);
+        }
+    }
+
+    .main-menu>ul {
+        gap: 40px;
+
+        >li {
+            flex-grow: 1;
+            max-width: 270px;
+
+            &:hover {
+
+                >a {
+                    color: var(--secondary);
+                    border-color: var(--primary);
+                }
+            }
+
+            >a {
+                padding-bottom: 17px;
+                border-bottom: 1px solid rgba(17, 17, 17, 0.2);
+            }
+        }
+    }
+
+    .main-menu ul.dp-menu {
+        min-width: 100%;
+    }
+}
