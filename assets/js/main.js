@@ -527,20 +527,19 @@
 
   // testimonial active 
   if (document.querySelectorAll(".testimonial-active").length > 0) {
-    if ('.testimonial-active') {
-      var client_slider_active = new Swiper(".testimonial-active", {
-        slidesPerView: 1,
-        loop: true,
-        autoplay: true,
-        spaceBetween: 30,
-        centeredSlides: true,
-        speed: 2000,
-        autoplay: false,
-        pagination: {
-          el: ".testimonial-pagination",
-        },
-      });
-    }
+    var testimonial_slider_active = new Swiper(".testimonial-active", {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: true,
+      spaceBetween: 30,
+      centeredSlides: true,
+      speed: 2000,
+      autoplay: false,
+      pagination: {
+        el: ".testimonial-pagination",
+        clickable: true,
+      },
+    });
   }
 
   // testimonial 3 active
@@ -669,6 +668,7 @@
       watchSlidesProgress: true,
       pagination: {
         el: ".testimonial-4-pagination",
+        clickable: true,
       },
     });
   }
