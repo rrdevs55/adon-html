@@ -891,6 +891,46 @@
   });
 
 
+  // Service list Hover Animation home 09
+  // ===============================
+  function Team_animation() {
+    const wrapper = $(".service-9__wrapper");
+    const active_bg = wrapper.find(".active-bg");
+
+    function moveBgTo(target) {
+      if (!target.length) return;
+
+      const offsetTop = target.offset().top;
+      const height = target.outerHeight();
+      const wrapperTop = wrapper.offset().top;
+      const translateY = offsetTop - wrapperTop;
+
+      active_bg.css({
+        transform: `translateY(${translateY}px)`,
+        height: `${height}px`,
+        opacity: 1
+      });
+    }
+
+    // On hover
+    wrapper.find(".service-9__item").on("mouseenter", function () {
+      moveBgTo($(this));
+    });
+
+    // On leave, hide background
+    wrapper.on("mouseleave", function () {
+      active_bg.css({
+        opacity: 0,
+        height: 0
+      });
+    });
+  }
+
+  $(document).ready(function () {
+    Team_animation();
+  });
+
+
   // Moving Gallery		
   if ($('.fun-fact-area-inner').length > 0 && window.innerWidth > 767) {
     gsap.utils.toArray('.fun-fact-area-inner').forEach((section, index) => {
