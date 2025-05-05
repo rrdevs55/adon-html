@@ -817,6 +817,93 @@
     }
 }
 
+/* header area 8 style  */
+.header-area-8 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        gap: 30px;
+        padding: 26px 0;
+
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr;
+
+        }
+
+        >* {
+            &:nth-child(2) {
+                text-align: center;
+
+                @media #{$sm} {
+                    text-align: end;
+                }
+            }
+
+            &:nth-child(3) {
+                text-align: end;
+
+                @media #{$sm} {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .sticky,
+    .transformed {
+        background-color: #FFFFFF;
+    }
+
+    .header__logo {
+
+        img {
+            width: 112px;
+        }
+    }
+
+    .menu-toggle {
+        font-family: var(--font_bdogrotesk);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 16px;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: var(--white);
+        transition: all 0.3s;
+
+        &:hover {
+            color: #999999;
+        }
+    }
+
+    .rr-btn-underline {
+        font-family: var(--font_bdogrotesk);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 16px;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: var(--white);
+        padding-bottom: 2px;
+
+        &:hover {
+            &:before {
+                width: 100%;
+            }
+        }
+
+        &:before {
+            width: 0;
+        }
+    }
+}
 
 
 /* header area 6 style  */
