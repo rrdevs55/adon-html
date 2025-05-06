@@ -449,3 +449,52 @@
 
 
 }
+
+
+/* cta area 8 style  */
+.cta-area-8-inner {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-8-header {
+    text-align: center;
+
+    .section-title {
+        max-width: 940px;
+        margin-inline: auto;
+    }
+
+    .btn-wrapper {
+        margin-top: 92px;
+
+        @media #{$xxl} {
+            margin-top: 72px;
+        }
+
+        @media #{$xl} {
+            margin-top: 62px;
+        }
+
+        @media #{$md} {
+            margin-top: 52px;
+        }
+
+        @media #{$sm} {
+            margin-top: 42px;
+        }
+    }
+
+    .rr-btn-underline {
+        font-family: var(--font_bdogrotesk);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 16px;
+        letter-spacing: -0.05em;
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 8px;
+    }
+}
