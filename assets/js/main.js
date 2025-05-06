@@ -508,85 +508,38 @@
   }
 
 
-  // if ($('.work-area-2').length > 0 && window.innerWidth > 768) {
-  //   let work_area_2 = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: ".work-area-2",
-  //       start: "top -20%",
-  //       end: "bottom 60%",
-  //       pin: ".section-header",
-  //       markers: false,
-  //       pinSpacing: false,
-  //       scrub: 3,
-  //     },
-  //   });
-  // }
 
-  if ($('.works-wrapper-box').length > 0 && window.innerWidth > 768) {
-    // let initialPosition = gsap.getProperty('.section-title', 'x'); // Capture the initial position
+
+  if ($('.works-wrapper-box-2').length > 0 && window.innerWidth > 768) {
 
     let work_area_2 = gsap.timeline({
       scrollTrigger: {
-        trigger: ".works-wrapper-box",
+        trigger: ".works-wrapper-box-2",
         start: "top 0%s", // Adjust this value as needed
         end: "bottom 70%", // Adjust this value as needed
         pin: ".section-header",
         markers: false,
         pinSpacing: false,
         scrub: 3,
-
-        // onEnterBack: () => {
-        //   // When section-title scrolls back up, show .remove-text class again immediately
-        //   gsap.to('.section-title .remove-text', {
-        //     opacity: 1,
-        //     visibility: 'visible',
-        //     x: '0',
-        //     duration: 1
-        //   });
-
-        //   // Move section-title back to its initial position (stored in initialPosition)
-        //   gsap.to('.section-title', {
-        //     x: initialPosition,
-        //     duration: 1
-        //   });
-        // },
-
-        // onLeave: () => {
-        //   // When section-title reaches the end position, hide .remove-text class first
-        //   gsap.to('.section-title .remove-text', {
-        //     opacity: 0,
-        //     visibility: 'hidden',
-        //     x: '-30',
-        //     duration: 1
-        //   });
-
-        //   // Then, move .section-title 200px to the right after the text is hidden
-        //   gsap.to('.work-area-2 .section-title', {
-        //     x: 200,
-        //     duration: 1
-        //   });
-        // },
-
       },
     });
   }
 
   // testimonial active 
   if (document.querySelectorAll(".testimonial-active").length > 0) {
-    if ('.testimonial-active') {
-      var client_slider_active = new Swiper(".testimonial-active", {
-        slidesPerView: 1,
-        loop: true,
-        autoplay: true,
-        spaceBetween: 30,
-        centeredSlides: true,
-        speed: 2000,
-        autoplay: false,
-        pagination: {
-          el: ".testimonial-pagination",
-        },
-      });
-    }
+    var testimonial_slider_active = new Swiper(".testimonial-active", {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: true,
+      spaceBetween: 30,
+      centeredSlides: true,
+      speed: 2000,
+      autoplay: false,
+      pagination: {
+        el: ".testimonial-pagination",
+        clickable: true,
+      },
+    });
   }
 
   // testimonial 3 active
@@ -704,16 +657,18 @@
       }
     });
   });
+
   // testimonial 4 active
   if (document.querySelectorAll(".testimonial-4-active").length > 0) {
     var testimonial_4_active = new Swiper(".testimonial-4-active", {
       loop: true,
       slidesPerView: 1,
-      spaceBetween: 5,
+      spaceBetween: 40,
       speed: 2000,
       watchSlidesProgress: true,
       pagination: {
         el: ".testimonial-4-pagination",
+        clickable: true,
       },
     });
   }
@@ -783,25 +738,7 @@
 
 
 
-  // Moving brand		
-  if (document.querySelectorAll(".moving-brand").length > 0) {
-    mm.add("(min-width: 1200px)", () => {
-      gsap.utils.toArray('.moving-brand').forEach((section, index) => {
-        const w = section.querySelector('.wrapper-brand');
-        const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
-        gsap.fromTo(w, { x }, {
-          x: xEnd,
-          ease: "none",
-          scrollTrigger: {
-            trigger: section,
-            scrub: 0.5,
-            start: "20% bottom",
-            end: "80% center",
-          }
-        });
-      });
-    });
-  }
+
 
   // client-testimonial
   // ===============================
@@ -874,6 +811,46 @@
 
     // On hover
     wrapper.find(".service-5__item").on("mouseenter", function () {
+      moveBgTo($(this));
+    });
+
+    // On leave, hide background
+    wrapper.on("mouseleave", function () {
+      active_bg.css({
+        opacity: 0,
+        height: 0
+      });
+    });
+  }
+
+  $(document).ready(function () {
+    Team_animation();
+  });
+
+
+  // Service list Hover Animation home 09
+  // ===============================
+  function Team_animation() {
+    const wrapper = $(".service-9__wrapper");
+    const active_bg = wrapper.find(".active-bg");
+
+    function moveBgTo(target) {
+      if (!target.length) return;
+
+      const offsetTop = target.offset().top;
+      const height = target.outerHeight();
+      const wrapperTop = wrapper.offset().top;
+      const translateY = offsetTop - wrapperTop;
+
+      active_bg.css({
+        transform: `translateY(${translateY}px)`,
+        height: `${height}px`,
+        opacity: 1
+      });
+    }
+
+    // On hover
+    wrapper.find(".service-9__item").on("mouseenter", function () {
       moveBgTo($(this));
     });
 
@@ -973,8 +950,7 @@
           scrollTrigger: {
             trigger: ".client-area-4",
             start: "bottom bottom",
-            endTrigger: ".client-area-4",
-            end: "bottom center",
+            end: "+=80%",
             pin: ".about-area-4",
             pinSpacing: true,
             scrub: 0,
@@ -987,9 +963,8 @@
           ease: "power2.in",
           scrollTrigger: {
             trigger: ".client-area-4",
-            start: "bottom center",
-            endTrigger: ".client-area-4",
-            end: "bottom top",
+            start: "bottom 20%",
+            end: "+=100%",
             pin: ".about-area-4",
             pinSpacing: true,
             scrub: 0,
@@ -1031,12 +1006,11 @@
         })
         ab4.to(".about-4-title-shape img", {
           translateX: 350,
-          ease: "none",
+          ease: "power2.inOut",
           scrollTrigger: {
             trigger: ".client-area-4",
             start: "bottom bottom",
-            endTrigger: ".client-area-4",
-            end: "bottom center",
+            end: "+=80%",
             pin: ".about-area-4",
             pinSpacing: true,
             scrub: 0,
@@ -1049,9 +1023,8 @@
           ease: "power2.in",
           scrollTrigger: {
             trigger: ".client-area-4",
-            start: "bottom center",
-            endTrigger: ".client-area-4",
-            end: "bottom top",
+            start: "bottom 20%",
+            end: "+=100%",
             pin: ".about-area-4",
             pinSpacing: true,
             scrub: 0,
@@ -1059,6 +1032,26 @@
           }
         })
       },
+    });
+  }
+
+  // Moving brand		
+  if (document.querySelectorAll(".moving-brand").length > 0) {
+    mm.add("(min-width: 1200px)", () => {
+      gsap.utils.toArray('.moving-brand').forEach((section, index) => {
+        const w = section.querySelector('.wrapper-brand');
+        const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
+        gsap.fromTo(w, { x }, {
+          x: xEnd,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            scrub: 0.5,
+            start: "20% bottom",
+            end: "80% 30%",
+          }
+        });
+      });
     });
   }
 
@@ -1077,7 +1070,7 @@
           toggleActions: "play complete play reverse",
           pin: true,
           scrub: 0,
-          markers: true,
+          // markers: true,
         }
       });
 
@@ -1089,7 +1082,7 @@
           start: "top top",
           end: "center top",
           scrub: true,
-          markers: true,
+          // markers: true,
         }
       });
 
@@ -1107,6 +1100,8 @@
       });
     });
   }
+
+
 
 
   // Animate the image scaling to fullscreen, keeping center position
@@ -1359,6 +1354,23 @@
       dotGrid.addEventListener("mouseleave", resetPositions);
     }
   });
+
+
+  // document.querySelectorAll(".work-box__item").forEach((item) => {
+  //   const speed = parseFloat(item.dataset.speed) || 1;
+
+  //   gsap.to(item, {
+  //     y: () => -(window.innerHeight * speed * 0.2),
+  //     // ease: "sine.out",
+  //     scrollTrigger: {
+  //       trigger: item,
+  //       start: "top bottom",
+  //       end: "bottom top",
+  //       scrub: true,
+  //     }
+  //   });
+  // });
+
 
 
 

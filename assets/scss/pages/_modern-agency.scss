@@ -522,6 +522,10 @@
                     font-size: 30px;
                     line-height: 40px;
                 }
+
+                a:hover {
+                    color: var(--secondary);
+                }
             }
 
             p {

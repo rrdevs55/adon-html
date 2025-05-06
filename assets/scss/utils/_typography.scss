@@ -39,8 +39,20 @@
 }
 
 @font-face {
+  font-family: "PPEditorialNew-Regular";
+  src: url('../fonts/PPEditorialNew-Regular.otf');
+  font-weight: 400;
+}
+
+@font-face {
   font-family: "PPEditorialNew-Italic";
   src: url('../fonts/PPEditorialNew-Italic.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Tartuffo_Trial-Regular";
+  src: url('../fonts/Tartuffo_Trial-Regular.otf');
   font-weight: 400;
 }
 
@@ -49,6 +61,8 @@
   --font_dmsans: "DM Sans", sans-serif;
   --font_bdogrotesk: "BDOGrotesk-Regular";
   --font_ppeditor: "PPEditorialNew-Italic";
+  --font_ppeditorialnewregular: "PPEditorialNew-Regular";
+  --font_tartuffotrial: "Tartuffo_Trial-Regular";
   --font_awesome: 'Font Awesome 6 pro';
 }
 

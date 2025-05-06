@@ -41,6 +41,10 @@
   max-width: 1850px;
 }
 
+.rr-container-1890 {
+  max-width: 1890px;
+}
+
 .rr-container-1455 {
   max-width: 1455px;
 }
@@ -179,6 +183,17 @@
   color: var(--primary);
 }
 
+.section-subtitle-4 {
+  font-family: var(--font_bdogrotesk);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: var(--primary);
+  display: inline-block;
+}
+
 .go-down {
   width: 28px;
   height: 28px;
@@ -242,6 +257,10 @@
 
 .font_ppeditor {
   font-family: var(--font_ppeditor);
+}
+
+.font_ppeditorialnewregular {
+  font-family: var(--font_ppeditorialnewregular);
 }
 
 /* Section spacing with responsive padding */
