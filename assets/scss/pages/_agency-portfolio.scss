@@ -207,7 +207,7 @@
     }
 }
 
-/* service-5 style  */
+/* service-9 style  */
 .service-9 {
 
     .service-9-inner {
@@ -218,11 +218,6 @@
         gap: 50px;
         display: grid;
         grid-template-columns: 750px 1fr;
-
-        // @media #{$xxl} {
-        //     margin-left: 430px;
-        //     grid-template-columns: 500px 1fr;
-        // }
 
         @media #{$xl} {
             grid-template-columns: 550px 1fr;
@@ -410,5 +405,173 @@
         transform: translateY(0);
         transform-origin: top center;
         transition: transform 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+    }
+}
+
+/* work-area-9 gallery style  */
+.work-area-9 {
+
+    .work-area-9-inner {
+        .main-title {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: -0.64px;
+            transform: translateY(100%);
+            font-family: var(--font_dmsans);
+        }
+    }
+
+    .works-9-wrapper {
+        display: grid;
+        gap: 150px 0;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+
+        @media #{$xl} {
+            gap: 100px 0;
+        }
+
+        @media #{$lg} {
+            gap: 100px;
+        }
+
+        >* {
+
+            &:nth-child(1) {
+                margin-top: 924px;
+                max-width: 485px;
+
+                @media #{$lg} {
+                    margin-top: 800px;
+                }
+            }
+
+            &:nth-child(2) {
+                margin-left: -40px;
+
+                @media #{$xl} {
+                    margin-left: 0;
+                }
+            }
+
+            &:nth-child(3) {
+                max-width: 960px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            &:nth-child(4) {
+                margin-top: 265px;
+                margin-right: -40px;
+
+                @media #{$xl} {
+                    margin-right: 0;
+                }
+            }
+
+            &:nth-child(5) {
+                margin-left: auto;
+            }
+
+            &:nth-child(6) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            &:nth-child(8) {
+                margin-top: 321px;
+                margin-left: -40px;
+
+                @media #{$xl} {
+                    margin-left: 0;
+                }
+            }
+        }
+
+    }
+
+    .span-2 {
+        grid-column: span 2;
+    }
+
+    .work-box__item {
+        will-change: transform;
+
+
+        .thumb {
+            overflow: hidden;
+
+            .image {
+                overflow: hidden;
+                position: relative;
+            }
+        }
+
+        .content {
+            margin-top: 24px;
+
+            @media #{$lg} {
+                margin-top: 14px;
+
+            }
+
+            .designation {
+                font-size: 20px;
+                font-weight: 400;
+                max-width: 540px;
+                line-height: 28px;
+                color: var(--black);
+                margin-bottom: 70px;
+
+                @media #{$lg} {
+                    margin-bottom: 50px;
+                }
+
+                @media #{$sm} {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 26px;
+            letter-spacing: -0.05em;
+
+            @media #{$lg} {
+                font-size: 18px;
+            }
+        }
+
+        .tag {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 26px;
+            letter-spacing: -0.05em;
+            display: block;
+            font-family: var(--font_bdogrotesk);
+            color: var(--primary);
+
+            @media #{$lg} {
+                font-size: 18px;
+            }
+        }
+
+        .date {
+
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 26px;
+            letter-spacing: -0.05em;
+            display: block;
+            font-family: var(--font_bdogrotesk);
+            color: var(--primary);
+
+            @media #{$lg} {
+                font-size: 18px;
+            }
+        }
     }
 }
