@@ -1126,3 +1126,32 @@
         display: inline-block;
     }
 }
+
+/* vision area 8 style  */
+.vision-8-header {
+    margin-top: 187px;
+
+    @media #{$xxl} {
+        margin-top: 137px;
+    }
+
+    @media #{$xl} {
+        margin-top: 87px;
+    }
+
+    @media #{$md} {
+        margin-top: 37px;
+    }
+
+    .section-title {
+        max-width: 1400px;
+    }
+}
+
+.vision-8-image-wrapper {
+    margin-top: 45px;
+
+    @media #{$md} {
+        margin-top: 35px;
+    }
+}
