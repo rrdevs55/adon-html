@@ -1363,27 +1363,6 @@
     }
   });
 
-
-  // document.querySelectorAll(".work-box__item").forEach((item) => {
-  //   const speed = parseFloat(item.dataset.speed) || 1;
-
-  //   gsap.to(item, {
-  //     y: () => -(window.innerHeight * speed * 0.2),
-  //     // ease: "sine.out",
-  //     scrollTrigger: {
-  //       trigger: item,
-  //       start: "top bottom",
-  //       end: "bottom top",
-  //       scrub: true,
-  //     }
-  //   });
-  // });
-
-
-
-
-
-
 })(jQuery);
 
 
