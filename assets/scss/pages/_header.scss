@@ -663,6 +663,10 @@
 
         .header__nav {
             margin-right: 424px;
+
+            @media #{$xl} {
+                margin-right: 100px;
+            }
         }
     }
 
@@ -720,6 +724,9 @@
             letter-spacing: -0.64px;
             position: relative;
 
+            @media #{$sm} {
+                display: none;
+            }
 
             &::before {
                 content: "";
