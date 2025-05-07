@@ -583,3 +583,151 @@
         }
     }
 }
+
+/* award area 8 style  */
+.award-8-inner {
+    position: relative;
+
+    .shape-1 {
+        position: absolute;
+        width: 180px;
+        left: 765px;
+        top: 1050px;
+    }
+}
+
+.award-8-header {
+    margin-top: 16px;
+}
+
+.award-8-title {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 500;
+    font-size: 265px;
+    line-height: 0.79;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @media #{$xxl} {
+        font-size: 185px;
+    }
+
+    @media #{$xl} {
+        font-size: 165px;
+    }
+
+    @media #{$lg} {
+        font-size: 125px;
+    }
+
+    @media #{$md} {
+        font-size: 95px;
+    }
+
+    @media #{$sm} {
+        font-size: 70px;
+    }
+
+    @media #{$xs} {
+        font-size: 45px;
+    }
+
+    .block-1 {
+        font-family: var(--font_tartuffotrial);
+        font-weight: 400;
+        line-height: 0.91;
+        display: block;
+    }
+
+    .block-2 {
+        display: block;
+        text-align: end;
+        margin-top: 107px;
+
+        @media #{$xl} {
+            margin-top: 67px;
+        }
+    }
+
+    .block-3 {
+        display: block;
+        margin-left: 400px;
+        margin-top: 137px;
+
+        @media #{$xxl} {
+            margin-left: 300px;
+        }
+
+        @media #{$xl} {
+            margin-top: 97px;
+        }
+    }
+}
+
+
+.awards-8-wrapper-box {
+    margin-top: -544px;
+
+    @media #{$xxl} {
+        margin-top: -424px;
+    }
+}
+
+.awards-8-wrapper {
+    display: grid;
+    gap: 203px 0;
+
+    @media #{$xxl} {
+        gap: 143px 0;
+    }
+
+    >* {
+        &:nth-child(1) {
+            margin-left: 395px;
+
+            @media #{$xxl} {
+                margin-left: 295px;
+            }
+        }
+
+        &:nth-child(2) {
+            margin-left: auto;
+        }
+
+        &:nth-child(3) {
+            margin-left: auto;
+        }
+    }
+}
+
+
+.award-box-8 {
+    width: 740px;
+    display: grid;
+    gap: 15px 40px;
+    grid-template-columns: 200px 1fr;
+
+    .title {
+        font-family: var(--font_bdogrotesk);
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+    }
+
+    .award-list {
+        li {
+            font-family: var(--font_bdogrotesk);
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: -0.05em;
+
+            .count {
+                margin-right: 13px;
+            }
+        }
+    }
+
+}
