@@ -402,7 +402,7 @@
         opacity: 0;
         position: absolute;
         pointer-events: none;
-        background: #EAEAEA;
+        background: #F1F1F1;
         transform: translateY(0);
         transform-origin: top center;
         transition: transform 0.4s ease, height 0.4s ease, opacity 0.4s ease;
@@ -420,6 +420,11 @@
             letter-spacing: -0.64px;
             transform: translateY(100%);
             font-family: var(--font_dmsans);
+
+            @media #{$sm} {
+                transform: translateY(0);
+                margin-bottom: 20px;
+            }
         }
     }
 
@@ -528,6 +533,41 @@
 
                 @media #{$sm} {
                     margin-top: 0px;
+                }
+            }
+
+            &:nth-child(9) {
+                max-width: 960px;
+                margin-left: auto;
+                margin-right: auto;
+
+                @media #{$lg} {
+                    max-width: 700px;
+                }
+
+                @media #{$md} {
+                    max-width: 550px;
+                }
+            }
+
+            &:nth-child(10) {
+                margin-top: 265px;
+                margin-right: -40px;
+
+                @media #{$xl} {
+                    margin-right: 0;
+                }
+
+                @media #{$sm} {
+                    margin-top: 0px;
+                }
+            }
+
+            &:nth-child(11) {
+                margin-left: auto;
+
+                @media #{$sm} {
+                    margin-left: inherit;
                 }
             }
         }
