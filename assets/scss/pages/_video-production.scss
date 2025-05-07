@@ -318,40 +318,6 @@
         }
     }
 
-    .section-title {
-        font-family: var(--font_bdogrotesk);
-        font-weight: 500;
-        font-size: 465px;
-        line-height: 0.77;
-        letter-spacing: -0.07em;
-        text-align: center;
-        text-transform: uppercase;
-
-        @media #{$xxl} {
-            font-size: 345px;
-        }
-
-        @media #{$xl} {
-            font-size: 315px;
-
-        }
-
-        @media #{$lg} {
-            font-size: 235px;
-        }
-
-        @media #{$md} {
-            font-size: 175px;
-        }
-
-        @media #{$sm} {
-            font-size: 125px;
-        }
-
-        @media #{$xs} {
-            font-size: 65px;
-        }
-    }
 
     .text-wrapper {
         margin-top: 192px;
@@ -379,6 +345,41 @@
         color: var(--primary);
         max-width: 410px;
         margin-inline: auto;
+    }
+}
+
+.portfolio-8-title {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 500;
+    font-size: 465px;
+    line-height: 0.77;
+    letter-spacing: -0.07em;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media #{$xxl} {
+        font-size: 345px;
+    }
+
+    @media #{$xl} {
+        font-size: 315px;
+
+    }
+
+    @media #{$lg} {
+        font-size: 235px;
+    }
+
+    @media #{$md} {
+        font-size: 175px;
+    }
+
+    @media #{$sm} {
+        font-size: 125px;
+    }
+
+    @media #{$xs} {
+        font-size: 65px;
     }
 }
 
@@ -846,4 +847,208 @@
         }
     }
 
+}
+
+/* team area 8 style  */
+.team-8-header {
+    text-align: center;
+    margin-top: 306px;
+
+    @media #{$xxl} {
+        margin-top: 256px;
+    }
+
+    @media #{$xl} {
+        margin-top: 206px;
+    }
+
+    @media #{$md} {
+        margin-top: 156px;
+    }
+
+    @media #{$sm} {
+        margin-top: 106px
+    }
+
+    .subtitle-wrapper {
+        margin-top: 248px;
+
+        @media #{$xxl} {
+            margin-top: 188px;
+        }
+
+        @media #{$xl} {
+            margin-top: 128px;
+        }
+
+        @media #{$md} {
+            margin-top: 68px;
+        }
+    }
+}
+
+.team-8-title {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 500;
+    font-size: 565px;
+    line-height: 0.62;
+    letter-spacing: -0.07em;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media #{$xxl} {
+        font-size: 415px;
+    }
+
+    @media #{$xl} {
+        font-size: 395px;
+
+    }
+
+    @media #{$lg} {
+        font-size: 295px;
+    }
+
+    @media #{$md} {
+        font-size: 215px;
+    }
+
+    @media #{$sm} {
+        font-size: 155px;
+    }
+
+    @media #{$xs} {
+        font-size: 85px;
+    }
+}
+
+.team-8-content {
+    display: grid;
+    gap: 40px 40px;
+    grid-template-columns: 430px 1fr;
+    margin-top: 189px;
+
+    @media #{$xxl} {
+        margin-top: 139px;
+    }
+
+    @media #{$xl} {
+        margin-top: 89px;
+        grid-template-columns: 380px 1fr;
+    }
+
+    @media #{$md} {
+        margin-top: 39px;
+    }
+
+    .text-wrapper {
+        margin-top: 2px;
+    }
+
+    .text {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 28px;
+        color: var(--primary);
+        border-left: 1px solid var(--primary);
+        padding-left: 40px;
+        padding-bottom: 24px;
+        max-width: 430px;
+    }
+
+}
+
+.team-8-wrapper-box {
+    margin-top: -150px;
+}
+
+.team-8-wrapper {
+    display: grid;
+    gap: 561px 40px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media #{$xxl} {
+        gap: 461px 40px;
+    }
+
+    >* {
+        &:nth-child(1) {
+            grid-column: 4;
+        }
+
+        &:nth-child(2) {
+            margin-top: -110px;
+
+            @media #{$xxl} {
+                margin-top: -60px;
+            }
+        }
+
+        &:nth-child(3) {
+            margin-top: -800px;
+
+            @media #{$xxl} {
+                margin-top: -600px;
+            }
+        }
+
+        &:nth-child(4) {
+            margin-top: -400px;
+
+            @media #{$xxl} {
+                margin-top: -300px;
+            }
+        }
+    }
+}
+
+.team-8-box {
+    pointer-events: none;
+
+    &:hover {
+        .thumb {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .thumb {
+        overflow: hidden;
+        pointer-events: auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+    }
+
+    .content {
+        margin-top: 15px;
+        pointer-events: auto;
+
+    }
+
+    .name {
+        font-family: var(--font_bdogrotesk);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.05em;
+
+        a:hover {
+            color: var(--secondary);
+        }
+    }
+
+    .post {
+        font-family: var(--font_bdogrotesk);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.05em;
+        display: inline-block;
+    }
 }
