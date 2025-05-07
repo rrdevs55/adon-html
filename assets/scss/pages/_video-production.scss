@@ -924,7 +924,7 @@
 
 .team-8-content {
     display: grid;
-    gap: 40px 40px;
+    gap: 20px 40px;
     grid-template-columns: 430px 1fr;
     margin-top: 189px;
 
@@ -939,6 +939,11 @@
 
     @media #{$md} {
         margin-top: 39px;
+        grid-template-columns: 280px 1fr;
+    }
+
+    @media #{$sm} {
+        grid-template-columns: 1fr;
     }
 
     .text-wrapper {
@@ -954,12 +959,23 @@
         padding-left: 40px;
         padding-bottom: 24px;
         max-width: 430px;
+
+        @media #{$sm} {
+            border-left: 0;
+            padding-left: 0px;
+            padding-bottom: 0px;
+            max-width: 100%;
+        }
     }
 
 }
 
 .team-8-wrapper-box {
     margin-top: -150px;
+
+    @media #{$lg} {
+        margin-top: 40px;
+    }
 }
 
 .team-8-wrapper {
@@ -971,9 +987,31 @@
         gap: 461px 40px;
     }
 
+    @media #{$lg} {
+        gap: 261px 40px;
+    }
+
+    @media #{$md} {
+        gap: 161px 30px;
+    }
+
+    @media #{$sm} {
+        gap: 41px 30px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media #{$xs} {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
     >* {
         &:nth-child(1) {
             grid-column: 4;
+
+            @media #{$sm} {
+                grid-column: auto;
+            }
         }
 
         &:nth-child(2) {
@@ -981,6 +1019,14 @@
 
             @media #{$xxl} {
                 margin-top: -60px;
+            }
+
+            @media #{$lg} {
+                margin-top: -10px;
+            }
+
+            @media #{$sm} {
+                margin-top: 0;
             }
         }
 
@@ -990,6 +1036,22 @@
             @media #{$xxl} {
                 margin-top: -600px;
             }
+
+            @media #{$lg} {
+                margin-top: -400px;
+            }
+
+            @media #{$lg} {
+                margin-top: -400px;
+            }
+
+            @media #{$md} {
+                margin-top: -300px;
+            }
+
+            @media #{$sm} {
+                margin-top: 0;
+            }
         }
 
         &:nth-child(4) {
@@ -997,6 +1059,18 @@
 
             @media #{$xxl} {
                 margin-top: -300px;
+            }
+
+            @media #{$lg} {
+                margin-top: -200px;
+            }
+
+            @media #{$md} {
+                margin-top: -150px;
+            }
+
+            @media #{$sm} {
+                margin-top: 0;
             }
         }
     }
