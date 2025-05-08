@@ -1350,6 +1350,62 @@
   }
 
 
+  // tagline animation 
+  if (document.querySelectorAll(".tagline-8-list-wrapper-box").length > 0) {
+    mm.add("(min-width: 1200px)", () => {
+      gsap.utils.toArray('.tagline-8-list-wrapper-box').forEach((listRotatorWrapper) => {
+
+        const listRotatorPin = listRotatorWrapper.querySelector(".tagline-8-list-wrapper");
+        const listRotator = listRotatorWrapper.querySelector(".tagline-8-list");
+
+
+        const rTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: listRotatorPin,
+            start: function () {
+              const startPin = 0;
+              return "top +=" + startPin;
+            },
+            end: function () {
+              const endPin = window.innerHeight * 3;
+              return "+=" + endPin;
+            },
+            pin: true,
+            scrub: true,
+          }
+        });
+
+        const listItems = gsap.utils.toArray('.tagline-8-list li');
+        const stagger = 0.5;
+
+        listItems.forEach((listItem, index) => {
+          rTimeline.from(listItem, {
+            duration: 1,
+            opacity: 0.2,
+            delay: index * 0.5,
+          });
+        });
+
+        gsap.to(listRotator, {
+          scrollTrigger: {
+            trigger: listRotatorWrapper,
+            start: function () {
+              const startPin = 0;
+              return "top +=" + startPin;
+            },
+            end: function () {
+              const endPin = window.innerHeight * 3;
+              return "+=" + endPin;
+            },
+            scrub: true,
+          },
+          y: - (listRotator.offsetHeight - window.innerHeight)
+        });
+
+      });
+    });
+  }
+
   // side-toggle animaton
   document.addEventListener("DOMContentLoaded", () => {
     const dotGrid = document.querySelector(".side-toggle");
