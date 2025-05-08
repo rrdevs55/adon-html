@@ -1238,3 +1238,67 @@
         font-size: 40px;
     }
 }
+
+/* clients area 8 style  */
+.clients-8-header {
+    margin-top: 294px;
+
+    @media #{$xxl} {
+        margin-top: 244px;
+    }
+
+    @media #{$xl} {
+        margin-top: 194px;
+    }
+
+    @media #{$md} {
+        margin-top: 144px;
+    }
+
+    @media #{$sm} {
+        margin-top: 94px
+    }
+}
+
+.clients-8-title {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    max-width: 240px;
+    margin-inline: auto;
+}
+
+.clients-8-wrapper-box {
+    margin-top: 146px;
+
+    @media #{$xxl} {
+        margin-top: 116px;
+    }
+
+    @media #{$xl} {
+        margin-top: 86px;
+    }
+}
+
+.clients-8-wrapper {
+    display: flex;
+    gap: 70px 150px;
+    justify-content: center;
+    max-width: 1250px;
+    flex-wrap: wrap;
+    margin-inline: auto;
+
+    @media #{$xxl} {
+        gap: 60px 120px;
+        max-width: 1120px;
+    }
+}
+
+.client-8-item {
+    img {
+        height: 30px;
+    }
+}
