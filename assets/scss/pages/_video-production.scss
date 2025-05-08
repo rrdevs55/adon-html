@@ -1240,23 +1240,15 @@
 }
 
 /* clients area 8 style  */
-.clients-8-header {
-    margin-top: 294px;
+.clients-8-inner {
+    margin-top: 94px;
 
     @media #{$xxl} {
-        margin-top: 244px;
+        margin-top: 44px;
     }
 
     @media #{$xl} {
-        margin-top: 194px;
-    }
-
-    @media #{$md} {
-        margin-top: 144px;
-    }
-
-    @media #{$sm} {
-        margin-top: 94px
+        margin-top: 0px;
     }
 }
 
