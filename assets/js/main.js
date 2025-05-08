@@ -867,6 +867,46 @@
     Team_animation();
   });
 
+  // Service list Hover Animation home 09
+  // ===============================
+  function Team_animation() {
+    const wrapper = $(".service-10__wrapper");
+    const active_bg = wrapper.find(".active-bg");
+
+    function moveBgTo(target) {
+      if (!target.length) return;
+
+      const offsetTop = target.offset().top;
+      const height = target.outerHeight();
+      const wrapperTop = wrapper.offset().top;
+      const translateY = offsetTop - wrapperTop;
+
+      active_bg.css({
+        transform: `translateY(${translateY}px)`,
+        height: `${height}px`,
+        opacity: 1
+      });
+    }
+
+    // On hover
+    wrapper.find(".service-10__item").on("mouseenter", function () {
+      moveBgTo($(this));
+    });
+
+    // On leave, hide background
+    wrapper.on("mouseleave", function () {
+      active_bg.css({
+        opacity: 0,
+        height: 0
+      });
+    });
+  }
+
+  $(document).ready(function () {
+    Team_animation();
+  });
+
+
 
   // Moving Gallery		
   if ($('.fun-fact-area-inner').length > 0 && window.innerWidth > 767) {
@@ -1363,25 +1403,54 @@
     }
   });
 
+  if ($('.Projects-area-10').length > 0) {
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      return gsap.to('.Projects-area-10', {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: '.Projects-area-10',
+          scrub: 1,
+          start: 'top top',
+          end: "bottom 100%",
+          pin: '.Projects__content',
+          markers: true,
+          pinSpacing: false,
+          toggleActions: 'play reverse play reverse',
+        }
+      });
+    });
+  }
 
-  // document.querySelectorAll(".work-box__item").forEach((item) => {
-  //   const speed = parseFloat(item.dataset.speed) || 1;
+  if (document.querySelector(".Projects-area-10") && window.innerWidth > 768) {
+    const projectArea = document.querySelector(".Projects-area-10");
+    const steps = document.querySelectorAll(".Projects__content ul li");
+    const stepCount = steps.length;
 
-  //   gsap.to(item, {
-  //     y: () => -(window.innerHeight * speed * 0.2),
-  //     // ease: "sine.out",
-  //     scrollTrigger: {
-  //       trigger: item,
-  //       start: "top bottom",
-  //       end: "bottom top",
-  //       scrub: true,
-  //     }
-  //   });
-  // });
+    const fill = document.querySelector(".Projects-area-10__fill");
+    const current = document.getElementById("Projects-area-10__current");
+    const total = document.getElementById("Projects-area-10__total");
 
+    if (total) total.textContent = String(stepCount).padStart(2, '0');
 
+    ScrollTrigger.create({
+      trigger: projectArea,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      onUpdate: ({ progress }) => {
+        const step = Math.min(stepCount, Math.max(1, Math.floor(progress * (stepCount - 1)) + 1));
+        const width = (step / stepCount) * 100;
 
+        if (fill) fill.style.width = `${width}%`;
+        if (current) current.textContent = String(step).padStart(2, '0');
 
+        steps.forEach((li, index) => {
+          li.classList.toggle("active", index + 1 === step);
+        });
+      }
+    });
+  }
 
 
 })(jQuery);

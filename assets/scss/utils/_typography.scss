@@ -56,6 +56,18 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Tartuffo_Trial-Regular";
+  src: url('../fonts/Tartuffo_Trial-Thin.otf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Tartuffo_Trial-Regular";
+  src: url('../fonts/Tartuffo_Trial-Light.otf');
+  font-weight: 300;
+}
+
 
 :root {
   --font_dmsans: "DM Sans", sans-serif;
