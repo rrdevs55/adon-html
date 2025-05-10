@@ -1341,14 +1341,19 @@
     });
   })
 
-  // Play video in hover 
+  // Play video in hover
   const videos = document.querySelectorAll(".video");
 
   for (const video of videos) {
-    video.addEventListener('mouseover', function () { video.play() }, false);
-    video.addEventListener('mouseout', function () { video.pause() }, false);
-  }
+    video.muted = true; // <-- Required for autoplay to work on hover
+    video.addEventListener('mouseover', () => {
+      video.play().catch((e) => console.log("Playback error:", e));
+    }, false);
 
+    video.addEventListener('mouseout', () => {
+      video.pause();
+    }, false);
+  }
 
   // tagline animation 
   if (document.querySelectorAll(".tagline-8-list-wrapper-box").length > 0) {
