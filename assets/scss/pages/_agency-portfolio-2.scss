@@ -318,6 +318,7 @@
                     font-weight: 300;
                     line-height: 36px;
                     font-family: var(--font_tartuffotrial);
+                    list-style: none;
 
                     @media #{$xs} {
                         font-size: 25px;

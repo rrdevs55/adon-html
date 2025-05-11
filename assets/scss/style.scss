@@ -259,6 +259,7 @@
             color: var(--primary);
             transition-property: opacity;
             transition-duration: 500ms;
+            list-style: none;
 
             a {
                 display: block;
@@ -698,6 +699,7 @@
             letter-spacing: -0.7px;
             text-transform: uppercase;
             font-family: var(--font_bdogrotesk);
+            list-style: none;
 
             a {
                 display: inline-block;
@@ -1011,6 +1013,7 @@
             text-transform: uppercase;
             transition-property: opacity;
             transition-duration: 500ms;
+            list-style: none;
 
             &:not(:last-child) {
                 margin-bottom: 0px;
@@ -1241,6 +1244,7 @@
             transition-property: opacity;
             transition-duration: 500ms;
             font-family: var(--font_dmsans);
+            list-style: none;
 
             &:not(:last-child) {
                 margin-bottom: 4px;

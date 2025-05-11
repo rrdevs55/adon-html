@@ -64,6 +64,7 @@
             letter-spacing: -0.05em;
             text-transform: uppercase;
             color: var(--white);
+            list-style: none;
 
             a:hover {
                 color: #999999;
@@ -215,12 +216,12 @@
     position: relative;
 
     @media #{$lg} {
-        column-gap: 80px;
+        gap: 0 80px;
 
     }
 
     @media #{$sm} {
-        column-count: auto;
+        grid-template-columns: 1fr;
     }
 
     &:before {
@@ -231,6 +232,10 @@
         background-color: rgba(17, 17, 17, 0.15);
         top: 0;
         left: 50%;
+
+        @media #{$sm} {
+            display: none;
+        }
     }
 
     >* {
@@ -856,6 +861,7 @@
             font-size: 15px;
             line-height: 20px;
             letter-spacing: -0.05em;
+            list-style: none;
 
             .count {
                 margin-right: 13px;
