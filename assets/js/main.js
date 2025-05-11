@@ -1411,6 +1411,9 @@
     });
   }
 
+
+
+
   // side-toggle animaton
   document.addEventListener("DOMContentLoaded", () => {
     const dotGrid = document.querySelector(".side-toggle");

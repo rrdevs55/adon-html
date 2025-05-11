@@ -209,9 +209,10 @@
 .about-8-item-wrapper {
     border-top: 1px solid rgba(17, 17, 17, 0.15);
     border-bottom: 1px solid rgba(17, 17, 17, 0.15);
-    column-count: 2;
-    column-gap: 140px;
-    column-rule: 1px solid rgba(17, 17, 17, 0.15);
+    display: grid;
+    gap: 0 140px;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
 
     @media #{$lg} {
         column-gap: 80px;
@@ -220,6 +221,16 @@
 
     @media #{$sm} {
         column-count: auto;
+    }
+
+    &:before {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: rgba(17, 17, 17, 0.15);
+        top: 0;
+        left: 50%;
     }
 
     >* {
@@ -269,6 +280,11 @@
 
     .thumb {
         margin-top: 83px;
+        margin-top: 83px;
+        aspect-ratio: 100 / 128;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         @media #{$xxl} {
             margin-top: 63px;
