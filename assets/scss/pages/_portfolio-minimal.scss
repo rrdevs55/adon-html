@@ -1,0 +1,53 @@
+/* portfolio area 12 style  */
+.portfolio-12-title {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 400;
+    font-size: 140px;
+    line-height: 0.86;
+    letter-spacing: -0.07em;
+}
+
+
+.portfolio-12-header {
+    margin-top: 136px;
+
+    .text-wrapper {
+        margin-top: 287px;
+    }
+
+    .text {
+        font-family: var(--font_bdogrotesk);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.03em;
+        max-width: 390px;
+    }
+
+}
+
+.works-12-wrapper-box {
+    margin-top: 45px;
+}
+
+.works-12-wrapper {
+    display: grid;
+    gap: 44px 10px;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.work-box-12 {
+    .title {
+        font-family: var(--font_bdogrotesk);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: -0.05em;
+    }
+
+    .content {
+        margin-top: 8px;
+    }
+
+
+}
