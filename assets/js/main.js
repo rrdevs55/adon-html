@@ -1517,6 +1517,112 @@
   }
 
 
+
+
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   const titles = document.querySelectorAll(".portfolio-title");
+
+  //   // Split each title into letters
+  //   titles.forEach(title => {
+  //     let text = title.textContent.trim();
+  //     title.innerHTML = "";
+  //     text.split("").forEach(letter => {
+  //       let span = document.createElement("span");
+  //       span.textContent = letter;
+  //       span.style.display = "inline-block";
+  //       span.style.opacity = 0;
+  //       span.style.transform = "translateY(2em)";
+  //       title.appendChild(span);
+  //     });
+  //   });
+
+  //   // Create a GSAP timeline
+  //   let tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".title-container",
+  //       start: "top 80%",
+  //       end: "bottom top",
+  //       once: true, // Ensure the animation plays only once
+  //       markers: true,
+  //       toggleActions: "play none none none",
+  //     }
+  //   });
+
+  //   // Animate each title separately
+  //   titles.forEach((title, index) => {
+  //     let letters = title.querySelectorAll("span");
+
+  //     // Show title after animation
+  //     gsap.set(title, { visibility: "visible" });
+
+  //     // Add animation for each letter
+  //     tl.to(
+  //       letters,
+  //       {
+  //         opacity: 1,
+  //         y: 0,
+  //         rotate: 0,
+  //         duration: 0.5,
+  //         stagger: 0.05,
+  //         ease: "power3.out",
+  //       },
+  //       index * 1.5 // Delay for each title
+  //     );
+  //   });
+  // });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const wraps = document.querySelectorAll("[data-title-wrap]");
+    if (!wraps.length) return;
+
+    // Split titles into letters
+    const letterTargets = document.querySelectorAll("[data-title-element]");
+    new SplitType(letterTargets, { types: "words, chars" });
+
+    wraps.forEach((wrap, index) => {
+      const titles = wrap.querySelectorAll("[data-title-element]");
+      const animatedTitle = titles[0];
+      const staticTitle = titles[1];
+
+      // Animate the first title
+      gsap.fromTo(
+        animatedTitle.querySelectorAll(".char"),
+        {
+          y: "-150%",
+          rotate: "-15deg",
+          opacity: 0,
+        },
+        {
+          y: "0%",
+          rotate: "0deg",
+          opacity: 1,
+          duration: 1.5,
+          stagger: 0.09,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: wrap,
+            start: "top 80%",
+            end: "top 30%",
+            scrub: 1,
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      // Show the static title after animation
+      gsap.set(staticTitle, { opacity: 0 });
+      gsap.to(staticTitle, {
+        opacity: 1,
+        delay: 1.5 + (titles[0].textContent.length * 0.05),
+        duration: 0.5,
+        ease: "power3.out",
+      });
+    });
+  });
+
+
+
 })(jQuery);
 
 
