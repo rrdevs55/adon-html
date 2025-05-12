@@ -379,17 +379,21 @@
     font-family: var(--font_bdogrotesk);
     font-weight: 500;
     font-size: 465px;
-    line-height: 0.77;
-    letter-spacing: -0.07em;
+    line-height: 0.9;
+    letter-spacing: -34px;
     text-align: center;
     text-transform: uppercase;
+    overflow: hidden;
+    margin-left: -60px;
 
     @media #{$xxl} {
         font-size: 345px;
     }
 
     @media #{$xl} {
-        font-size: 315px;
+        font-size: 280px;
+        margin-left: -20px;
+        letter-spacing: -20px;
 
     }
 
@@ -399,10 +403,14 @@
 
     @media #{$md} {
         font-size: 175px;
+        margin-left: -10px;
+        letter-spacing: -10px;
     }
 
     @media #{$sm} {
-        font-size: 125px;
+        font-size: 120px;
+        margin-left: 0px;
+        letter-spacing: 0px;
     }
 
     @media #{$xs} {
@@ -919,34 +927,40 @@
     font-family: var(--font_bdogrotesk);
     font-weight: 500;
     font-size: 565px;
-    line-height: 0.62;
-    letter-spacing: -0.07em;
+    line-height: 0.9;
+    letter-spacing: -49.1px;
+    display: flex;
     text-align: center;
     text-transform: uppercase;
+    overflow: hidden;
 
     @media #{$xxl} {
         font-size: 415px;
+        letter-spacing: -30px;
     }
 
     @media #{$xl} {
-        font-size: 395px;
+        font-size: 350px;
 
     }
 
     @media #{$lg} {
-        font-size: 295px;
+        font-size: 280px;
+        letter-spacing: -20px;
     }
 
     @media #{$md} {
-        font-size: 215px;
+        font-size: 210px;
+        letter-spacing: -10px;
     }
 
     @media #{$sm} {
-        font-size: 155px;
+        font-size: 145px;
+        letter-spacing: 0px;
     }
 
     @media #{$xs} {
-        font-size: 85px;
+        font-size: 75px;
     }
 }
 
@@ -1340,37 +1354,4 @@
             }
         }
     }
-}
-
-
-
-
-
-
-
-
-
-// ==================================
-// .title-container {
-//     text-align: center;
-//     font-size: 6rem;
-//     color: #333;
-//     // margin-top: 100vh;
-// }
-
-// .portfolio-title {
-//     // opacity: 0;
-//     display: inline-block;
-//     margin: 0;
-//     // white-space: nowrap;
-//     overflow: hidden;
-// }
-.portfolio-8-title {
-    // font-size: 6rem;
-    text-align: center;
-    margin: 100px 0;
-    color: #333;
-    overflow: hidden;
-    display: inline-block;
-    line-height: 1.2;
 }

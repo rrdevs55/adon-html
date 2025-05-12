@@ -1596,25 +1596,30 @@
     const letterTargets = document.querySelectorAll("[data-title-element]");
     new SplitType(letterTargets, { types: "words, chars" });
 
-    wraps.forEach((wrap, index) => {
-      const titles = wrap.querySelectorAll("[data-title-element]");
-      const animatedTitle = titles[0];
-      const staticTitle = titles[1];
+    wraps.forEach((wrap) => {
+      const title = wrap.querySelector("[data-title-element]");
+      const direction = title.getAttribute("data-title-element");
 
-      // Animate the first title
+      // Determine animation direction
+      const fromY = direction === "down" ? "-150%" : "150%";
+      const toY = "0%";
+      const rotateFrom = direction === "down" ? "-15deg" : "15deg";
+      const rotateTo = "0deg";
+
+      // GSAP Animation
       gsap.fromTo(
-        animatedTitle.querySelectorAll(".char"),
+        title.querySelectorAll(".char"),
         {
-          y: "-150%",
-          rotate: "-15deg",
+          y: fromY,
+          rotate: rotateFrom,
           opacity: 0,
         },
         {
-          y: "0%",
-          rotate: "0deg",
+          y: toY,
+          rotate: rotateTo,
           opacity: 1,
           duration: 1.5,
-          stagger: 0.09,
+          stagger: 0.05,
           ease: "power3.out",
           scrollTrigger: {
             trigger: wrap,
@@ -1625,15 +1630,6 @@
           },
         }
       );
-
-      // Show the static title after animation
-      gsap.set(staticTitle, { opacity: 0 });
-      gsap.to(staticTitle, {
-        opacity: 1,
-        delay: 1.5 + (titles[0].textContent.length * 0.05),
-        duration: 0.5,
-        ease: "power3.out",
-      });
     });
   });
 
