@@ -125,8 +125,10 @@ ol {
   margin: 0;
 }
 
-li {
-  list-style: none;
+.ls-none {
+  li {
+    list-style: none;
+  }
 }
 
 a {
