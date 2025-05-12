@@ -185,11 +185,17 @@
 
 
 /* about area 8 style  */
+.about-area-8 {
+    position: relative;
+    z-index: 1;
+    background-color: var(--white);
+}
+
 .about-8-header {
-    margin-top: 47px;
+    padding-top: 47px;
 
     .title-wrapper {
-        margin-top: 39px;
+        padding-top: 39px;
     }
 
     .section-title {

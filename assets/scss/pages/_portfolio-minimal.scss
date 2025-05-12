@@ -5,14 +5,58 @@
     font-size: 140px;
     line-height: 0.86;
     letter-spacing: -0.07em;
+
+    @media #{$xxl} {
+        font-size: 110px;
+    }
+
+    @media #{$xl} {
+        font-size: 100px;
+    }
+
+    @media #{$lg} {
+        font-size: 70px;
+    }
+
+    @media #{$md} {
+        font-size: 60px;
+    }
+
+    @media #{$sm} {
+        font-size: 50px;
+    }
+
+    @media #{$xs} {
+        font-size: 45px;
+    }
+
+    br {
+        display: block;
+    }
 }
 
 
 .portfolio-12-header {
     margin-top: 136px;
 
+    @media #{$xl} {
+        margin-top: 116px;
+    }
+
     .text-wrapper {
         margin-top: 287px;
+
+        @media #{$xxl} {
+            margin-top: 167px;
+        }
+
+        @media #{$xl} {
+            margin-top: 97px;
+        }
+
+        @media #{$lg} {
+            margin-top: 47px;
+        }
     }
 
     .text {
@@ -29,17 +73,48 @@
 .works-12-wrapper-box {
     margin-top: 45px;
     margin-bottom: 194px;
+
+    @media #{$xxl} {
+        margin-bottom: 144px;
+    }
+
+    @media #{$xl} {
+        margin-top: 35px;
+        margin-bottom: 94px;
+
+    }
+
+    @media #{$md} {
+        margin-bottom: 54px;
+    }
 }
 
 .works-12-wrapper {
     display: grid;
     gap: 44px 10px;
     grid-template-columns: repeat(5, 1fr);
+
+    @media #{$lg} {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media #{$md} {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media #{$sm} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media #{$xs} {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .work-box-12 {
     .thumb {
-        height: 300px;
+        aspect-ratio: 100/82;
+
 
         img {
             width: 100%;
@@ -62,15 +137,29 @@
 
     &.v-big {
         .thumb {
-            height: 500px;
+            aspect-ratio: 100/137;
+
+            @media #{$md} {
+                aspect-ratio: 100/82;
+
+            }
         }
     }
 
     &.span-2 {
         grid-column: span 2;
 
+        @media #{$md} {
+            grid-column: auto;
+        }
+
         .thumb {
-            height: 500px;
+            aspect-ratio: 100/68;
+
+            @media #{$md} {
+                aspect-ratio: 100/82;
+
+            }
         }
     }
 }
