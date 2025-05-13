@@ -698,6 +698,7 @@
         font-weight: 400;
         line-height: 0.91;
         display: block;
+        overflow: hidden;
 
         @media #{$sm} {
             display: inline-block;
@@ -709,6 +710,8 @@
         display: block;
         text-align: end;
         margin-top: 107px;
+        overflow: hidden;
+
 
         @media #{$xl} {
             margin-top: 67px;
@@ -724,6 +727,8 @@
         display: block;
         margin-left: 400px;
         margin-top: 137px;
+        overflow: hidden;
+
 
         @media #{$xxl} {
             margin-left: 250px;
