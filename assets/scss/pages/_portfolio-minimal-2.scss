@@ -1,0 +1,63 @@
+/* hero area 16 style  */
+.meta-box li {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.03em;
+    list-style: none;
+    color: var(--primary);
+}
+
+.meta-box-wrapper {
+    display: grid;
+    gap: 25px 40px;
+    grid-template-columns: 905px 1fr auto;
+}
+
+.hero-16-content {
+    margin-top: 127px;
+}
+
+p.text {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.03em;
+    color: var(--primary);
+    max-width: 220px;
+}
+
+h2.section-title {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 1;
+    letter-spacing: -0.07em;
+    max-width: 625px;
+}
+
+span.number {
+    font-family: var(--font_bdogrotesk);
+    font-weight: 400;
+    font-size: 265px;
+    line-height: 0.75;
+    letter-spacing: -0.07em;
+    display: inline-block;
+    color: var(--primary);
+    margin-top: 70px;
+    margin-bottom: 9px;
+}
+
+.section-title-wrapper {
+    display: grid;
+    gap: 25px 40px;
+    grid-template-columns: 905px 1fr;
+    margin-top: 170px;
+}
+
+.works-16-wrapper-box {
+    margin-top: 147px;
+    margin-bottom: 150px;
+}
