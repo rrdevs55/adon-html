@@ -1671,6 +1671,47 @@
   });
 
 
+  // Menu Text Animation
+  document.querySelectorAll('.menu-anim > li > a').forEach(button => {
+    button.innerHTML = '<div class="menu-text"><span>' +
+      button.textContent.split('').join('</span><span>') +
+      '</span></div>';
+
+    const spans = button.querySelectorAll('.menu-text span');
+    spans.forEach((span, index) => {
+      span.style.transitionDelay = `${index * 0.06}s`;
+    });
+  });
+
+  // Image Hover Effect
+  const menuItems = document.querySelectorAll(".menu-anim > li");
+  const images = document.querySelectorAll(".scale-img");
+
+  // Set Default Active Item
+  let activeIndex = 0;
+  images[activeIndex].classList.add("active");
+
+  // Hover Effect
+  menuItems.forEach((item, index) => {
+    item.addEventListener("mouseenter", () => {
+      // Remove active class from all images
+      images.forEach((img, i) => {
+        if (i !== index) {
+          img.style.transition = "opacity 0.89s ease, transform 1s cubic-bezier(0.25, 0.8, 0.25, 1)";
+          img.classList.remove("active");
+        }
+      });
+
+      // Add active class to the hovered image
+      const activeImage = images[index];
+      activeImage.style.transition = "opacity 0.9s ease, transform 1.4s cubic-bezier(0.25, 0.8, 0.25, 1)";
+      activeImage.classList.add("active");
+
+      // Update active index
+      activeIndex = index;
+    });
+  });
+
 
 })(jQuery);
 

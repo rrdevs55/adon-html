@@ -53,3 +53,38 @@
   display: inline-flexbox;
   display: inline-flex;
 }
+
+
+// Menu Animation
+// @mixin menu_anim($shadow_color) {
+//   .menu-text {
+//     display: flex;
+//     overflow: hidden;
+//     text-shadow: 0 16px 0 $shadow_color;
+
+//     span {
+//       display: block;
+//       backface-visibility: hidden;
+//       font-style: normal;
+//       transition: transform .4s ease;
+//       transform: translateY(var(--m)) translateZ(0);
+//       $i: 1;
+
+//       @while $i < 50 {
+//         &:nth-child(#{$i}) {
+//           transition-delay: $i / 20 + s;
+//         }
+
+//         $i: $i + 1;
+//       }
+//     }
+//   }
+
+//   &:hover {
+//     --y: -4px;
+
+//     span {
+//       --m: calc(16px * -1);
+//     }
+//   }
+// }
