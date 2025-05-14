@@ -1466,6 +1466,11 @@
     });
   }
 
+  // menu slider 
+  $('.menu-slider-title').on("mouseenter", function () {
+    $('#menu-slider-wrap').removeClass().addClass($(this).attr('rel'));
+    $(this).addClass('active').siblings().removeClass('active');
+  });
 
   // side-toggle animaton
   document.addEventListener("DOMContentLoaded", () => {
