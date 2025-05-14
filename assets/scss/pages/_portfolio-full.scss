@@ -1,0 +1,183 @@
+.portfolio-full {
+
+    width: 100vw;
+
+    .portfolio-full-inner {
+        height: 100vh;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 285px 700px 1fr;
+        margin-top: 80px;
+        overflow: hidden;
+        gap: 20px;
+
+        @media #{$xl} {
+            grid-template-columns: 185px 500px 1fr;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 185px 400px 1fr;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        gap: 10px;
+        border-right: 1px solid rgba(17, 17, 17, 0.10);
+
+        @media #{$md} {
+            border-right: none;
+        }
+
+        span {
+            color: var(--black);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 14px;
+            display: inline-block;
+            letter-spacing: -0.7px;
+            font-family: var(--font_bdogrotesk);
+        }
+
+        .sub-title {
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: auto;
+            line-height: 14px;
+            color: var(--black);
+            display: inline-block;
+            letter-spacing: -0.7px;
+            text-transform: uppercase;
+            transform: translate(0, -120px);
+            font-family: var(--font_bdogrotesk);
+
+            @media #{$md} {
+                transform: translate(0, 0px);
+            }
+        }
+    }
+
+    /* Media Block */
+    .media {
+        position: relative;
+        overflow: hidden;
+        margin-top: 20px;
+        height: 100vh;
+
+        @media #{$md} {
+            height: 500px;
+            order: 2;
+        }
+    }
+
+    .scale-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transform: scale(0.2);
+        transition:
+            opacity 0.8s ease,
+            transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .scale-img.active {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .content {
+        padding-top: 30px;
+        border-left: 1px solid rgba(17, 17, 17, 0.10);
+
+        @media #{$md} {
+            order: 1;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 80px;
+
+            @media #{$xl} {
+                margin-left: 20px;
+            }
+
+            li {
+                position: relative;
+                align-items: center;
+                display: inline-flex;
+                align-items: baseline;
+                font-family: var(--font_tartuffotrial);
+
+                a {
+                    width: 100%;
+                    color: #999;
+                    font-size: 110px;
+                    font-weight: 300;
+                    line-height: 110px;
+                    font-family: var(--font_tartuffotrial);
+                    transform: translateY(var(--y)) translateZ(0);
+                    transition: transform 0.6s ease, box-shadow 0.4s ease;
+
+                    @media #{$xl} {
+                        font-size: 70px;
+                        line-height: 70px;
+                    }
+
+                    @media #{$lg} {
+                        font-size: 50px;
+                        line-height: 50px;
+                    }
+
+                    &:hover {
+                        --y: 0px;
+
+                        .menu-text span {
+                            --m: calc(120px * -1);
+                            color: var(--secondary);
+                        }
+                    }
+
+                    .menu-text {
+                        display: flex;
+                        overflow: hidden;
+                        display: flex;
+                        overflow: hidden;
+                        text-shadow: 0 115px 0 black;
+
+                        span {
+                            display: block;
+                            font-style: normal;
+                            backface-visibility: hidden;
+                            transition: transform 0.6s ease, color 0.4s ease;
+                            transform: translateY(var(--m)) translateZ(0);
+                        }
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                .year {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 80px;
+                    white-space: nowrap;
+                    letter-spacing: -0.7px;
+                    font-family: var(--font_bdogrotesk);
+                }
+            }
+        }
+    }
+}
