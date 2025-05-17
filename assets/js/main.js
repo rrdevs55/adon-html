@@ -1773,6 +1773,23 @@
     }
   });
 
+  // portfolio-slide
+  if (document.querySelectorAll(".portfolio").length > 0) {
+    var swiper = new Swiper(".portfolio-activ", {
+
+      effect: "fade",
+      loop: true,
+      mousewheel: true,
+      pagination: {
+        el: '.portfolio-pagination',
+        clickable: true,
+      },
+      navigation: {
+        prevEl: ".portfolio__slider__arrow-prev",
+        nextEl: ".portfolio__slider__arrow-next",
+      },
+    });
+  }
 
 })(jQuery);
 
