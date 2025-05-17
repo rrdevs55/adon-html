@@ -6,42 +6,106 @@
 .menu-slider-content-wrap {
     position: absolute;
     top: 0;
-    left: 170px;
+    left: 0;
     height: 100%;
-    width: 50%;
+    width: 100%;
     overflow-y: scroll;
     scrollbar-width: none;
-    padding-top: 100px;
-
-    @media #{$xs} {
-        left: 20px;
-        width: 100%;
-    }
-
-    @media #{$sm} {
-        left: 120px;
-        width: 100%;
-    }
+    display: flex;
+    align-items: center;
 }
 
-.menu-slider-title {
-    font-family: var(--font_bdogrotesk);
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.42;
-    letter-spacing: -0.05em;
-    color: var(--white);
-    transition: 0.5s;
-    display: block;
+.menu-slider-item {
     opacity: 0.40;
+    transition: all 0.5s;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
 
-    &:hover {
+    &:hover,
+    &.active {
         opacity: 1;
 
-        a {
+        .number,
+        .tag,
+        .year {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &:not(:first-child) {
+        margin-top: 1px;
+    }
+
+    >* {
+        &:nth-child(4) {
+            text-align: end;
+        }
+    }
+
+    .title {
+        font-family: var(--font_bdogrotesk);
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.42;
+        letter-spacing: -0.05em;
+        color: var(--white);
+        display: inline-block;
+
+        a:hover {
             color: var(--white);
         }
     }
+
+    .number {
+        font-family: var(--font_bdogrotesk);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.75;
+        letter-spacing: -0.05em;
+        color: var(--white);
+        display: inline-block;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s;
+
+    }
+
+    .content-last {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+    }
+
+    .tag {
+        font-family: var(--font_bdogrotesk);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.75;
+        letter-spacing: -0.05em;
+        color: var(--white);
+        display: inline-block;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s;
+    }
+
+    .year {
+        font-family: var(--font_bdogrotesk);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.75;
+        letter-spacing: -0.05em;
+        color: var(--white);
+        display: inline-block;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s;
+    }
+
+
+
 }
 
 .menu {
@@ -173,15 +237,15 @@
             }
         }
     }
-}
 
-.footer-13-meta-list li {
-    font-family: var(--font_bdogrotesk);
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 16px;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-    color: var(--white);
-    list-style: none;
+    li {
+        font-family: var(--font_bdogrotesk);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 16px;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: var(--white);
+        list-style: none;
+    }
 }
