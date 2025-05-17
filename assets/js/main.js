@@ -1472,6 +1472,18 @@
     $(this).addClass('active').siblings().removeClass('active');
   });
 
+  // hover flip Text Animation
+  document.querySelectorAll('.flip-char').forEach(button => {
+    button.innerHTML = '<div class="flip-char"><span>' +
+      button.textContent.split('').join('</span><span>') +
+      '</span></div>';
+
+    const spans = button.querySelectorAll('.flip-char span');
+    spans.forEach((span, index) => {
+      span.style.transitionDelay = `${index * 0.01}s`;
+    });
+  });
+
   // side-toggle animaton
   document.addEventListener("DOMContentLoaded", () => {
     const dotGrid = document.querySelector(".side-toggle");
