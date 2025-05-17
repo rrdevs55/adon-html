@@ -1676,45 +1676,101 @@
   });
 
 
-  // Menu Text Animation
-  document.querySelectorAll('.menu-anim > li > a').forEach(button => {
-    button.innerHTML = '<div class="menu-text"><span>' +
-      button.textContent.split('').join('</span><span>') +
-      '</span></div>';
+  // // Menu Text Animation
+  // document.querySelectorAll('.menu-anim > li > a').forEach(button => {
+  //   button.innerHTML = '<div class="menu-text"><span>' +
+  //     button.textContent.split('').join('</span><span>') +
+  //     '</span></div>';
 
-    const spans = button.querySelectorAll('.menu-text span');
-    spans.forEach((span, index) => {
-      span.style.transitionDelay = `${index * 0.06}s`;
-    });
-  });
+  //   const spans = button.querySelectorAll('.menu-text span');
+  //   spans.forEach((span, index) => {
+  //     span.style.transitionDelay = `${index * 0.06}s`;
+  //   });
+  // });
 
-  // Image Hover Effect
-  const menuItems = document.querySelectorAll(".menu-anim > li");
-  const images = document.querySelectorAll(".scale-img");
+  // // Image Hover Effect
+  // const menuItems = document.querySelectorAll(".menu-anim > li");
+  // const images = document.querySelectorAll(".scale-img");
 
-  // Set Default Active Item
-  let activeIndex = 0;
-  images[activeIndex].classList.add("active");
+  // // Set Default Active Item
+  // let activeIndex = 0;
+  // images[activeIndex].classList.add("active");
 
-  // Hover Effect
-  menuItems.forEach((item, index) => {
-    item.addEventListener("mouseenter", () => {
-      // Remove active class from all images
-      images.forEach((img, i) => {
-        if (i !== index) {
-          img.style.transition = "opacity 0.89s ease, transform 1s cubic-bezier(0.25, 0.8, 0.25, 1)";
-          img.classList.remove("active");
+  // // Hover Effect
+  // menuItems.forEach((item, index) => {
+  //   item.addEventListener("mouseenter", () => {
+  //     // Remove active class from all images
+  //     images.forEach((img, i) => {
+  //       if (i !== index) {
+  //         img.style.transition = "opacity 0.89s ease, transform 1s cubic-bezier(0.25, 0.8, 0.25, 1)";
+  //         img.classList.remove("active");
+  //       }
+  //     });
+
+  //     // Add active class to the hovered image
+  //     const activeImage = images[index];
+  //     activeImage.style.transition = "opacity 0.9s ease, transform 1.4s cubic-bezier(0.25, 0.8, 0.25, 1)";
+  //     activeImage.classList.add("active");
+
+  //     // Update active index
+  //     activeIndex = index;
+  //   });
+  // });
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (document.querySelector(".portfolio-full")) {
+      const interleaveOffset = 0.75;
+      var portfolio_4_activ = new Swiper('.portfolio-full-activ', {
+        loop: true,
+        direction: "vertical",
+        autoplay: false,
+        speed: 2000,
+        watchSlidesProgress: true,
+        allowTouchMove: false,
+        mousewheelControl: false,
+        mousewheel: false,
+        pagination: {
+          el: ".portfolio-full-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            const bulletElement = document.querySelectorAll('.pagination-bullet')[index];
+            const text = bulletElement.getAttribute('data-text');
+            return '<span class="' + className + ' pagination-bullet" data-text="' + text + '">' + bulletElement.innerHTML + '</span>';
+          },
+        },
+        on: {
+          progress: function () {
+            let swiper = this;
+            for (let i = 0; i < swiper.slides.length; i++) {
+              let slideProgress = swiper.slides[i].progress;
+              let innerOffset = swiper.height * interleaveOffset;
+              let innerTranslate = slideProgress * innerOffset;
+
+              TweenMax.set(swiper.slides[i].querySelector(".slide-inner"), {
+                y: innerTranslate,
+              });
+            }
+          },
+          setTransition: function (slider, speed) {
+            let swiper = this;
+            for (let i = 0; i < swiper.slides.length; i++) {
+              swiper.slides[i].style.transition = speed + "ms";
+              swiper.slides[i].querySelector(".slide-inner").style.transition = speed + "ms";
+            }
+          }
         }
       });
 
-      // Add active class to the hovered image
-      const activeImage = images[index];
-      activeImage.style.transition = "opacity 0.9s ease, transform 1.4s cubic-bezier(0.25, 0.8, 0.25, 1)";
-      activeImage.classList.add("active");
+      // Add hover functionality to pagination bullets
+      const paginationBullets = document.querySelectorAll('.portfolio-full-pagination .pagination-bullet');
 
-      // Update active index
-      activeIndex = index;
-    });
+      paginationBullets.forEach((bullet, index) => {
+        bullet.addEventListener('mouseenter', () => {
+          portfolio_4_activ.slideTo(index + 1); // +1 if you're using loop
+        });
+      });
+    }
   });
 
 
