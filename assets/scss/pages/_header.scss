@@ -434,9 +434,6 @@
         margin-right: 90px;
     }
 
-
-
-
     .main-menu {
         li a {
 
@@ -782,6 +779,33 @@
     }
 }
 
+.header-area-14 {
+    .header__nav {
+        margin-right: 90px;
+
+        @media #{$xl} {
+            margin-right: 40px;
+        }
+    }
+
+    .main-menu {
+        li a {
+
+            font-size: 16px;
+            font-weight: 500;
+            padding: 32px 25px;
+            text-transform: uppercase;
+
+            @media #{$xl} {
+                padding: 32px 15px;
+            }
+
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+}
 
 // Icon draw
 .bar-icon {
