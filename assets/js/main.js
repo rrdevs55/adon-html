@@ -1480,7 +1480,7 @@
 
     const spans = button.querySelectorAll('.flip-char span');
     spans.forEach((span, index) => {
-      span.style.transitionDelay = `${index * 0.01}s`;
+      span.style.transitionDelay = `${index * 0.06}s`;
     });
   });
 
