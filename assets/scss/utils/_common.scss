@@ -41,12 +41,20 @@
   max-width: 1850px;
 }
 
+.rr-container-1860 {
+  max-width: 1860px;
+}
+
 .rr-container-1890 {
   max-width: 1890px;
 }
 
 .rr-container-1455 {
   max-width: 1455px;
+}
+
+.rr-container-1897 {
+  max-width: 1897px;
 }
 
 /* Background color classes */
@@ -752,7 +760,7 @@
         font-size: 10px;
         font-weight: 600;
         background: #FFA38E;
-        color: var(--black-2);
+        color: #999999;
         padding: 3px 7px;
         line-height: 1;
         display: flex;
