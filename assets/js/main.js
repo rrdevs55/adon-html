@@ -1774,22 +1774,54 @@
   });
 
   // portfolio-slide
-  if (document.querySelectorAll(".portfolio").length > 0) {
-    var swiper = new Swiper(".portfolio-activ", {
+  // if (document.querySelectorAll(".portfolio").length > 0) {
+  //   var swiper = new Swiper(".portfolio-activ", {
+  //     loop: true,
+  //     speed: 3000,
+  //     mousewheel: true,
+  //     effect: 'creative',
+  //     pagination: {
+  //       el: '.portfolio-pagination',
+  //       clickable: true,
+  //     },
+  //     navigation: {
+  //       prevEl: ".portfolio__slider__arrow-prev",
+  //       nextEl: ".portfolio__slider__arrow-next",
+  //     },
 
-      effect: "fade",
-      loop: true,
-      mousewheel: true,
-      pagination: {
-        el: '.portfolio-pagination',
-        clickable: true,
+  //   });
+  // }
+
+  const swiper = new Swiper('.portfolio-activ', {
+    loop: true,
+    speed: 2000,
+    effect: 'creative',
+    loop: true,
+    speed: 3000,
+    mousewheel: true,
+    pagination: {
+      el: '.portfolio-pagination',
+      clickable: true,
+    },
+    creativeEffect: {
+      perspective: true,
+      prev: {
+        translate: ['-60%', 0, -3000],
       },
-      navigation: {
-        prevEl: ".portfolio__slider__arrow-prev",
-        nextEl: ".portfolio__slider__arrow-next",
+      next: {
+        translate: ['60%', 0, -3000],
       },
-    });
-  }
+    },
+    on: {
+      init: () => {
+        const slides = document.querySelectorAll('.swiper-slide');
+        slides.forEach(slide => {
+          slide.style.width = '100%';
+          slide.style.height = '100vh';
+        });
+      }
+    }
+  });
 
 })(jQuery);
 

@@ -7,9 +7,24 @@
 }
 
 .portfolio {
+
     .portfolio-inner {
         position: relative;
         overflow: hidden;
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .swiper-slide {
+        width: 60%;
+        height: 60vh;
+        background-size: cover;
+        background-position: center;
+        transition: transform 1.5s ease, width 1.5s ease, height 1.5s ease;
+        // overflow: hidden;
     }
 
     .horizontal-line {
@@ -98,7 +113,7 @@
         position: relative;
         background-size: cover;
         background-repeat: no-repeat;
-        transition: .8s cubic-bezier(.37, .23, 0, .96);
+        transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
     &__content {
