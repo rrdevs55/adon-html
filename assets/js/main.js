@@ -1467,9 +1467,21 @@
   }
 
   // menu slider 
-  $('.menu-slider-title').on("mouseenter", function () {
+  $('.menu-slider-item').on("mouseenter", function () {
     $('#menu-slider-wrap').removeClass().addClass($(this).attr('rel'));
     $(this).addClass('active').siblings().removeClass('active');
+  });
+
+  // hover flip Text Animation
+  document.querySelectorAll('.flip-char').forEach(button => {
+    button.innerHTML = '<div class="flip-char"><span>' +
+      button.textContent.split('').join('</span><span>') +
+      '</span></div>';
+
+    const spans = button.querySelectorAll('.flip-char span');
+    spans.forEach((span, index) => {
+      span.style.transitionDelay = `${index * 0.06}s`;
+    });
   });
 
   // side-toggle animaton
