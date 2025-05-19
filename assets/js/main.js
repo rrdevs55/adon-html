@@ -788,37 +788,40 @@
   });
 
 
-  // Service list Hover Animation
-  // ===============================
+  // Service list Hover Animation (Combined)
   function Team_animation() {
-    const wrapper = $(".service-5__wrapper");
-    const active_bg = wrapper.find(".active-bg");
+    const wrappers = [".service-5__wrapper", ".service-9__wrapper", ".service-10__wrapper"];
 
-    function moveBgTo(target) {
-      if (!target.length) return;
+    wrappers.forEach(wrapperClass => {
+      const wrapper = $(wrapperClass);
+      const active_bg = wrapper.find(".active-bg");
 
-      const offsetTop = target.offset().top;
-      const height = target.outerHeight();
-      const wrapperTop = wrapper.offset().top;
-      const translateY = offsetTop - wrapperTop;
+      function moveBgTo(target) {
+        if (!target.length) return;
 
-      active_bg.css({
-        transform: `translateY(${translateY}px)`,
-        height: `${height}px`,
-        opacity: 1
+        const offsetTop = target.offset().top;
+        const height = target.outerHeight();
+        const wrapperTop = wrapper.offset().top;
+        const translateY = offsetTop - wrapperTop;
+
+        active_bg.css({
+          transform: `translateY(${translateY}px)`,
+          height: `${height}px`,
+          opacity: 1
+        });
+      }
+
+      // On hover
+      wrapper.find(`${wrapperClass.replace("__wrapper", "__item")}`).on("mouseenter", function () {
+        moveBgTo($(this));
       });
-    }
 
-    // On hover
-    wrapper.find(".service-5__item").on("mouseenter", function () {
-      moveBgTo($(this));
-    });
-
-    // On leave, hide background
-    wrapper.on("mouseleave", function () {
-      active_bg.css({
-        opacity: 0,
-        height: 0
+      // On leave, hide background
+      wrapper.on("mouseleave", function () {
+        active_bg.css({
+          opacity: 0,
+          height: 0
+        });
       });
     });
   }
@@ -826,86 +829,6 @@
   $(document).ready(function () {
     Team_animation();
   });
-
-
-  // Service list Hover Animation home 09
-  // ===============================
-  function Team_animation() {
-    const wrapper = $(".service-9__wrapper");
-    const active_bg = wrapper.find(".active-bg");
-
-    function moveBgTo(target) {
-      if (!target.length) return;
-
-      const offsetTop = target.offset().top;
-      const height = target.outerHeight();
-      const wrapperTop = wrapper.offset().top;
-      const translateY = offsetTop - wrapperTop;
-
-      active_bg.css({
-        transform: `translateY(${translateY}px)`,
-        height: `${height}px`,
-        opacity: 1
-      });
-    }
-
-    // On hover
-    wrapper.find(".service-9__item").on("mouseenter", function () {
-      moveBgTo($(this));
-    });
-
-    // On leave, hide background
-    wrapper.on("mouseleave", function () {
-      active_bg.css({
-        opacity: 0,
-        height: 0
-      });
-    });
-  }
-
-  $(document).ready(function () {
-    Team_animation();
-  });
-
-  // Service list Hover Animation home 09
-  // ===============================
-  function Team_animation() {
-    const wrapper = $(".service-10__wrapper");
-    const active_bg = wrapper.find(".active-bg");
-
-    function moveBgTo(target) {
-      if (!target.length) return;
-
-      const offsetTop = target.offset().top;
-      const height = target.outerHeight();
-      const wrapperTop = wrapper.offset().top;
-      const translateY = offsetTop - wrapperTop;
-
-      active_bg.css({
-        transform: `translateY(${translateY}px)`,
-        height: `${height}px`,
-        opacity: 1
-      });
-    }
-
-    // On hover
-    wrapper.find(".service-10__item").on("mouseenter", function () {
-      moveBgTo($(this));
-    });
-
-    // On leave, hide background
-    wrapper.on("mouseleave", function () {
-      active_bg.css({
-        opacity: 0,
-        height: 0
-      });
-    });
-  }
-
-  $(document).ready(function () {
-    Team_animation();
-  });
-
 
 
   // Moving Gallery		
@@ -944,8 +867,6 @@
       });
     });
   }
-
-
 
 
 

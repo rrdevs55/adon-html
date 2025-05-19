@@ -10,7 +10,7 @@
     &-main {
         overflow: hidden;
         width: 100vw;
-        height: 100vh;
+        height: calc(100vh - 120px);
     }
 
     .portfolio-full-inner {
@@ -39,26 +39,27 @@
     }
 
     .text {
-        display: flex;
-        flex-direction: column;
-        padding-top: 20px;
         gap: 10px;
+        display: flex;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        flex-direction: column;
         border-right: 1px solid rgba(17, 17, 17, 0.10);
 
         @media #{$md} {
             border-right: none;
+            padding-bottom: 0;
         }
 
         .sub-title {
             font-size: 14px;
             font-weight: 400;
-            // margin-top: auto;
+            margin-top: auto;
             line-height: 14px;
             color: var(--black);
             display: inline-block;
             letter-spacing: -0.7px;
             text-transform: uppercase;
-            // transform: translate(0, -140px);
             font-family: var(--font_bdogrotesk);
 
             @media #{$md} {
@@ -70,10 +71,7 @@
     /* Media Block */
     .media-wrapper {
         display: flex;
-        // padding-top: 20px;
-        // margin-bottom: 20px;
         margin-top: 20px;
-        margin-bottom: 100px;
 
         @media #{$md} {
             height: 500px;
@@ -181,7 +179,7 @@
             }
 
             @media #{$lg} {
-                font-size: 60px;
+                font-size: 50px;
                 line-height: 60px;
             }
 
