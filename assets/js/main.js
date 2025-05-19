@@ -1466,22 +1466,33 @@
     });
   }
 
-  // menu slider 
+  // Menu slider hover effect
   $('.menu-slider-item').on("mouseenter", function () {
     $('#menu-slider-wrap').removeClass().addClass($(this).attr('rel'));
     $(this).addClass('active').siblings().removeClass('active');
   });
 
-  // hover flip Text Animation
-  document.querySelectorAll('.flip-char').forEach(button => {
-    button.innerHTML = '<div class="flip-char"><span>' +
-      button.textContent.split('').join('</span><span>') +
-      '</span></div>';
+  function applyFlipAnimation() {
+    document.querySelectorAll('.flip-char').forEach(button => {
+      if (button.querySelector('.flip-char span')) return;
 
-    const spans = button.querySelectorAll('.flip-char span');
-    spans.forEach((span, index) => {
-      span.style.transitionDelay = `${index * 0.06}s`;
+      const originalText = button.textContent;
+
+      button.innerHTML = '<span>' +
+        originalText.split('').map(char =>
+          char === ' ' ? '&nbsp;' : char
+        ).join('</span><span>') +
+        '</span>';
+
+      const spans = button.querySelectorAll('span');
+      spans.forEach((span, index) => {
+        span.style.transitionDelay = `${index * 0.02}s`;
+      });
     });
+  }
+
+  $(document).ready(function () {
+    applyFlipAnimation();
   });
 
   // side-toggle animaton
