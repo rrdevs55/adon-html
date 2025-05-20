@@ -68,6 +68,12 @@
   font-weight: 300;
 }
 
+@font-face {
+  font-family: "Astro-Nebula";
+  src: url('../fonts/Astro-Nebula-Light.otf');
+  font-weight: 300;
+}
+
 
 :root {
   --font_dmsans: "DM Sans", sans-serif;
@@ -75,6 +81,7 @@
   --font_ppeditor: "PPEditorialNew-Italic";
   --font_ppeditorialnewregular: "PPEditorialNew-Regular";
   --font_tartuffotrial: "Tartuffo_Trial-Regular";
+  --font_astronebula: "Astro-Nebula";
   --font_awesome: 'Font Awesome 6 pro';
 }
 
