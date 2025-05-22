@@ -209,8 +209,7 @@
     &__meta-list {
         opacity: 0;
         display: grid;
-        margin-left: 50px;
-        margin-right: 50px;
+        margin: 0 50px;
         padding-top: 183px;
         transform: translateY(-30px);
         justify-content: space-between;
@@ -219,6 +218,7 @@
         @media #{$xs} {
             grid-template-columns: auto;
             gap: 10px;
+            margin: 0 15px;
         }
 
         li {
