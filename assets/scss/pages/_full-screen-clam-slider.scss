@@ -1,4 +1,6 @@
-//header clam-slider styel 
+/*--------------------------------------------------
+    06. Footer Elements
+---------------------------------------------------*/
 
 .clam-slider {
     .header-area-8__inner {
@@ -6,11 +8,7 @@
     }
 }
 
-.portfolio {
-    .portfolio-inner {
-        position: relative;
-        overflow: hidden;
-    }
+.clam-slider {
 
     .horizontal-line {
         .line-1 {
@@ -92,16 +90,65 @@
         }
     }
 
-    &__item {
-        width: 100vw;
+    #clam-slider-holder {
+        width: 100%;
         height: 100vh;
         position: relative;
-        background-size: cover;
-        background-repeat: no-repeat;
-        transition: .8s cubic-bezier(.37, .23, 0, .96);
+        overflow: hidden;
+        opacity: 0;
     }
 
+    #clam-slider-main {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        overflow: visible;
+    }
+
+    #canvas-slider {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        -webkit-transition: width 0.5s ease-in-out 0;
+        transition: width 0.5s ease-in-out 0s;
+
+        .slider-img {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center center;
+            background-color: black;
+            visibility: hidden;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            opacity: 0;
+            -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: none;
+            z-index: 100;
+            cursor: pointer;
+            object-position: center;
+            object-fit: cover;
+        }
+    }
+
+
     &__content {
+        overflow: hidden;
         z-index: 9;
         left: 321px;
         bottom: 155px;
@@ -117,19 +164,24 @@
 
         @media #{$sm} {
             left: 120px;
+            bottom: 135px;
         }
 
         @media #{$xs} {
-            left: 15px
+            left: 15px;
         }
 
-        &-title {
+
+        span {
+
             opacity: 0;
             font-size: 110px;
             line-height: 95px;
-            letter-spacing: -7.7px;
+            letter-spacing: -3px;
             color: var(--white);
-            transform: translateY(-50px);
+            overflow: hidden;
+            transform: translateY(-100%);
+            display: inline-block;
 
             @media #{$xl} {
                 font-size: 100px;
@@ -149,27 +201,33 @@
                 font-size: 40px;
                 line-height: 40px;
             }
-
-            a {
-                &:hover {
-                    color: var(--white);
-                }
-            }
         }
 
+        &-wrapper {
+            overflow: hidden;
+            margin: 0 50px;
+            margin-top: 183px;
+
+            @media #{$xs} {
+                margin: 0px;
+                margin-top: 183px;
+            }
+        }
     }
+
 
     &__meta-list {
         opacity: 0;
         display: grid;
-        padding-top: 183px;
+        overflow: hidden;
+        transform: translateY(-100%);
         justify-content: space-between;
-        transform: translateY(-30px);
-        grid-template-columns: 270px 1fr auto;
+        grid-template-columns: 270px auto 1fr;
 
         @media #{$xs} {
             grid-template-columns: auto;
             gap: 10px;
+            margin: 0 15px;
         }
 
         li {
@@ -180,119 +238,107 @@
             color: var(--white);
             letter-spacing: -0.75px;
             text-transform: uppercase;
+
+            &.year {
+                margin-left: auto;
+
+                @media #{$xs} {
+                    margin-left: initial;
+                }
+            }
         }
-    }
-
-    .portfolio-bottom {
-        position: absolute;
-        display: flex;
-        bottom: 50px;
-        margin: 0 50px;
-        left: 0;
-        right: 0;
-        z-index: 9;
-        justify-content: space-between;
-
-        span {
-            font-size: 15px;
-            font-weight: 500;
-            line-height: 16px;
-            list-style: none;
-            display: inline-block;
-            color: var(--white);
-            letter-spacing: -0.75px;
-            text-transform: uppercase;
-        }
-
     }
 
     .swiper-slide-active {
 
-        .portfolio {
+        .clam-slider {
 
             &__content {
 
-                &-title {
+                &-title {}
+
+                span {
                     opacity: 1;
                     transform: translatey(0px);
-                    transition: all 2200ms ease;
+                    display: block;
+                    transition: all 2000ms ease;
                 }
             }
 
             &__meta-list {
                 opacity: 1;
                 transform: translatey(0px);
-                transition: all 2200ms ease;
+                transition: all 1500ms ease;
             }
         }
     }
 
-    &__slider {
+    &__arrow {
+        gap: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        &__arrow {
-            gap: 40px;
+        @media #{$xs} {
+            display: none;
+        }
+
+        &-prev,
+        &-next {
+            gap: 8px;
+            width: 65px;
+            height: 65px;
             display: flex;
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--white);
             align-items: center;
-            justify-content: space-between;
+            border-radius: 500px;
+            transition: all 0.3s;
+            justify-content: center;
+            border: 1px solid transparent;
 
-            @media #{$xs} {
-                display: none;
-            }
-
-            &-prev,
-            &-next {
-                gap: 8px;
-                width: 65px;
-                height: 65px;
-                display: flex;
-                font-size: 20px;
-                font-weight: 400;
-                color: var(--white);
-                align-items: center;
-                border-radius: 500px;
-                justify-content: center;
-                border-width: 0;
-                border: 1px solid rgba(255, 255, 255, 0.30);
-            }
-
-            &-next {
-                position: absolute;
-                right: 50px;
-                bottom: 215px;
-                z-index: 99;
-
-                @media #{$md} {
-                    bottom: 200px;
-                }
-
-                @media #{$sm} {
-                    right: 15px;
-                    bottom: 145px;
-                }
-
-            }
-
-            &-prev {
-                position: absolute;
-                left: 50px;
-                bottom: 215px;
-                z-index: 99;
-
-                @media #{$md} {
-                    bottom: 200px;
-
-                }
-
-                @media #{$sm} {
-                    left: 15px;
-                    bottom: 145px;
-                }
+            &:hover {
+                border-color: rgba(255, 255, 255, 0.30);
             }
         }
 
+        &-next {
+            position: absolute;
+            right: 50px;
+            bottom: 215px;
+            z-index: 99;
+
+            @media #{$md} {
+                bottom: 200px;
+            }
+
+            @media #{$sm} {
+                right: 15px;
+                bottom: 145px;
+            }
+
+        }
+
+        &-prev {
+            position: absolute;
+            left: 50px;
+            bottom: 215px;
+            z-index: 99;
+
+            @media #{$md} {
+                bottom: 200px;
+
+            }
+
+            @media #{$sm} {
+                left: 15px;
+                bottom: 145px;
+            }
+        }
     }
 
-    .portfolio-pagination-wrapper {
+    .clam-slider-pagination-wrapper {
         left: 0%;
         right: 0;
         z-index: 9;
@@ -305,7 +351,7 @@
             display: none;
         }
 
-        .portfolio-pagination {
+        .clam-slider-pagination {
             gap: 15px;
             display: flex;
             align-items: center;
@@ -327,8 +373,6 @@
 
     .swiper-pagination-bullet-active {
         opacity: 1;
-        background-color: var(--white);
+        background-color: var(--black);
     }
-
-
 }

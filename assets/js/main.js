@@ -788,37 +788,40 @@
   });
 
 
-  // Service list Hover Animation
-  // ===============================
+  // Service list Hover Animation (Combined)
   function Team_animation() {
-    const wrapper = $(".service-5__wrapper");
-    const active_bg = wrapper.find(".active-bg");
+    const wrappers = [".service-5__wrapper", ".service-9__wrapper", ".service-10__wrapper"];
 
-    function moveBgTo(target) {
-      if (!target.length) return;
+    wrappers.forEach(wrapperClass => {
+      const wrapper = $(wrapperClass);
+      const active_bg = wrapper.find(".active-bg");
 
-      const offsetTop = target.offset().top;
-      const height = target.outerHeight();
-      const wrapperTop = wrapper.offset().top;
-      const translateY = offsetTop - wrapperTop;
+      function moveBgTo(target) {
+        if (!target.length) return;
 
-      active_bg.css({
-        transform: `translateY(${translateY}px)`,
-        height: `${height}px`,
-        opacity: 1
+        const offsetTop = target.offset().top;
+        const height = target.outerHeight();
+        const wrapperTop = wrapper.offset().top;
+        const translateY = offsetTop - wrapperTop;
+
+        active_bg.css({
+          transform: `translateY(${translateY}px)`,
+          height: `${height}px`,
+          opacity: 1
+        });
+      }
+
+      // On hover
+      wrapper.find(`${wrapperClass.replace("__wrapper", "__item")}`).on("mouseenter", function () {
+        moveBgTo($(this));
       });
-    }
 
-    // On hover
-    wrapper.find(".service-5__item").on("mouseenter", function () {
-      moveBgTo($(this));
-    });
-
-    // On leave, hide background
-    wrapper.on("mouseleave", function () {
-      active_bg.css({
-        opacity: 0,
-        height: 0
+      // On leave, hide background
+      wrapper.on("mouseleave", function () {
+        active_bg.css({
+          opacity: 0,
+          height: 0
+        });
       });
     });
   }
@@ -826,86 +829,6 @@
   $(document).ready(function () {
     Team_animation();
   });
-
-
-  // Service list Hover Animation home 09
-  // ===============================
-  function Team_animation() {
-    const wrapper = $(".service-9__wrapper");
-    const active_bg = wrapper.find(".active-bg");
-
-    function moveBgTo(target) {
-      if (!target.length) return;
-
-      const offsetTop = target.offset().top;
-      const height = target.outerHeight();
-      const wrapperTop = wrapper.offset().top;
-      const translateY = offsetTop - wrapperTop;
-
-      active_bg.css({
-        transform: `translateY(${translateY}px)`,
-        height: `${height}px`,
-        opacity: 1
-      });
-    }
-
-    // On hover
-    wrapper.find(".service-9__item").on("mouseenter", function () {
-      moveBgTo($(this));
-    });
-
-    // On leave, hide background
-    wrapper.on("mouseleave", function () {
-      active_bg.css({
-        opacity: 0,
-        height: 0
-      });
-    });
-  }
-
-  $(document).ready(function () {
-    Team_animation();
-  });
-
-  // Service list Hover Animation home 09
-  // ===============================
-  function Team_animation() {
-    const wrapper = $(".service-10__wrapper");
-    const active_bg = wrapper.find(".active-bg");
-
-    function moveBgTo(target) {
-      if (!target.length) return;
-
-      const offsetTop = target.offset().top;
-      const height = target.outerHeight();
-      const wrapperTop = wrapper.offset().top;
-      const translateY = offsetTop - wrapperTop;
-
-      active_bg.css({
-        transform: `translateY(${translateY}px)`,
-        height: `${height}px`,
-        opacity: 1
-      });
-    }
-
-    // On hover
-    wrapper.find(".service-10__item").on("mouseenter", function () {
-      moveBgTo($(this));
-    });
-
-    // On leave, hide background
-    wrapper.on("mouseleave", function () {
-      active_bg.css({
-        opacity: 0,
-        height: 0
-      });
-    });
-  }
-
-  $(document).ready(function () {
-    Team_animation();
-  });
-
 
 
   // Moving Gallery		
@@ -944,8 +867,6 @@
       });
     });
   }
-
-
 
 
 
@@ -1466,10 +1387,33 @@
     });
   }
 
-  // menu slider 
-  $('.menu-slider-title').on("mouseenter", function () {
+  // Menu slider hover effect
+  $('.menu-slider-item').on("mouseenter", function () {
     $('#menu-slider-wrap').removeClass().addClass($(this).attr('rel'));
     $(this).addClass('active').siblings().removeClass('active');
+  });
+
+  function applyFlipAnimation() {
+    document.querySelectorAll('.flip-char').forEach(button => {
+      if (button.querySelector('.flip-char span')) return;
+
+      const originalText = button.textContent;
+
+      button.innerHTML = '<span>' +
+        originalText.split('').map(char =>
+          char === ' ' ? '&nbsp;' : char
+        ).join('</span><span>') +
+        '</span>';
+
+      const spans = button.querySelectorAll('span');
+      spans.forEach((span, index) => {
+        span.style.transitionDelay = `${index * 0.02}s`;
+      });
+    });
+  }
+
+  $(document).ready(function () {
+    applyFlipAnimation();
   });
 
   // side-toggle animaton
@@ -1774,22 +1718,54 @@
   });
 
   // portfolio-slide
-  if (document.querySelectorAll(".portfolio").length > 0) {
-    var swiper = new Swiper(".portfolio-activ", {
+  // if (document.querySelectorAll(".portfolio").length > 0) {
+  //   var swiper = new Swiper(".portfolio-activ", {
+  //     loop: true,
+  //     speed: 3000,
+  //     mousewheel: true,
+  //     effect: 'creative',
+  //     pagination: {
+  //       el: '.portfolio-pagination',
+  //       clickable: true,
+  //     },
+  //     navigation: {
+  //       prevEl: ".portfolio__slider__arrow-prev",
+  //       nextEl: ".portfolio__slider__arrow-next",
+  //     },
 
-      effect: "fade",
-      loop: true,
-      mousewheel: true,
-      pagination: {
-        el: '.portfolio-pagination',
-        clickable: true,
+  //   });
+  // }
+
+  const swiper = new Swiper('.portfolio-activ', {
+    loop: true,
+    speed: 2000,
+    effect: 'creative',
+    loop: true,
+    speed: 3000,
+    mousewheel: true,
+    pagination: {
+      el: '.portfolio-pagination',
+      clickable: true,
+    },
+    creativeEffect: {
+      perspective: true,
+      prev: {
+        translate: ['-60%', 0, -3000],
       },
-      navigation: {
-        prevEl: ".portfolio__slider__arrow-prev",
-        nextEl: ".portfolio__slider__arrow-next",
+      next: {
+        translate: ['60%', 0, -3000],
       },
-    });
-  }
+    },
+    on: {
+      init: () => {
+        const slides = document.querySelectorAll('.swiper-slide');
+        slides.forEach(slide => {
+          slide.style.width = '100%';
+          slide.style.height = '100vh';
+        });
+      }
+    }
+  });
 
 })(jQuery);
 
