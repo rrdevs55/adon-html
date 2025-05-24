@@ -140,6 +140,51 @@
 }
 
 
+.corner-shape-border {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .shape-1 {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-left: 1px solid var(--primary);
+        border-top: 1px solid var(--primary);
+        top: 0;
+        left: 0;
+    }
+
+    .shape-2 {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-top: 1px solid var(--primary);
+        border-right: 1px solid var(--primary);
+        top: 0;
+        right: 0;
+    }
+
+    .shape-3 {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-right: 1px solid var(--primary);
+        border-bottom: 1px solid var(--primary);
+        right: 0;
+        bottom: 0;
+    }
+
+    .shape-4 {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-bottom: 1px solid var(--primary);
+        border-left: 1px solid var(--primary);
+        bottom: 0;
+        left: 0;
+    }
+}
 
 
 
@@ -383,7 +428,7 @@
         align-items: center;
         z-index: 1;
 
-        .bg-shape {
+        .bg-area {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -430,22 +475,6 @@
     grid-column-end: 5;
 }
 
-.title {
-    font-family: var(--font_astronebula);
-    font-weight: 300;
-    font-size: 30px;
-    line-height: 30px;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-}
-
-.text {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    text-transform: uppercase;
-    color: var(--primary);
-}
 
 
 .feature-17-box {
@@ -470,7 +499,7 @@
         align-items: center;
         z-index: 1;
 
-        .bg-shape {
+        .bg-area {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -485,16 +514,35 @@
         }
     }
 
-    .content {
-        padding: 24px 20px;
-    }
-
     .title-wrapper {
         padding: 28px 30px;
         border-left: 1px solid rgba(17, 17, 17, 0.15);
         background-color: #F5F5F5;
         border-right: 1px solid rgba(17, 17, 17, 0.15);
     }
+
+    .title {
+        font-family: var(--font_astronebula);
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 30px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+    }
+
+
+    .content {
+        padding: 24px 20px;
+    }
+
+    .text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: var(--primary);
+    }
+
 }
 
 
@@ -516,4 +564,226 @@
     .title-wrapper {
         padding: 51px 20px 37px;
     }
+}
+
+.funfact-17-content-box {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.growth-cube-wrapper {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    padding: 110px 80px 116px;
+
+    .bg-area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #FEFEFE;
+        top: 0;
+        left: 0;
+        padding: 50px;
+        z-index: -1;
+        border-left: 1px solid rgba(17, 17, 17, 0.15);
+        border-right: 1px solid rgba(17, 17, 17, 0.15);
+    }
+
+    .title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #999999;
+    }
+
+    .cubes-wrapper {
+        width: 100%;
+        max-width: 250px;
+        margin-top: 115px;
+        margin-inline: auto;
+        aspect-ratio: 100 / 94;
+        position: relative;
+
+        .cube-1 {
+            position: absolute;
+            width: 67%;
+            top: 0;
+            left: 0;
+        }
+
+        .cube-2 {
+            position: absolute;
+            width: 67%;
+            bottom: 0;
+            left: 0;
+        }
+
+        .cube-3 {
+            position: absolute;
+            width: 50%;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+    }
+}
+
+.funfact-17-content {
+    display: grid;
+    grid-template-columns: 1fr 620px;
+
+    .title-wrapper {
+        padding: 28px 20px;
+        border-right: 1px solid rgba(17, 17, 17, 0.15);
+        background-color: #F5F5F5;
+    }
+
+    .title {
+        font-family: var(--font_astronebula);
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 30px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+    }
+
+    .text-wrapper {
+        padding: 24px 20px 30px;
+        background-color: #F5F5F5;
+        border-right: 1px solid rgba(17, 17, 17, 0.15);
+    }
+
+    .text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: var(--primary);
+    }
+
+
+
+    .btn-wrapper {
+        margin-top: 134px;
+    }
+}
+
+.funfact-17-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.funfact-17-box {
+    padding: 26px 20px 15px;
+
+    .text {
+        font-family: var(--font_astronebula);
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 18px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: var(--primary);
+    }
+
+    .number {
+        font-family: var(--font_astronebula);
+        font-weight: 300;
+        font-size: 90px;
+        line-height: 0.67;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        display: block;
+        color: var(--primary);
+        margin-top: 140px;
+    }
+}
+
+/* portfolio area 17 style  */
+.portfolio-area-17 {
+    background-color: #F5F5F5;
+}
+
+.portfolio-17-header {
+    .section-title-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .section-subtitle-5 {
+        padding: 13px 20px;
+    }
+
+    .title-wrapper {
+        padding: 36px 20px 27px;
+    }
+
+    .section-title {
+        font-size: 290px;
+    }
+}
+
+.portfolio-17-wrapper {
+    padding: 20px;
+}
+
+.portfolio-17-item {
+    border: 1px solid rgba(17, 17, 17, 0.15);
+
+    .meta {
+        display: grid;
+        grid-template-columns: 1fr 96px;
+    }
+
+    .tag {
+        font-family: var(--font_astronebula);
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: var(--primary);
+        display: inline-block;
+        padding: 12px 20px 9px;
+    }
+
+    .year {
+        font-family: var(--font_astronebula);
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: var(--primary);
+        display: inline-block;
+        padding: 12px 20px 9px;
+        border-left: 1px solid rgba(17, 17, 17, 0.15);
+    }
+
+    .thumb {
+        border-top: 1px solid rgba(17, 17, 17, 0.15);
+        border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .content {
+        padding: 15px 20px 12px;
+    }
+
+    .title {
+        font-family: var(--font_astronebula);
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+    }
+
 }
