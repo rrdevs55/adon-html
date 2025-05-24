@@ -266,6 +266,8 @@
     grid-template-columns: 1fr 1fr;
 
     .nav-tabs {
+        border: none;
+
         .nav-link {
             border-radius: 0;
             border: 0;
@@ -273,6 +275,7 @@
             background-color: transparent;
             width: 100%;
             text-align: start;
+            margin: 0;
 
             &:hover {
 
@@ -296,6 +299,10 @@
 
     .nav-item {
         width: 100%;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+        }
     }
 
     .tab-pane {
@@ -304,10 +311,11 @@
 }
 
 .service-17-name {
-    border-bottom: 1px solid rgba(17, 17, 17, 0.15);
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: flex-start;
+
+
 
     .number {
         font-family: var(--font_astronebula);
@@ -397,6 +405,105 @@
 }
 
 .feature-17-header {
+    .section-title-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .section-subtitle-5 {
+        padding: 13px 20px;
+    }
+
+    .title-wrapper {
+        padding: 51px 20px 37px;
+    }
+}
+
+.features-17-wrapper-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.features-17-wrapper {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+
+.title {
+    font-family: var(--font_astronebula);
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+
+.feature-17-box {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+    }
+
+    .logo-wrapper-box {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+    }
+
+    .logo-wrapper {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 100 / 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+
+        .bg-shape {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #FEFEFE;
+            top: 0;
+            left: 0;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -1;
+        }
+    }
+
+    .content {
+        padding: 24px 20px;
+    }
+
+    .title-wrapper {
+        padding: 28px 30px;
+        border-left: 1px solid rgba(17, 17, 17, 0.15);
+        background-color: #F5F5F5;
+        border-right: 1px solid rgba(17, 17, 17, 0.15);
+    }
+}
+
+
+/* fun fact area 17 style  */
+.funfact-area-17 {
+    background-color: #F5F5F5;
+}
+
+.funfact-17-header {
     .section-title-wrapper {
         display: grid;
         grid-template-columns: 1fr 3fr;
