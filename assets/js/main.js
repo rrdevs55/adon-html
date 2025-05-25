@@ -627,6 +627,72 @@
     });
   }
 
+  // portfolio 17 active
+  if (document.querySelectorAll(".portfolio-17-active").length > 0) {
+    var portfolio_17_active = new Swiper(".portfolio-17-active", {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 40,
+      speed: 1000,
+      watchSlidesProgress: true,
+      navigation: {
+        prevEl: ".portfolio-17-button-prev",
+        nextEl: ".portfolio-17-button-next",
+      },
+      breakpoints: {
+        // when window width is >= px
+        576: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 1,
+        },
+        992: {
+          slidesPerView: 2,
+        },
+        1201: {
+          slidesPerView: 3,
+        },
+        1367: {
+          slidesPerView: 4,
+        },
+      }
+    });
+  }
+
+  // testimonial 17 active
+  if (document.querySelectorAll(".testimonial-17-active").length > 0) {
+    var testimonial_17_active = new Swiper(".testimonial-17-active", {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      speed: 1000,
+      watchSlidesProgress: true,
+      navigation: {
+        prevEl: ".testimonial-17-button-prev",
+        nextEl: ".testimonial-17-button-next",
+      },
+      breakpoints: {
+        // when window width is >= px
+        576: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 1,
+        },
+        992: {
+          slidesPerView: 2,
+        },
+        1201: {
+          slidesPerView: 3,
+        },
+        1367: {
+          slidesPerView: 3.4,
+        },
+      }
+    });
+  }
+
 
   // Moving Gallery		
   if (document.querySelectorAll(".moving-gallery").length > 0) {
