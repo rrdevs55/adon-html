@@ -244,7 +244,58 @@
   }
   // Preloader end
 
+  // side-toggle animaton
+  document.addEventListener("DOMContentLoaded", () => {
+    const dotGrid = document.querySelector(".side-toggle");
 
+    if (dotGrid) {
+      const dotSize = 4;
+      const gapX = 5;
+      const gapY = 5;
+      const centerOffset = 27;
+
+      const baseOffset = dotSize + gapX;
+      const baseOffsetY = dotSize + gapY;
+
+      const positions = [
+        { x: 0, y: 0 },
+        { x: baseOffset, y: 0 },
+        { x: baseOffset * 2, y: 0 },
+        { x: 0, y: baseOffsetY },
+        { x: baseOffset, y: baseOffsetY },
+        { x: baseOffset, y: baseOffsetY * 2 },
+        { x: baseOffset * 2, y: baseOffsetY * 2 },
+      ];
+
+      const originalPositions = [...positions];
+      const dots = [];
+
+      function setDotPosition(dot, pos) {
+        dot.style.left = `${centerOffset + pos.x - baseOffset}px`;
+        dot.style.top = `${centerOffset + pos.y - baseOffsetY}px`;
+      }
+
+      positions.forEach(pos => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        setDotPosition(dot, pos);
+        dotGrid.appendChild(dot);
+        dots.push(dot);
+      });
+
+      function applyShuffledPositions() {
+        const shuffled = [...positions].sort(() => Math.random() - 0.5);
+        dots.forEach((dot, i) => setDotPosition(dot, shuffled[i]));
+      }
+
+      function resetPositions() {
+        dots.forEach((dot, i) => setDotPosition(dot, originalPositions[i]));
+      }
+
+      dotGrid.addEventListener("mouseenter", applyShuffledPositions);
+      dotGrid.addEventListener("mouseleave", resetPositions);
+    }
+  });
 
 
   // Side Info Js
@@ -263,6 +314,82 @@
       $(".offcanvas-overlay").removeClass("overlay-open");
     }
   });
+
+  // Creative Agency menu style
+  if (document.querySelectorAll(".header-area-3").length > 0) {
+    const toggleBtn = document.getElementById("side-toggle");
+    const sidebar = document.querySelector(".side-info");
+    const closeBtn = document.getElementById("side-info-4-close");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.add("info-open");
+
+      gsap.from(".socail-media li", {
+        y: "-100%",
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.9,
+        ease: "power3.out"
+      });
+
+      gsap.from(".nav-list li", {
+        y: "-100%",
+        opacity: 0,
+        stagger: 0.1,
+        delay: 0.3,
+        duration: 0.9,
+        ease: "power3.out"
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.remove("info-open");
+    });
+  }
+
+  //  Video Production Agency menu Animaton 
+  if (document.querySelectorAll(".side-info-4").length > 0) {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const sidebar = document.querySelector(".side-info-4");
+    const closeBtn = document.getElementById("side-info-4-close");
+
+    const socialTl = gsap.timeline({ paused: true });
+    const navTl = gsap.timeline({ paused: true });
+
+    socialTl.from(".socail-media li", {
+      x: "-50%",
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.6,
+      ease: "power3.out"
+    });
+
+    navTl.from(".nav-list li", {
+      x: "-50%",
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.6,
+      ease: "power3.out"
+    });
+
+    menuToggle.addEventListener("click", () => {
+      sidebar.classList.add("info-open");
+      socialTl.play();
+      navTl.play(0);
+    });
+
+    closeBtn.addEventListener("click", () => {
+      socialTl.reverse();
+      navTl.reverse();
+
+      const totalDuration = Math.max(socialTl.duration(), navTl.duration()) * 300;
+
+      setTimeout(() => {
+        sidebar.classList.remove("info-open");
+      }, totalDuration);
+    });
+  }
+
 
   // meanmenu activation 
   $('.main-menu').meanmenu({
@@ -1482,58 +1609,7 @@
     applyFlipAnimation();
   });
 
-  // side-toggle animaton
-  document.addEventListener("DOMContentLoaded", () => {
-    const dotGrid = document.querySelector(".side-toggle");
 
-    if (dotGrid) {
-      const dotSize = 4;
-      const gapX = 5;
-      const gapY = 5;
-      const centerOffset = 27;
-
-      const baseOffset = dotSize + gapX;
-      const baseOffsetY = dotSize + gapY;
-
-      const positions = [
-        { x: 0, y: 0 },
-        { x: baseOffset, y: 0 },
-        { x: baseOffset * 2, y: 0 },
-        { x: 0, y: baseOffsetY },
-        { x: baseOffset, y: baseOffsetY },
-        { x: baseOffset, y: baseOffsetY * 2 },
-        { x: baseOffset * 2, y: baseOffsetY * 2 },
-      ];
-
-      const originalPositions = [...positions];
-      const dots = [];
-
-      function setDotPosition(dot, pos) {
-        dot.style.left = `${centerOffset + pos.x - baseOffset}px`;
-        dot.style.top = `${centerOffset + pos.y - baseOffsetY}px`;
-      }
-
-      positions.forEach(pos => {
-        const dot = document.createElement("div");
-        dot.classList.add("dot");
-        setDotPosition(dot, pos);
-        dotGrid.appendChild(dot);
-        dots.push(dot);
-      });
-
-      function applyShuffledPositions() {
-        const shuffled = [...positions].sort(() => Math.random() - 0.5);
-        dots.forEach((dot, i) => setDotPosition(dot, shuffled[i]));
-      }
-
-      function resetPositions() {
-        dots.forEach((dot, i) => setDotPosition(dot, originalPositions[i]));
-      }
-
-      dotGrid.addEventListener("mouseenter", applyShuffledPositions);
-      dotGrid.addEventListener("mouseleave", resetPositions);
-    }
-  });
 
   if ($('.Projects-area-10').length > 0) {
     let mm = gsap.matchMedia();
@@ -1832,6 +1908,143 @@
       }
     }
   });
+
+  // if (document.querySelectorAll(".side-info-4").length > 0) {
+  //   const menuToggle = document.querySelector(".menu-toggle");
+  //   const sideInfo = document.querySelector(".side-info-4");
+  //   const closeButton = document.getElementById("side-info-4-close");
+  //   const navItems = document.querySelectorAll(".nav-list li");
+
+  //   // Create GSAP timeline (paused by default)
+  //   const tl = gsap.timeline({ paused: true });
+
+  //   // Add animation to timeline
+  //   tl.from(navItems, {
+  //     y: -30,
+  //     opacity: 0,
+  //     duration: 0.5,
+  //     stagger: 0.1,
+  //     ease: "power2.out"
+  //   });
+
+  //   // Open menu
+  //   menuToggle.addEventListener("click", function () {
+  //     sideInfo.classList.add("info-open");
+  //     tl.play(); // Play forward (items come in from top)
+  //   });
+
+  //   // Close menu with reverse animation
+  //   closeButton.addEventListener("click", function () {
+  //     tl.reverse(); // Play timeline in reverse (items go down and disappear)
+  //     // Wait till animation ends, then hide sidebar
+  //     tl.eventCallback("onReverseComplete", function () {
+  //       sideInfo.classList.remove("info-open");
+  //     });
+  //   });
+
+  //   // Close on scroll with reverse animation
+  //   window.addEventListener("scroll", function () {
+  //     if (window.scrollY > 0 && sideInfo.classList.contains("info-open")) {
+  //       tl.reverse();
+  //       tl.eventCallback("onReverseComplete", function () {
+  //         sideInfo.classList.remove("info-open");
+  //       });
+  //     }
+  //   });
+  // }
+  // if (document.querySelectorAll(".side-info-4").length > 0) {
+  //   const menuToggle = document.querySelector(".menu-toggle");
+  //   const sideInfo = document.querySelector(".side-info-4");
+  //   const closeButton = document.getElementById("side-info-4-close");
+  //   const navItems = document.querySelectorAll(".nav-list li");
+
+  //   // Create GSAP timeline (paused by default)
+  //   const tl = gsap.timeline({ paused: true });
+
+  //   // Add animation to timeline (items slide from top)
+  //   tl.from(navItems, {
+  //     x: "-50%",
+  //     opacity: 0,
+  //     duration: 0.5,
+  //     stagger: 0.1,
+  //     ease: "power.out"
+  //   });
+
+  //   // Open menu
+  //   menuToggle.addEventListener("click", function () {
+  //     // Show sidebar by adding class
+  //     sideInfo.classList.add("info-open");
+
+  //     // Slight delay then play animation
+  //     gsap.delayedCall(0.3, () => {
+  //       tl.play();
+  //     });
+  //   });
+
+  //   // Close menu on close button click — reverse animation + remove class immediately
+  //   closeButton.addEventListener("click", function () {
+  //     tl.reverse();
+  //     sideInfo.classList.remove("info-open");
+  //   });
+
+  //   // Close menu on scroll — reverse animation + remove class immediately
+  //   window.addEventListener("scroll", function () {
+  //     if (window.scrollY > 0 && sideInfo.classList.contains("info-open")) {
+  //       tl.reverse();
+  //       sideInfo.classList.remove("info-open");
+  //     }
+  //   });
+  // }
+
+  // ofcanvas style
+
+  // if (document.querySelectorAll(".side-info-4").length > 0) {
+  //   const menuToggle = document.querySelector(".menu-toggle");
+  //   const sideInfo = document.querySelector(".side-info-4");
+  //   const closeButton = document.getElementById("side-info-4-close");
+
+  //   const navListItems = document.querySelectorAll(".nav-list li");
+  //   const socialMediaItems = document.querySelectorAll(".socail-media li");
+
+  //   // দুই লিস্ট মিলে একত্রে একটি অ্যারে তৈরি
+  //   const allItems = [...socialMediaItems, ...navListItems]; // একই সময়ে animate করাতে order control
+
+  //   const tl = gsap.timeline({ paused: true });
+
+  //   // একসাথে সব আইটেম animate হবে
+  //   tl.from(allItems, {
+  //     x: "-50",
+  //     opacity: 0,
+  //     duration: 0.5,
+  //     stagger: 0.1,
+  //     ease: "power2.out"
+  //   });
+
+  //   // মেনু খোলা হলে
+  //   menuToggle.addEventListener("click", function () {
+  //     sideInfo.classList.add("info-open");
+
+  //     // delay না দিলেও হবে কারণ animate একসাথে শুরু হচ্ছে
+  //     tl.restart(); // .play() দিলে পুরোনো স্টেট থেকে চালু হতে পারে, restart দিলে একেবারে শুরু থেকে
+  //   });
+
+  //   // ক্লোজ বাটন ক্লিক করলে
+  //   closeButton.addEventListener("click", function () {
+  //     tl.reverse();
+  //     sideInfo.classList.remove("info-open");
+  //   });
+
+  //   // স্ক্রল করলে মেনু ক্লোজ হবে
+  //   window.addEventListener("scroll", function () {
+  //     if (window.scrollY > 0 && sideInfo.classList.contains("info-open")) {
+  //       tl.reverse();
+  //       sideInfo.classList.remove("info-open");
+  //     }
+  //   });
+  // }
+
+
+
 
 })(jQuery);
 
