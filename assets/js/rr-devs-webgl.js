@@ -1,4 +1,4 @@
-class ClapatWebGL {
+class RrdvesWebGL {
     constructor(e) {
         this.scene = new THREE.Scene, this.vertex = "varying vec2 vUv;void main() {vUv = uv;gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );}", this.material = e.material, this.fragment = e.fragment, this.uniforms = e.uniforms, this.renderer = new THREE.WebGLRenderer, this.width = window.innerWidth, this.height = window.innerHeight, this.renderer.setPixelRatio(window.devicePixelRatio), this.renderer.setSize(this.width, this.height), this.renderer.setClearColor(2303786, 1), this.container = document.getElementById("canvas-slider"), this.images = Array.from(document.querySelectorAll(".slide-img")), this.width = this.container.offsetWidth, this.height = this.container.offsetHeight, this.container.appendChild(this.renderer.domElement), this.camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, .001, 1e3), this.camera.position.set(0, 0, 2), this.current = 0, this.textures = [], this.isRunning = !1, this.paused = !0, this.initiate(() => {
             this.setupResize(), this.addObjects(), this.resize(), this.play()

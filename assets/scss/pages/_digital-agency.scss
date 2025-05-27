@@ -1,17 +1,3 @@
-/* digital agency page css */
-.body-digital-agency {
-    .container {
-        &.large {
-            @media (min-width: 1650px) {
-                max-width: 1650px;
-                --container-max-widths: 1650px;
-            }
-        }
-    }
-}
-
-
-
 /* hero area style  */
 .hero-area {
     background-color: var(--black);
