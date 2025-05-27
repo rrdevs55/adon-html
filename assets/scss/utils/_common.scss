@@ -280,6 +280,10 @@
     font-weight: 300;
     line-height: 0.83;
     letter-spacing: -0.02em;
+
+    @media #{$lg} {
+      line-height: 0.93;
+    }
   }
 }
 

@@ -1299,8 +1299,8 @@
         grid-template-columns: 1fr 2fr 1fr;
         align-items: center;
 
-        @media #{$sm} {
-            grid-template-columns: 1fr 1fr;
+        @media #{$lg} {
+            grid-template-columns: 3fr 1fr;
 
         }
 
@@ -1325,6 +1325,12 @@
             border-left: 1px solid var(--primary);
             padding-left: 20px;
             margin-left: 20px;
+        }
+    }
+
+    .header__nav {
+        @media #{$lg} {
+            display: none;
         }
     }
 

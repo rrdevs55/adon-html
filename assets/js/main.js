@@ -759,8 +759,9 @@
     var portfolio_17_active = new Swiper(".portfolio-17-active", {
       loop: true,
       slidesPerView: 1,
-      spaceBetween: 40,
+      spaceBetween: 20,
       speed: 1000,
+      autoplay: true,
       watchSlidesProgress: true,
       navigation: {
         prevEl: ".portfolio-17-button-prev",
@@ -772,17 +773,16 @@
           slidesPerView: 1,
         },
         768: {
-          slidesPerView: 1,
-        },
-        992: {
           slidesPerView: 2,
         },
-        1201: {
+        992: {
           slidesPerView: 3,
         },
-        1367: {
+        1201: {
           slidesPerView: 4,
-        },
+          spaceBetween: 40,
+
+        }
       }
     });
   }
@@ -794,6 +794,7 @@
       slidesPerView: 1,
       spaceBetween: 20,
       speed: 1000,
+      autoplay: true,
       watchSlidesProgress: true,
       navigation: {
         prevEl: ".testimonial-17-button-prev",
@@ -813,7 +814,7 @@
         1201: {
           slidesPerView: 3,
         },
-        1367: {
+        1800: {
           slidesPerView: 3.4,
         },
       }
