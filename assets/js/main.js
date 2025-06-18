@@ -947,7 +947,7 @@
           start: "top 0%",
           end: "+=400%",
           scrub: 0,
-          markers: true,
+          // markers: true,
           pin: true
         }
       });
@@ -960,7 +960,7 @@
           start: "top 0%",
           end: "+=200%",
           scrub: true,
-          markers: true,
+          // markers: true,
         }
       });
 
@@ -1623,7 +1623,7 @@
           start: 'top top',
           end: "bottom 100%",
           pin: '.Projects__content',
-          markers: true,
+          // markers: true,
           pinSpacing: false,
           toggleActions: 'play reverse play reverse',
         }
