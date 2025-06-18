@@ -182,15 +182,21 @@ section {
   direction: rtl;
 }
 
-.show-dark {
+.show-light {
   display: inline-block;
 
+  @include dark {
+    display: none;
+  }
 
 }
 
-.show-light {
+.show-dark {
   display: none;
 
+  @include dark {
+    display: inline-block;
+  }
 
 }
 
