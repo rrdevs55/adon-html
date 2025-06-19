@@ -1336,7 +1336,7 @@
 
   serviceItems.forEach(item => {
     const hoverImage = item.querySelector('.hover-image');
-    const hoverImgEl = hoverImage.querySelector('img');
+    const hoverImgEl = hoverImage.querySelector('.hover-img');
     const hoverTextTitle = hoverImage.querySelector('.hover-text h4');
     const hoverTextSubtitle = hoverImage.querySelector('.hover-text p');
 
