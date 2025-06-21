@@ -1,10 +1,4 @@
-/*----------------------------------------*/
-/*  01. MENU CSS START
-/*----------------------------------------*/
-
-
-
-
+/* menu css */
 .main-menu {
   &.menu-dark>ul>li>a {
     color: var(--black);
@@ -57,6 +51,7 @@
 
   li {
     position: relative;
+    list-style: none;
 
     a {
       display: flex;
@@ -87,6 +82,7 @@
     &.column-2 {
       column-count: 2;
       width: 480px;
+      column-gap: 0;
     }
 
     ul {

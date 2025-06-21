@@ -759,8 +759,9 @@
     var portfolio_17_active = new Swiper(".portfolio-17-active", {
       loop: true,
       slidesPerView: 1,
-      spaceBetween: 40,
+      spaceBetween: 20,
       speed: 1000,
+      autoplay: true,
       watchSlidesProgress: true,
       navigation: {
         prevEl: ".portfolio-17-button-prev",
@@ -772,17 +773,16 @@
           slidesPerView: 1,
         },
         768: {
-          slidesPerView: 1,
-        },
-        992: {
           slidesPerView: 2,
         },
-        1201: {
+        992: {
           slidesPerView: 3,
         },
-        1367: {
+        1201: {
           slidesPerView: 4,
-        },
+          spaceBetween: 40,
+
+        }
       }
     });
   }
@@ -794,6 +794,7 @@
       slidesPerView: 1,
       spaceBetween: 20,
       speed: 1000,
+      autoplay: true,
       watchSlidesProgress: true,
       navigation: {
         prevEl: ".testimonial-17-button-prev",
@@ -813,7 +814,7 @@
         1201: {
           slidesPerView: 3,
         },
-        1367: {
+        1800: {
           slidesPerView: 3.4,
         },
       }
@@ -946,7 +947,7 @@
           start: "top 0%",
           end: "+=400%",
           scrub: 0,
-          markers: true,
+          // markers: true,
           pin: true
         }
       });
@@ -959,7 +960,7 @@
           start: "top 0%",
           end: "+=200%",
           scrub: true,
-          markers: true,
+          // markers: true,
         }
       });
 
@@ -1216,7 +1217,7 @@
 
       tl.to(".services-wrapper-1 .service-box-1", {
         x: 0,
-        ease: "none",
+        ease: "power2.inOut",
         scrollTrigger: {
           trigger: ".services-wrapper-box",
           start: "top top",
@@ -1335,7 +1336,7 @@
 
   serviceItems.forEach(item => {
     const hoverImage = item.querySelector('.hover-image');
-    const hoverImgEl = hoverImage.querySelector('img');
+    const hoverImgEl = hoverImage.querySelector('.hover-img');
     const hoverTextTitle = hoverImage.querySelector('.hover-text h4');
     const hoverTextSubtitle = hoverImage.querySelector('.hover-text p');
 
@@ -1622,7 +1623,7 @@
           start: 'top top',
           end: "bottom 100%",
           pin: '.Projects__content',
-          markers: true,
+          // markers: true,
           pinSpacing: false,
           toggleActions: 'play reverse play reverse',
         }
@@ -2043,6 +2044,32 @@
   //   });
   // }
 
+
+  /* cubes parallax  */
+  var timeout;
+  $('#cube-container').mousemove(function (e) {
+    if (timeout) clearTimeout(timeout);
+    setTimeout(callParallax.bind(null, e), 200);
+
+  });
+
+  function callParallax(e) {
+    parallaxIt(e, '.cube-one', -50);
+    parallaxIt(e, '.cube-two', -50);
+    parallaxIt(e, '.cube-three', -50);
+  }
+
+  function parallaxIt(e, target, movement) {
+    var $this = $('#cube-container');
+    var relX = e.pageX - $this.offset().left;
+    var relY = e.pageY - $this.offset().top;
+
+    TweenMax.to(target, 1, {
+      x: (relX - $this.width() / 2) / $this.width() * movement,
+      y: (relY - $this.height() / 2) / $this.height() * movement,
+      ease: Power2.easeOut
+    })
+  }
 
 
 

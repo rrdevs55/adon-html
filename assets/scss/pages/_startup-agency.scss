@@ -1,3 +1,4 @@
+/* startup agency page css */
 .body {
     &-startup-agency {
         background-color: #F8F8F8;
@@ -187,8 +188,8 @@
 
         video {
             width: 100%;
-            -webkit-mask-image: url(../imgs/shape/shape-3.png);
-            mask-image: url(../imgs/shape/shape-3.png);
+            -webkit-mask-image: url(../imgs/shape/shape-3.webp);
+            mask-image: url(../imgs/shape/shape-3.webp);
             mask-size: 100% 100%;
             object-fit: cover;
         }
