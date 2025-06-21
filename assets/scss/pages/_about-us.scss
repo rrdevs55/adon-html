@@ -10,7 +10,7 @@
     }
 
     .info {
-        border-right: 1px solid rgba(17, 17, 17, 0.10);
+        border-right: 1px solid var(--border);
 
         @media #{$md} {
             border-right: none;
@@ -21,7 +21,7 @@
             font-weight: 400;
             line-height: 22px;
             letter-spacing: -1px;
-            color: var(--black);
+            color: var(--primary);
             font-family: var(--font_bdogrotesk);
 
             @media #{$md} {
@@ -37,7 +37,7 @@
             font-weight: 400;
             line-height: 20px;
             margin-top: 126px;
-            color: var(--black);
+            color: var(--primary);
             letter-spacing: -1px;
             font-family: var(--font_bdogrotesk);
 
@@ -187,12 +187,16 @@
         &.item-1 {
             background-color: #F1F1F1;
 
+            @include dark {
+                background-color: #1A1A1A;
+            }
+
             p {
-                color: var(--black);
+                color: var(--primary);
             }
 
             h2 {
-                color: var(--black);
+                color: var(--primary);
             }
         }
 
@@ -266,23 +270,27 @@
     .btn-wrapper {
 
         a {
-            color: var(--black);
+            color: var(--primary);
         }
     }
 
     .team-box {
         .name {
-            color: var(--black);
+            color: var(--primary);
 
             a {
                 &:hover {
-                    color: var(--black);
+                    color: var(--secondary);
                 }
             }
         }
 
         .post {
             color: #555555;
+
+            @include dark {
+                color: #999999;
+            }
         }
     }
 }
@@ -379,6 +387,10 @@
 
         &:hover {
             background-color: #171717;
+
+            @include dark {
+                background-color: #1F1F1F;
+            }
 
             @media #{$sm} {
                 background-color: transparent;

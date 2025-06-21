@@ -28,7 +28,7 @@
         }
 
         .subtitle-wrapper {
-            border-right: 1px solid rgba(17, 17, 17, 0.10);
+            border-right: 1px solid var(--border);
         }
     }
 
@@ -64,6 +64,11 @@
             line-height: 28px;
             letter-spacing: -1.2px;
             max-width: 335px;
+            color: #999999;
+
+            @include dark {
+                color: #555555;
+            }
 
             span {
                 color: var(--primary);
@@ -79,7 +84,7 @@
 .team-page {
 
     .team-wrapper-box {
-        border-bottom: 1px solid rgba(17, 17, 17, 0.10);
+        border-bottom: 1px solid var(--border);
     }
 
     .team-wrapper {
@@ -88,17 +93,21 @@
 
     .team-box {
         .name {
-            color: var(--black);
+            color: var(--primary);
 
             a {
                 &:hover {
-                    color: var(--black);
+                    color: var(--secondary);
                 }
             }
         }
 
         .post {
             color: #555555;
+
+            @include dark {
+                color: #999999;
+            }
         }
     }
 }

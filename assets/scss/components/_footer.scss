@@ -88,13 +88,13 @@
     }
 
     .copyright-area-5 {
-        border-top: 1px solid rgba(17, 17, 17, 0.10);
+        border-top: 1px solid var(--border);
 
     }
 
     .footer-widget-wrapper-box {
-        border-top: 1px solid rgba(17, 17, 17, 0.10);
-        border-bottom: 1px solid rgba(17, 17, 17, 0.10);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
         padding: 100px 0px;
         position: relative;
 
@@ -110,7 +110,7 @@
             content: "";
             position: absolute;
             right: 795px;
-            background-color: rgba(17, 17, 17, 0.10);
+            background-color: var(--border);
             width: 1px;
             height: 100%;
             top: 0;
@@ -139,8 +139,12 @@
                 line-height: 85px;
                 letter-spacing: -3.5px;
                 font-family: var(--font_bdogrotesk);
-                color: var(--black);
+                color: var(--primary);
                 display: inline-block;
+
+                @include dark {
+                    color: var(--primary);
+                }
 
                 @media #{$xxl} {
                     font-size: 80px;
@@ -207,6 +211,10 @@
             color: #999999;
             font-family: var(--font_dmsans);
 
+            @include dark {
+                color: #555555;
+            }
+
             @media #{$xxl} {
                 margin-bottom: 20px;
 
@@ -256,7 +264,6 @@
     }
 
     .copyright-area-inner {
-        border-top: 1px solid var(--border);
         padding: 48px 0;
 
         @media #{$xxl} {
@@ -285,6 +292,10 @@
                 color: #999999;
                 transition: all 0.3s;
                 position: relative;
+
+                @include dark {
+                    color: #555555;
+                }
 
                 &::before {
                     width: 0%;
@@ -317,7 +328,6 @@
 .footer-area-2 {
 
     .footer-widget-wrapper-box {
-        border-bottom: none;
         position: relative;
 
         &::after {

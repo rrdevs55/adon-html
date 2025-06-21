@@ -902,6 +902,10 @@
         background-color: #1A1A1A;
         padding: 34px 40px 4px 45px;
 
+        @include dark {
+            background-color: #FFFFFF;
+        }
+
         @media #{$lg} {
             padding: 34px 35px 4px 35px;
         }
@@ -913,6 +917,10 @@
         p {
             color: var(--white);
             font-size: 20px;
+
+            @include dark {
+                color: var(--black);
+            }
         }
 
         h2 {
@@ -922,6 +930,10 @@
             color: var(--white);
             align-items: self-start;
             font-family: var(--font_ppeditor);
+
+            @include dark {
+                color: var(--black);
+            }
 
             @media #{$xs} {
                 margin-top: 10px;
