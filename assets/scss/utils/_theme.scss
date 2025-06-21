@@ -82,6 +82,10 @@ body {
 
   &-black {
     background-color: var(--black);
+
+    @include dark {
+      background-color: #171717;
+    }
   }
 
   &-primary {

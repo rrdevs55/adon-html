@@ -41,6 +41,10 @@
 
     .meta-wrapper {
         border-bottom: 1px solid #E7E7E7;
+
+        @include dark {
+            border-color: #292929;
+        }
     }
 
     .meta-item {
@@ -50,6 +54,10 @@
         display: grid;
         gap: 30px;
         grid-template-columns: 154px 1fr;
+
+        @include dark {
+            border-color: #292929;
+        }
 
         @media #{$xs} {
             gap: 15px;
@@ -153,7 +161,6 @@
             .text-wrapper {
 
                 .text {
-                    color: #555;
                     font-size: 20px;
                     font-weight: 400;
                     line-height: 28px;
@@ -248,7 +255,6 @@
             font-weight: 400;
             line-height: 28px;
             margin-top: 16px;
-            color: #555;
 
             @media #{$lg} {
                 font-size: 18px;
@@ -324,7 +330,7 @@
         }
 
         a {
-            border: 1px solid rgba(17, 17, 17, 0.10);
+            border: 1px solid var(--border);
             width: 170px;
             height: 90px;
             display: inline-flex;

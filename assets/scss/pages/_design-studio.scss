@@ -604,6 +604,10 @@
         border-bottom: 1px solid rgba(17, 17, 17, 0.15);
         justify-content: space-between;
 
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
         @media #{$lg} {
             margin-top: 14px;
             flex-wrap: wrap;
@@ -658,6 +662,10 @@
         background: #F1F1F1;
         border-color: transparent;
 
+        @include dark {
+            background-color: #1A1A1A;
+        }
+
         i {
             margin-left: 5px;
             rotate: -45deg;
@@ -686,6 +694,10 @@
                 .text-one,
                 .text-two {
                     color: var(--white);
+
+                    @include dark {
+                        color: var(--black);
+                    }
                 }
             }
         }

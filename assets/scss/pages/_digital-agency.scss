@@ -574,6 +574,11 @@
 
     .section-title {
         max-width: 665px;
+        color: var(--white);
+
+        @include dark {
+            color: var(--black);
+        }
 
         @media #{$xxl} {
             max-width: 565px;
@@ -654,6 +659,10 @@
             text-decoration: none;
             display: inline-block;
 
+            @include dark {
+                color: var(--black);
+            }
+
             @media #{$lg} {
                 font-size: 20px;
             }
@@ -676,6 +685,10 @@
             background-size: 100% 100%;
             transition: background-size 1s;
             background-position: 0 -2px;
+
+            @include dark {
+                background-image: linear-gradient(transparent calc(100% - 1px), var(--black) 1px);
+            }
         }
     }
 }
@@ -712,12 +725,20 @@
         letter-spacing: -0.05em;
         color: var(--white);
 
+        @include dark {
+            color: var(--black);
+        }
+
         @media #{$lg} {
             font-size: 20px;
         }
 
         a:hover {
-            color: var(--secondary);
+            color: #999999;
+
+            @include dark {
+                color: #555555;
+            }
         }
     }
 
@@ -728,6 +749,10 @@
         letter-spacing: -0.02em;
         display: inline-block;
         color: #999999;
+
+        @include dark {
+            color: #555555;
+        }
     }
 
     .content {
@@ -749,6 +774,11 @@
         line-height: 1;
         letter-spacing: -0.07em;
         white-space: nowrap;
+        color: var(--white);
+
+        @include dark {
+            color: var(--black);
+        }
 
         @media #{$xxl} {
             font-size: 210px;
@@ -783,7 +813,6 @@
 
 /* client area style  */
 .client-area {
-    background-color: var(--black);
     margin-top: -4px;
     margin-bottom: -1px;
 
@@ -1103,6 +1132,10 @@
     border-radius: 15px;
     height: 100%;
 
+    @include dark {
+        background-color: var(--white);
+    }
+
 
     @media #{$xxl} {
         padding: 30px 25px 26px;
@@ -1110,6 +1143,10 @@
 
     &:hover {
         background-color: #555555;
+
+        @include dark {
+            background-color: #999999;
+        }
     }
 
     .thumb {
@@ -1132,6 +1169,10 @@
         line-height: 1.07;
         letter-spacing: -0.05em;
         color: var(--white);
+
+        @include dark {
+            color: var(--black);
+        }
 
         @media #{$xxl} {
             font-size: 24px;
@@ -1182,7 +1223,7 @@
     }
 
     .mockup-header {
-        border: 1px solid rgba(17, 17, 17, 0.1);
+        border: 1px solid var(--border);
         border-radius: 20px;
         display: flex;
         align-items: center;
@@ -1197,6 +1238,12 @@
     .mockup-logo {
         img {
             width: 100px;
+        }
+    }
+
+    .mockup-offcanvas {
+        svg * {
+            fill: var(--primary);
         }
     }
 
@@ -1222,6 +1269,10 @@
 
             a {
                 color: rgba(17, 17, 17, 0.3);
+
+                @include dark {
+                    color: rgba(255, 255, 255, 0.3);
+                }
 
                 &:hover {
                     .underline {
@@ -1256,5 +1307,23 @@
 
     .add-shape-wrapper {
         transform: translate(0, calc(-50vh - 46px));
+    }
+
+    .add-shape {
+        circle {
+            fill: var(--black);
+
+            @include dark {
+                fill: var(--white);
+            }
+        }
+
+        path {
+            fill: var(--white);
+
+            @include dark {
+                fill: var(--black);
+            }
+        }
     }
 }
