@@ -1,7 +1,6 @@
 const serviceItems = document.querySelectorAll('.our-expertise-item');
 
 serviceItems.forEach(item => {
-    // Create a hover image inside each service item
     const hoverImage = document.createElement('div');
     hoverImage.className = 'hover-image';
     hoverImage.innerHTML = '<img src="" alt="Hover Preview">';
