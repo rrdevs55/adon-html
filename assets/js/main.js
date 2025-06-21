@@ -1217,7 +1217,7 @@
 
       tl.to(".services-wrapper-1 .service-box-1", {
         x: 0,
-        ease: "none",
+        ease: "power2.inOut",
         scrollTrigger: {
           trigger: ".services-wrapper-box",
           start: "top top",
