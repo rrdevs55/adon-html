@@ -119,9 +119,7 @@
         transform: translateY(-50%);
         color: var(--black);
 
-        @include dark {
-          color: var(--white);
-        }
+
       }
     }
   }
@@ -287,6 +285,7 @@
   text-transform: uppercase;
 
   @include dark {
+    background-color: var(--black);
     color: var(--black);
   }
 
@@ -319,7 +318,7 @@
         color: var(--black);
 
         @include dark {
-          color: var(--white);
+          color: var(--black);
         }
       }
     }
@@ -371,7 +370,7 @@
       transition: all 0.5s;
 
       @include dark {
-        color: var(--black);
+        color: var(--white);
       }
     }
 

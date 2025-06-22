@@ -211,6 +211,26 @@
                 color: var(--black);
             }
         }
+
+        &.item-3 {
+
+            @include dark {
+                background-color: #FFFFFF;
+            }
+
+            p {
+                @include dark {
+                    color: var(--black);
+                }
+            }
+
+            h2 {
+                @include dark {
+                    color: var(--black);
+                }
+
+            }
+        }
     }
 
 }
@@ -274,7 +294,7 @@
         }
     }
 
-    .team-box {
+    .team-box-1 {
         .name {
             color: var(--primary);
 

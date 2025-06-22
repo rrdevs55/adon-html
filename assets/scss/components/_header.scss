@@ -134,6 +134,7 @@
         font-size: 16px;
         font-weight: 500;
         padding: 21px 17px;
+        color: var(--black);
 
         &:hover {
             color: var(--secondary);
@@ -154,7 +155,7 @@
             height: 12px;
 
             span {
-                background-color: var(--primary);
+                background-color: var(--black);
                 height: 2px;
                 border-radius: 500px;
 
@@ -260,6 +261,11 @@
         margin-top: 10px;
         border-radius: 20px;
         width: 950px;
+        background-color: var(--white);
+
+        @include dark {
+            background-color: var(--black);
+        }
 
         @media #{$xxl} {
             width: 700px;
@@ -346,6 +352,10 @@
         border-radius: 20px;
         transition: all 0.5s;
         border: 1px solid rgba(17, 17, 17, 0.15);
+
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
 
         &:hover {
             background-color: #FFD80C;
