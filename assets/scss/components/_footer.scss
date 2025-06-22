@@ -432,6 +432,10 @@
     border-radius: 20px;
     padding: 50px 50px;
 
+    @include dark {
+        background-color: var(--black);
+    }
+
     @media #{$xxl} {
         padding: 40px 40px;
     }
@@ -473,6 +477,10 @@
     background-color: var(--white);
     border-radius: 20px;
     padding: 45px 30px 47px;
+
+    @include dark {
+        background-color: var(--black);
+    }
 
     @media #{$xxl} {
         padding: 35px 30px 37px;
@@ -520,6 +528,10 @@
         height: 100px;
         padding: 20px 30px;
         border-radius: 20px;
+
+        @include dark {
+            background-color: var(--black);
+        }
 
         @media #{$lg} {
             height: 80px;
