@@ -1,3 +1,4 @@
+/* error page css */
 // error area style 
 .error-area {
     &-inner {
@@ -34,9 +35,8 @@
 
     .section-title {
         max-width: 740px;
-        font-size: 90px;
         font-weight: 400;
-        line-height: 85px;
+        line-height: 0.94;
         letter-spacing: -4.5px;
 
         @media #{$xxl} {
@@ -45,20 +45,7 @@
 
         @media #{$lg} {
             letter-spacing: 0;
-        }
-
-        @media #{$md} {
-            font-size: 70px;
-        }
-
-        @media #{$sm} {
-            font-size: 60px;
-            line-height: 70px;
-        }
-
-        @media #{$xs} {
-            font-size: 40px;
-            line-height: 50px;
+            line-height: 1.22;
         }
     }
 

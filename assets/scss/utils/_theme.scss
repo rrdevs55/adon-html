@@ -1,12 +1,4 @@
-/*----------------------------------------*/
-/* THEME CSS START
-/*----------------------------------------*/
-
-// for image transparency 
-// img[src$=".webp"] {
-//   filter: brightness(0.1);
-// }
-
+/* theme css */
 
 html {
   --container-max-widths: 1320px;
@@ -90,6 +82,10 @@ body {
 
   &-black {
     background-color: var(--black);
+
+    @include dark {
+      background-color: #171717;
+    }
   }
 
   &-primary {
@@ -182,15 +178,21 @@ section {
   direction: rtl;
 }
 
-.show-dark {
+.show-light {
   display: inline-block;
 
+  @include dark {
+    display: none;
+  }
 
 }
 
-.show-light {
+.show-dark {
   display: none;
 
+  @include dark {
+    display: inline-block;
+  }
 
 }
 

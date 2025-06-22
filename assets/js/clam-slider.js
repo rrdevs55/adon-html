@@ -154,7 +154,7 @@ jQuery(function ($) {
                 }
             `;
 
-            var gl_canvas = new ClapatWebGL({
+            var gl_canvas = new RrdvesWebGL({
                 vertex: vertex,
                 fragment: fragment,
             });

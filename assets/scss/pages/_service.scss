@@ -1,5 +1,5 @@
+/* service page css */
 .service-2 {
-
     .section-title-wrapper {
         display: grid;
         gap: 15px 40px;
@@ -41,13 +41,17 @@
             }
 
             span {
-                color: #999;
+                color: #999999;
+
+                @include dark {
+                    color: #555555;
+                }
             }
         }
     }
 
     .subtitle-wrapper {
-        border-right: 1px solid rgba(17, 17, 17, 0.10);
+        border-right: 1px solid var(--border);
     }
 
     .service-2-box {
@@ -56,7 +60,7 @@
         padding-top: 40px;
         align-items: center;
         grid-template-columns: 660px 1fr;
-        border-top: 1px solid rgba(17, 17, 17, 0.10);
+        border-top: 1px solid var(--border);
 
         &:not(:last-child) {
             padding-bottom: 40px;

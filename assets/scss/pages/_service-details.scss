@@ -1,5 +1,5 @@
+/* service details page css */
 .hero-area-service-details {
-
     .service-meta {
         z-index: 1;
         display: grid;
@@ -145,7 +145,7 @@
         }
 
         .text {
-            color: #555;
+            color: var(--secondary);
             font-size: 18px;
             max-width: 395px;
             line-height: 26px;
@@ -181,7 +181,7 @@
                 align-items: center;
                 color: var(--primary);
                 border-radius: 500px;
-                border: 1px solid rgba(17, 17, 17, 0.10);
+                border: 1px solid var(--border);
             }
         }
 
@@ -300,6 +300,10 @@
     .approach-wrapper {
         border-top: 1px dashed #878482;
 
+        @include dark {
+            border-color: #626262;
+        }
+
     }
 
     .approach-box {
@@ -310,6 +314,10 @@
         padding-top: 40px;
         padding-bottom: 44px;
         border-bottom: 1px dashed #878482;
+
+        @include dark {
+            border-color: #626262;
+        }
 
         @media #{$xxl} {
             grid-template-columns: 60px 1fr 395px;
@@ -352,7 +360,7 @@
             font-size: 18px;
             font-weight: 400;
             line-height: 26px;
-            color: #555555;
+            color: var(--secondary);
         }
 
     }
@@ -421,6 +429,7 @@
             font-weight: 400;
             line-height: 26px;
             margin-top: 30px;
+            color: #999999;
         }
     }
 
@@ -514,6 +523,7 @@
             font-weight: 400;
             line-height: 26px;
             margin-top: 35px;
+            color: #999999;
 
             @media #{$lg} {
                 margin-top: 10px;
@@ -597,6 +607,10 @@
     .accordion {
         counter-reset: accordion;
         border-top: 1px solid #E7E7E7;
+
+        @include dark {
+            border-color: #292929;
+        }
     }
 
     .accordion-button {
@@ -646,6 +660,10 @@
         transition: all 0.5s;
         border-radius: 0;
 
+        @include dark {
+            border-color: #292929;
+        }
+
         .title {
             gap: 49px;
             display: flex;
@@ -675,12 +693,15 @@
         padding-left: 68px;
         border-top: 1px solid #E7E7E7;
 
+        @include dark {
+            border-color: #292929;
+        }
+
         @media #{$sm} {
             padding-left: 30px;
         }
 
         p {
-            color: #555;
             font-size: 18px;
             font-weight: 400;
             line-height: 26px;

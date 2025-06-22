@@ -1,5 +1,5 @@
+/* modern agency page css */
 .hero-7-area {
-
     .hero-7-area-inner {
         padding-top: 160px;
         padding-bottom: 120px;
@@ -142,24 +142,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .image-wrapper {
+        width: 500px;
+        height: 650px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 650px;
+            display: block;
+        }
+    }
 }
 
-.image-wrapper {
-    width: 500px;
-    height: 650px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    min-height: 650px;
-    display: block;
-}
+
 
 .label-left,
 .label-right {
