@@ -11,18 +11,28 @@
             }
         }
 
+        .footer-widget-box {
+            .title {
+                color: #999999;
+
+                @include dark {
+                    color: #999999;
+                }
+            }
+        }
+
         .subscribe-form {
             max-width: 515px;
 
             .input-field {
                 display: flex;
                 gap: 10px;
-                background-color: rgba(17, 17, 17, 0.05);
+                background-color: var(--white);
                 padding: 28px 30px;
                 border-radius: 50px;
 
                 @include dark {
-                    background-color: rgba(255, 255, 255, 0.05);
+                    background-color: var(--black);
                 }
 
                 @media #{$xxl} {
@@ -40,6 +50,10 @@
 
                     &::placeholder {
                         color: rgba(17, 17, 17, 0.3);
+
+                        @include dark {
+                            color: rgba(255, 255, 255, 0.3);
+                        }
                     }
 
                 }
@@ -47,6 +61,7 @@
                 i {
                     rotate: -45deg;
                     font-size: 20px;
+                    color: var(--primary);
                 }
             }
 
@@ -81,6 +96,18 @@
                                 width: 0;
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        .copyright-text {
+            .text {
+                a {
+                    color: #999999;
+
+                    @include dark {
+                        color: #999999;
                     }
                 }
             }
@@ -461,6 +488,10 @@
         border-radius: 20px;
         display: inline-block;
 
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
         @media #{$lg} {
             padding: 16px 19px;
         }
@@ -542,7 +573,7 @@
             color: var(--secondary);
 
             @include dark {
-                color: rgba(255, 255, 255, 0.30);
+                color: #555555;
             }
         }
 
@@ -606,7 +637,7 @@
 
 /* footer area 4 style  */
 .copyright-area-4-inner {
-    border-top: 1px solid rgba(17, 17, 17, 0.1);
+    border-top: 1px solid var(--border);
     padding: 48px 0;
 
     @media #{$xxl} {

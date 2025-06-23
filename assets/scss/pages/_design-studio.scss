@@ -27,7 +27,7 @@
         position: absolute;
         top: 169px;
         left: 74px;
-        border: 1px solid rgba(17, 17, 17, 0.1);
+        border: 1px solid var(--border);
         border-radius: 50%;
 
         @media #{$xxl} {
@@ -148,7 +148,6 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 26px;
-        color: #555555;
         max-width: 325px;
     }
 }
@@ -310,6 +309,10 @@
     padding-top: 44px;
     padding-bottom: 44px;
 
+    @include dark {
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+
     @media #{$xxl} {
         padding-top: 34px;
         padding-bottom: 34px;
@@ -338,9 +341,27 @@
 .service-4-section-header {
     margin-top: 40px;
 
+    .section-subtitle-2 {
+        @include bg-primary {
+            color: var(--white);
+
+            @include dark {
+                color: var(--black);
+            }
+        }
+    }
+
     .section-title {
         text-indent: 260px;
         max-width: 1150px;
+
+        @include bg-primary {
+            color: var(--white);
+
+            @include dark {
+                color: var(--black);
+            }
+        }
 
         @media #{$xxl} {
             max-width: 950px;
@@ -384,11 +405,19 @@
 
 .services-4-wrapper-box {
     margin-top: -6px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid;
     padding-top: 43px;
     display: grid;
     gap: 0 60px;
     grid-template-columns: 1fr 850px;
+
+    @include bg-primary {
+        border-color: rgba(255, 255, 255, 0.15);
+
+        @include dark {
+            border-color: rgba(17, 17, 17, 0.15);
+        }
+    }
 
     @media #{$lg} {
         grid-template-columns: 1fr;
@@ -400,6 +429,16 @@
 
         @media #{$lg} {
             display: none;
+        }
+    }
+
+    .go-down {
+        background-color: var(--white);
+        color: var(--black);
+
+        @include dark {
+            background-color: var(--black);
+            color: var(--white);
         }
     }
 }
@@ -433,6 +472,14 @@
         letter-spacing: -0.05em;
         margin-top: 4px;
 
+        @include bg-primary {
+            color: var(--white);
+
+            @include dark {
+                color: var(--black);
+            }
+        }
+
         a:hover {
             color: #555555;
         }
@@ -445,8 +492,16 @@
             font-size: 18px;
             line-height: 26px;
             letter-spacing: -0.05em;
-            color: #555555;
+
             list-style: none;
+
+            @include bg-primary {
+                color: #555555;
+
+                @include dark {
+                    color: #999999;
+                }
+            }
         }
     }
 }
@@ -500,12 +555,32 @@
         margin-bottom: 0;
     }
 
+    .section-subtitle-2 {
+        @include bg-primary {
+            color: var(--white);
+
+            @include dark {
+                color: var(--black);
+            }
+        }
+    }
+
     .title-wrapper {
         margin-top: 28px;
 
         @media #{$lg} {
             margin-top: 18px;
 
+        }
+    }
+
+    .section-title {
+        @include bg-primary {
+            color: var(--white);
+
+            @include dark {
+                color: var(--black);
+            }
         }
     }
 }
@@ -531,38 +606,79 @@
 
     .portfolio-4-item {
         .content {
-            border-color: rgba(255, 255, 255, 0.15);
+            @include bg-primary {
+                border-color: rgba(255, 255, 255, 0.15);
+
+                @include dark {
+                    border-color: rgba(17, 17, 17, 0.15);
+                }
+            }
         }
 
         .title {
-            color: var(--white);
+
+            @include bg-primary {
+                color: var(--white);
+
+                @include dark {
+                    color: var(--black);
+                }
+            }
 
             a:hover {
                 color: #999999;
+
+                @include dark {
+                    color: #555555;
+                }
             }
         }
 
         .tag {
-            color: var(--white);
+            @include bg-primary {
+                color: var(--white);
+
+                @include dark {
+                    color: var(--black);
+                }
+            }
         }
 
         .date {
-            color: var(--white);
+            @include bg-primary {
+                color: var(--white);
+
+                @include dark {
+                    color: var(--black);
+                }
+            }
         }
 
         .rr-btn {
             background: #1A1A1A;
+
+            @include dark {
+                background: #F1F1F1;
+            }
 
             .btn-wrap {
 
                 .text-one,
                 .text-two {
                     color: var(--white);
+
+                    @include dark {
+                        color: var(--black);
+                    }
                 }
             }
 
             &::before {
                 background-color: var(--white);
+
+                @include dark {
+                    background-color: var(--black);
+                }
             }
 
             &:hover {
@@ -572,6 +688,10 @@
                     .text-one,
                     .text-two {
                         color: var(--black);
+
+                        @include dark {
+                            color: var(--white);
+                        }
                     }
                 }
             }
@@ -730,7 +850,14 @@
         font-size: 30px;
         line-height: 1;
         letter-spacing: -0.05em;
-        color: var(--white);
+
+        @include bg-primary {
+            color: var(--white);
+
+            @include dark {
+                color: var(--black);
+            }
+        }
 
         @media #{$lg} {
             font-size: 24px;
@@ -743,6 +870,23 @@
 
         @media #{$lg} {
             margin-top: 27px;
+        }
+
+        .rr-btn {
+            border: 1px solid rgba(252, 247, 243, 0.10);
+            background-color: transparent;
+
+            @include dark {
+                border-color: var(--black);
+            }
+
+            .btn-wrap {
+                .text-two {
+                    @include dark {
+                        color: var(--white);
+                    }
+                }
+            }
         }
     }
 }
@@ -835,6 +979,10 @@
     margin-top: -30px;
     position: relative;
 
+    @include dark {
+        background-color: var(--black);
+    }
+
     .area-top-shape {
         position: absolute;
         width: 100%;
@@ -852,6 +1000,10 @@
             top: -10px;
             left: 30px;
             z-index: -1;
+
+            @include dark {
+                background-color: #ACACAC;
+            }
         }
 
         &:after {
@@ -864,6 +1016,10 @@
             top: -20px;
             left: 50px;
             z-index: -2;
+
+            @include dark {
+                background-color: #D6D6D6;
+            }
         }
     }
 }
@@ -923,6 +1079,11 @@
     gap: 20px 60px;
     grid-template-columns: 1fr 770px;
 
+    @include dark {
+
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+
     @media #{$xl} {
         grid-template-columns: 1fr 570px;
     }
@@ -956,7 +1117,6 @@
         font-weight: 400;
         font-size: 20px;
         line-height: 28px;
-        color: #555555;
         max-width: 317px;
     }
 
@@ -1001,6 +1161,10 @@
         border-top: 1px solid rgba(17, 17, 17, 0.15);
         padding-top: 19px;
         margin-top: 4px;
+
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
     }
 
     &.span-2 {
@@ -1081,6 +1245,10 @@
     display: grid;
     gap: 20px 60px;
     grid-template-columns: 1fr 990px;
+
+    @include dark {
+        border-color: rgba(255, 255, 255, 0.15);
+    }
 
     @media #{$xl} {
         grid-template-columns: 1fr 890px;
@@ -1268,6 +1436,10 @@
         background-color: #E6E6E6;
         opacity: 1;
 
+        @include dark {
+            background-color: #555555;
+        }
+
         &.swiper-pagination-bullet-active {
             background-color: var(--primary);
         }
@@ -1337,6 +1509,9 @@
     gap: 20px 60px;
     grid-template-columns: 1fr 510px;
 
+    @include dark {
+        border-color: rgba(255, 255, 255, 0.15);
+    }
 
 
     @media #{$lg} {
@@ -1357,7 +1532,6 @@
         font-weight: 400;
         font-size: 20px;
         line-height: 28px;
-        color: #555555;
     }
 
 }
@@ -1434,7 +1608,7 @@
         }
 
         a:hover {
-            color: #555;
+            color: var(--secondary);
         }
     }
 
@@ -1449,7 +1623,6 @@
         }
 
         li {
-            color: #555;
             font-size: 14px;
             font-weight: 400;
             line-height: 27px;
@@ -1487,7 +1660,7 @@
 .cta-4-section-header {
     margin-top: 41px;
     padding-top: 40px;
-    border-top: 1px solid rgba(17, 17, 17, 0.1);
+    border-top: 1px solid var(--border);
     padding-bottom: 90px;
 
     @media #{$xxl} {

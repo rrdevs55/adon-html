@@ -692,7 +692,7 @@
         gap: 10px;
         position: relative;
         height: 80px;
-        border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+        border-bottom: 1px solid var(--border);
     }
 
 
@@ -866,11 +866,27 @@
     .rr-btn {
         border-radius: 15px;
         padding: 14px 25px;
+        background-color: var(--white);
+        border-color: transparent;
+
+        @include dark {
+            background-color: var(--black);
+        }
+
+        &:before {
+            background-color: transparent;
+        }
+
 
         .text-one,
         .text-two {
             font-size: 16px;
             font-weight: 500;
+            color: var(--black);
+
+            @include dark {
+                color: var(--white);
+            }
 
             &::before {
                 content: "";
@@ -881,15 +897,14 @@
                 position: absolute;
                 transition: all 0.3s;
                 background-color: var(--black);
+
+                @include dark {
+                    background-color: var(--white);
+                }
             }
         }
 
-        .text-two {
 
-            &::before {
-                background-color: var(--white);
-            }
-        }
 
 
     }

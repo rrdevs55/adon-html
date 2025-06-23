@@ -18,6 +18,13 @@
   }
 }
 
+// bg primary 
+@mixin bg-primary {
+  .rr-bg-primary & {
+    @content;
+  }
+}
+
 // Transition multiple
 @mixin rs-transition-mul($property) {
   -webkit-transition: $property;

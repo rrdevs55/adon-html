@@ -520,6 +520,24 @@
 
     &:hover {
         background-color: #FFD80C;
+
+        svg {
+            * {
+                fill: var(--black);
+
+                @include dark {
+                    fill: var(--black);
+                }
+            }
+        }
+    }
+
+    svg {
+        * {
+            @include dark {
+                fill: var(--white);
+            }
+        }
     }
 }
 
@@ -685,6 +703,16 @@
     }
 
     &:hover {
+        .icon {
+            svg {
+                * {
+                    @include dark {
+                        stroke: var(--black);
+                    }
+                }
+            }
+        }
+
         .title {
             @include dark {
                 color: var(--black);
@@ -702,7 +730,7 @@
         position: relative;
         z-index: 2;
 
-        img {
+        svg {
             height: 80px;
 
             @media #{$xxl} {
@@ -711,6 +739,14 @@
 
             @media #{$lg} {
                 height: 50px;
+            }
+
+            * {
+                transition: all 0.7s;
+
+                @include dark {
+                    stroke: var(--white);
+                }
             }
         }
     }
@@ -870,6 +906,27 @@
 
     &:hover {
         background-color: #FFD80C;
+
+        .name {
+            color: var(--black);
+        }
+
+        .post {
+            color: var(--black);
+        }
+
+        @include dark {
+            .social-links {
+                a {
+                    border-color: rgba(17, 17, 17, 0.15);
+                    color: var(--black);
+
+                    &:hover {
+                        color: var(--white);
+                    }
+                }
+            }
+        }
     }
 
     .thumb {
@@ -902,7 +959,6 @@
         font-size: 18px;
         line-height: 1;
         letter-spacing: -0.02em;
-        color: var(--primary);
         display: inline-block;
         margin-top: 11px;
     }
@@ -922,6 +978,10 @@
             border-radius: 50%;
             font-size: 16px;
             color: var(--primary);
+
+            @include dark {
+                border-color: rgba(255, 255, 255, 0.15);
+            }
 
             @media #{$lg} {
                 width: 40px;
@@ -1075,12 +1135,34 @@
     justify-content: center;
     transition: all 0.5s;
 
+    @include dark {
+        background-color: var(--black);
+    }
+
     @media #{$lg} {
         height: 80px;
     }
 
     &:hover {
         background-color: #FFD80C;
+
+        svg {
+            * {
+                fill: var(--black);
+
+                @include dark {
+                    fill: var(--black);
+                }
+            }
+        }
+    }
+
+    svg {
+        * {
+            @include dark {
+                fill: var(--white);
+            }
+        }
     }
 
 }
@@ -1155,6 +1237,10 @@
         gap: 10px 30px;
         grid-template-columns: 1fr auto;
         align-items: center;
+
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
     }
 
     .name {
@@ -1270,6 +1356,6 @@
     display: flex;
     gap: 25px 50px;
     flex-wrap: wrap;
-    border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+    border-bottom: 1px solid var(--border);
     padding-bottom: 30px;
 }

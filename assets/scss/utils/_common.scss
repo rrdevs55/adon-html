@@ -98,7 +98,10 @@
 
 .rr-bg-light-gray {
   background-color: #F0F0F0;
-  /* White background color */
+
+  @include dark {
+    background-color: #212121;
+  }
 }
 
 .rr-bg-light {
@@ -128,6 +131,10 @@
 .agency-body-border {
   border-right: 1px solid rgba(17, 17, 17, 0.20);
   border-left: 1px solid rgba(17, 17, 17, 0.20);
+
+  @include dark {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
 
   @media #{$sm} {
     border: none;
@@ -254,10 +261,10 @@
   font-size: 12px;
   border-radius: 50%;
 
-  &.rr-content-white {
-    background-color: var(--white);
+  @include dark {
     color: var(--black);
   }
+
 }
 
 /* Section title styling with responsive font sizes */
