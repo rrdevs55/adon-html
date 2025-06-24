@@ -190,6 +190,10 @@
     position: relative;
     z-index: 1;
     background-color: var(--white);
+
+    @include dark {
+        background-color: var(--black);
+    }
 }
 
 .about-8-header {
@@ -205,6 +209,10 @@
         span {
             font-family: var(--font_ppeditorialnewregular);
             color: rgba(17, 17, 17, 0.4);
+
+            @include dark {
+                color: rgba(255, 255, 255, 0.4);
+            }
         }
     }
 }
@@ -221,6 +229,10 @@
     gap: 0 140px;
     grid-template-columns: 1fr 1fr;
     position: relative;
+
+    @include dark {
+        border-color: rgba(255, 255, 255, 0.15);
+    }
 
     @media #{$lg} {
         gap: 0 80px;
@@ -239,6 +251,10 @@
         background-color: rgba(17, 17, 17, 0.15);
         top: 0;
         left: 50%;
+
+        @include dark {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
 
         @media #{$sm} {
             display: none;

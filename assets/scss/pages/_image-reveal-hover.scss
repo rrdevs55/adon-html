@@ -3,6 +3,10 @@
     .our-expertise-inner {
         border-top: 1px solid #D5D0CE;
         position: relative;
+
+        @include dark {
+            border-color: #292929;
+        }
     }
 
     .section-title {
@@ -67,6 +71,10 @@
         padding-bottom: 50px;
         border-bottom: 1px solid #D5D0CE;
         grid-template-columns: 234px 930px 1fr;
+
+        @include dark {
+            border-color: #292929;
+        }
 
         @media #{$xxl} {
             grid-template-columns: 234px 630px 1fr;
@@ -192,5 +200,9 @@
         transform: translateY(0);
         transform-origin: top center;
         transition: transform 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+
+        @include dark {
+            background-color: #1A1A1A;
+        }
     }
 }

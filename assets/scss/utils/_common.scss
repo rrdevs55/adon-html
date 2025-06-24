@@ -105,7 +105,12 @@
 }
 
 .rr-bg-light {
-  background: #F8F2EF;
+  background-color: #F8F2EF;
+
+  @include dark {
+    background-color: #111111;
+    --primary: #F8F2EF;
+  }
 }
 
 .rr-text-white {

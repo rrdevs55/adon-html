@@ -39,6 +39,11 @@
         background-color: var(--black);
         color: var(--white);
 
+        @include dark {
+            background-color: var(--white);
+            color: var(--black);
+        }
+
         .icon {
             .first {
                 transform: translate(100%, -100%) rotate(-45deg);
@@ -93,6 +98,10 @@
     width: 100%;
     height: 1px;
     background-color: rgba(17, 17, 17, 0.15);
+
+    @include dark {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
 }
 
 .rr-v-lines {
@@ -110,6 +119,10 @@
         width: 1px;
         height: 100%;
         background-color: rgba(17, 17, 17, 0.15);
+
+        @include dark {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
 
         &:nth-child(3) {
             @media #{$xs} {
@@ -147,6 +160,10 @@
         background-color: rgba(17, 17, 17, 0.15);
         top: 0;
         right: 100%;
+
+        @include dark {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
     }
 }
 
@@ -161,6 +178,10 @@
         background-color: rgba(17, 17, 17, 0.15);
         top: 0;
         left: 100%;
+
+        @include dark {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
     }
 }
 
@@ -176,6 +197,10 @@
         background-color: #F5F5F5;
         left: -170px;
         top: -1px;
+
+        @include dark {
+            background-color: var(--black)
+        }
 
         @media #{$lg} {
             width: 90px;
@@ -193,6 +218,10 @@
         top: 0;
         transform: rotate(32deg);
         transform-origin: top left;
+
+        @include dark {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
 
         @media #{$lg} {
             width: 105px;
@@ -255,6 +284,10 @@
 /* hero area 17 style  */
 .hero-area-17 {
     background-color: #F5F5F5;
+
+    @include dark {
+        background-color: var(--black);
+    }
 }
 
 .hero-17-inner {
@@ -422,11 +455,19 @@
             background-color: #F5F5F5;
             margin-left: 1px;
             margin-right: 1px;
+
+            @include dark {
+                background-color: var(--black);
+            }
         }
 
         @media #{$sm} {
             grid-column: span 2;
             border-top: 1px solid rgba(17, 17, 17, 0.15);
+
+            @include dark {
+                border-color: rgba(255, 255, 255, 0.15);
+            }
         }
 
         @media #{$xs} {
@@ -467,6 +508,10 @@
 /* service area 17 style  */
 .service-area-17 {
     background-color: #F5F5F5;
+
+    @include dark {
+        background-color: var(--black);
+    }
 }
 
 .service-17-header {
@@ -520,6 +565,10 @@
             background-color: #F5F5F5;
             margin-left: 1px;
             margin-right: 1px;
+
+            @include dark {
+                background-color: var(--black);
+            }
         }
 
         .nav-link {
@@ -535,6 +584,10 @@
 
                 .title {
                     background-color: #FEFEFE;
+
+                    @include dark {
+                        background-color: #1F1F1F;
+                    }
                 }
             }
 
@@ -543,6 +596,7 @@
 
                 .title {
                     background-color: #FB7515;
+                    color: var(--black);
                 }
             }
 
@@ -556,6 +610,10 @@
 
         &:not(:last-child) {
             border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+
+            @include dark {
+                border-color: rgba(255, 255, 255, 0.15);
+            }
         }
     }
 
@@ -634,6 +692,10 @@
     @media #{$sm} {
         border-top: 1px solid rgba(17, 17, 17, 0.15);
         margin-left: 1px;
+
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
     }
 
     @media #{$xs} {
@@ -645,6 +707,11 @@
         display: grid;
         border-right: 1px solid rgba(17, 17, 17, 0.15);
         background-color: #F5F5F5;
+
+        @include dark {
+            background-color: var(--black);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
 
         @media #{$sm} {
             padding: 19px 20px 18px;
@@ -712,6 +779,10 @@
             justify-content: center;
             align-items: center;
             z-index: -1;
+
+            @include dark {
+                background-color: #1F1F1F;
+            }
         }
     }
 }
@@ -719,6 +790,10 @@
 /* feature area 17 style  */
 .feature-area-17 {
     background-color: #F5F5F5;
+
+    @include dark {
+        background-color: var(--black);
+    }
 }
 
 .feature-17-header {
@@ -785,6 +860,10 @@
 
     &:not(:last-child) {
         border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
     }
 
     .logo-wrapper-box {
@@ -828,6 +907,10 @@
             align-items: center;
             z-index: -1;
 
+            @include dark {
+                background-color: #1F1F1F;
+            }
+
             @media #{$sm} {
                 padding: 10px;
             }
@@ -839,6 +922,11 @@
         border-left: 1px solid rgba(17, 17, 17, 0.15);
         background-color: #F5F5F5;
         border-right: 1px solid rgba(17, 17, 17, 0.15);
+
+        @include dark {
+            background-color: var(--black);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
 
         @media #{$md} {
             padding: 18px 20px;
@@ -870,6 +958,10 @@
             background-color: #F5F5F5;
             margin-left: 1px;
             margin-right: 1px;
+
+            @include dark {
+                background-color: var(--black);
+            }
         }
 
         @media #{$md} {
@@ -878,6 +970,10 @@
 
         @media #{$sm} {
             border-top: 1px solid #D3D3D3;
+
+            @include dark {
+                border-color: rgba(255, 255, 255, 0.15);
+            }
         }
     }
 
@@ -895,6 +991,10 @@
 /* fun fact area 17 style  */
 .funfact-area-17 {
     background-color: #F5F5F5;
+
+    @include dark {
+        background-color: var(--black);
+    }
 }
 
 .funfact-17-header {
@@ -963,6 +1063,11 @@
         border-left: 1px solid rgba(17, 17, 17, 0.15);
         border-right: 1px solid rgba(17, 17, 17, 0.15);
 
+        @include dark {
+            background-color: #1F1F1F;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
         @media #{$xxl} {
             padding: 20px;
 
@@ -1029,6 +1134,10 @@
 
     @media #{$md} {
         border-top: 1px solid rgba(17, 17, 17, 0.15);
+
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
     }
 
     @media #{$sm} {
@@ -1039,6 +1148,11 @@
         padding: 28px 20px;
         border-right: 1px solid rgba(17, 17, 17, 0.15);
         background-color: #F5F5F5;
+
+        @include dark {
+            background-color: var(--black);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
     }
 
     .title {
@@ -1058,6 +1172,10 @@
         padding: 24px 20px 30px;
         background-color: #F5F5F5;
         margin-right: 1px;
+
+        @include dark {
+            background-color: var(--black);
+        }
 
         @media #{$sm} {
             border-top: 1px solid rgba(17, 17, 17, 0.15);
@@ -1101,8 +1219,14 @@
 .funfact-17-box {
     padding: 26px 20px 15px;
 
+
+
     @media #{$md} {
         background-color: #F5F5F5;
+
+        @include dark {
+            background-color: var(--black);
+        }
     }
 
     .text {
@@ -1146,6 +1270,10 @@
     &:not(:last-child) {
         @media #{$md} {
             border-right: 1px solid rgba(17, 17, 17, 0.15);
+
+            @include dark {
+                border-color: rgba(255, 255, 255, 0.15);
+            }
         }
 
         @media #{$sm} {
@@ -1158,6 +1286,10 @@
 /* portfolio area 17 style  */
 .portfolio-area-17 {
     background-color: #F5F5F5;
+
+    @include dark {
+        background-color: var(--black);
+    }
 }
 
 .portfolio-17-header {
@@ -1218,6 +1350,11 @@
 .portfolio-17-item {
     border: 1px solid rgba(17, 17, 17, 0.15);
     background-color: #FEFEFE;
+
+    @include dark {
+        background-color: #1F1F1F;
+        border-color: rgba(255, 255, 255, 0.15);
+    }
 
     .meta {
         display: grid;
@@ -1316,6 +1453,11 @@
     background-color: #FEFEFE;
     transition: all 0.3s;
 
+    @include dark {
+        background-color: #1F1F1F;
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+
     @media #{$xxl} {
         width: 46px;
         height: 52px;
@@ -1326,6 +1468,10 @@
         border-color: transparent;
         background-color: #111111;
 
+        @include dark {
+            background-color: var(--white);
+        }
+
         svg * {
             fill: #FB7515;
         }
@@ -1333,7 +1479,7 @@
 
     svg * {
         transition: all 0.3s;
-
+        fill: var(--primary);
     }
 }
 
@@ -1342,6 +1488,10 @@
 /* testimonial area 17 style  */
 .testimonial-area-17 {
     background-color: #F5F5F5;
+
+    @include dark {
+        background-color: var(--black);
+    }
 }
 
 .testimonial-17-header {
@@ -1404,6 +1554,11 @@
     flex-direction: column;
     justify-content: space-between;
 
+    @include dark {
+        border-color: rgba(255, 255, 255, 0.15);
+        background-color: #1F1F1F;
+    }
+
     @media #{$xxl} {
         padding: 40px 40px;
     }
@@ -1422,6 +1577,10 @@
         padding: 20px;
         z-index: -1;
 
+        @include dark {
+            background-color: #1F1F1F;
+        }
+
         @media #{$sm} {
             display: none;
         }
@@ -1436,6 +1595,10 @@
         font-size: 22px;
         line-height: 30px;
         color: #555555;
+
+        @include dark {
+            color: #999999;
+        }
 
         @media #{$xxl} {
             font-size: 18px;
@@ -1526,6 +1689,11 @@
     background-color: #FEFEFE;
     transition: all 0.3s;
 
+    @include dark {
+        background-color: #1F1F1F;
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+
     @media #{$xxl} {
         width: 46px;
         height: 52px;
@@ -1535,6 +1703,10 @@
         border-color: transparent;
         background-color: #111111;
 
+        @include dark {
+            background-color: var(--white);
+        }
+
         svg * {
             fill: #FB7515;
         }
@@ -1542,13 +1714,17 @@
 
     svg * {
         transition: all 0.3s;
-
+        fill: var(--primary);
     }
 }
 
 /* cta area 17 style  */
 .cta-area-17 {
     background-color: #F5F5F5;
+
+    @include dark {
+        background-color: var(--black);
+    }
 }
 
 .cta-17-header {
@@ -1590,6 +1766,10 @@
             align-items: center;
             transition: all 0.3s;
 
+            @include dark {
+                border-color: rgba(255, 255, 255, 0.15);
+            }
+
             @media #{$sm} {
                 border-right: 1px solid #D3D3D3;
             }
@@ -1600,9 +1780,14 @@
 
             &:hover {
                 background-color: #FEFEFE;
+
+                @include dark {
+                    background-color: #1F1F1F;
+                }
             }
 
             svg {
+
                 @media #{$xxl} {
                     width: 50px;
                 }
@@ -1617,6 +1802,11 @@
 
                 @media #{$xs} {
                     width: 15px;
+                }
+
+                * {
+                    fill: var(--primary);
+
                 }
             }
         }
@@ -1657,6 +1847,10 @@
 .footer-area-17 {
     background-color: #F5F5F5;
     margin-top: -3px;
+
+    @include dark {
+        background-color: var(--black);
+    }
 }
 
 .footer-17-inner {
@@ -1677,6 +1871,10 @@
         background-color: #F5F5F5;
         margin-left: 1px;
         margin-right: 1px;
+
+        @include dark {
+            background-color: var(--black);
+        }
     }
 
     @media #{$md} {
@@ -1691,6 +1889,10 @@
             border-bottom: 1px solid #D3D3D3;
             padding: 15px 20px;
             margin-left: 0;
+
+            @include dark {
+                border-color: rgba(255, 255, 255, 0.15);
+            }
         }
 
         img {
@@ -1723,6 +1925,10 @@
             li {
                 list-style: none;
 
+                @include dark {
+                    border-color: rgba(255, 255, 255, 0.15);
+                }
+
                 @media #{$lg} {
                     border-left: 1px solid rgba(17, 17, 17, 0.15);
 
@@ -1747,7 +1953,11 @@
                     border-left: 1px solid rgba(17, 17, 17, 0.15);
                     margin-right: 1px;
 
-                    @media #{$lg} {
+                    @include dark {
+                        border-color: rgba(255, 255, 255, 0.15);
+                    }
+
+                    @media #{$xs} {
                         margin-right: 0;
                         border-left: 0;
                     }
@@ -1772,6 +1982,16 @@
 
                     &:hover {
                         background-color: #FEFEFE;
+
+                        @include dark {
+                            background-color: #1F1F1F;
+                        }
+                    }
+
+                    svg {
+                        * {
+                            fill: var(--primary);
+                        }
                     }
                 }
             }
@@ -1790,6 +2010,10 @@
             grid-column: span 2;
             text-align: center;
             border-top: 1px solid #D3D3D3;
+
+            @include dark {
+                border-color: rgba(255, 255, 255, 0.15);
+            }
         }
 
         @media #{$md} {

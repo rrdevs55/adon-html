@@ -938,7 +938,11 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: #F8F2EF;
+    background-color: #F8F2EF;
+
+    @include dark {
+        background-color: #111111;
+    }
 
     &.header-area-10 {
         background: transparent;
@@ -1037,6 +1041,12 @@
                 }
             }
         }
+
+        .rr-btn {
+            padding: 15px 22px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
     }
 
     .side-toggle {
@@ -1050,12 +1060,20 @@
             border: 1px solid rgba(17, 17, 17, 0.40);
             transition: all 0.5s;
 
+            @include dark {
+                border-color: rgba(248, 242, 239, 0.4);
+            }
+
             &:hover {
                 background-color: var(--primary);
                 border-color: transparent;
 
                 svg * {
                     fill: var(--white);
+
+                    @include dark {
+                        fill: var(--black);
+                    }
                 }
             }
 
@@ -1066,6 +1084,9 @@
             svg * {
                 transition: all 0.5s;
 
+                @include dark {
+                    fill: var(--white);
+                }
             }
 
         }
@@ -1418,6 +1439,10 @@
         border: 1px solid rgba(17, 17, 17, 0.15);
         position: relative;
         margin-right: 20px;
+
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
 
         &:hover {
             background-color: #FB7515;

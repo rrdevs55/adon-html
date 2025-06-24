@@ -261,6 +261,10 @@
 
         padding-top: 40px;
         border-top: 1px solid rgba(17, 17, 17, 0.15);
+
+        @include dark {
+            border-color: rgba(248, 242, 239, 0.15);
+        }
     }
 
     &__wrapper {
@@ -433,6 +437,10 @@
     .feature-work-7-inner {
         padding-top: 40px;
         border-top: 1px solid rgba(17, 17, 17, 0.15);
+
+        @include dark {
+            border-color: rgba(248, 242, 239, 0.15);
+        }
     }
 
     .feature-work-7-wrapper {
@@ -490,6 +498,10 @@
         &:not(:last-child) {
             padding-bottom: 40px;
             border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+
+            @include dark {
+                border-color: rgba(248, 242, 239, 0.15);
+            }
         }
 
         span {
@@ -606,6 +618,10 @@
                 letter-spacing: -0.7px;
                 text-transform: uppercase;
                 font-family: var(--font_bdogrotesk);
+
+                @include dark {
+                    color: #FFFFFF;
+                }
 
                 @media #{$sm} {
                     top: 180px;
@@ -783,7 +799,11 @@
             }
 
             &.has--card {
-                background: #F2E9E5;
+                background-color: #F2E9E5;
+
+                @include dark {
+                    background-color: #1A1A1A;
+                }
             }
         }
     }

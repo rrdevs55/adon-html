@@ -697,7 +697,7 @@
 .footer-area-6 {
 
     .footer-area-6-inner {
-        border-top: 1px solid rgba(17, 17, 17, 0.10);
+        border-top: 1px solid var(--border);
     }
 
     .footer-area-6-list {
@@ -757,6 +757,10 @@
 
     .footer-inner-7 {
         border-top: 1px solid #D5D0CE;
+
+        @include dark {
+            border-color: #292929;
+        }
     }
 
     .footer-widget-wrapper {
@@ -788,6 +792,10 @@
             margin-top: 43px;
             font-weight: 400;
             color: var(--black);
+
+            @include dark {
+                color: #F8F2EF;
+            }
 
             @media #{$lg} {
                 margin-top: 30px;
@@ -834,6 +842,10 @@
             position: absolute;
             background-color: #D5D0CE;
 
+            @include dark {
+                background-color: #292929;
+            }
+
             @media #{$sm} {
                 display: none;
             }
@@ -873,10 +885,14 @@
             padding-bottom: 15px;
             border-bottom: 1px solid var(--primary);
 
+            @include dark {
+                border-color: #F8F2EF;
+            }
+
             input {
                 width: 100%;
                 border: none;
-                color: #999;
+                color: var(--primary);
                 font-size: 20px;
                 font-weight: 400;
                 padding-right: 10px;
@@ -887,15 +903,30 @@
                     outline: 0;
                     box-shadow: none;
                 }
+
+                &::placeholder {
+                    color: #999999;
+
+                    @include dark {
+                        color: #555555;
+                    }
+                }
+            }
+
+            button {
+                i {
+                    color: var(--primary);
+
+                    @include dark {
+                        color: #F8F2EF;
+                    }
+                }
             }
         }
     }
 }
 
 /* footer area 8 style  */
-.footer-area-8 {
-    background-color: var(--black);
-}
 
 .footer-8-inner {
     padding-top: 46px;
@@ -956,6 +987,10 @@
                 background-color: transparent;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
+                @include dark {
+                    border-color: rgba(17, 17, 17, 0.2);
+                }
+
                 input {
                     width: 100%;
                     background-color: transparent;
@@ -963,18 +998,42 @@
                     outline: 0;
                     font-size: 15px;
                     line-height: 20px;
-                    color: var(--white);
+
+                    @include bg-primary {
+                        color: var(--white);
+
+                        @include dark {
+                            color: var(--black);
+                        }
+
+                    }
 
                     &::placeholder {
-                        color: #555555;
                         text-transform: uppercase;
+
+                        @include bg-primary {
+                            color: #555555;
+
+                            @include dark {
+                                color: #999999;
+                            }
+
+                        }
                     }
 
                 }
 
                 i {
                     font-size: 20px;
-                    color: var(--white);
+
+                    @include bg-primary {
+                        color: var(--white);
+
+                        @include dark {
+                            color: var(--black);
+                        }
+
+                    }
                 }
             }
 
@@ -998,14 +1057,30 @@
             font-size: 15px;
             font-weight: 500;
             line-height: 21px;
-            color: var(--white);
             text-transform: uppercase;
             transition-property: opacity;
             transition-duration: 500ms;
             display: inline-block;
 
+            @include bg-primary {
+                color: var(--white);
+
+                @include dark {
+                    color: var(--black);
+                }
+
+            }
+
             &:hover {
-                color: var(--secondary);
+
+                @include bg-primary {
+                    color: #999999;
+
+                    @include dark {
+                        color: #555555;
+                    }
+
+                }
             }
         }
     }
@@ -1015,9 +1090,17 @@
         font-size: 15px;
         font-weight: 500;
         line-height: 20px;
-        color: #555555;
         text-transform: uppercase;
         margin-bottom: 20px;
+
+        @include bg-primary {
+            color: #555555;
+
+            @include dark {
+                color: #999999;
+            }
+
+        }
     }
 
     .footer-nav-list {
@@ -1035,11 +1118,19 @@
             font-size: 15px;
             font-weight: 500;
             line-height: 21px;
-            color: var(--white);
             text-transform: uppercase;
             transition-property: opacity;
             transition-duration: 500ms;
             list-style: none;
+
+            @include bg-primary {
+                color: var(--white);
+
+                @include dark {
+                    color: var(--black);
+                }
+
+            }
 
             &:not(:last-child) {
                 margin-bottom: 0px;
@@ -1050,7 +1141,15 @@
 
                 &:hover {
                     opacity: 1;
-                    color: var(--white);
+
+                    @include bg-primary {
+                        color: var(--white);
+
+                        @include dark {
+                            color: var(--black);
+                        }
+
+                    }
 
                     a strong {
                         opacity: 1;
@@ -1106,12 +1205,27 @@
             font-size: 15px;
             font-weight: 500;
             line-height: 21px;
-            color: var(--white);
             text-transform: uppercase;
+
+            @include bg-primary {
+                color: var(--white);
+
+                @include dark {
+                    color: var(--black);
+                }
+
+            }
 
             a {
                 &:hover {
-                    color: #555555;
+                    @include bg-primary {
+                        color: #999999;
+
+                        @include dark {
+                            color: #555555;
+                        }
+
+                    }
                 }
             }
         }
@@ -1123,12 +1237,28 @@
             font-size: 15px;
             font-weight: 500;
             line-height: 21px;
-            color: var(--white);
             text-transform: uppercase;
+
+            @include bg-primary {
+                color: var(--white);
+
+                @include dark {
+                    color: var(--black);
+                }
+
+            }
 
             a {
                 &:hover {
-                    color: #555555;
+                    @include bg-primary {
+
+                        color: #999999;
+
+                        @include dark {
+                            color: #555555;
+                        }
+
+                    }
                 }
             }
         }
@@ -1142,6 +1272,10 @@
         padding-top: 50px;
         border-top: 1px solid rgba(17, 17, 17, 0.20);
         padding-bottom: 200px;
+
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
 
         @media #{$xl} {
             padding-bottom: 150px;
@@ -1202,6 +1336,10 @@
                     background-color: transparent;
                     border-bottom: 1px solid rgba(17, 17, 17, 0.20);
 
+                    @include dark {
+                        border-color: rgba(255, 255, 255, 0.2);
+                    }
+
                     input {
                         width: 100%;
                         background-color: transparent;
@@ -1212,13 +1350,18 @@
                         color: var(--primary);
 
                         &::placeholder {
-                            color: #999;
+                            color: #999999;
+
+                            @include dark {
+                                color: #555555;
+                            }
                         }
 
                     }
 
                     i {
                         font-size: 20px;
+                        color: var(--primary);
                     }
                 }
 
@@ -1241,12 +1384,16 @@
         }
 
         .title {
-            color: #999;
+            color: #999999;
             font-size: 18px;
             font-weight: 400;
             line-height: 20px;
             margin-bottom: 15px;
             font-family: var(--font_dmsans);
+
+            @include dark {
+                color: #555555;
+            }
         }
 
 

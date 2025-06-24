@@ -128,12 +128,20 @@
                 >a {
                     color: var(--secondary);
                     border-color: var(--primary);
+
+                    @include dark {
+                        border-color: var(--primary);
+                    }
                 }
             }
 
             >a {
                 padding-bottom: 17px;
                 border-bottom: 1px solid rgba(17, 17, 17, 0.2);
+
+                @include dark {
+                    border-color: rgba(255, 255, 255, 0.2);
+                }
             }
         }
     }
@@ -388,7 +396,7 @@
                 content: "";
                 width: 1px;
                 height: 100%;
-                background-color: rgba(17, 17, 17, 0.1);
+                background-color: var(--border);
                 top: 0;
                 left: -50px;
 
@@ -404,7 +412,7 @@
     display: grid;
     gap: 30px 40px;
     grid-template-columns: 1fr 280px;
-    border-top: 1px solid rgba(17, 17, 17, 0.1);
+    border-top: 1px solid var(--border);
     padding-top: 23px;
 
     @media #{$lg} {
@@ -435,6 +443,11 @@
             line-height: 26px;
             letter-spacing: -0.05em;
             list-style: none;
+            color: #999999;
+
+            @include dark {
+                color: #555555;
+            }
         }
     }
 
@@ -451,15 +464,7 @@
 
 }
 
-
-
-
-
 // portfolio area 6 style 
-.portfolio-area-6-bg {
-    background-color: var(--black);
-}
-
 .portfolio-6-section-header {
     margin-top: 78px;
     display: grid;
@@ -480,7 +485,14 @@
     }
 
     .section-title-6 {
-        color: var(--white);
+        @include bg-primary {
+            color: var(--white);
+
+            @include dark {
+                color: var(--black);
+            }
+
+        }
     }
 
     .btn-wrapper {
@@ -488,11 +500,19 @@
     }
 
     .rr-btn-underline {
-        color: var(--white);
         font-size: 14px;
         line-height: 30px;
         text-transform: uppercase;
         gap: 10px;
+
+        @include bg-primary {
+            color: var(--white);
+
+            @include dark {
+                color: var(--black);
+            }
+
+        }
 
         span {
             margin-right: 30px;
@@ -596,10 +616,32 @@
 }
 
 // approach-area
+.approach-section-header {
+    .section-title-6 {
+
+        @include bg-primary {
+            color: var(--white);
+
+            @include dark {
+                color: var(--black);
+            }
+
+        }
+    }
+}
 
 .approach-wrapper {
-    border-top: 1px solid #292929;
+    border-top: 1px solid;
     margin-top: 93px;
+
+    @include bg-primary {
+        border-color: #292929;
+
+        @include dark {
+            border-color: #E7E7E7;
+        }
+
+    }
 
     @media #{$lg} {
         margin-top: 60px;
@@ -614,8 +656,17 @@
         display: grid;
         padding-top: 60px;
         padding-bottom: 110px;
-        border-bottom: 1px solid #292929;
+        border-bottom: 1px solid;
         grid-template-columns: 238px 820px 1fr;
+
+        @include bg-primary {
+            border-color: #292929;
+
+            @include dark {
+                border-color: #E7E7E7;
+            }
+
+        }
 
         @media #{$xxl} {
             grid-template-columns: 238px 600px 1fr;
@@ -660,9 +711,17 @@
             font-size: 30px;
             font-weight: 400;
             line-height: 30px;
-            color: var(--white);
             letter-spacing: -1.5px;
             text-transform: uppercase;
+
+            @include bg-primary {
+                color: var(--white);
+
+                @include dark {
+                    color: var(--black);
+                }
+
+            }
 
             @media #{$xs} {
                 font-size: 25px;
@@ -673,9 +732,17 @@
             font-size: 30px;
             font-weight: 400;
             line-height: 30px;
-            color: var(--white);
             letter-spacing: -1.5px;
             text-transform: uppercase;
+
+            @include bg-primary {
+                color: var(--white);
+
+                @include dark {
+                    color: var(--black);
+                }
+
+            }
 
             @media #{$md} {
                 br {
@@ -689,11 +756,19 @@
         }
 
         p {
-            color: #999;
             font-size: 20px;
             font-weight: 400;
             line-height: 28px;
             max-width: 500px;
+
+            @include bg-primary {
+                color: #999999;
+
+                @include dark {
+                    color: #555555;
+                }
+
+            }
         }
     }
 }
@@ -705,7 +780,7 @@
     .fun-fact-area-inner {
         margin-top: 93px;
         padding-top: 20px;
-        border-top: 1px solid rgba(17, 17, 17, 0.10);
+        border-top: 1px solid var(--border);
 
 
         @media #{$lg} {
@@ -747,6 +822,10 @@
             border-radius: 10px;
             background-color: #F1F1F1;
 
+            @include dark {
+                background-color: #1A1A1A;
+            }
+
             @media #{$md} {
                 height: 280px;
             }
@@ -760,6 +839,10 @@
                     line-height: 22px;
                     letter-spacing: -1px;
                     color: rgba(17, 17, 17, 0.50);
+
+                    @include dark {
+                        color: rgba(255, 255, 255, 0.5);
+                    }
 
                     span {
                         color: var(--primary);
@@ -937,7 +1020,7 @@
 
                 .text-one,
                 .text-two {
-                    color: var(--black);
+                    color: var(--primary);
 
                 }
 

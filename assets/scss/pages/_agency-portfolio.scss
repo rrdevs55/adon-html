@@ -154,6 +154,10 @@
     border-top: 1px solid rgba(17, 17, 17, 0.20);
     border-bottom: 1px solid rgba(17, 17, 17, 0.20);
 
+    @include dark {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
     .hero-9-nav-wrapper {
         display: flex;
         padding: 21px 0;
@@ -215,6 +219,10 @@
 
     .service-9-inner {
         border-top: 1px solid rgba(17, 17, 17, 0.20);
+
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
     }
 
     &__content {
@@ -242,6 +250,10 @@
         padding-right: 50px;
         flex-direction: column;
         border-right: 1px solid rgba(17, 17, 17, 0.20);
+
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
 
         @media #{$md} {
             border-right: none;
@@ -367,6 +379,10 @@
         list-style: none;
         position: relative;
         border-top: 1px solid #CFCFCF;
+
+        @include dark {
+            border-color: #545454;
+        }
     }
 
     &__item {
@@ -384,6 +400,10 @@
         justify-content: space-between;
         border-bottom: 1px solid #CFCFCF;
         transition: 0.3s transform ease-in-out, background-color 0.3s ease;
+
+        @include dark {
+            border-color: #545454;
+        }
 
         @media #{$xs} {
             font-size: 16px;
@@ -417,6 +437,10 @@
         transform: translateY(0);
         transform-origin: top center;
         transition: transform 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+
+        @include dark {
+            background-color: #1F1F1F;
+        }
     }
 }
 

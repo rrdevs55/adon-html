@@ -6,6 +6,10 @@
         padding-bottom: 100px;
         background: linear-gradient(180deg, #FFD80C 6.48%, #FFF 84.06%);
 
+        @include dark {
+            background: var(--black);
+        }
+
         @media #{$lg} {
             padding-top: 110px;
             padding-bottom: 80px;
@@ -24,7 +28,8 @@
 
     &__content {
         padding-top: 25px;
-        border-top: 1px solid rgba(17, 17, 17, 0.10);
+        border-top: 1px solid var(--border);
+
     }
 
     &__wrapper {
@@ -251,7 +256,7 @@
     display: grid;
     padding-top: 30px;
     grid-template-columns: 785px auto;
-    border-top: 1px solid rgba(17, 17, 17, 0.10);
+    border-top: 1px solid var(--border);
 
     @media #{$xxl} {
         grid-template-columns: 685px auto;
@@ -314,12 +319,16 @@
             ul {
 
                 li {
-                    color: #999;
+                    color: #999999;
                     font-size: 30px;
                     font-weight: 300;
                     line-height: 36px;
                     font-family: var(--font_tartuffotrial);
                     list-style: none;
+
+                    @include dark {
+                        color: #555555;
+                    }
 
                     @media #{$xs} {
                         font-size: 25px;
@@ -389,8 +398,12 @@
 .service-10-area {
 
     .service-10__inner {
-        background: #F1F1F1;
+        background-color: #F1F1F1;
         padding-top: 30px;
+
+        @include dark {
+            background-color: #171717;
+        }
 
         .sub-title {
             font-size: 18px;
@@ -420,7 +433,7 @@
         margin: 0px 30px;
         display: grid;
         grid-template-columns: 785px auto;
-        border-top: 1px solid rgba(17, 17, 17, 0.10);
+        border-top: 1px solid var(--border);
 
         @media #{$xl} {
             grid-template-columns: 515px auto;
@@ -517,6 +530,9 @@
         &:not(:first-child) {
             border-top: 1px solid #CFCFCF;
 
+            @include dark {
+                border-color: #414141;
+            }
         }
 
         @media #{$xs} {
@@ -533,10 +549,14 @@
         opacity: 0;
         position: absolute;
         pointer-events: none;
-        background: #fff;
+        background-color: var(--white);
         transform: translateY(0);
         transform-origin: top center;
         transition: transform 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+
+        @include dark {
+            background-color: var(--black);
+        }
     }
 }
 
@@ -552,7 +572,7 @@
         padding-top: 30px;
         margin-bottom: 100px;
         grid-template-columns: 772px auto;
-        border-top: 1px solid rgba(17, 17, 17, 0.10);
+        border-top: 1px solid var(--border);
 
         @media #{$xxl} {
             grid-template-columns: 672px auto;
