@@ -95,6 +95,10 @@
     border-top: 1px solid rgba(17, 17, 17, 0.20);
     border-bottom: 1px solid rgba(17, 17, 17, 0.20);
 
+    @include dark {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
     .hero-11-nav-wrapper {
         display: flex;
         padding: 21px 0;
@@ -202,6 +206,10 @@
         grid-template-columns: 848px auto;
         border-top: 1px solid rgba(17, 17, 17, 0.20);
 
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
         @media #{$xxl} {
             grid-template-columns: 700px auto;
         }
@@ -227,6 +235,10 @@
             padding-top: 70px;
             border-right: 1px solid rgba(17, 17, 17, 0.20);
 
+            @include dark {
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+
             @media #{$xl} {
                 padding-top: 50px;
             }
@@ -246,7 +258,7 @@
                 color: var(--primary);
                 display: inline-block;
                 text-transform: capitalize;
-                border: 1px solid var(--black);
+                border: 1px solid var(--primary);
                 font-family: var(--font_bdogrotesk);
 
                 &::before {
@@ -257,7 +269,7 @@
                     content: "";
                     position: absolute;
                     border-radius: 500px;
-                    background-color: var(--black);
+                    background-color: currentColor;
                     transform: translate(-50%, -50%);
                 }
             }
@@ -280,7 +292,7 @@
                 font-size: 30px;
                 font-weight: 400;
                 line-height: 30px;
-                color: var(--black);
+                color: var(--primary);
                 margin-bottom: 100px;
                 letter-spacing: -1.5px;
                 font-family: var(--font_bdogrotesk);
@@ -439,7 +451,7 @@
                 font-size: 16px;
                 font-weight: 400;
                 line-height: 26px;
-                color: var(--primary);
+                color: var(--black);
                 background: var(--white);
                 border-radius: 500px;
                 padding: 4px 13px;
@@ -459,6 +471,10 @@
             @media #{$md} {
                 font-size: 20px;
                 letter-spacing: 0;
+            }
+
+            a:hover {
+                color: var(--secondary);
             }
         }
     }

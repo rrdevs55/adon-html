@@ -1512,7 +1512,7 @@
 .footer-12-inner {
     padding-top: 46px;
     padding-bottom: 195px;
-    border-top: 1px solid rgba(17, 17, 17, 0.1);
+    border-top: 1px solid var(--border);
 
     @media #{$xxl} {
         padding-bottom: 145px;
@@ -1569,6 +1569,10 @@
                 background-color: transparent;
                 border-bottom: 1px solid rgba(17, 17, 17, 0.2);
 
+                @include dark {
+                    border-color: rgba(255, 255, 255, 0.2);
+                }
+
                 input {
                     width: 100%;
                     background-color: transparent;
@@ -1581,6 +1585,10 @@
                     &::placeholder {
                         color: #999999;
                         text-transform: uppercase;
+
+                        @include dark {
+                            color: #555555;
+                        }
                     }
 
                     &:-webkit-autofill,
@@ -1632,9 +1640,13 @@
         font-size: 16px;
         font-weight: 500;
         line-height: 20px;
-        color: #555555;
+        color: #999999;
         text-transform: uppercase;
         margin-bottom: 20px;
+
+        @include dark {
+            color: #555555;
+        }
     }
 
     .footer-nav-list {

@@ -373,6 +373,10 @@
                 @media #{$md} {
                     gap: 50px;
                 }
+
+                &:hover {
+                    color: var(--black);
+                }
             }
 
             .icon {

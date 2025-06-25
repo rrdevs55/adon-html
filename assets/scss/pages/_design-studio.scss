@@ -745,6 +745,10 @@
         @media #{$lg} {
             font-size: 18px;
         }
+
+        a:hover {
+            color: var(--secondary);
+        }
     }
 
     .tag {
