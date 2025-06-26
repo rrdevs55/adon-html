@@ -11,21 +11,21 @@
 
 /* bdo grotesk  */
 @font-face {
-  font-family: "BDOGrotesk-Regular";
-  src: url('../fonts/BDOGrotesk-Regular.ttf');
-  font-weight: 400;
+  font-family: "BDOGrotesk";
+  src: url('../fonts/BDOGrotesk-DemiBold.ttf');
+  font-weight: 600;
 }
 
 @font-face {
-  font-family: "BDOGrotesk-Regular";
+  font-family: "BDOGrotesk";
   src: url('../fonts/BDOGrotesk-Medium.ttf');
   font-weight: 500;
 }
 
 @font-face {
-  font-family: "BDOGrotesk-Regular";
-  src: url('../fonts/BDOGrotesk-DemiBold.ttf');
-  font-weight: 600;
+  font-family: "BDOGrotesk";
+  src: url('../fonts/BDOGrotesk-Regular.ttf');
+  font-weight: 400;
 }
 
 @font-face {
@@ -73,7 +73,7 @@
 
 :root {
   --font_dmsans: "DM Sans", sans-serif;
-  --font_bdogrotesk: "BDOGrotesk-Regular";
+  --font_bdogrotesk: "BDOGrotesk";
   --font_ppeditor: "PPEditorialNew-Italic";
   --font_ppeditorialnewregular: "PPEditorialNew-Regular";
   --font_tartuffotrial: "Tartuffo_Trial-Regular";
@@ -82,14 +82,6 @@
 }
 
 
-// Font Family Classes
-.font {
-  &-heading {
-    &-bdogrotesk {
-      @include heading (var(--font_bdogrotesk));
-    }
-  }
-}
 
 // Defalut Style
 * {

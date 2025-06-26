@@ -772,7 +772,7 @@
         font-size: 16px;
         font-weight: 500;
         letter-spacing: 0.04em;
-        padding: 15px 26px;
+        padding: 14px 26px;
         border-radius: 50px;
     }
 
@@ -1056,7 +1056,7 @@
     }
 
     .header__navicon {
-        gap: 10px;
+        gap: 20px;
         display: flex;
         align-items: center;
 
@@ -1371,13 +1371,27 @@
     .side-toggle {
         width: 46px;
         height: 46px;
-        border: 1px solid rgba(17, 17, 17, 0.4);
+        border: 1px solid rgba(17, 17, 17, 0.2);
         border-radius: 50%;
         transition: all 0.5s;
+
+        @include dark {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
 
         &:hover {
             background-color: #FFD80C;
             border-color: transparent;
+
+            svg * {
+                fill: var(--black);
+            }
+        }
+
+        svg * {
+            fill: var(--primary);
+            transition: all 0.5s;
+
         }
     }
 }

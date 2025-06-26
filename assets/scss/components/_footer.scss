@@ -711,6 +711,10 @@
         align-items: center;
         justify-content: space-between;
 
+        @media #{$xs} {
+            justify-content: center;
+        }
+
         @media #{$sm} {
             padding: 50px 0;
         }

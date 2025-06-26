@@ -898,6 +898,11 @@
             line-height: 20px;
             letter-spacing: -0.05em;
             list-style: none;
+            color: #999999;
+
+            @include dark {
+                color: #555555;
+            }
 
             .count {
                 margin-right: 13px;

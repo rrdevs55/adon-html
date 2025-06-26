@@ -1043,6 +1043,10 @@
   clip-path: inset(0 0 100% 0);
   transition: clip-path 0.9s ease-in-out, opacity 0.9s ease-in-out;
 
+  @include dark {
+    background-color: var(--black);
+  }
+
   &.info-open {
     opacity: 1;
     z-index: 99999999;
@@ -1058,10 +1062,10 @@
         align-items: center;
         padding-bottom: 24px;
         justify-content: space-between;
-        border-bottom: 1px solid rgba(17, 17, 17, 0.10);
+        border-bottom: 1px solid var(--border);
 
         h6 {
-          color: #555;
+          color: var(--secondary);
           font-size: 16px;
           font-weight: 400;
           line-height: 18px;
@@ -1070,7 +1074,7 @@
         }
 
         .date {
-          color: #555;
+          color: var(--secondary);
           font-size: 16px;
           font-weight: 400;
           line-height: 18px;
@@ -1119,6 +1123,10 @@
         line-height: 20px;
         letter-spacing: -0.54px;
         margin-bottom: 30px;
+
+        @include dark {
+          color: #555555;
+        }
       }
 
       .socail-media {
@@ -1130,12 +1138,12 @@
             font-size: 18px;
             font-weight: 400;
             line-height: 50px;
-            color: var(--black);
+            color: var(--primary);
             letter-spacing: -0.54px;
             font-family: var(--font_bdogrotesk);
 
             &:hover {
-              color: #555;
+              color: var(--secondary);
             }
           }
         }
@@ -1148,7 +1156,7 @@
           transform: translateY(-20px);
 
           a {
-            color: #555;
+            color: var(--secondary);
             font-size: 90px;
             font-weight: 400;
             line-height: 100px;
@@ -1160,7 +1168,7 @@
             }
 
             &:hover {
-              color: var(--black);
+              color: var(--primary);
             }
           }
         }
@@ -1172,7 +1180,7 @@
           position: relative;
           font-weight: 400;
           line-height: 20px;
-          color: var(--black);
+          color: var(--primary);
           font-family: var(--font_bdogrotesk);
 
           &::before {
@@ -1222,18 +1230,28 @@
       line-height: 20px;
       padding: 29px 25px;
       border-radius: 15px;
-      color: var(--black);
+      color: var(--primary);
       align-items: center;
-      background: #F3F3F3;
+      background-color: #F3F3F3;
       letter-spacing: -0.48px;
       justify-content: space-between;
       font-family: var(--font_bdogrotesk);
-      border: 1px solid rgba(17, 17, 17, 0.10);
+      border: 1px solid var(--border);
+
+      @include dark {
+        background-color: #1B1B1B;
+      }
 
       &:hover {
         transform: rotate(0deg);
-        background: var(--black);
+        border-color: transparent;
+        background-color: var(--black);
         color: var(--white);
+
+        @include dark {
+          background-color: var(--white);
+          color: var(--black);
+        }
       }
     }
   }
