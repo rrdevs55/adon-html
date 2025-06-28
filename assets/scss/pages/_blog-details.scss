@@ -145,6 +145,19 @@
         h5,
         h6 {
             margin-bottom: 10px;
+            font-size: 50px;
+
+            @media #{$xxl} {
+                font-size: 45px;
+            }
+
+            @media #{$lg} {
+                font-size: 35px;
+            }
+
+            @media #{$sm} {
+                font-size: 28px;
+            }
         }
 
         p {

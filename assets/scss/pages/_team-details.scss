@@ -39,9 +39,10 @@
         font-size: 30px;
         font-weight: 310;
         line-height: 0.93;
-        letter-spacing: -0.07em;
+        letter-spacing: -0.05em;
         color: var(--primary);
         text-transform: unset;
+        font-family: var(--font_bdogrotesk);
 
         @media #{$xl} {
             font-size: 24px;
