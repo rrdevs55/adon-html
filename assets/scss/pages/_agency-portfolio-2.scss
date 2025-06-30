@@ -4,7 +4,7 @@
     .hero-area-10__inner {
         padding-top: 142px;
         padding-bottom: 100px;
-        background: linear-gradient(180deg, #FFD80C 6.48%, #FFF 84.06%);
+        position: relative;
 
         @include dark {
             background: var(--black);
@@ -23,6 +23,17 @@
         @media #{$xs} {
             padding-top: 80px;
             padding-bottom: 60px;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 130%;
+            background: linear-gradient(180deg, #FFD80C 6.48%, #FFF 84.06%);
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
     }
 
@@ -517,14 +528,7 @@
     }
 
     .service-10__item {
-        z-index: 1;
-        font-size: 30px;
-        font-weight: 300;
-        line-height: 30px;
-        padding: 19.5px 0px;
-        position: relative;
-        color: var(--primary);
-        font-family: var(--font_tartuffotrial);
+
         transition: 0.3s transform ease-in-out, background-color 0.3s ease;
 
         &:not(:first-child) {
@@ -535,9 +539,21 @@
             }
         }
 
-        @media #{$xs} {
-            font-size: 16px;
-            padding: 12px 2px;
+
+        .title {
+            z-index: 1;
+            font-size: 30px;
+            font-weight: 300;
+            line-height: 30px;
+            padding: 19.5px 0px;
+            position: relative;
+            color: var(--primary);
+            font-family: var(--font_tartuffotrial);
+
+            @media #{$xs} {
+                font-size: 16px;
+                padding: 12px 2px;
+            }
         }
     }
 
