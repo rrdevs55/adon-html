@@ -1047,6 +1047,10 @@
     background-color: var(--black);
   }
 
+  @media #{$md} {
+    padding: 0 20px;
+  }
+
   &.info-open {
     opacity: 1;
     z-index: 99999999;
@@ -1071,6 +1075,10 @@
           line-height: 18px;
           letter-spacing: -0.48px;
           margin-right: auto;
+
+          @media #{$sm} {
+            display: none;
+          }
         }
 
         .date {
@@ -1080,6 +1088,10 @@
           line-height: 18px;
           font-family: var(--font_bdogrotesk);
           letter-spacing: -0.48px;
+
+          @media #{$sm} {
+            display: none;
+          }
         }
       }
 
@@ -1087,8 +1099,8 @@
         width: 95px;
         margin-right: 225px;
 
-        @media #{$xs} {
-          width: 95px;
+        @media #{$sm} {
+          margin-right: 0;
         }
 
         img {

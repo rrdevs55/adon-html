@@ -1401,6 +1401,11 @@ h6 {
 .dark .side-info-4 {
   background-color: var(--black);
 }
+@media only screen and (max-width: 991px) {
+  .side-info-4 {
+    padding: 0 20px;
+  }
+}
 .side-info-4.info-open {
   opacity: 1;
   z-index: 99999999;
@@ -1423,6 +1428,11 @@ h6 {
   letter-spacing: -0.48px;
   margin-right: auto;
 }
+@media only screen and (max-width: 767px) {
+  .side-info-4 .offcanvas-4 .offset-header h6 {
+    display: none;
+  }
+}
 .side-info-4 .offcanvas-4 .offset-header .date {
   color: var(--secondary);
   font-size: 16px;
@@ -1431,13 +1441,18 @@ h6 {
   font-family: var(--font_bdogrotesk);
   letter-spacing: -0.48px;
 }
+@media only screen and (max-width: 767px) {
+  .side-info-4 .offcanvas-4 .offset-header .date {
+    display: none;
+  }
+}
 .side-info-4 .offcanvas-4 .offset-logo {
   width: 95px;
   margin-right: 225px;
 }
-@media (max-width: 575px) {
+@media only screen and (max-width: 767px) {
   .side-info-4 .offcanvas-4 .offset-logo {
-    width: 95px;
+    margin-right: 0;
   }
 }
 .side-info-4 .offcanvas-4 .offset-logo img {
@@ -3945,7 +3960,6 @@ section {
 .header-area-3 .side-toggle {
   width: 60px;
   height: 60px;
-  height: 60px;
   cursor: pointer;
   border-radius: 20px;
   transition: all 0.5s;
@@ -3967,8 +3981,8 @@ section {
   transition: all 0.4s ease;
 }
 .header-area-3 .offcanvas-3 {
-  top: 50%;
-  right: 50%;
+  top: 0;
+  right: 0;
   height: auto;
   padding: 100px;
   position: absolute;
@@ -3990,8 +4004,8 @@ section {
   opacity: 1;
   filter: none;
   height: 990px;
-  margin: -50px;
-  margin-right: -55px;
+  margin: -20px;
+  margin-right: -25px;
   pointer-events: auto;
   width: 950px;
   overflow-y: scroll;
@@ -4008,14 +4022,15 @@ section {
 }
 @media only screen and (max-width: 1199px) {
   .header-area-3 .offcanvas-3.info-open {
-    width: 505px;
+    width: 500px;
     padding: 100px 30px 50px;
+    margin: -10px;
+    margin-right: -20px;
   }
 }
 @media only screen and (max-width: 991px) {
   .header-area-3 .offcanvas-3.info-open {
-    margin-top: -45px;
-    width: calc(100vw - 10px);
+    width: calc(100vw - 25px);
     padding: 100px 30px 50px;
   }
 }
