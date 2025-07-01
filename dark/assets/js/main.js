@@ -1518,20 +1518,22 @@
   }
 
   // pin on bottom
-  var pin_on_bottom = document.querySelectorAll(".pin-on-bottom");
-  pin_on_bottom.forEach((el) => {
-    gsap.to(el, {
-      paddingBottom: "500px",
-      ease: "none",
-      scrollTrigger: {
-        trigger: el,
-        pin: true,
-        start: "bottom 90%",
-        end: "bottom top",
-        pinSpacing: false,
-        scrub: 3,
-        // markers: true,
-      },
+  mm.add("(min-width: 1200px)", () => {
+    var pin_on_bottom = document.querySelectorAll(".pin-on-bottom");
+    pin_on_bottom.forEach((el) => {
+      gsap.to(el, {
+        paddingBottom: "500px",
+        ease: "none",
+        scrollTrigger: {
+          trigger: el,
+          pin: true,
+          start: "bottom 90%",
+          end: "bottom top",
+          pinSpacing: false,
+          scrub: 3,
+          // markers: true,
+        },
+      });
     });
   });
 

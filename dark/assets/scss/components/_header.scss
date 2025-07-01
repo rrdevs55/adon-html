@@ -347,7 +347,6 @@
     .side-toggle {
         width: 60px;
         height: 60px;
-        height: 60px;
         cursor: pointer;
         border-radius: 20px;
         transition: all 0.5s;
@@ -409,8 +408,8 @@
 
 
     .offcanvas-3 {
-        top: 50%;
-        right: 50%;
+        top: 0;
+        right: 0;
         height: auto;
         padding: 100px;
         position: absolute;
@@ -432,8 +431,8 @@
             opacity: 1;
             filter: none;
             height: 990px;
-            margin: -50px;
-            margin-right: -55px;
+            margin: -20px;
+            margin-right: -25px;
             pointer-events: auto;
             width: calc(950px + 0px);
             overflow-y: scroll;
@@ -447,13 +446,14 @@
             }
 
             @media #{$lg} {
-                width: 505px;
+                width: 500px;
                 padding: 100px 30px 50px;
+                margin: -10px;
+                margin-right: -20px;
             }
 
             @media #{$md} {
-                margin-top: -45px;
-                width: calc(100vw - 10px);
+                width: calc(100vw - 25px);
                 padding: 100px 30px 50px;
             }
 
